@@ -1,0 +1,31 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/legacy/Dockerfile
+    container_name: chisimba-legacy-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ../../framework/app:/var/www/html/ch
+      - ../../modules:/var/www/html/ch/packages
+      - ../../canvases:/var/www/html/ch/canvases
+      - runtime_config:/var/www/html/ch/config
+      - runtime_usrfiles:/var/www/html/ch/usrfiles
+      - runtime_error_logs:/var/www/html/ch/error_logs
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.5.62
+    container_name: chisimba-legacy-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - legacy_db:/var/lib/mysql
+
+volumes:
+  legacy_db:
+  runtime_config:
+  runtime_usrfiles:
+  runtime_error_logs:
