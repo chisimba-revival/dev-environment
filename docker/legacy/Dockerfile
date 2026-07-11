@@ -36,7 +36,9 @@ RUN set -eux; \
     pear config-set auto_discover 1; \
     pear install -f MDB2-2.5.0b5; \
     pear install -a -f MDB2_Driver_mysql; \
-    pear install -a -f MDB2_Schema
+    pear install -a -f MDB2_Schema; \
+    pear install -a -f XML_Parser-1.3.4; \
+    pear install -a -f Calendar-0.5.5
 
 COPY config/php/legacy.ini /usr/local/etc/php/conf.d/chisimba.ini
 
