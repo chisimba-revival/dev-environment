@@ -1,0 +1,25 @@
+name: chisimba-php74
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/php74/Dockerfile
+    container_name: chisimba-php74-web
+    ports:
+      - "8081:80"
+    volumes:
+      - ../runtime/php74-ch:/var/www/html/ch
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.5.62
+    container_name: chisimba-php74-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - php74_db:/var/lib/mysql
+
+volumes:
+  php74_db:
