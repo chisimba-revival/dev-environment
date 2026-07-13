@@ -36,33 +36,6 @@ RUN set -eux; \
       zip; \
     rm -rf /var/lib/apt/lists/*
 
-RUN set -eux; \
-    pear config-set auto_discover 1; \
-    pear install -f MDB2-2.5.0b5; \
-    pear install -a -f MDB2_Driver_mysql; \
-    pear install -a -f MDB2_Driver_mysqli; \
-    pear install -a -f MDB2_Schema; \
-    pear install -a -f XML_Parser-1.3.4; \
-    pear install -a -f Calendar-0.5.5
-    
-# Patch legacy PEAR MDB2 code for PHP 7.4 compatibility.
-#
-# MDB2_Driver_mysql 1.4.1 and MDB2_Driver_mysqli 1.4.1 still contain
-# PHP 4 object-construction syntax ("=& new" and "= &new"), which PHP 7
-# cannot parse. MDB2::parseDSN() also calls count() on a string or null.
-RUN set -eux; \
-    sed -i \
-      -e 's/\([[:space:]]\)=&[[:space:]]*new[[:space:]]/\1= new /g' \
-      -e 's/\([[:space:]]\)=[[:space:]]*&new[[:space:]]/\1= new /g' \
-      /usr/local/lib/php/MDB2/Driver/mysql.php \
-      /usr/local/lib/php/MDB2/Driver/mysqli.php; \
-    sed -i \
-      's/if (!count($dsn)) {/if ($dsn === null || $dsn === "") {/' \
-      /usr/local/lib/php/MDB2.php; \
-    php -l /usr/local/lib/php/MDB2.php; \
-    php -l /usr/local/lib/php/MDB2/Driver/mysql.php; \
-    php -l /usr/local/lib/php/MDB2/Driver/mysqli.php; \
-    php -l /usr/local/lib/php/MDB2/Schema.php
 
 COPY config/php/php74.ini /usr/local/etc/php/conf.d/chisimba.ini
 
