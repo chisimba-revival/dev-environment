@@ -1,0 +1,8 @@
+id|version|source_type|source|status|purpose
+PEAR|1.10.18|pear_tgz|https://pear.php.net/get/PEAR-1.10.18.tgz|current|PEAR core runtime
+MDB2|96380f6|github_tar|https://github.com/imrelaszlo/PEAR-MDB2/archive/96380f6.tar.gz|pinned-fork|PHP 7.4 and PHP 8 compatible Chisimba database API
+MDB2_Schema|e9cc352|github_tar|https://github.com/pear/MDB2_Schema/archive/e9cc352.tar.gz|pinned|MDB2 schema and installer support
+XML_Parser|1.3.8|pear_tgz|https://pear.php.net/get/XML_Parser-1.3.8.tgz|current|XML parser required by MDB2_Schema
+XML_Util|1.4.5|pear_tgz|https://pear.php.net/get/XML_Util-1.4.5.tgz|current|XML utility API required by PEAR and Chisimba
+Calendar|0.5.5|pear_tgz|https://pear.php.net/get/Calendar-0.5.5.tgz|legacy-compatible|Chisimba Calendar API
+XML_RPC|1.5.5|pear_tgz|https://pear.php.net/get/XML_RPC-1.5.5.tgz|legacy-compatible|XML_RPC API required by Chisimba RPC modules

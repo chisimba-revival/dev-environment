@@ -42,3 +42,7 @@ COPY config/php/php74.ini /usr/local/etc/php/conf.d/chisimba.ini
 RUN a2enmod rewrite
 
 WORKDIR /var/www/html/ch
+
+# Chisimba PHP 7.4 runtime error policy
+COPY docker/php74/chisimba-runtime-errors.php /usr/local/lib/php/chisimba-runtime-errors.php
+COPY docker/php74/99-chisimba-runtime-errors.ini /usr/local/etc/php/conf.d/99-chisimba-runtime-errors.ini

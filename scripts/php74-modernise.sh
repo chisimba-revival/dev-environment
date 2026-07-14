@@ -163,3 +163,8 @@ echo
 echo "Review with:"
 echo "  git -C \"$FRAMEWORK_DIR\" diff --stat"
 echo "  git -C \"$MODULES_DIR\" diff --stat"
+
+echo
+echo "Modernising removed POSIX regular-expression functions..."
+php "$DEV_ENV_DIR/tools/php-moderniser/modernise-ereg.php"
+
