@@ -84,6 +84,43 @@ echo "Rollback copy:"
 echo "  $ROLLBACK_DIR"
 echo
 
+# BEGIN RUNTIME STATE HANDOFF
+#
+# Runtime-generated files are normally owned by www-data and restricted to
+# the container. Before moving the runtime to the rollback location, make
+# those state directories readable and copyable by the host user.
+#
+# Secure www-data ownership is reapplied after the replacement container
+# starts successfully.
+if [[ -d "$RUNTIME_DIR" ]]; then
+    echo
+    echo "Preparing runtime state for host-side preservation..."
+
+    docker compose \
+        -f "$COMPOSE_FILE" \
+        exec -T -u root web \
+        sh -c '
+            set -eu
+
+            for path in \
+                /var/www/html/ch/usrfiles \
+                /var/www/html/ch/user_images \
+                /var/www/html/ch/error_log \
+                /var/www/html/ch/error_logs \
+                /var/www/html/ch/tmp \
+                /var/www/html/ch/cache
+            do
+                if [ ! -e "$path" ]; then
+                    continue
+                fi
+
+                chmod -R a+rwX "$path"
+                echo "Prepared for host copy: $path"
+            done
+        '
+fi
+# END RUNTIME STATE HANDOFF
+
 echo "Stopping the web container..."
 docker compose -f "$COMPOSE_FILE" stop web
 WEB_STOPPED=1
@@ -182,6 +219,34 @@ if [[ "$OLD_RUNTIME_MOVED" -eq 1 ]]; then
     fi
 fi
 
+
+# BEGIN HOST RUNTIME DIRECTORY PREPARATION
+echo
+echo "Preparing runtime-writable directories..."
+
+runtime_writable_paths=(
+    "usrfiles"
+    "user_images"
+    "error_log"
+    "error_logs"
+    "tmp"
+    "cache"
+)
+
+mkdir -p "$RUNTIME_DIR/usrfiles/searchindexes"
+
+for relative_path in "${runtime_writable_paths[@]}"; do
+    writable_path="$RUNTIME_DIR/$relative_path"
+
+    if [[ ! -e "$writable_path" ]]; then
+        continue
+    fi
+
+    chmod -R u+rwX,g+rwX,o+rX "$writable_path"
+    echo "Prepared: $relative_path"
+done
+# END HOST RUNTIME DIRECTORY PREPARATION
+
 echo
 echo "Checking for obsolete '&new' syntax in the assembled runtime..."
 
@@ -218,6 +283,53 @@ echo "Recreating the PHP 7.4 web container..."
 docker compose \
     -f "$COMPOSE_FILE" \
     up -d --force-recreate --no-deps web
+
+
+# BEGIN CONTAINER RUNTIME PERMISSIONS
+echo
+echo "Applying runtime ownership inside the web container..."
+
+docker compose \
+    -f "$COMPOSE_FILE" \
+    exec -T -u root web \
+    sh -c '
+        set -eu
+
+        for path in \
+            /var/www/html/ch/usrfiles \
+            /var/www/html/ch/user_images \
+            /var/www/html/ch/error_log \
+            /var/www/html/ch/error_logs \
+            /var/www/html/ch/tmp \
+            /var/www/html/ch/cache
+        do
+            if [ ! -e "$path" ]; then
+                continue
+            fi
+
+            chown -R www-data:www-data "$path"
+            chmod -R u+rwX,g+rwX,o-rwx "$path"
+
+            echo "Writable for www-data: $path"
+        done
+
+        mkdir -p /var/www/html/ch/usrfiles/searchindexes
+
+        chown -R www-data:www-data \
+            /var/www/html/ch/usrfiles/searchindexes
+
+        chmod -R u+rwX,g+rwX,o-rwx \
+            /var/www/html/ch/usrfiles/searchindexes
+
+        runuser -u www-data -- \
+            test -w /var/www/html/ch/usrfiles
+
+        runuser -u www-data -- \
+            test -w /var/www/html/ch/usrfiles/searchindexes
+    '
+
+echo "Verified: runtime paths are writable by www-data."
+# END CONTAINER RUNTIME PERMISSIONS
 
 echo
 echo "Waiting for Apache..."
