@@ -6,3 +6,4 @@ XML_Parser|1.3.8|pear_tgz|https://pear.php.net/get/XML_Parser-1.3.8.tgz|current|
 XML_Util|1.4.5|pear_tgz|https://pear.php.net/get/XML_Util-1.4.5.tgz|current|XML utility API required by PEAR and Chisimba
 Calendar|0.5.5|pear_tgz|https://pear.php.net/get/Calendar-0.5.5.tgz|legacy-compatible|Chisimba Calendar API
 XML_RPC|1.5.5|pear_tgz|https://pear.php.net/get/XML_RPC-1.5.5.tgz|legacy-compatible|XML_RPC API required by Chisimba RPC modules
+XML_Serializer|0.21.0|pear|https://pear.php.net/get/XML_Serializer-0.21.0.tgz|legacy-compatible|Provides XML_Serializer and XML_Unserializer used by Chisimba utilities

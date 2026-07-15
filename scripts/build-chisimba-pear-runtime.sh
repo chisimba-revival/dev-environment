@@ -150,13 +150,30 @@ while IFS='|' read -r id version source_type source status purpose; do
             cp -a "$root/XML/Util.php" "$STAGING_ROOT/XML/"
             ;;
 
+        XML_Serializer)
+            require_path "$root/XML/Serializer.php"
+            require_path "$root/XML/Unserializer.php"
+
+            mkdir -p "$STAGING_ROOT/XML"
+            cp -a "$root/XML/Serializer.php" "$STAGING_ROOT/XML/"
+            cp -a "$root/XML/Unserializer.php" "$STAGING_ROOT/XML/"
+            ;;
+
         Calendar)
             require_path "$root/Calendar.php"
-            require_path "$root/Calendar"
+            require_path "$root/Day.php"
+            require_path "$root/Decorator"
+            require_path "$root/Engine"
+            require_path "$root/Month"
+            require_path "$root/Table"
+            require_path "$root/Util"
 
             cp -a "$root/Calendar.php" "$STAGING_ROOT/"
+
             rm -rf "$STAGING_ROOT/Calendar"
-            cp -a "$root/Calendar" "$STAGING_ROOT/"
+            mkdir -p "$STAGING_ROOT/Calendar"
+
+            find "$root"                 -mindepth 1                 -maxdepth 1                 \( -type f -o -type d \)                 ! -name 'Calendar.php'                 ! -name 'docs'                 ! -name 'tests'                 ! -name 'package.xml'                 -exec cp -a {} "$STAGING_ROOT/Calendar/" \;
             ;;
 
         XML_RPC)
@@ -197,6 +214,8 @@ required_files=(
     "MDB2/Driver/mysqli.php"
     "XML/Parser.php"
     "XML/Util.php"
+    "XML/Serializer.php"
+    "XML/Unserializer.php"
     "Calendar.php"
     "XML/RPC.php"
     "XML/RPC/Server.php"
