@@ -17,6 +17,38 @@ WORKSPACE_DIR="$(cd "$DEV_ENV_DIR/.." && pwd)"
 FRAMEWORK_DIR="$WORKSPACE_DIR/framework"
 MODULES_DIR="$WORKSPACE_DIR/modules"
 
+BACKUP_ROOT="/run/media/derek/main/tmp_chisimba/moderniser-backups"
+RUN_ID="$(date +%Y%m%d-%H%M%S)"
+RUN_BACKUP_DIR="$BACKUP_ROOT/$RUN_ID"
+
+mkdir -p "$RUN_BACKUP_DIR/originals" "$RUN_BACKUP_DIR/failed"
+: > "$RUN_BACKUP_DIR/manifest.tsv"
+: > "$RUN_BACKUP_DIR/run.log"
+
+export CHISIMBA_MODERNISER_WORKSPACE="$WORKSPACE_DIR"
+export CHISIMBA_MODERNISER_BACKUP_DIR="$RUN_BACKUP_DIR"
+
+backup_file() {
+    local source="$1"
+    local relative destination
+
+    if [[ "$source" != "$WORKSPACE_DIR/"* ]]; then
+        echo "Refusing to back up path outside workspace: $source" >&2
+        exit 1
+    fi
+
+    relative="${source#"$WORKSPACE_DIR/"}"
+    destination="$RUN_BACKUP_DIR/originals/$relative"
+
+    if [[ -e "$destination" ]]; then
+        return 0
+    fi
+
+    mkdir -p "$(dirname "$destination")"
+    cp -p "$source" "$destination"
+    printf 'ORIGINAL\t%s\t%s\n' "$source" "$destination"         >> "$RUN_BACKUP_DIR/manifest.tsv"
+}
+
 BASE_CLASS_FILE="$FRAMEWORK_DIR/app/classes/core/object_class_inc.php"
 
 if [[ ! -f "$BASE_CLASS_FILE" ]]; then
@@ -130,6 +162,28 @@ if [[ "$MODE" == "report" ]]; then
 fi
 
 echo "Applying changes..."
+echo "External backup run:"
+echo "  $RUN_BACKUP_DIR"
+echo
+
+declare -A FILES_TO_BACK_UP=()
+FILES_TO_BACK_UP["$BASE_CLASS_FILE"]=1
+
+for file in "${EXTENDS_FILES[@]}"; do
+    FILES_TO_BACK_UP["$file"]=1
+done
+
+for file in "${NEW_OBJECT_FILES[@]}"; do
+    FILES_TO_BACK_UP["$file"]=1
+done
+
+for file in "${QUOTED_REFERENCE_FILES[@]}"; do
+    FILES_TO_BACK_UP["$file"]=1
+done
+
+for file in "${!FILES_TO_BACK_UP[@]}"; do
+    backup_file "$file"
+done
 
 perl -pi -e \
     's/^(\s*class\s+)object(\s*(?:\{|$))/${1}ChisimbaObject${2}/' \
@@ -166,5 +220,10 @@ echo "  git -C \"$MODULES_DIR\" diff --stat"
 
 echo
 echo "Modernising removed POSIX regular-expression functions..."
-php "$DEV_ENV_DIR/tools/php-moderniser/modernise-ereg.php"
+php "$DEV_ENV_DIR/tools/php-moderniser/modernise-ereg.php" \
+    --backup-dir "$RUN_BACKUP_DIR"
+
+echo
+echo "Moderniser backup and manifest:"
+echo "  $RUN_BACKUP_DIR"
 

@@ -25,6 +25,53 @@ if ($workspace === false) {
     exit(1);
 }
 
+$arguments = $argv;
+array_shift($arguments);
+
+$backupDir = getenv('CHISIMBA_MODERNISER_BACKUP_DIR') ?: '';
+
+if (($arguments[0] ?? null) === '--backup-dir') {
+    array_shift($arguments);
+    $backupDir = (string) (array_shift($arguments) ?? '');
+}
+
+if ($arguments !== []) {
+    fwrite(STDERR, "Unexpected argument: {$arguments[0]}\n");
+    exit(1);
+}
+
+if ($backupDir === '') {
+    fwrite(
+        STDERR,
+        "A backup directory is required. Use --backup-dir PATH or " .
+        "CHISIMBA_MODERNISER_BACKUP_DIR.\n"
+    );
+    exit(1);
+}
+
+if (!is_dir($backupDir) && !mkdir($backupDir, 0775, true)) {
+    fwrite(STDERR, "Unable to create backup directory: {$backupDir}\n");
+    exit(1);
+}
+
+$backupDir = realpath($backupDir);
+
+if ($backupDir === false) {
+    fwrite(STDERR, "Unable to resolve backup directory.\n");
+    exit(1);
+}
+
+$originalsDir = $backupDir . '/originals';
+$failedDir = $backupDir . '/failed';
+$manifestFile = $backupDir . '/manifest.tsv';
+
+foreach ([$originalsDir, $failedDir] as $directory) {
+    if (!is_dir($directory) && !mkdir($directory, 0775, true)) {
+        fwrite(STDERR, "Unable to create directory: {$directory}\n");
+        exit(1);
+    }
+}
+
 $roots = [
     $workspace . '/framework/app',
     $workspace . '/modules',
@@ -34,6 +81,62 @@ $roots = [
 $changed = [];
 $manual = [];
 $syntaxFailures = [];
+
+function workspaceRelativePath(string $file, string $workspace): string
+{
+    $prefix = rtrim($workspace, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+
+    if (strpos($file, $prefix) !== 0) {
+        throw new RuntimeException(
+            "Source path is outside the workspace: {$file}"
+        );
+    }
+
+    return substr($file, strlen($prefix));
+}
+
+function backupDestination(
+    string $baseDirectory,
+    string $file,
+    string $workspace
+): string {
+    return rtrim($baseDirectory, DIRECTORY_SEPARATOR)
+        . DIRECTORY_SEPARATOR
+        . workspaceRelativePath($file, $workspace);
+}
+
+function preserveFile(
+    string $source,
+    string $destination,
+    string $manifestFile,
+    string $kind
+): void {
+    if (file_exists($destination)) {
+        return;
+    }
+
+    $directory = dirname($destination);
+
+    if (!is_dir($directory) && !mkdir($directory, 0775, true)) {
+        throw new RuntimeException(
+            "Unable to create backup directory: {$directory}"
+        );
+    }
+
+    if (!copy($source, $destination)) {
+        throw new RuntimeException(
+            "Unable to preserve {$kind}: {$source}"
+        );
+    }
+
+    $entry = $kind . "\t" . $source . "\t" . $destination . "\n";
+
+    if (file_put_contents($manifestFile, $entry, FILE_APPEND) === false) {
+        throw new RuntimeException(
+            "Unable to update manifest: {$manifestFile}"
+        );
+    }
+}
 
 function phpFiles(array $roots): Generator
 {
@@ -282,13 +385,17 @@ foreach (phpFiles($roots) as $file) {
         continue;
     }
 
-    $backup = $file . '.before-ereg-moderniser';
-
-    if (!file_exists($backup)) {
-        if (!copy($file, $backup)) {
-            fwrite(STDERR, "Unable to create backup: {$backup}\n");
-            exit(1);
-        }
+    try {
+        $backup = backupDestination($originalsDir, $file, $workspace);
+        preserveFile(
+            $file,
+            $backup,
+            $manifestFile,
+            'ORIGINAL'
+        );
+    } catch (Throwable $error) {
+        fwrite(STDERR, "Backup failure: {$error->getMessage()}\n");
+        exit(1);
     }
 
     if (file_put_contents($file, $updated) === false) {
@@ -321,28 +428,52 @@ if ($syntaxFailures !== []) {
     foreach ($syntaxFailures as $file => $message) {
         fwrite(STDERR, "\n{$file}\n{$message}\n");
 
-        $failedCopy = $file . '.failed-ereg-moderniser';
-        $backup = $file . '.before-ereg-moderniser';
+        $failedCopy = backupDestination(
+            $failedDir,
+            $file,
+            $workspace
+        );
+        $backup = backupDestination(
+            $originalsDir,
+            $file,
+            $workspace
+        );
 
         /*
-         * Preserve the rejected transformed file for diagnosis before
+         * Preserve the rejected transformed file externally before
          * restoring the known-good source.
          */
-        if (!copy($file, $failedCopy)) {
+        try {
+            preserveFile(
+                $file,
+                $failedCopy,
+                $manifestFile,
+                'FAILED'
+            );
             fwrite(
                 STDERR,
-                "Unable to preserve failed output: {$failedCopy}\n"
+                "Preserved failed output: {$failedCopy}\n"
             );
-        } else {
-            fwrite(STDERR, "Preserved failed output: {$failedCopy}\n");
+        } catch (Throwable $error) {
+            fwrite(
+                STDERR,
+                "Unable to preserve failed output: " .
+                $error->getMessage() . "\n"
+            );
         }
 
-        if (file_exists($backup)) {
-            if (!copy($backup, $file)) {
-                fwrite(STDERR, "Unable to restore backup: {$file}\n");
-            } else {
-                fwrite(STDERR, "Restored backup for {$file}\n");
-            }
+        if (!file_exists($backup)) {
+            fwrite(
+                STDERR,
+                "Original backup is missing; cannot restore: {$backup}\n"
+            );
+            continue;
+        }
+
+        if (!copy($backup, $file)) {
+            fwrite(STDERR, "Unable to restore backup: {$file}\n");
+        } else {
+            fwrite(STDERR, "Restored backup for {$file}\n");
         }
     }
 
