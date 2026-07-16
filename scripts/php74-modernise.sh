@@ -125,10 +125,16 @@ echo "Direct-instantiation files found: ${#NEW_OBJECT_FILES[@]}"
 echo "Quoted-reference files found: ${#QUOTED_REFERENCE_FILES[@]}"
 echo
 
-if [[ "$BASE_DECLARATIONS" -ne 1 ]]; then
-    echo "Expected exactly one base-class declaration."
-    echo "No changes were made."
+if [[ "$BASE_DECLARATIONS" -gt 1 ]]; then
+    echo "More than one legacy base-class declaration was found."
+    echo "The source state is ambiguous; no changes were made."
     exit 1
+fi
+
+if [[ "$BASE_DECLARATIONS" -eq 0 ]]; then
+    echo "Base-class migration is already complete."
+    echo "Continuing with repeatable compatibility passes."
+    echo
 fi
 
 if [[ "$MODE" == "report" ]]; then
