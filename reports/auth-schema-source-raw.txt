@@ -1,0 +1,290 @@
+### FILE /run/media/derek/main/chisimba-revival/framework/app/classes/core/engine_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/context/classes/usercontext_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/context/classes/utilities_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/contextgroups/classes/block_contextmembers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/contextgroups/classes/onlinecount_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/filemanager/classes/dbquotas_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/filemanager/classes/emailutils_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/groupadmin/classes/groupops_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/groupadmin/classes/managegroup_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/groupadmin/classes/usersdb_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/groupadmin/patches/installscripts_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/logger/classes/logshow_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/modulecatalogue/classes/tableinfo_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/permissions/classes/permissions_acl_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/auth_database_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/auth_fmp_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/auth_ldap_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/auth_uwcldap_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/auth_witsldap_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/loggedinusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/sqlusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/useradmin_model2_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/useradmin_model_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/user_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/classes/userloginhistory_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/sql/sql_updates.xml
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/sql/tbl_perms_groups.sql
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/sql/tbl_perms_groupusers.sql
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/sql/tbl_perms_perm_users.sql
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/sql/tbl_users.sql
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/core_modules/security/sql/users.xml
+
+### FILE /run/media/derek/main/chisimba-revival/framework/app/installer/steps/databasecreate.inc
+
+### FILE /run/media/derek/main/chisimba-revival/modules/apo/classes/dbapousers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/artdir/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/assignment/classes/dbassignmentsubmit_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/blog/classes/blogimporter_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/blog/classes/blogmail_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/blog/classes/dbblog_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/blog/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/buddies/classes/dbbuddies_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/buddies/classes/dbusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/buddies/sql/tbl_buddies.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/cmsadmin/classes/dbsecurity_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/cmsadmin/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/contextcontent/classes/alertutils_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/contextinstructor/classes/manager_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/courselecturers/sql/tbl_courselecturers.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/dbmanager/classes/dbmanagerdb_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/discussion/classes/dbdiscussionsubscriptions_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/discussion/classes/dbpost_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/discussion/classes/dbtopic_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/discussion/classes/dbtopicsubscriptions_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/discussion/classes/discussionstats_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/discussion/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/eportfolio/classes/db_eportfolio_activitystreamer_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/eportfolio/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/eportfolio/templates/content/main_tpl.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/eportfolio/templates/content/view_others_tpl.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/essay/sql/tbl_essay_book.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/essay/sql/tbl_essay_zipfiles.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/events/classes/dbevents_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/examiners/classes/dbexams_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/foaf/classes/dbfoaf_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/foaf/classes/dbfoafusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/foaf/classes/foafops_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/foaf/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/forum/classes/dbforumsubscriptions_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/forum/classes/dbpost_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/forum/classes/dbtopic_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/forum/classes/dbtopicsubscriptions_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/forum/classes/forumstats_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/forum/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/fossad/classes/dbregistration_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/fullprofile/classes/dbfullprofile_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/fullprofile/classes/fpdisplay_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/generator/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/gis/classes/dbpostgis_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/hivaids/classes/dbloggercalc_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/hivaids/classes/dbusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/hivaids/sql/tbl_hivaids_users.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/homepage/classes/dbhomepages_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/homepage/sql/tbl_homepages.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/iconrequest/templates/content/dev_edit_tpl.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/internalmail/classes/dbemailusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/internalmail/classes/dbrouting_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/jturnitin/classes/turnitinsubmittedassignments_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/jukskei/classes/dbgroups_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/kngimport/classes/remoteimportexportutils_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/maillist/classes/dbmaillist_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/maillist/classes/mail_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/mcqtests/classes/dbmarked_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/mcqtests/classes/dbresults_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/mcqtests/sql/tbl_test_marked.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/mcqtests/sql/tbl_test_results.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/mcqtests/sql/tbl_tests.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/messaging/classes/dbmessaging_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/myprofile/classes/dbfriends_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/oer/classes/groupmanager_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/oeruserdata/classes/dboeruserdata_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/oeruserdata/classes/dboerusermain_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/oeruserdata/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/openaris/classes/ahisuser_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/openaris/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/pbladmin/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/podcast/classes/dbpodcast_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/podcaster/classes/dbfolderpermissions_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/podcaster/classes/dbpodcastertags_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/podcaster/classes/eventutils_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/practicals/classes/dbpracticalssubmit_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/profiles/classes/dbprofiles_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/schoolregisterusers/classes/dbschumusermain_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/schoolregisterusers/controller.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/schoolusers/classes/dbusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/simpleblog/classes/dbsimpleblog_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/simpleregistration/classes/dbregistration_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sitestats/classes/dbuserstats_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/speak4free/classes/dbgroups_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/speak4free/classes/dbspeak4freetags_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sportsadmin/sql/tbl_playerdata.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sportsadmin/sql/tbl_sportsnews.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sportsadmin/sql/tbl_sports.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sportsadmin/sql/tbl_tournament.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sports/sql/tbl_sports.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/sudoku/sql/tbl_sudoku.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/survey/classes/groups_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/survey/sql/tbl_survey_response.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/survey/sql/tbl_survey.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/userextra/classes/dbuserextra_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/userimport/classes/dbuserimport_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/userstats/classes/dbloginhistory_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/uwcelearningmobile/classes/util_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/wall/classes/dbcomment_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/wall/classes/dbwall_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/webpresent/classes/dbwebpresenttags_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/websearch/sql/tbl_websearch.sql
+
+### FILE /run/media/derek/main/chisimba-revival/modules/wicid/classes/dbfolderpermissions_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/wicid/classes/dbforwardto_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/workgroup/classes/dbusers_class_inc.php
+
+### FILE /run/media/derek/main/chisimba-revival/modules/workgroup/classes/dbworkgroupusers_class_inc.php
+

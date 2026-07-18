@@ -1,0 +1,43 @@
+### TABLE tbl_users
+id	varchar	varchar(32)	YES	NULL	MUL		
+userid	varchar	varchar(25)	YES	NULL	MUL		
+username	varchar	varchar(255)	YES	NULL			
+title	varchar	varchar(25)	YES	NULL			
+firstname	varchar	varchar(50)	YES	NULL			
+surname	varchar	varchar(50)	YES	NULL			
+pass	varchar	varchar(100)	YES	NULL			
+creationdate	date	date	YES	NULL			
+emailaddress	varchar	varchar(100)	YES	NULL			
+logins	varchar	varchar(11)	NO	0			
+sex	varchar	varchar(10)	YES	NULL			
+country	varchar	varchar(2)	YES	NULL			
+staffnumber	varchar	varchar(25)	YES	NULL			
+cellnumber	varchar	varchar(13)	YES	NULL			
+accesslevel	varchar	varchar(10)	YES	NULL			
+isactive	varchar	varchar(10)	YES	NULL			
+howcreated	varchar	varchar(32)	NO	unknown			
+updated	date	date	YES	NULL			
+last_login	datetime	datetime	YES	NULL			
+puid	bigint	bigint(20)	NO	NULL	PRI	auto_increment	
+
+### TABLE tbl_perms_groups
+id	varchar	varchar(32)	YES	NULL	MUL		
+group_id	bigint	bigint(20)	YES	NULL	MUL		
+group_type	bigint	bigint(20)	YES	NULL			
+group_define_name	varchar	varchar(255)	YES	NULL			
+puid	bigint	bigint(20)	NO	NULL	PRI	auto_increment	
+
+### TABLE tbl_perms_groupusers
+id	varchar	varchar(32)	YES	NULL	MUL		
+perm_user_id	bigint	bigint(20)	YES	NULL			
+group_id	bigint	bigint(20)	YES	NULL	MUL		
+puid	bigint	bigint(20)	NO	NULL	PRI	auto_increment	
+
+### TABLE tbl_perms_perm_users
+id	varchar	varchar(32)	YES	NULL	MUL		
+perm_user_id	bigint	bigint(20)	YES	NULL	MUL		
+auth_user_id	bigint	bigint(20)	YES	NULL			
+auth_container_name	varchar	varchar(32)	YES	NULL			
+perm_type	bigint	bigint(20)	YES	NULL			
+puid	bigint	bigint(20)	NO	NULL	PRI	auto_increment	
+

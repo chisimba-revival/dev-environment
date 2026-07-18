@@ -1,0 +1,94 @@
+Chisimba bounded authentication and language-stack audit
+===========================================================
+
+Files scanned: 14104
+Relevant files: 133
+
+LiveUser
+--------
+External calls: 7
+External files: 1
+Used methods: 5 of 40
+Recommendation: replace behind authentication adapter
+Rationale: The detected Chisimba-facing surface is bounded. Reproduce login, sessions, users, groups and rights using PHP 7.4 as the behavioural reference.
+Methods: getErrors, init, isLoggedIn, logout, singleton
+Likely tables: tbl_perms_groups, tbl_perms_groupusers, tbl_perms_perm_users, tbl_users
+Capabilities:
+  authentication: logout
+  object construction and configuration: init, singleton
+  other: getErrors, isLoggedIn
+Call sites:
+  framework/app/classes/core/engine_class_inc.php:846 static singleton()
+  framework/app/classes/core/engine_class_inc.php:849 instance init()
+  framework/app/classes/core/engine_class_inc.php:850 instance getErrors()
+  framework/app/classes/core/engine_class_inc.php:873 instance logout()
+  framework/app/classes/core/engine_class_inc.php:877 instance logout()
+  framework/app/classes/core/engine_class_inc.php:2062 instance isLoggedIn()
+  framework/app/classes/core/engine_class_inc.php:2086 instance isLoggedIn()
+
+LiveUser_Admin
+--------------
+External calls: 4
+External files: 1
+Used methods: 2 of 14
+Recommendation: replace behind authentication adapter
+Rationale: The detected Chisimba-facing surface is bounded. Reproduce login, sessions, users, groups and rights using PHP 7.4 as the behavioural reference.
+Methods: factory, init
+Likely tables: tbl_perms_groups, tbl_perms_groupusers, tbl_perms_perm_users, tbl_users
+Capabilities:
+  object construction and configuration: factory, init
+Call sites:
+  framework/app/classes/core/engine_class_inc.php:854 static factory()
+  framework/app/classes/core/engine_class_inc.php:894 static factory()
+  framework/app/classes/core/engine_class_inc.php:855 instance init()
+  framework/app/classes/core/engine_class_inc.php:895 instance init()
+
+Translation2
+------------
+External calls: 2
+External files: 1
+Used methods: 1 of 35
+Recommendation: replace behind adapter
+Rationale: The detected external method surface is bounded enough to reimplement without preserving the full abandoned package.
+Methods: factory
+Likely tables: tbl_languagelist
+Capabilities:
+  object construction and configuration: factory
+Call sites:
+  framework/app/core_modules/language/classes/languageconfig_class_inc.php:163 static factory()
+  framework/app/core_modules/language/classes/languageconfig_class_inc.php:170 static factory()
+
+I18Nv2
+------
+External calls: 4
+External files: 2
+Used methods: 2 of 15
+Recommendation: replace behind adapter
+Rationale: PHP intl can provide the core locale services while an adapter preserves Chisimba-facing method names.
+Methods: autoConv, createLocale
+Likely tables: tbl_languagelist
+Capabilities:
+  locale handling: createLocale
+  other: autoConv
+Call sites:
+  framework/app/core_modules/language/classes/languagecode_class_inc.php:192 static autoConv()
+  framework/app/core_modules/language/classes/language_class_inc.php:129 static createLocale()
+  framework/app/core_modules/language/classes/language_class_inc.php:353 static createLocale()
+  framework/app/core_modules/language/classes/language_class_inc.php:360 static createLocale()
+
+Event_Dispatcher
+----------------
+External calls: 2
+External files: 1
+Used methods: 2 of 21
+Recommendation: replace
+Rationale: The exposed interface is small and maps naturally to a Chisimba-native event dispatcher.
+Methods: addObserver, getInstance
+Likely tables: none identified
+Capabilities:
+  event dispatch: addObserver
+  other: getInstance
+Call sites:
+  framework/app/classes/core/engine_class_inc.php:556 static getInstance()
+  framework/app/classes/core/engine_class_inc.php:847 instance addObserver()
+

@@ -1,0 +1,549 @@
+{
+  "generated_at": "2026-07-16T14:55:29.845854+00:00",
+  "tables": {
+    "tbl_users": {
+      "exists_in_database": true,
+      "column_count": 20,
+      "columns": [
+        {
+          "table": "tbl_users",
+          "name": "id",
+          "data_type": "varchar",
+          "column_type": "varchar(32)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "userid",
+          "data_type": "varchar",
+          "column_type": "varchar(25)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "username",
+          "data_type": "varchar",
+          "column_type": "varchar(255)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "title",
+          "data_type": "varchar",
+          "column_type": "varchar(25)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "firstname",
+          "data_type": "varchar",
+          "column_type": "varchar(50)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "surname",
+          "data_type": "varchar",
+          "column_type": "varchar(50)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "pass",
+          "data_type": "varchar",
+          "column_type": "varchar(100)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "creationdate",
+          "data_type": "date",
+          "column_type": "date",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "emailaddress",
+          "data_type": "varchar",
+          "column_type": "varchar(100)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "logins",
+          "data_type": "varchar",
+          "column_type": "varchar(11)",
+          "nullable": false,
+          "default": "0",
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "sex",
+          "data_type": "varchar",
+          "column_type": "varchar(10)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "country",
+          "data_type": "varchar",
+          "column_type": "varchar(2)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "staffnumber",
+          "data_type": "varchar",
+          "column_type": "varchar(25)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "cellnumber",
+          "data_type": "varchar",
+          "column_type": "varchar(13)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "accesslevel",
+          "data_type": "varchar",
+          "column_type": "varchar(10)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "isactive",
+          "data_type": "varchar",
+          "column_type": "varchar(10)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "howcreated",
+          "data_type": "varchar",
+          "column_type": "varchar(32)",
+          "nullable": false,
+          "default": "unknown",
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "updated",
+          "data_type": "date",
+          "column_type": "date",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "last_login",
+          "data_type": "datetime",
+          "column_type": "datetime",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_users",
+          "name": "puid",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": false,
+          "default": null,
+          "key": "PRI",
+          "extra": "auto_increment",
+          "source": "database"
+        }
+      ],
+      "categories": {
+        "identity": [
+          "emailaddress",
+          "id",
+          "logins",
+          "puid",
+          "userid",
+          "username"
+        ],
+        "other user metadata": [
+          "accesslevel",
+          "cellnumber",
+          "pass",
+          "sex"
+        ],
+        "profile": [
+          "country",
+          "creationdate",
+          "firstname",
+          "howcreated",
+          "staffnumber",
+          "surname",
+          "title",
+          "updated"
+        ],
+        "session and account state": [
+          "isactive",
+          "last_login"
+        ]
+      },
+      "primary_or_indexed_columns": [
+        "id",
+        "userid",
+        "puid"
+      ],
+      "auto_increment_columns": [
+        "puid"
+      ],
+      "minimum_php82_contract": [
+        "id",
+        "userid",
+        "username",
+        "isactive",
+        "puid"
+      ],
+      "source_definition_files": [],
+      "assessment": "The table can be retained. Authentication-specific fields form a small subset; profile and application data should remain in place while a native PHP 8.2 authentication service reads only the identity, credential and account-state fields."
+    },
+    "tbl_perms_groups": {
+      "exists_in_database": true,
+      "column_count": 5,
+      "columns": [
+        {
+          "table": "tbl_perms_groups",
+          "name": "id",
+          "data_type": "varchar",
+          "column_type": "varchar(32)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groups",
+          "name": "group_id",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groups",
+          "name": "group_type",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groups",
+          "name": "group_define_name",
+          "data_type": "varchar",
+          "column_type": "varchar(255)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groups",
+          "name": "puid",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": false,
+          "default": null,
+          "key": "PRI",
+          "extra": "auto_increment",
+          "source": "database"
+        }
+      ],
+      "categories": {
+        "group and role definition": [
+          "group_define_name",
+          "group_id",
+          "group_type"
+        ],
+        "group metadata": [
+          "id",
+          "puid"
+        ]
+      },
+      "primary_or_indexed_columns": [
+        "id",
+        "group_id",
+        "puid"
+      ],
+      "auto_increment_columns": [
+        "puid"
+      ],
+      "minimum_php82_contract": [
+        "id",
+        "group_id"
+      ],
+      "source_definition_files": [],
+      "assessment": "Retain the table. It represents Chisimba's domain model for groups and roles rather than an implementation detail of LiveUser."
+    },
+    "tbl_perms_groupusers": {
+      "exists_in_database": true,
+      "column_count": 4,
+      "columns": [
+        {
+          "table": "tbl_perms_groupusers",
+          "name": "id",
+          "data_type": "varchar",
+          "column_type": "varchar(32)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groupusers",
+          "name": "perm_user_id",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groupusers",
+          "name": "group_id",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_groupusers",
+          "name": "puid",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": false,
+          "default": null,
+          "key": "PRI",
+          "extra": "auto_increment",
+          "source": "database"
+        }
+      ],
+      "categories": {
+        "relationship key": [
+          "group_id",
+          "perm_user_id"
+        ],
+        "relationship metadata": [
+          "id",
+          "puid"
+        ]
+      },
+      "primary_or_indexed_columns": [
+        "id",
+        "group_id",
+        "puid"
+      ],
+      "auto_increment_columns": [
+        "puid"
+      ],
+      "minimum_php82_contract": [
+        "id",
+        "group_id"
+      ],
+      "source_definition_files": [],
+      "assessment": "Retain the table. It is a conventional user-to-group relationship that can be accessed through a small membership repository."
+    },
+    "tbl_perms_perm_users": {
+      "exists_in_database": true,
+      "column_count": 6,
+      "columns": [
+        {
+          "table": "tbl_perms_perm_users",
+          "name": "id",
+          "data_type": "varchar",
+          "column_type": "varchar(32)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_perm_users",
+          "name": "perm_user_id",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "MUL",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_perm_users",
+          "name": "auth_user_id",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_perm_users",
+          "name": "auth_container_name",
+          "data_type": "varchar",
+          "column_type": "varchar(32)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_perm_users",
+          "name": "perm_type",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": true,
+          "default": null,
+          "key": "",
+          "extra": "",
+          "source": "database"
+        },
+        {
+          "table": "tbl_perms_perm_users",
+          "name": "puid",
+          "data_type": "bigint",
+          "column_type": "bigint(20)",
+          "nullable": false,
+          "default": null,
+          "key": "PRI",
+          "extra": "auto_increment",
+          "source": "database"
+        }
+      ],
+      "categories": {
+        "relationship key": [
+          "auth_user_id",
+          "perm_type",
+          "perm_user_id"
+        ],
+        "relationship metadata": [
+          "auth_container_name",
+          "id",
+          "puid"
+        ]
+      },
+      "primary_or_indexed_columns": [
+        "id",
+        "perm_user_id",
+        "puid"
+      ],
+      "auto_increment_columns": [
+        "puid"
+      ],
+      "minimum_php82_contract": [
+        "id"
+      ],
+      "source_definition_files": [],
+      "assessment": "Retain the table initially. Encapsulate direct user permissions behind a permission repository so its legacy semantics can be verified against PHP 7.4 before later schema simplification."
+    }
+  },
+  "recommended_architecture": {
+    "schema": "Retain existing authentication and permission tables initially.",
+    "user_repository": "Add a repository that owns identity, profile and account-state queries against tbl_users.",
+    "authentication_service": "Implement password verification, login, logout and sessions without LiveUser.",
+    "group_repository": "Encapsulate tbl_perms_groups and tbl_perms_groupusers.",
+    "permission_repository": "Encapsulate tbl_perms_perm_users and preserve legacy semantics using PHP 7.4 behavioural tests.",
+    "migration_rule": "No schema redesign until PHP 8.2 login, logout, group membership and permission checks match the PHP 7.4 baseline."
+  },
+  "limitations": [
+    "This audit describes schema structure, not every runtime invariant.",
+    "Dynamic SQL and database triggers may require additional review.",
+    "Password hashing behaviour must be verified separately.",
+    "Permission precedence must be tested against the PHP 7.4 baseline."
+  ]
+}

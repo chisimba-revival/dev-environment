@@ -1,0 +1,61 @@
+Chisimba authentication schema audit
+=====================================
+
+tbl_users
+---------
+Exists in live database: yes
+Columns: 20
+Indexed/key columns: id, userid, puid
+Minimum PHP 8.2 contract: id, userid, username, isactive, puid
+Categories:
+  identity: emailaddress, id, logins, puid, userid, username
+  other user metadata: accesslevel, cellnumber, pass, sex
+  profile: country, creationdate, firstname, howcreated, staffnumber, surname, title, updated
+  session and account state: isactive, last_login
+Source definitions:
+Assessment: The table can be retained. Authentication-specific fields form a small subset; profile and application data should remain in place while a native PHP 8.2 authentication service reads only the identity, credential and account-state fields.
+
+tbl_perms_groups
+----------------
+Exists in live database: yes
+Columns: 5
+Indexed/key columns: id, group_id, puid
+Minimum PHP 8.2 contract: id, group_id
+Categories:
+  group and role definition: group_define_name, group_id, group_type
+  group metadata: id, puid
+Source definitions:
+Assessment: Retain the table. It represents Chisimba's domain model for groups and roles rather than an implementation detail of LiveUser.
+
+tbl_perms_groupusers
+--------------------
+Exists in live database: yes
+Columns: 4
+Indexed/key columns: id, group_id, puid
+Minimum PHP 8.2 contract: id, group_id
+Categories:
+  relationship key: group_id, perm_user_id
+  relationship metadata: id, puid
+Source definitions:
+Assessment: Retain the table. It is a conventional user-to-group relationship that can be accessed through a small membership repository.
+
+tbl_perms_perm_users
+--------------------
+Exists in live database: yes
+Columns: 6
+Indexed/key columns: id, perm_user_id, puid
+Minimum PHP 8.2 contract: id
+Categories:
+  relationship key: auth_user_id, perm_type, perm_user_id
+  relationship metadata: auth_container_name, id, puid
+Source definitions:
+Assessment: Retain the table initially. Encapsulate direct user permissions behind a permission repository so its legacy semantics can be verified against PHP 7.4 before later schema simplification.
+
+Recommended architecture
+------------------------
+schema: Retain existing authentication and permission tables initially.
+user_repository: Add a repository that owns identity, profile and account-state queries against tbl_users.
+authentication_service: Implement password verification, login, logout and sessions without LiveUser.
+group_repository: Encapsulate tbl_perms_groups and tbl_perms_groupusers.
+permission_repository: Encapsulate tbl_perms_perm_users and preserve legacy semantics using PHP 7.4 behavioural tests.
+migration_rule: No schema redesign until PHP 8.2 login, logout, group membership and permission checks match the PHP 7.4 baseline.

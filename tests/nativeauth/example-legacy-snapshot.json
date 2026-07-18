@@ -1,0 +1,8 @@
+{
+    "authenticated": true,
+    "user_id": "example-user-id",
+    "username": "example",
+    "groups": ["Site Admin"],
+    "permissions": [],
+    "session_keys": []
+}

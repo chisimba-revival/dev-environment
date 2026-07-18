@@ -1,0 +1,441 @@
+{
+  "generated_at": "2026-07-16T14:37:34.048404+00:00",
+  "scope": [
+    "framework/app",
+    "modules",
+    "canvases"
+  ],
+  "limitations": [
+    "The audit records exact static calls.",
+    "Instance calls are recorded only for known integration variable names.",
+    "Dynamic method calls and aliases may require later manual review.",
+    "Runtime copies and backups are intentionally excluded."
+  ],
+  "files_scanned": 14104,
+  "relevant_files_scanned": 133,
+  "relevant_files": [
+    "framework/app/classes/core/engine_class_inc.php",
+    "framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php",
+    "framework/app/core_modules/language/classes/language_class_inc.php",
+    "framework/app/core_modules/language/classes/languagecode_class_inc.php",
+    "framework/app/core_modules/language/classes/languageconfig_class_inc.php",
+    "framework/app/lib/pear/Event/Dispatcher.php",
+    "framework/app/lib/pear/Event/Notification.php",
+    "framework/app/lib/pear/I18Nv2.php",
+    "framework/app/lib/pear/I18Nv2/AreaCode.php",
+    "framework/app/lib/pear/I18Nv2/CommonList.php",
+    "framework/app/lib/pear/I18Nv2/Country.php",
+    "framework/app/lib/pear/I18Nv2/Currency.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/AfricanCountries.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/AsianCountries.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/EuropeanCountries.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/Filter.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/HtmlEntities.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/HtmlSelect.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/HtmlSpecialchars.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/NorthAmericanCountries.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/OceanianCountries.php",
+    "framework/app/lib/pear/I18Nv2/DecoratedList/SouthAmericanCountries.php",
+    "framework/app/lib/pear/I18Nv2/Encoding.php",
+    "framework/app/lib/pear/I18Nv2/Language.php",
+    "framework/app/lib/pear/I18Nv2/Locale.php",
+    "framework/app/lib/pear/I18Nv2/Locale/EUR.php",
+    "framework/app/lib/pear/I18Nv2/Locale/Windows.php",
+    "framework/app/lib/pear/I18Nv2/Locale/af.php",
+    "framework/app/lib/pear/I18Nv2/Locale/cs.php",
+    "framework/app/lib/pear/I18Nv2/Locale/da.php",
+    "framework/app/lib/pear/I18Nv2/Locale/de.php",
+    "framework/app/lib/pear/I18Nv2/Locale/de_AT.php",
+    "framework/app/lib/pear/I18Nv2/Locale/de_DE.php",
+    "framework/app/lib/pear/I18Nv2/Locale/el_GR.php",
+    "framework/app/lib/pear/I18Nv2/Locale/en.php",
+    "framework/app/lib/pear/I18Nv2/Locale/en_IE.php",
+    "framework/app/lib/pear/I18Nv2/Locale/es.php",
+    "framework/app/lib/pear/I18Nv2/Locale/es_ES.php",
+    "framework/app/lib/pear/I18Nv2/Locale/fi_FI.php",
+    "framework/app/lib/pear/I18Nv2/Locale/fr.php",
+    "framework/app/lib/pear/I18Nv2/Locale/fr_BE.php",
+    "framework/app/lib/pear/I18Nv2/Locale/fr_FR.php",
+    "framework/app/lib/pear/I18Nv2/Locale/fr_LU.php",
+    "framework/app/lib/pear/I18Nv2/Locale/fr_MC.php",
+    "framework/app/lib/pear/I18Nv2/Locale/hu.php",
+    "framework/app/lib/pear/I18Nv2/Locale/it.php",
+    "framework/app/lib/pear/I18Nv2/Locale/it_IT.php",
+    "framework/app/lib/pear/I18Nv2/Locale/nb.php",
+    "framework/app/lib/pear/I18Nv2/Locale/nl.php",
+    "framework/app/lib/pear/I18Nv2/Locale/nl_BE.php",
+    "framework/app/lib/pear/I18Nv2/Locale/nl_NL.php",
+    "framework/app/lib/pear/I18Nv2/Locale/nn.php",
+    "framework/app/lib/pear/I18Nv2/Locale/no.php",
+    "framework/app/lib/pear/I18Nv2/Locale/pl.php",
+    "framework/app/lib/pear/I18Nv2/Locale/pt.php",
+    "framework/app/lib/pear/I18Nv2/Locale/pt_PT.php",
+    "framework/app/lib/pear/I18Nv2/Locale/ru.php",
+    "framework/app/lib/pear/I18Nv2/Locale/sl.php",
+    "framework/app/lib/pear/I18Nv2/Locale/sv_FI.php",
+    "framework/app/lib/pear/I18Nv2/Negotiator.php",
+    "framework/app/lib/pear/I18Nv2/Timezone.php",
+    "framework/app/lib/pear/LiveUser.php",
+    "framework/app/lib/pear/LiveUser/Admin.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/Common.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/DB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/MDB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/MDB2.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/PDO.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/Storage/DB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/Storage/MDB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/Storage/MDB2.php",
+    "framework/app/lib/pear/LiveUser/Admin/Auth/Storage/PDO.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Complex.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Medium.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Simple.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Storage/DB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Storage/MDB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Storage/MDB2.php",
+    "framework/app/lib/pear/LiveUser/Admin/Perm/Storage/PDO.php",
+    "framework/app/lib/pear/LiveUser/Admin/Storage.php",
+    "framework/app/lib/pear/LiveUser/Admin/Storage/DB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Storage/MDB.php",
+    "framework/app/lib/pear/LiveUser/Admin/Storage/MDB2.php",
+    "framework/app/lib/pear/LiveUser/Admin/Storage/PDO.php",
+    "framework/app/lib/pear/LiveUser/Admin/Storage/SQL.php",
+    "framework/app/lib/pear/LiveUser/Auth/Common.php",
+    "framework/app/lib/pear/LiveUser/Auth/DB.php",
+    "framework/app/lib/pear/LiveUser/Auth/MDB.php",
+    "framework/app/lib/pear/LiveUser/Auth/MDB2.php",
+    "framework/app/lib/pear/LiveUser/Auth/PDO.php",
+    "framework/app/lib/pear/LiveUser/Auth/PEARAuth.php",
+    "framework/app/lib/pear/LiveUser/Auth/Session.php",
+    "framework/app/lib/pear/LiveUser/Auth/Storage/Globals.php",
+    "framework/app/lib/pear/LiveUser/Auth/XML.php",
+    "framework/app/lib/pear/LiveUser/Perm/Complex.php",
+    "framework/app/lib/pear/LiveUser/Perm/Medium.php",
+    "framework/app/lib/pear/LiveUser/Perm/Simple.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/DB.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/Globals.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/MDB.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/MDB2.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/PDO.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/SQL.php",
+    "framework/app/lib/pear/LiveUser/Perm/Storage/XML.php",
+    "framework/app/lib/pear/Translation2.php",
+    "framework/app/lib/pear/Translation2/Admin.php",
+    "framework/app/lib/pear/Translation2/Admin/Container/dataobjectsimple.php",
+    "framework/app/lib/pear/Translation2/Admin/Container/db.php",
+    "framework/app/lib/pear/Translation2/Admin/Container/gettext.php",
+    "framework/app/lib/pear/Translation2/Admin/Container/mdb.php",
+    "framework/app/lib/pear/Translation2/Admin/Container/mdb2.php",
+    "framework/app/lib/pear/Translation2/Admin/Container/xml.php",
+    "framework/app/lib/pear/Translation2/Admin/Decorator.php",
+    "framework/app/lib/pear/Translation2/Admin/Decorator/Autoadd.php",
+    "framework/app/lib/pear/Translation2/Container.php",
+    "framework/app/lib/pear/Translation2/Container/dataobjectsimple.php",
+    "framework/app/lib/pear/Translation2/Container/db.php",
+    "framework/app/lib/pear/Translation2/Container/gettext.php",
+    "framework/app/lib/pear/Translation2/Container/mdb.php",
+    "framework/app/lib/pear/Translation2/Container/mdb2.php",
+    "framework/app/lib/pear/Translation2/Container/pdo.php",
+    "framework/app/lib/pear/Translation2/Container/xml.php",
+    "framework/app/lib/pear/Translation2/Decorator.php",
+    "framework/app/lib/pear/Translation2/Decorator/CacheLiteFunction.php",
+    "framework/app/lib/pear/Translation2/Decorator/CacheMemory.php",
+    "framework/app/lib/pear/Translation2/Decorator/DefaultText.php",
+    "framework/app/lib/pear/Translation2/Decorator/ErrorText.php",
+    "framework/app/lib/pear/Translation2/Decorator/Iconv.php",
+    "framework/app/lib/pear/Translation2/Decorator/Lang.php",
+    "framework/app/lib/pear/Translation2/Decorator/SpecialChars.php",
+    "framework/app/lib/pear/Translation2/Decorator/UTF8.php"
+  ],
+  "summary": {
+    "LiveUser": {
+      "external_call_count": 7,
+      "external_file_count": 1,
+      "used_methods": [
+        "getErrors",
+        "init",
+        "isLoggedIn",
+        "logout",
+        "singleton"
+      ],
+      "used_method_count": 5,
+      "available_method_count": 40,
+      "usage_ratio": 0.125,
+      "capabilities": {
+        "authentication": [
+          "logout"
+        ],
+        "object construction and configuration": [
+          "init",
+          "singleton"
+        ],
+        "other": [
+          "getErrors",
+          "isLoggedIn"
+        ]
+      },
+      "likely_tables": [
+        "tbl_perms_groups",
+        "tbl_perms_groupusers",
+        "tbl_perms_perm_users",
+        "tbl_users"
+      ],
+      "recommendation": "replace behind authentication adapter",
+      "rationale": "The detected Chisimba-facing surface is bounded. Reproduce login, sessions, users, groups and rights using PHP 7.4 as the behavioural reference.",
+      "calls": [
+        {
+          "subsystem": "LiveUser",
+          "method": "singleton",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 846,
+          "style": "static",
+          "text": "$_lu = LiveUser::singleton ( $this->luConfig );"
+        },
+        {
+          "subsystem": "LiveUser",
+          "method": "init",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 849,
+          "style": "instance",
+          "text": "if (! $_lu->init ()) {"
+        },
+        {
+          "subsystem": "LiveUser",
+          "method": "getErrors",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 850,
+          "style": "instance",
+          "text": "var_dump ( $_lu->getErrors () );"
+        },
+        {
+          "subsystem": "LiveUser",
+          "method": "logout",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 873,
+          "style": "instance",
+          "text": "// $this->lu->logout();"
+        },
+        {
+          "subsystem": "LiveUser",
+          "method": "logout",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 877,
+          "style": "instance",
+          "text": "// $this->lu->logout();"
+        },
+        {
+          "subsystem": "LiveUser",
+          "method": "isLoggedIn",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 2062,
+          "style": "instance",
+          "text": "if ((! $this->_objActiveController->requiresLogin ( $this->_action )) || ($this->lu->isLoggedIn ())) {"
+        },
+        {
+          "subsystem": "LiveUser",
+          "method": "isLoggedIn",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 2086,
+          "style": "instance",
+          "text": "if ($this->lu->isLoggedIn ()) {"
+        }
+      ]
+    },
+    "LiveUser_Admin": {
+      "external_call_count": 4,
+      "external_file_count": 1,
+      "used_methods": [
+        "factory",
+        "init"
+      ],
+      "used_method_count": 2,
+      "available_method_count": 14,
+      "usage_ratio": 0.143,
+      "capabilities": {
+        "object construction and configuration": [
+          "factory",
+          "init"
+        ]
+      },
+      "likely_tables": [
+        "tbl_perms_groups",
+        "tbl_perms_groupusers",
+        "tbl_perms_perm_users",
+        "tbl_users"
+      ],
+      "recommendation": "replace behind authentication adapter",
+      "rationale": "The detected Chisimba-facing surface is bounded. Reproduce login, sessions, users, groups and rights using PHP 7.4 as the behavioural reference.",
+      "calls": [
+        {
+          "subsystem": "LiveUser_Admin",
+          "method": "factory",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 854,
+          "style": "static",
+          "text": "$_luAdmin = LiveUser_Admin::factory ( $this->luConfig );"
+        },
+        {
+          "subsystem": "LiveUser_Admin",
+          "method": "factory",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 894,
+          "style": "static",
+          "text": "$_luAdmin = LiveUser_Admin::factory ( $this->luConfig );"
+        },
+        {
+          "subsystem": "LiveUser_Admin",
+          "method": "init",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 855,
+          "style": "instance",
+          "text": "$_luAdmin->init ();"
+        },
+        {
+          "subsystem": "LiveUser_Admin",
+          "method": "init",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 895,
+          "style": "instance",
+          "text": "$_luAdmin->init ();"
+        }
+      ]
+    },
+    "Translation2": {
+      "external_call_count": 2,
+      "external_file_count": 1,
+      "used_methods": [
+        "factory"
+      ],
+      "used_method_count": 1,
+      "available_method_count": 35,
+      "usage_ratio": 0.029,
+      "capabilities": {
+        "object construction and configuration": [
+          "factory"
+        ]
+      },
+      "likely_tables": [
+        "tbl_languagelist"
+      ],
+      "recommendation": "replace behind adapter",
+      "rationale": "The detected external method surface is bounded enough to reimplement without preserving the full abandoned package.",
+      "calls": [
+        {
+          "subsystem": "Translation2",
+          "method": "factory",
+          "file": "framework/app/core_modules/language/classes/languageconfig_class_inc.php",
+          "line": 163,
+          "style": "static",
+          "text": "$this->lang = &Translation2::factory($driver, $dsn, $params);"
+        },
+        {
+          "subsystem": "Translation2",
+          "method": "factory",
+          "file": "framework/app/core_modules/language/classes/languageconfig_class_inc.php",
+          "line": 170,
+          "style": "static",
+          "text": "$this->langAdmin = & Translation2_Admin::factory($driver, $dsn, $params);"
+        }
+      ]
+    },
+    "I18Nv2": {
+      "external_call_count": 4,
+      "external_file_count": 2,
+      "used_methods": [
+        "autoConv",
+        "createLocale"
+      ],
+      "used_method_count": 2,
+      "available_method_count": 15,
+      "usage_ratio": 0.133,
+      "capabilities": {
+        "locale handling": [
+          "createLocale"
+        ],
+        "other": [
+          "autoConv"
+        ]
+      },
+      "likely_tables": [
+        "tbl_languagelist"
+      ],
+      "recommendation": "replace behind adapter",
+      "rationale": "PHP intl can provide the core locale services while an adapter preserves Chisimba-facing method names.",
+      "calls": [
+        {
+          "subsystem": "I18Nv2",
+          "method": "autoConv",
+          "file": "framework/app/core_modules/language/classes/languagecode_class_inc.php",
+          "line": 192,
+          "style": "static",
+          "text": "I18Nv2::autoConv($ocs, $ics);"
+        },
+        {
+          "subsystem": "I18Nv2",
+          "method": "createLocale",
+          "file": "framework/app/core_modules/language/classes/language_class_inc.php",
+          "line": 129,
+          "style": "static",
+          "text": "@$this->locale = &I18Nv2::createLocale(\"{$country}\");"
+        },
+        {
+          "subsystem": "I18Nv2",
+          "method": "createLocale",
+          "file": "framework/app/core_modules/language/classes/language_class_inc.php",
+          "line": 353,
+          "style": "static",
+          "text": "@$this->locale = &I18Nv2::createLocale(\"{$country}\");"
+        },
+        {
+          "subsystem": "I18Nv2",
+          "method": "createLocale",
+          "file": "framework/app/core_modules/language/classes/language_class_inc.php",
+          "line": 360,
+          "style": "static",
+          "text": "@$this->locale = &I18Nv2::createLocale(\"{$country}\");"
+        }
+      ]
+    },
+    "Event_Dispatcher": {
+      "external_call_count": 2,
+      "external_file_count": 1,
+      "used_methods": [
+        "addObserver",
+        "getInstance"
+      ],
+      "used_method_count": 2,
+      "available_method_count": 21,
+      "usage_ratio": 0.095,
+      "capabilities": {
+        "event dispatch": [
+          "addObserver"
+        ],
+        "other": [
+          "getInstance"
+        ]
+      },
+      "likely_tables": [],
+      "recommendation": "replace",
+      "rationale": "The exposed interface is small and maps naturally to a Chisimba-native event dispatcher.",
+      "calls": [
+        {
+          "subsystem": "Event_Dispatcher",
+          "method": "getInstance",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 556,
+          "style": "static",
+          "text": "$this->eventDispatcher =& Event_Dispatcher::getInstance();"
+        },
+        {
+          "subsystem": "Event_Dispatcher",
+          "method": "addObserver",
+          "file": "framework/app/classes/core/engine_class_inc.php",
+          "line": 847,
+          "style": "instance",
+          "text": "$_lu->dispatcher->addObserver ( array (&$this, 'authNotification' ) );"
+        }
+      ]
+    }
+  }
+}

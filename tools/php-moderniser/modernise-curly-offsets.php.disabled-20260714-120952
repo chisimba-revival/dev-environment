@@ -1,0 +1,502 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * Modernise legacy curly-brace string and array offsets.
+ *
+ * Examples:
+ *
+ *   $text{0}          -> $text[0]
+ *   $text{$index}     -> $text[$index]
+ *   $array['key']{0}  -> $array['key'][0]
+ *   $this->value{0}   -> $this->value[0]
+ *
+ * Important safety rule:
+ *
+ * Curly braces inside double-quoted strings, heredocs, nowdocs, and
+ * backtick strings are never modified. This preserves interpolation such
+ * as "{$built}{$this->tokens->eol}" exactly as written.
+ */
+
+$workspace = realpath(__DIR__ . '/../../..');
+
+if ($workspace === false) {
+    fwrite(STDERR, "Unable to resolve workspace.\n");
+    exit(1);
+}
+
+/*
+ * Immediate restoration scope:
+ * framework/app includes the Chisimba framework and core_modules needed
+ * for installation, login, and basic operation. Optional external modules
+ * and canvases are deliberately deferred until the core installation runs.
+ */
+$roots = [
+    $workspace . '/framework/app',
+];
+
+$changed = [];
+$syntaxFailures = [];
+$manual = [];
+$baselineSyntax = [];
+
+
+function lintFile(string $file): array
+{
+    $output = [];
+    $status = 0;
+
+    $command = 'php -l ' . escapeshellarg($file) . ' 2>&1';
+    exec($command, $output, $status);
+
+    return [
+        'status' => $status,
+        'message' => implode("\n", $output),
+    ];
+}
+
+function phpFiles(array $roots): Generator
+{
+    foreach ($roots as $root) {
+        if (!is_dir($root)) {
+            continue;
+        }
+
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator(
+                $root,
+                FilesystemIterator::SKIP_DOTS
+            )
+        );
+
+        foreach ($iterator as $file) {
+            if (!$file->isFile()) {
+                continue;
+            }
+
+            $name = $file->getFilename();
+
+            if (
+                substr($name, -4) === '.php'
+                || substr($name, -8) === '.php.inc'
+                || substr($name, -14) === '_class_inc.php'
+                || $name === 'controller.php'
+            ) {
+                yield $file->getPathname();
+            }
+        }
+    }
+}
+
+function tokenText($token): string
+{
+    return is_array($token) ? $token[1] : $token;
+}
+
+function isIgnorableToken($token): bool
+{
+    return is_array($token)
+        && in_array(
+            $token[0],
+            [T_WHITESPACE, T_COMMENT, T_DOC_COMMENT],
+            true
+        );
+}
+
+function previousMeaningfulTokenIndex(array $tokens, int $start): ?int
+{
+    for ($index = $start; $index >= 0; $index--) {
+        if (!isIgnorableToken($tokens[$index])) {
+            return $index;
+        }
+    }
+
+    return null;
+}
+
+function nextMeaningfulTokenIndex(array $tokens, int $start): ?int
+{
+    $count = count($tokens);
+
+    for ($index = $start; $index < $count; $index++) {
+        if (!isIgnorableToken($tokens[$index])) {
+            return $index;
+        }
+    }
+
+    return null;
+}
+
+function lineForToken(array $tokens, int $targetIndex): int
+{
+    $line = 1;
+
+    for ($index = 0; $index < $targetIndex; $index++) {
+        $line += substr_count(tokenText($tokens[$index]), "\n");
+    }
+
+    return $line;
+}
+
+function isObjectOrStaticOperator($token): bool
+{
+    if ($token === '->' || $token === '::') {
+        return true;
+    }
+
+    return is_array($token)
+        && in_array(
+            $token[0],
+            [T_OBJECT_OPERATOR, T_DOUBLE_COLON],
+            true
+        );
+}
+
+/**
+ * Build a map showing which token positions occur inside interpolated
+ * strings, heredocs, nowdocs, or backtick strings.
+ *
+ * @return array<int,bool>
+ */
+function stringContextMap(array $tokens): array
+{
+    $inside = [];
+    $inDoubleQuotedString = false;
+    $inBacktickString = false;
+    $inHeredoc = false;
+
+    foreach ($tokens as $index => $token) {
+        $text = tokenText($token);
+
+        if (is_array($token) && $token[0] === T_START_HEREDOC) {
+            $inHeredoc = true;
+            $inside[$index] = true;
+            continue;
+        }
+
+        if (is_array($token) && $token[0] === T_END_HEREDOC) {
+            $inside[$index] = true;
+            $inHeredoc = false;
+            continue;
+        }
+
+        if ($inHeredoc) {
+            $inside[$index] = true;
+            continue;
+        }
+
+        if ($text === '"' && !$inBacktickString) {
+            $inside[$index] = true;
+            $inDoubleQuotedString = !$inDoubleQuotedString;
+            continue;
+        }
+
+        if ($text === '`' && !$inDoubleQuotedString) {
+            $inside[$index] = true;
+            $inBacktickString = !$inBacktickString;
+            continue;
+        }
+
+        if ($inDoubleQuotedString || $inBacktickString) {
+            $inside[$index] = true;
+        }
+    }
+
+    return $inside;
+}
+
+/**
+ * Decide whether an opening "{" is a legacy offset delimiter.
+ */
+function isLegacyOffsetOpening(
+    array $tokens,
+    array $insideString,
+    int $openIndex
+): bool {
+    if (isset($insideString[$openIndex])) {
+        return false;
+    }
+
+    $previousIndex = previousMeaningfulTokenIndex(
+        $tokens,
+        $openIndex - 1
+    );
+
+    if ($previousIndex === null || isset($insideString[$previousIndex])) {
+        return false;
+    }
+
+    $previous = $tokens[$previousIndex];
+
+    /*
+     * The common forms are:
+     *
+     *   $variable{...}
+     *   $array[...]{...}
+     *   $nested{...}{...}
+     */
+    if (is_array($previous) && $previous[0] === T_VARIABLE) {
+        return true;
+    }
+
+    if ($previous === ']' || $previous === '}') {
+        return true;
+    }
+
+    /*
+     * Permit object/static properties:
+     *
+     *   $this->property{0}
+     *   ClassName::$property{0}
+     */
+    if (is_array($previous) && $previous[0] === T_STRING) {
+        $operatorIndex = previousMeaningfulTokenIndex(
+            $tokens,
+            $previousIndex - 1
+        );
+
+        return $operatorIndex !== null
+            && !isset($insideString[$operatorIndex])
+            && isObjectOrStaticOperator($tokens[$operatorIndex]);
+    }
+
+    return false;
+}
+
+/**
+ * Find the closing brace belonging to a suspected offset expression.
+ */
+function matchingClosingBrace(
+    array $tokens,
+    array $insideString,
+    int $openIndex
+): ?int {
+    $depth = 0;
+    $count = count($tokens);
+
+    for ($index = $openIndex; $index < $count; $index++) {
+        if (isset($insideString[$index])) {
+            continue;
+        }
+
+        $text = tokenText($tokens[$index]);
+
+        if ($text === '{') {
+            $depth++;
+            continue;
+        }
+
+        if ($text === '}') {
+            $depth--;
+
+            if ($depth === 0) {
+                return $index;
+            }
+        }
+    }
+
+    return null;
+}
+
+/**
+ * @return array{0:string,1:int,2:array<int,string>}
+ */
+function transformCurlyOffsets(string $text, string $file): array
+{
+    $tokens = token_get_all($text);
+    $insideString = stringContextMap($tokens);
+    $changedCount = 0;
+    $manualEntries = [];
+    $count = count($tokens);
+
+    for ($index = 0; $index < $count; $index++) {
+        if (isset($insideString[$index])) {
+            continue;
+        }
+
+        if (tokenText($tokens[$index]) !== '{') {
+            continue;
+        }
+
+        if (!isLegacyOffsetOpening($tokens, $insideString, $index)) {
+            continue;
+        }
+
+        $closeIndex = matchingClosingBrace(
+            $tokens,
+            $insideString,
+            $index
+        );
+
+        if ($closeIndex === null) {
+            $line = lineForToken($tokens, $index);
+            $manualEntries[] = "{$file}:{$line}: unmatched offset brace";
+            continue;
+        }
+
+        $contentIndex = nextMeaningfulTokenIndex($tokens, $index + 1);
+
+        if (
+            $contentIndex === null
+            || $contentIndex >= $closeIndex
+            || isset($insideString[$contentIndex])
+        ) {
+            $line = lineForToken($tokens, $index);
+            $manualEntries[] = "{$file}:{$line}: ambiguous offset braces";
+            continue;
+        }
+
+        /*
+         * Replace only the opening and closing delimiters. The offset
+         * expression itself remains byte-for-byte unchanged.
+         */
+        $tokens[$index] = '[';
+        $tokens[$closeIndex] = ']';
+        $changedCount++;
+
+        $index = $closeIndex;
+    }
+
+    $updated = '';
+
+    foreach ($tokens as $token) {
+        $updated .= tokenText($token);
+    }
+
+    return [$updated, $changedCount, $manualEntries];
+}
+
+foreach (phpFiles($roots) as $file) {
+    $original = file_get_contents($file);
+
+    if ($original === false) {
+        fwrite(STDERR, "Unable to read: {$file}\n");
+        continue;
+    }
+
+    if (strpos($original, '{') === false) {
+        continue;
+    }
+
+    [$updated, $count, $fileManual] = transformCurlyOffsets(
+        $original,
+        $file
+    );
+
+    foreach ($fileManual as $entry) {
+        $manual[] = $entry;
+    }
+
+    if ($count === 0 || $updated === $original) {
+        continue;
+    }
+
+    /*
+     * Record the file's pre-existing PHP 7.4 lint state. A transformed
+     * file is rolled back only when the transformation introduces a new
+     * failure or changes the existing failure. Unrelated legacy failures
+     * must not prevent a correct offset conversion from being retained.
+     */
+    $baselineSyntax[$file] = lintFile($file);
+
+    $backup = $file . '.before-curly-offset-moderniser';
+
+    if (!file_exists($backup)) {
+        if (!copy($file, $backup)) {
+            fwrite(STDERR, "Unable to create backup: {$backup}\n");
+            exit(1);
+        }
+    }
+
+    if (file_put_contents($file, $updated) === false) {
+        fwrite(STDERR, "Unable to write: {$file}\n");
+        exit(1);
+    }
+
+    $changed[] = $file;
+}
+
+foreach ($changed as $file) {
+    $after = lintFile($file);
+    $before = $baselineSyntax[$file];
+
+    if ($after['status'] === 0) {
+        continue;
+    }
+
+    /*
+     * A file that already failed PHP 7.4 lint may expose its next legacy
+     * error after a correct curly-offset repair. Retain that progressive
+     * repair. Roll back only when this pass breaks a file that linted
+     * successfully before transformation.
+     */
+    if ($before['status'] !== 0) {
+        continue;
+    }
+
+    $syntaxFailures[$file] = [
+        'before' => $before['message'],
+        'after' => $after['message'],
+    ];
+}
+
+if ($syntaxFailures !== []) {
+    fwrite(
+        STDERR,
+        "New syntax failures introduced by curly-offset transformation:\n"
+    );
+
+    foreach ($syntaxFailures as $file => $messages) {
+        fwrite(STDERR, "\n{$file}\n");
+
+        if ($messages['before'] !== '') {
+            fwrite(STDERR, "Before transformation:\n");
+            fwrite(STDERR, $messages['before'] . "\n");
+        }
+
+        fwrite(STDERR, "After transformation:\n");
+        fwrite(STDERR, $messages['after'] . "\n");
+
+        $failedCopy = $file . '.failed-curly-offset-moderniser';
+        $backup = $file . '.before-curly-offset-moderniser';
+
+        if (!copy($file, $failedCopy)) {
+            fwrite(
+                STDERR,
+                "Unable to preserve failed output: {$failedCopy}\n"
+            );
+        } else {
+            fwrite(STDERR, "Preserved failed output: {$failedCopy}\n");
+        }
+
+        if (file_exists($backup)) {
+            if (!copy($backup, $file)) {
+                fwrite(STDERR, "Unable to restore backup: {$file}\n");
+            } else {
+                fwrite(STDERR, "Restored backup for {$file}\n");
+            }
+        }
+    }
+
+    exit(1);
+}
+
+sort($changed);
+sort($manual);
+
+echo "Curly-brace offset modernisation\n";
+echo "Changed files: " . count($changed) . "\n";
+echo "Scope: framework/app (framework plus core_modules required for installation).\n";
+echo "Progressive fixes are retained when a file already had another PHP 7.4 lint failure.\n";
+
+foreach ($changed as $file) {
+    echo "CHANGED: {$file}\n";
+}
+
+echo "\nItems requiring manual review: " . count($manual) . "\n";
+
+foreach ($manual as $entry) {
+    echo "MANUAL: {$entry}\n";
+}
+
+exit(0);

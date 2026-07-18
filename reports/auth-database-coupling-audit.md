@@ -1,0 +1,1140 @@
+# Authentication Database Coupling Audit
+
+Files scanned: **14104**  
+Relevant files: **145**
+
+## Executive table
+
+| Table | References | Files | Methods | Detected fields | Assessment |
+|---|---:|---:|---:|---:|---|
+| `tbl_users` | 719 | 139 | 242 | 0 | High coupling: retain the schema initially and add a compatibility repository layer before attempting behavioural replacement. |
+| `tbl_perms_groups` | 22 | 7 | 15 | 0 | Moderate coupling: introduce repository classes first, then move existing callers behind the authentication adapter. |
+| `tbl_perms_groupusers` | 13 | 8 | 10 | 0 | Moderate coupling: introduce repository classes first, then move existing callers behind the authentication adapter. |
+| `tbl_perms_perm_users` | 15 | 8 | 12 | 0 | Moderate coupling: introduce repository classes first, then move existing callers behind the authentication adapter. |
+
+## `tbl_users`
+
+High coupling: retain the schema initially and add a compatibility repository layer before attempting behavioural replacement.
+
+- Operations: `create`: 1, `delete`: 3, `insert/unknown`: 69, `read/unknown`: 8, `reference`: 221, `select`: 385, `update`: 27, `update/unknown`: 5
+- Fields: Not detected
+
+### Capabilities
+
+- **user authentication:** 184 references; `changePassword()`, `checkDbase()`, `checkUsernameAvailable()`, `email()`, `exportCSV()`, `exportClassXML()`, `exportXML()`, `getAllPersonalBloggers()`, `getAllPublicPosts()`, `getAuthorizedContentMembers()`, `getAuthorizedSectionMembers()`, `getComments()`, `getCurrentMonth()`, `getFlatThread()`, `getFriends()`, `getJsonGroupUsers()`, `getLastFiveOnlineUsers()`, `getLastLogin()`, `getLastMonth()`, `getLastNPosts()`, `getLastPost()`, `getLatestSitePost()`, `getListName()`, `getListOnlineUsers()`, `getListOnlineUsersInCurrentContext()`, `getLocalUserInfoAsArray()`, `getLoginHistory()`, `getMorePosts()`, `getPostWithText()`, `getPosts()`, `getPostsById()`, `getPostsByTag()`, `getPostsByUser()`, `getPostsByYearMonth()`, `getResultsForExport()`, `getRootPost()`, `getStudentSubmissions()`, `getTangents()`, `getThread()`, `getUnAuthorizedContentMembers()`, `getUnAuthorizedSectionMembers()`, `getUser()`, `getUserDataAsArray()`, `getUserDataAsArray2()`, `getUserDetails()`, `getUserId()`, `getUserList()`, `getUserPuidByUsername()`, `getUsers()`, `getUsersSubscribedDiscussion()`, `getUsersSubscribedForum()`, `getUsersSubscribedTopic()`, `getWall()`, `getallusers()`, `getmales()`, `getnowLogin()`, `importBlog()`, `jsonGetAllUsers()`, `listAll()`, `listPodcasters()`, `listSelected()`, `logins()`, `lookupData()`, `processLDAPIntegration()`, `resetPassword()`, `searchUser()`, `sendEmailAlert()`, `sendFileEmailAlert()`, `sendFolderEmailAlert()`, `sendMailNotification()`, `setActive()`, `show()`, `showBatch()`, `showTopicsInDiscussion()`, `showTopicsInForum()`, `userName()`
+- **user creation:** 53 references; `__editUser()`, `__getMethod()`, `__selfregister()`, `addSave()`, `dispatch()`, `getHowCreated()`, `getListName()`, `getLocalUserInfoAsArray()`, `getUserDataAsArray()`, `getUserDataAsArray2()`, `howCreated()`, `init()`, `insertMyDetails()`, `listAll()`, `lookupData()`, `mail2blog()`, `maildecode()`, `showStatsByUser()`, `showUserDetails()`
+- **user deletion:** 4 references; `deleteBatch()`, `deleteSingle()`, `migrateAdmin()`, `preinstall()`
+- **user lookup:** 436 references; `FindFullNames()`, `PKId()`, `__getxmlschema()`, `_getFriends()`, `_setUsers()`, `canUserReadContent()`, `canUserReadSection()`, `checkDbase()`, `checkUserIdAvailable()`, `checkValidUser()`, `configLu()`, `contextUsers()`, `countFemales()`, `countMales()`, `countUsers()`, `dispatch()`, `exportCSV()`, `exportXML()`, `getAclUsers()`, `getAllPersonalBloggers()`, `getAllPublicPosts()`, `getAllUsers()`, `getAssignedContentUsers()`, `getAssignedSectionUsers()`, `getBuddies()`, `getChildPostsSQL()`, `getComments()`, `getContextGuests()`, `getContextLecturers()`, `getContextStudents()`, `getCountries()`, `getCourses()`, `getCurrentMonth()`, `getEportfolioUsers()`, `getEportfolioUsersOld()`, `getFans()`, `getFilesWithTag()`, `getFirstname()`, `getFlatThread()`, `getForListing()`, `getForumCatViews()`, `getFriends()`, `getGenderSplit()`, `getGroupList()`, `getHomeLanguages()`, `getHomePagesWithHits()`, `getHomePagesWithHitsSingle()`, `getID()`, `getInstantMessages()`, `getLastMonth()`, `getLastNPosts()`, `getLastPost()`, `getLatestSitePost()`, `getList()`, `getListByRole()`, `getListName()`, `getLocalUserInfoAsArray()`, `getLoggedData()`, `getMailAddys()`, `getModuleHitsByGroup()`, `getModuleHitsByUser()`, `getMorePosts()`, `getMostUploadedAllTime()`, `getMostUploadedThisWeek()`, `getMostUploadedToday()`, `getNumResults()`, `getOnlineBuddies()`, `getOnlineUsers()`, `getOtherEvents()`, `getPostInLanguage()`, `getPostWithText()`, `getPosterTangents()`, `getPosterTopics()`, `getPostersNum()`, `getPosts()`, `getPostsById()`, `getPostsByTag()`, `getPostsByUser()`, `getPostsByYearMonth()`, `getPostsFromSearch()`, `getResults()`, `getResultsForExport()`, `getRootPost()`, `getStaffNumber()`, `getStudentParticipation()`, `getStudentSubmissions()`, `getSurname()`, `getTangents()`, `getThread()`, `getTitle()`, `getTotalCountries()`, `getTotalHits()`, `getTotalHitsByGroup()`, `getTotalHitsByUser()`, `getTotalUniqueVisitors()`, `getTotalUniqueVisitorsByGroup()`, `getTotalUsers()`, `getUserContact()`, `getUserDataAsArray()`, `getUserDataAsArray2()`, `getUserEvents()`, `getUserGroups()`, `getUserPuid()`, `getUserSettings()`, `getUsers()`, `getUsersSubscribedTopic()`, `getWall()`, `getWorkGroupPosts()`, `getYearStudy()`, `getfemales()`, `getmales()`, `importAllBlogs()`, `importBlog()`, `init()`, `isActive()`, `listAll()`, `listPodcasters()`, `listSingle()`, `listall()`, `lookupAdmin()`, `lookupData()`, `newPerson()`, `processAction()`, `processContentPermissionsMemberForm()`, `processManage()`, `processManagegroup()`, `processSectionPermissionsMemberForm()`, `remoteUsers()`, `searchUser()`, `searchUsers()`, `showBatch()`, `showForUser()`, `showManage()`, `showManagegroup()`, `showTopicsInDiscussion()`, `showTopicsInForum()`, `show_()`, `userSearch()`
+- **user profile update:** 42 references; `editStudents()`, `getContextMembers()`, `getForEdit()`, `getPostInLanguage()`, `getPostWithText()`, `preinstall()`
+
+### Owning methods
+
+- `Constructor::canUserReadContent()`
+- `Constructor::canUserReadSection()`
+- `Constructor::checkValidUser()`
+- `Constructor::getAllUsers()`
+- `Constructor::getAssignedContentUsers()`
+- `Constructor::getAssignedSectionUsers()`
+- `Constructor::getAuthorizedContentMembers()`
+- `Constructor::getAuthorizedSectionMembers()`
+- `Constructor::getUnAuthorizedContentMembers()`
+- `Constructor::getUnAuthorizedSectionMembers()`
+- `DbCreateAction::processAction()`
+- `ahisuser::getList()`
+- `ahisuser::getListByRole()`
+- `ahisuser::getUserContact()`
+- `alertutils::sendEmailAlert()`
+- `and::PKId()`
+- `and::editStudents()`
+- `and::email()`
+- `and::getFirstname()`
+- `and::getResultsForExport()`
+- `and::getStaffNumber()`
+- `and::getSurname()`
+- `and::getTitle()`
+- `and::getUserId()`
+- `and::howCreated()`
+- `and::init()`
+- `and::isActive()`
+- `and::logins()`
+- `and::lookupAdmin()`
+- `and::migrateAdmin()`
+- `and::userName()`
+- `are::getAllUsers()`
+- `auth_database::getUserDataAsArray()`
+- `auth_database::getUserDataAsArray2()`
+- `auth_database::init()`
+- `auth_ldap::getLocalUserInfoAsArray()`
+- `auth_ldap::init()`
+- `auth_ldap::processLDAPIntegration()`
+- `auth_ldap::sendMailNotification()`
+- `auth_ldap::setActive()`
+- `block_contextmembers::show_()`
+- `blogimporter::importAllBlogs()`
+- `blogimporter::importBlog()`
+- `blogmail::mail2blog()`
+- `cannot::getLastFiveOnlineUsers()`
+- `cannot::getListOnlineUsers()`
+- `cannot::getListOnlineUsersInCurrentContext()`
+- `contextusers::init()`
+- `contextusers::searchUsers()`
+- `dbBuddies::getBuddies()`
+- `dbBuddies::getFans()`
+- `dbBuddies::getOnlineBuddies()`
+- `dbBuddies::listAll()`
+- `dbHomePages::FindFullNames()`
+- `dbHomePages::deleteSingle()`
+- `dbHomePages::getHomePagesWithHits()`
+- `dbHomePages::getHomePagesWithHitsSingle()`
+- `dbLoggerCalc::getForumCatViews()`
+- `dbLoggerCalc::getLoggedData()`
+- `dbLoggerCalc::getModuleHitsByGroup()`
+- `dbLoggerCalc::getModuleHitsByUser()`
+- `dbLoggerCalc::getStudentParticipation()`
+- `dbLoggerCalc::getTotalHits()`
+- `dbLoggerCalc::getTotalHitsByGroup()`
+- `dbLoggerCalc::getTotalHitsByUser()`
+- `dbLoggerCalc::getTotalUniqueVisitors()`
+- `dbLoggerCalc::getTotalUniqueVisitorsByGroup()`
+- `dbPost::getChildPostsSQL()`
+- `dbPost::getFlatThread()`
+- `dbPost::getLastNPosts()`
+- `dbPost::getLastPost()`
+- `dbPost::getPostInLanguage()`
+- `dbPost::getPostWithText()`
+- `dbPost::getRootPost()`
+- `dbPost::getThread()`
+- `dbPost::getWorkGroupPosts()`
+- `dbProfiles::init()`
+- `dbUsers::init()`
+- `dbUsers::listAll()`
+- `dbUsers::listSelected()`
+- `dbWorkgroupUsers::listAll()`
+- `dbWorkgroupUsers::listSingle()`
+- `dbassignmentsubmit::getStudentSubmissions()`
+- `dbcomment::getComments()`
+- `dbdiscussionsubscriptions::getUsersSubscribedDiscussion()`
+- `dbemailusers::init()`
+- `dbevents::userSearch()`
+- `dbfoaf::getAllUsers()`
+- `dbfoaf::getFriends()`
+- `dbfoaf::init()`
+- `dbfoaf::insertMyDetails()`
+- `dbfolderpermissions::getallusers()`
+- `dbforumsubscriptions::getUsersSubscribedForum()`
+- `dbforwardto::getUsers()`
+- `dbfriends::getFriends()`
+- `dbfullprofile::searchUser()`
+- `dbgroups::getUsers()`
+- `dbloginhistory::getLoginHistory()`
+- `dbloginhistory::getfemales()`
+- `dbloginhistory::getmales()`
+- `dbmaillist::checkValidUser()`
+- `dbmaillist::getID()`
+- `dbmaillist::getListName()`
+- `dbmaillist::getMailAddys()`
+- `dbmanagerdb::listall()`
+- `dboeruserdata::getForEdit()`
+- `dboeruserdata::getForListing()`
+- `dboerusermain::init()`
+- `dbpodcast::listPodcasters()`
+- `dbpodcastertags::getFilesWithTag()`
+- `dbpracticalssubmit::getStudentSubmissions()`
+- `dbquotas::getNumResults()`
+- `dbquotas::getResults()`
+- `dbregistration::getUserDetails()`
+- `dbrouting::init()`
+- `dbschumuserdata::addSave()`
+- `dbschumuserdata::getForEdit()`
+- `dbschumuserdata::getForListing()`
+- `dbschumusermain::init()`
+- `dbsimpleblog::getAllPersonalBloggers()`
+- `dbsimpleblog::getAllPublicPosts()`
+- `dbsimpleblog::getCurrentMonth()`
+- `dbsimpleblog::getLastMonth()`
+- `dbsimpleblog::getLatestSitePost()`
+- `dbsimpleblog::getPosts()`
+- `dbsimpleblog::getPostsById()`
+- `dbsimpleblog::getPostsByTag()`
+- `dbsimpleblog::getPostsByUser()`
+- `dbsimpleblog::getPostsByYearMonth()`
+- `dbsimpleblog::getPostsFromSearch()`
+- `dbspeak4freetags::getFilesWithTag()`
+- `dbtopic::getTangents()`
+- `dbtopic::showTopicsInDiscussion()`
+- `dbtopic::showTopicsInForum()`
+- `dbtopicsubscriptions::getUsersSubscribedTopic()`
+- `dbuserextra::getUserPuid()`
+- `dbuserextra::getUserPuidByUsername()`
+- `dbuserextra::init()`
+- `dbusers::getCourses()`
+- `dbusers::getGenderSplit()`
+- `dbusers::getGroupList()`
+- `dbusers::getHomeLanguages()`
+- `dbusers::getLoginHistory()`
+- `dbusers::getTotalUsers()`
+- `dbusers::getUserList()`
+- `dbusers::getYearStudy()`
+- `dbusers::init()`
+- `dbuserstats::countFemales()`
+- `dbuserstats::countMales()`
+- `dbuserstats::countUsers()`
+- `dbuserstats::getCountries()`
+- `dbuserstats::getHowCreated()`
+- `dbuserstats::getTotalCountries()`
+- `dbuserstats::init()`
+- `dbwall::getMorePosts()`
+- `dbwall::getWall()`
+- `dbwebpresenttags::getFilesWithTag()`
+- `dbwebpresentuploadscounter::getMostUploadedAllTime()`
+- `dbwebpresentuploadscounter::getMostUploadedThisWeek()`
+- `dbwebpresentuploadscounter::getMostUploadedToday()`
+- `discussion::sendEmailAlert()`
+- `discussionstats::getPosterTangents()`
+- `discussionstats::getPosterTopics()`
+- `discussionstats::getPostersNum()`
+- `emailutils::sendFileEmailAlert()`
+- `emailutils::sendFolderEmailAlert()`
+- `file::configLu()`
+- `foaf::dispatch()`
+- `foafops::init()`
+- `for::maildecode()`
+- `forum::sendEmailAlert()`
+- `forumstats::getPosterTangents()`
+- `forumstats::getPosterTopics()`
+- `forumstats::getPostersNum()`
+- `groupadmin_installscripts::init()`
+- `groupadmin_installscripts::preinstall()`
+- `groupmanager::getContextMembers()`
+- `groupops::getEportfolioUsers()`
+- `groupops::getEportfolioUsersOld()`
+- `groupops::getJsonGroupUsers()`
+- `groupops::getOtherEvents()`
+- `groupops::getUserEvents()`
+- `groupops::getUserGroups()`
+- `groupops::jsonGetAllUsers()`
+- `groupops::processManage()`
+- `groupops::processManagegroup()`
+- `groupops::showManage()`
+- `groupops::showManagegroup()`
+- `in::_setUsers()`
+- `in::contextUsers()`
+- `in::dispatch()`
+- `in::getInstantMessages()`
+- `in::getUserSettings()`
+- `in::init()`
+- `it::__editUser()`
+- `it::__getMethod()`
+- `it::__getxmlschema()`
+- `it::__selfregister()`
+- `logshow::showForUser()`
+- `logshow::showStatsByUser()`
+- `manageGroup::getUsers()`
+- `manager::show()`
+- `object::_getFriends()`
+- `object::newPerson()`
+- `of::showUserDetails()`
+- `onlineCount::getOnlineUsers()`
+- `permissions_acl::getAclUsers()`
+- `properties::init()`
+- `remoteimportexportutils::remoteUsers()`
+- `sqlUsers::changePassword()`
+- `sqlUsers::checkDbase()`
+- `sqlUsers::getUsers()`
+- `sqlUsers::init()`
+- `sqlUsers::resetPassword()`
+- `tableinfo::init()`
+- `to::dispatch()`
+- `to::processContentPermissionsMemberForm()`
+- `to::processSectionPermissionsMemberForm()`
+- `turnitinsubmittedassignments::getUser()`
+- `up::init()`
+- `user::init()`
+- `user::lookupData()`
+- `userLoginHistory::getLastLogin()`
+- `userLoginHistory::getnowLogin()`
+- `useradmin_model::changePassword()`
+- `useradmin_model::checkUserIdAvailable()`
+- `useradmin_model::checkUsernameAvailable()`
+- `useradmin_model::getUsers()`
+- `useradmin_model::init()`
+- `useradmin_model2::init()`
+- `usercontext::getContextGuests()`
+- `usercontext::getContextLecturers()`
+- `usercontext::getContextStudents()`
+- `usersdb::init()`
+- `util::getStudentSubmissions()`
+- `util::getUsers()`
+- `utilities::getUserPuid()`
+- `var::deleteBatch()`
+- `var::exportCSV()`
+- `var::exportXML()`
+- `var::showBatch()`
+- `variable::exportClassXML()`
+
+### Source references
+
+- `framework/app/core_modules/filemanager/classes/emailutils_class_inc.php:39` — reference — `$students = $this->objManageGroups->contextUsers('Students', $contextcode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `framework/app/core_modules/filemanager/classes/emailutils_class_inc.php:40` — reference — `$lecturers = $this->objManageGroups->contextUsers('Lecturers', $contextcode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `framework/app/core_modules/filemanager/classes/emailutils_class_inc.php:75` — reference — `$students = $this->objManageGroups->contextUsers('Students', $contextcode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `framework/app/core_modules/filemanager/classes/emailutils_class_inc.php:76` — reference — `$lecturers = $this->objManageGroups->contextUsers('Lecturers', $contextcode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `framework/app/core_modules/filemanager/classes/dbquotas_class_inc.php:310` — select — `$sql = 'SELECT tbl_files_quotas.*, firstName as firstname, surname FROM tbl_files_quotas JOIN tbl_users ON (userId ='.$substring.')';`
+- `framework/app/core_modules/filemanager/classes/dbquotas_class_inc.php:352` — select — `$sql = 'SELECT COUNT(tbl_files_quotas.id) AS thecount FROM tbl_files_quotas JOIN tbl_users ON (userId ='.$substring.')';`
+- `framework/app/core_modules/permissions/classes/permissions_acl_class_inc.php:118` — select — `$usersDb = 'tbl_users';`
+- `framework/app/core_modules/modulecatalogue/classes/tableinfo_class_inc.php:51` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/groupadmin/patches/installscripts_class_inc.php:4` — reference — `parent::init ( 'tbl_users' );`
+- `framework/app/core_modules/groupadmin/patches/installscripts_class_inc.php:45` — delete — `$this->delete('id', $user['id'], 'tbl_users');`
+- `framework/app/core_modules/groupadmin/patches/installscripts_class_inc.php:53` — select — `$this->query("UPDATE tbl_users SET pass='".$user['pass']."' WHERE id='$id'");`
+- `framework/app/core_modules/groupadmin/classes/managegroup_class_inc.php:107` — reference — `$fields = $fields ? implode(',',$fields) : array("tbl_users.id","tbl_users.userId"," 'firstName' || ' ' || 'surname' as fullName");`
+- `framework/app/core_modules/groupadmin/classes/managegroup_class_inc.php:107` — reference — `$fields = $fields ? implode(',',$fields) : array("tbl_users.id","tbl_users.userId"," 'firstName' || ' ' || 'surname' as fullName");`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:203` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstname, us.surname, us.username, us.staffnumber, us.last_login, us.logins, us.emailAddress, us.isActive from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on pu.auth_user_id = us.userId WHERE group_id = " . $groupId . $where . " ORDER BY us.surname " . $filter;`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:457` — select — `$sql = "SELECT pu.perm_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress FROM tbl_users as us INNER join tbl_perms_perm_users as pu on us.userId = pu.auth_user_id" . $where . " ORDER BY us.surname " . $filter;`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:461` — select — `$countSQL = "SELECT username FROM tbl_users";`
+- `framework/app/core_modules/groupadmin/classes/usersdb_class_inc.php:68` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/contextgroups/classes/block_contextmembers_class_inc.php:141` — reference — `$lecturers = $objManageGroups->contextUsers('Lecturers', $this->contextCode, array( 'tbl_users.userId', 'firstName', 'surname'));`
+- `framework/app/core_modules/contextgroups/classes/block_contextmembers_class_inc.php:142` — reference — `$students = $objManageGroups->contextUsers('Students', $this->contextCode, array( 'tbl_users.userId', 'firstName', 'surname'));`
+- `framework/app/core_modules/contextgroups/classes/onlinecount_class_inc.php:162` — select — `'tbl_users',`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:474` — reference — `$fields = $fields ? $fields : array( "tbl_users.userId", "  'firstName' || ' ' || 'surname'  as fullName " );`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:65` — insert/unknown — `parent::init('tbl_users');`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:90` — select — `FROM tbl_users WHERE '.$field.' LIKE "'.$search.'%" GROUP BY userId ORDER BY '.$order;`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:96` — select — `$sql.="FROM tbl_groupadmin_groupuser INNER JOIN tbl_users ";`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:97` — select — `$sql.="ON ( ( user_id = tbl_users.id ) AND ( group_id = '$gid' ) ) WHERE $field LIKE '$search%' ORDER BY $order";`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:106` — select — `$sql.="FROM tbl_groupadmin_groupuser INNER JOIN tbl_users ";`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:107` — select — `$sql.="ON ( ( user_id = tbl_users.id ) AND ( (group_id = '$gids[0]') OR (group_id = '$gids[1]') OR (group_id = '$gids[2]') OR (group_id = '$gids[3]') ) ) WHERE $field LIKE '$search%' ORDER BY $order";`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:127` — select — `$sql.="FROM tbl_groupadmin_groupuser INNER JOIN tbl_users ";`
+- `framework/app/core_modules/contextgroups/classes/contextusers_class_inc.php:128` — select — `$sql.="ON ( ( user_id = tbl_users.id ) AND ( $sqlGroups) ) WHERE $field LIKE '$search%' ORDER BY $order";`
+- `framework/app/core_modules/logger/classes/logshow_class_inc.php:61` — select — `tbl_users.firstname, tbl_users.surname,`
+- `framework/app/core_modules/logger/classes/logshow_class_inc.php:61` — select — `tbl_users.firstname, tbl_users.surname,`
+- `framework/app/core_modules/logger/classes/logshow_class_inc.php:64` — reference — `FROM tbl_logger LEFT JOIN tbl_users ON`
+- `framework/app/core_modules/logger/classes/logshow_class_inc.php:65` — reference — `tbl_logger.userid=tbl_users.userid $where ";`
+- `framework/app/core_modules/logger/classes/logshow_class_inc.php:98` — select — `$sql = "select users.firstname, users.surname, logger.userid, logger.eventparamvalue, logger.datecreated, logger.context, logger.module from tbl_logger as logger, tbl_users as users ".$where;`
+- `framework/app/core_modules/security/sql/sql_updates.xml:34` — update — `<table>tbl_users</table>`
+- `framework/app/core_modules/security/sql/sql_updates.xml:81` — update — `<table>tbl_users</table>`
+- `framework/app/core_modules/security/sql/sql_updates.xml:92` — update — `<table>tbl_users</table>`
+- `framework/app/core_modules/security/sql/tbl_users.sql:4` — reference — `$tablename = 'tbl_users';`
+- `framework/app/core_modules/security/sql/users.xml:3` — reference — `<!-- Table tbl_users -->`
+- `framework/app/core_modules/security/sql/users.xml:4` — reference — `<tbl_users>`
+- `framework/app/core_modules/security/sql/users.xml:21` — update/unknown — `</tbl_users>`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:52` — reference — `parent::init ( 'tbl_users' );`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:110` — update — `$sql="UPDATE tbl_users  SET  isActive = '1' WHERE  username='".$userId."'";`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:136` — select — `tbl_users.username,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:137` — select — `tbl_users.userid,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:138` — select — `tbl_users.title,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:139` — reference — `tbl_users.firstname,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:140` — insert/unknown — `tbl_users.surname,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:141` — insert/unknown — `tbl_users.pass,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:142` — insert/unknown — `tbl_users.creationdate,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:143` — insert/unknown — `tbl_users.emailaddress,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:144` — insert/unknown — `tbl_users.logins,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:145` — insert/unknown — `tbl_users.isactive,`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:146` — insert/unknown — `tbl_users.accesslevel`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:148` — insert/unknown — `tbl_users`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:254` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on CAST(pu.auth_user_id AS CHAR(25)) = us.userId WHERE group_id = ".$groupId." ORDER BY us.surname ";`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:268` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on CAST(pu.auth_user_id AS CHAR(25)) = us.userId WHERE group_id = ".$groupId." ORDER BY us.surname ";`
+- `framework/app/core_modules/security/classes/useradmin_model_class_inc.php:49` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/security/classes/useradmin_model_class_inc.php:128` — select — `$sql="SELECT * FROM tbl_users";`
+- `framework/app/core_modules/security/classes/useradmin_model_class_inc.php:189` — select — `$sql="SELECT COUNT(*) AS thecount FROM tbl_users WHERE userId='$userId'";`
+- `framework/app/core_modules/security/classes/useradmin_model_class_inc.php:205` — select — `$sql="SELECT COUNT(*) AS thecount FROM tbl_users WHERE username='$username'";`
+- `framework/app/core_modules/security/classes/useradmin_model_class_inc.php:234` — update — `//$sql="update tbl_users set password='".$cryptpassword."' where userId='".$userId."'";`
+- `framework/app/core_modules/security/classes/auth_uwcldap_class_inc.php:48` — reference — `parent::init ( 'tbl_users' );`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:48` — reference — `parent::init ( 'tbl_users' );`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:104` — update — `$sql="UPDATE tbl_users  SET  isActive = '1' WHERE  username='".$userId."'";`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:130` — select — `tbl_users.username,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:131` — select — `tbl_users.userid,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:132` — select — `tbl_users.title,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:133` — reference — `tbl_users.firstname,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:134` — insert/unknown — `tbl_users.surname,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:135` — insert/unknown — `tbl_users.pass,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:136` — insert/unknown — `tbl_users.creationdate,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:137` — insert/unknown — `tbl_users.emailaddress,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:138` — insert/unknown — `tbl_users.logins,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:139` — insert/unknown — `tbl_users.isactive,`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:140` — insert/unknown — `tbl_users.accesslevel`
+- `framework/app/core_modules/security/classes/auth_ldap_class_inc.php:142` — insert/unknown — `tbl_users`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:29` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:109` — select — `tbl_users.username,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:110` — select — `tbl_users.userid,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:111` — select — `tbl_users.title,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:112` — reference — `tbl_users.firstname,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:113` — insert/unknown — `tbl_users.surname,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:114` — insert/unknown — `tbl_users.pass,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:115` — insert/unknown — `tbl_users.creationdate,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:116` — insert/unknown — `tbl_users.emailaddress,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:117` — insert/unknown — `tbl_users.logins,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:118` — insert/unknown — `tbl_users.isactive,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:119` — insert/unknown — `tbl_users.accesslevel`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:121` — insert/unknown — `tbl_users`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:137` — select — `tbl_users.username,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:138` — select — `tbl_users.userid,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:139` — select — `tbl_users.title,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:140` — reference — `tbl_users.firstname,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:141` — insert/unknown — `tbl_users.surname,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:142` — insert/unknown — `tbl_users.pass,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:143` — insert/unknown — `tbl_users.creationdate,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:144` — insert/unknown — `tbl_users.emailaddress,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:145` — insert/unknown — `tbl_users.logins,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:146` — insert/unknown — `tbl_users.isactive,`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:147` — insert/unknown — `tbl_users.accesslevel`
+- `framework/app/core_modules/security/classes/auth_database_class_inc.php:149` — insert/unknown — `tbl_users`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:336` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) ORDER BY ' . $order;`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:336` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) ORDER BY ' . $order;`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:336` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) ORDER BY ' . $order;`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:346` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) ORDER BY ' . $order . ' LIMIT 5';`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:346` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) ORDER BY ' . $order . ' LIMIT 5';`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:346` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) ORDER BY ' . $order . ' LIMIT 5';`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:356` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) where coursecode= "' . $contextCode . '" ORDER BY WhenLastActive DESC';`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:356` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) where coursecode= "' . $contextCode . '" ORDER BY WhenLastActive DESC';`
+- `framework/app/core_modules/security/classes/loggedinusers_class_inc.php:356` — select — `$sql = 'SELECT DISTINCT tbl_users.userId, username, firstName, surname FROM tbl_loggedinusers INNER JOIN tbl_users ON (tbl_loggedinusers.userId = tbl_users.userId) where coursecode= "' . $contextCode . '" ORDER BY WhenLastActive DESC';`
+- `framework/app/core_modules/security/classes/auth_fmp_class_inc.php:30` — reference — `parent::init ( 'tbl_users' );`
+- `framework/app/core_modules/security/classes/user_class_inc.php:62` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/security/classes/user_class_inc.php:119` — select — `tbl_users.username,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:120` — select — `tbl_users.userid,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:121` — select — `tbl_users.title,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:122` — reference — `tbl_users.firstname,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:123` — insert/unknown — `tbl_users.surname,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:124` — insert/unknown — `tbl_users.pass,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:125` — insert/unknown — `tbl_users.creationdate,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:126` — insert/unknown — `tbl_users.emailaddress,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:127` — insert/unknown — `tbl_users.logins,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:128` — insert/unknown — `tbl_users.isactive,`
+- `framework/app/core_modules/security/classes/user_class_inc.php:129` — insert/unknown — `tbl_users.accesslevel`
+- `framework/app/core_modules/security/classes/user_class_inc.php:131` — insert/unknown — `tbl_users`
+- `framework/app/core_modules/security/classes/user_class_inc.php:404` — reference — `* which looks in the tbl_users table.`
+- `framework/app/core_modules/security/classes/user_class_inc.php:429` — select — `$sql = "select userid from tbl_users where username='$username'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:451` — select — `$sql = "select id from tbl_users where userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:494` — select — `$sql = "SELECT username FROM tbl_users WHERE userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:554` — select — `$sql = "SELECT surname FROM tbl_users WHERE userid='" . $userId . "'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:582` — select — `$sql = "SELECT firstname FROM tbl_users WHERE userid='" . $userId . "'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:607` — select — `$sql = "SELECT staffnumber FROM tbl_users WHERE userid='" . $userId . "'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:637` — select — `$sql = "SELECT emailaddress FROM tbl_users WHERE userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:663` — select — `$sql = "SELECT isactive from tbl_users where userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:678` — select — `$sql = "SELECT howcreated from tbl_users where userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:704` — select — `$sql = "SELECT title FROM tbl_users WHERE userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:733` — select — `$sql = "SELECT logins FROM tbl_users WHERE userid='$userId'";`
+- `framework/app/core_modules/security/classes/user_class_inc.php:1010` — delete — `//$this->delete('id', $user['id'], 'tbl_users');`
+- `framework/app/core_modules/security/classes/userloginhistory_class_inc.php:122` — select — `tbl_userloginhistory as last, tbl_users as user`
+- `framework/app/core_modules/security/classes/userloginhistory_class_inc.php:143` — select — `tbl_userloginhistory as last, tbl_users as users`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:49` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:170` — select — `//$sql="select userId,username,title,firstName,surname,emailAddress from tbl_users";`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:171` — select — `$sql="select * from tbl_users";`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:225` — select — `$sql="select COUNT(*) as count from tbl_users where username='".$username."'";`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:228` — select — `$sql="select COUNT(*) as count from tbl_users  where userId='".$userId."'";`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:252` — update — `//$sql="update tbl_users set password='".$cryptpassword."' where userId='".$userId."'";`
+- `framework/app/core_modules/security/classes/sqlusers_class_inc.php:274` — select — `$sql="select userId, username, firstname, surname, PASS from tbl_users where username='$username' and emailAddress='$email'";`
+- `framework/app/core_modules/security/classes/useradmin_model2_class_inc.php:70` — reference — `parent::init('tbl_users');`
+- `framework/app/core_modules/context/classes/usercontext_class_inc.php:156` — reference — `return $this->objGroups->contextUsers ( 'Lecturers', $contextCode, array ('tbl_users.userId', 'firstname', 'surname' ) );`
+- `framework/app/core_modules/context/classes/usercontext_class_inc.php:166` — reference — `return $this->objGroups->contextUsers ( 'Students', $contextCode, array ('tbl_users.userId', 'firstname', 'surname' ) );`
+- `framework/app/core_modules/context/classes/usercontext_class_inc.php:176` — reference — `return $this->objGroups->contextUsers ( 'Guests', $contextCode, array ('tbl_users.userId', 'firstname', 'surname' ) );`
+- `framework/app/core_modules/context/classes/utilities_class_inc.php:883` — select — `"select puid  from tbl_users where userid = '$userid'";`
+- `framework/app/installer/steps/databasecreate.inc:156` — reference — `$this->_installDb32('core_modules/security/sql/tbl_users.sql');`
+- `framework/app/classes/core/engine_class_inc.php:1002` — reference — `'tbl_users' => array (`
+- `modules/uwcelearningmobile/classes/util_class_inc.php:67` — select — `$sql = 'SELECT username, userId FROM tbl_users';`
+- `modules/uwcelearningmobile/classes/util_class_inc.php:107` — select — `INNER JOIN tbl_users ON tbl_assignment_submit.userid = tbl_users.userid  WHERE assignmentid=\''.$assignmentId.'\' ORDER BY '.$orderBy;`
+- `modules/uwcelearningmobile/classes/util_class_inc.php:107` — select — `INNER JOIN tbl_users ON tbl_assignment_submit.userid = tbl_users.userid  WHERE assignmentid=\''.$assignmentId.'\' ORDER BY '.$orderBy;`
+- `modules/userimport/classes/dbuserimport_class_inc.php:105` — delete — `// now from tbl_users...`
+- `modules/userimport/classes/dbuserimport_class_inc.php:154` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:154` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:154` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:155` — select — `."where tbl_importusers.batchId='$batchCode' and tbl_users.userId=tbl_importusers.userId";`
+- `modules/userimport/classes/dbuserimport_class_inc.php:177` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:177` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:177` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:178` — select — `."where tbl_importusers.batchId='$batchCode' and tbl_users.userId=tbl_importusers.userId";`
+- `modules/userimport/classes/dbuserimport_class_inc.php:196` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:196` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:196` — select — `$sql="select tbl_users.userId, tbl_users.username, firstname,surname,title,sex,emailAddress from tbl_users,tbl_importusers "`
+- `modules/userimport/classes/dbuserimport_class_inc.php:197` — select — `."where tbl_importusers.batchId='$batchCode' and tbl_users.userId=tbl_importusers.userId";`
+- `modules/userimport/classes/dbuserimport_class_inc.php:199` — select — `$sql="select userId, username, pass as cryptpassword, firstname,surname,title,sex,emailAddress from tbl_users";`
+- `modules/userimport/classes/dbuserimport_class_inc.php:250` — insert/unknown — `$fields=array("tbl_users.userId AS userId", "username", "pass as cryptpassword", "firstname",`
+- `modules/iconrequest/templates/content/dev_edit_tpl.php:43` — select — `$users = $this->objUser->getArray("SELECT firstName, surname, userId FROM tbl_users WHERE 1");`
+- `modules/simpleregistration/classes/dbregistration_class_inc.php:55` — select — `$sql="select * from  tbl_users where username= '".$username."'";`
+- `modules/generator/controller.php:258` — reference — `$this->setVar('str', $objSch->getXmlSchema('tbl_users'));`
+- `modules/wall/classes/dbcomment_class_inc.php:92` — select — `tbl_users.userid,`
+- `modules/wall/classes/dbcomment_class_inc.php:93` — select — `tbl_users.firstname,`
+- `modules/wall/classes/dbcomment_class_inc.php:94` — select — `tbl_users.surname,`
+- `modules/wall/classes/dbcomment_class_inc.php:95` — reference — `tbl_users.username,`
+- `modules/wall/classes/dbcomment_class_inc.php:99` — reference — `FROM tbl_wall_comments, tbl_users, tbl_wall_posts`
+- `modules/wall/classes/dbcomment_class_inc.php:100` — reference — `WHERE tbl_wall_comments.posterId = tbl_users.userid`
+- `modules/wall/classes/dbwall_class_inc.php:103` — select — `tbl_users.userid,`
+- `modules/wall/classes/dbwall_class_inc.php:104` — select — `tbl_users.firstname,`
+- `modules/wall/classes/dbwall_class_inc.php:105` — select — `tbl_users.surname,`
+- `modules/wall/classes/dbwall_class_inc.php:106` — select — `tbl_users.username,`
+- `modules/wall/classes/dbwall_class_inc.php:111` — reference — `FROM tbl_wall_posts, tbl_users`
+- `modules/wall/classes/dbwall_class_inc.php:112` — reference — `WHERE tbl_wall_posts.posterId = tbl_users.userid';`
+- `modules/wall/classes/dbwall_class_inc.php:143` — select — `tbl_users.userid,`
+- `modules/wall/classes/dbwall_class_inc.php:144` — select — `tbl_users.firstname,`
+- `modules/wall/classes/dbwall_class_inc.php:145` — select — `tbl_users.surname,`
+- `modules/wall/classes/dbwall_class_inc.php:146` — select — `tbl_users.username,`
+- `modules/wall/classes/dbwall_class_inc.php:151` — reference — `FROM tbl_wall_posts, tbl_users`
+- `modules/wall/classes/dbwall_class_inc.php:152` — reference — `WHERE tbl_wall_posts.posterId = tbl_users.userid ';`
+- `modules/buddies/sql/tbl_buddies.sql:13` — update — `CONSTRAINT `tbl_buddies_ibfk_2` FOREIGN KEY (`buddyId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,`
+- `modules/buddies/sql/tbl_buddies.sql:14` — update — `CONSTRAINT `tbl_buddies_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE`
+- `modules/buddies/classes/dbbuddies_class_inc.php:58` — select — `CONCAT(tbl_users.firstName, ' ', tbl_users.surname) AS Fullname`
+- `modules/buddies/classes/dbbuddies_class_inc.php:58` — select — `CONCAT(tbl_users.firstName, ' ', tbl_users.surname) AS Fullname`
+- `modules/buddies/classes/dbbuddies_class_inc.php:59` — select — `FROM tbl_buddies, tbl_users`
+- `modules/buddies/classes/dbbuddies_class_inc.php:61` — reference — `(tbl_buddies.buddyId = tbl_users.userId)`
+- `modules/buddies/classes/dbbuddies_class_inc.php:79` — select — `CONCAT(tbl_users.firstName, ' ', tbl_users.surname) AS Fullname`
+- `modules/buddies/classes/dbbuddies_class_inc.php:79` — select — `CONCAT(tbl_users.firstName, ' ', tbl_users.surname) AS Fullname`
+- `modules/buddies/classes/dbbuddies_class_inc.php:80` — select — `FROM tbl_buddies, tbl_users`
+- `modules/buddies/classes/dbbuddies_class_inc.php:82` — reference — `(tbl_buddies.userId = tbl_users.userId)`
+- `modules/buddies/classes/dbbuddies_class_inc.php:100` — insert/unknown — `tbl_users.firstName,`
+- `modules/buddies/classes/dbbuddies_class_inc.php:101` — insert/unknown — `tbl_users.surname,`
+- `modules/buddies/classes/dbbuddies_class_inc.php:102` — insert/unknown — `tbl_users.emailAddress`
+- `modules/buddies/classes/dbbuddies_class_inc.php:103` — insert/unknown — `FROM tbl_buddies, tbl_users`
+- `modules/buddies/classes/dbbuddies_class_inc.php:105` — insert/unknown — `AND (tbl_buddies.buddyId = tbl_users.userId)`
+- `modules/buddies/classes/dbbuddies_class_inc.php:106` — reference — `ORDER BY tbl_users.firstName, tbl_users.surname";`
+- `modules/buddies/classes/dbbuddies_class_inc.php:106` — reference — `ORDER BY tbl_users.firstName, tbl_users.surname";`
+- `modules/buddies/classes/dbbuddies_class_inc.php:234` — select — `. " tbl_users as users"`
+- `modules/buddies/classes/dbusers_class_inc.php:10` — reference — `* Model class for the table tbl_users`
+- `modules/buddies/classes/dbusers_class_inc.php:21` — reference — `parent::init('tbl_users');`
+- `modules/buddies/classes/dbusers_class_inc.php:31` — select — `$sql = "SELECT userId, firstName, surname, emailAddress FROM tbl_users"`
+- `modules/buddies/classes/dbusers_class_inc.php:44` — select — `$sql = "SELECT userId, firstName, surname, emailAddress FROM tbl_users"`
+- `modules/pbladmin/controller.php:288` — reference — `$filter .= " ON (tbl_users.id=log.studentid) AND (log.classroomid='$id')";`
+- `modules/profiles/classes/dbprofiles_class_inc.php:28` — reference — `$this->usrTable = 'tbl_users';`
+- `modules/schoolregisterusers/controller.php:224` — insert/unknown — `* that the OER project needs, as well as the data from tbl_users`
+- `modules/schoolregisterusers/controller.php:238` — insert/unknown — `* the data from tbl_users`
+- `modules/schoolregisterusers/controller.php:252` — insert/unknown — `* the data from tbl_users`
+- `modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php:226` — insert/unknown — `// Add the user to the primary tbl_users and get the id back`
+- `modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php:262` — select — `$sql = "SELECT tbl_users.*, "`
+- `modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php:273` — reference — `. "FROM tbl_users LEFT OUTER JOIN "`
+- `modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php:275` — reference — `. "= tbl_users.id WHERE tbl_users.id = '$id';";`
+- `modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php:275` — reference — `. "= tbl_users.id WHERE tbl_users.id = '$id';";`
+- `modules/schoolregisterusers/classes/dbschumuserdata_class_inc.php:296` — select — `. " FROM tbl_users WHERE isactive=1 LIMIT $start, $records";`
+- `modules/schoolregisterusers/classes/dbschumusermain_class_inc.php:64` — reference — `parent::init("tbl_users");`
+- `modules/cmsadmin/controller.php:1730` — reference — `$fields = array ( 'tbl_users.id' );`
+- `modules/cmsadmin/controller.php:1843` — reference — `$fields = array ( 'tbl_users.id' );`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:267` — select — `$sql = "SELECT id from tbl_users WHERE userId = '$userid'";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:440` — select — `$sql = "SELECT id from tbl_users WHERE userId = '$userid'";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1117` — select — `$sql = "SELECT userId as id, username, firstname, surname FROM tbl_users WHERE userId IN ($in_part)";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1193` — select — `$sql = "SELECT userId as id, username, firstname, surname FROM tbl_users WHERE userId IN ($in_part)";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1253` — select — `FROM tbl_cms_section_user as su, tbl_users as u`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1296` — select — `FROM tbl_cms_content_user as su, tbl_users as u`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1338` — select — `FROM tbl_users";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1375` — select — `$sql = "SELECT userId as id, username, firstname, surname FROM tbl_users WHERE userId NOT IN ($in_part) ORDER BY firstname, surname ASC ";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1379` — select — `$sql = "SELECT userId as id, username, firstname, surname FROM tbl_users ORDER BY firstname, surname ASC";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1461` — select — `$sql = "SELECT userid as id, username, firstname, surname FROM tbl_users WHERE userId NOT IN ($in_part) ORDER BY firstname, surname ASC ";`
+- `modules/cmsadmin/classes/dbsecurity_class_inc.php:1465` — select — `$sql = "SELECT userid as id, username, firstname, surname FROM tbl_users ORDER BY firstname, surname ASC";`
+- `modules/contextcontent/classes/alertutils_class_inc.php:85` — insert/unknown — `$students = $this->objManageGroups->contextUsers('Students', $contextCode, array( 'tbl_users.userid','emailaddress', 'firstname', 'surname'));`
+- `modules/schoolusers/classes/dbusers_class_inc.php:75` — reference — `parent::init('tbl_users');`
+- `modules/schoolusers/classes/dbusers_class_inc.php:76` — reference — `$this->table = 'tbl_users';`
+- `modules/gis/classes/dbpostgis_class_inc.php:52` — reference — `parent::init('tbl_users');`
+- `modules/myprofile/classes/dbfriends_class_inc.php:112` — select — `tbl_users.userid AS user_userid,`
+- `modules/myprofile/classes/dbfriends_class_inc.php:113` — select — `tbl_users.firstname,`
+- `modules/myprofile/classes/dbfriends_class_inc.php:114` — select — `tbl_users.surname,`
+- `modules/myprofile/classes/dbfriends_class_inc.php:115` — select — `tbl_users.username,`
+- `modules/myprofile/classes/dbfriends_class_inc.php:116` — select — `tbl_users.emailaddress,`
+- `modules/myprofile/classes/dbfriends_class_inc.php:119` — select — `WHERE tbl_foaf_friends.userid = tbl_users.userid`
+- `modules/myprofile/classes/dbfriends_class_inc.php:121` — reference — `FROM tbl_foaf_friends, tbl_users`
+- `modules/myprofile/classes/dbfriends_class_inc.php:123` — reference — `AND tbl_foaf_friends.fuserid = tbl_users.userid`
+- `modules/myprofile/classes/dbfriends_class_inc.php:124` — reference — `ORDER BY tbl_users.firstname';`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:17` — reference — `parent::init('tbl_users');`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:31` — select — `FROM tbl_users";`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:45` — select — `FROM tbl_users";`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:76` — select — `FROM tbl_users";`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:90` — select — `FROM tbl_users WHERE sex='F'";`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:104` — select — `FROM tbl_users WHERE sex='M'";`
+- `modules/sitestats/classes/dbuserstats_class_inc.php:119` — select — `FROM tbl_users`
+- `modules/sports/sql/tbl_sports.sql:13` — update — `REFERENCES tbl_users(userId)`
+- `modules/artdir/controller.php:121` — insert/unknown — `//create the basic foaf profile from tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:104` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:105` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:106` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:107` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:112` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:113` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:119` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:120` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:121` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:122` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:123` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:124` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:158` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:159` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:160` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:161` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:166` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:167` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:172` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:173` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:174` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:175` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:176` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:177` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:203` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:204` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:205` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:206` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:211` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:212` — reference — `WHERE tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:219` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:220` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:221` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:222` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:223` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:224` — reference — `WHERE tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:240` — select — `tbl_users.userid as usersid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:241` — reference — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:242` — reference — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:243` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:244` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:245` — reference — `WHERE tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:266` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:267` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:268` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:269` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:274` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:275` — select — `WHERE tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:279` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:280` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:281` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:282` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:283` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:284` — reference — `WHERE tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:307` — reference — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:308` — reference — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:309` — reference — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:310` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:311` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:365` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:366` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:367` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:368` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:373` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:374` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:382` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:383` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:384` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:385` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:386` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:387` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:421` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:422` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:423` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:424` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:429` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:430` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:438` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:439` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:440` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:441` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:442` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:443` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:497` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:498` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:499` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:500` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:505` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:506` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:514` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:515` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:516` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:517` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:518` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:519` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:542` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:543` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:544` — select — `tbl_users.surname`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:545` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:547` — reference — `AND tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:578` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:579` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:580` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:581` — select — `tbl_users.username,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:586` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:587` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:595` — select — `tbl_users.userid,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:596` — select — `tbl_users.firstname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:597` — select — `tbl_users.surname,`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:598` — reference — `tbl_users.username`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:599` — reference — `FROM tbl_simpleblog_posts, tbl_users`
+- `modules/simpleblog/classes/dbsimpleblog_class_inc.php:600` — reference — `WHERE  tbl_simpleblog_posts.userid = tbl_users.userid`
+- `modules/oeruserdata/controller.php:221` — insert/unknown — `* that the OER project needs, as well as the data from tbl_users`
+- `modules/oeruserdata/controller.php:235` — insert/unknown — `* the data from tbl_users`
+- `modules/oeruserdata/controller.php:249` — insert/unknown — `* the data from tbl_users`
+- `modules/oeruserdata/classes/dboeruserdata_class_inc.php:268` — select — `$sql = "SELECT tbl_users.*, "`
+- `modules/oeruserdata/classes/dboeruserdata_class_inc.php:281` — reference — `. "FROM tbl_users LEFT OUTER JOIN "`
+- `modules/oeruserdata/classes/dboeruserdata_class_inc.php:283` — reference — `. "= tbl_users.id WHERE tbl_users.id = '$id';";`
+- `modules/oeruserdata/classes/dboeruserdata_class_inc.php:283` — reference — `. "= tbl_users.id WHERE tbl_users.id = '$id';";`
+- `modules/oeruserdata/classes/dboeruserdata_class_inc.php:304` — select — `. " FROM tbl_users WHERE isactive=1 LIMIT $start, $records";`
+- `modules/oeruserdata/classes/dboerusermain_class_inc.php:64` — reference — `parent::init("tbl_users");`
+- `modules/essay/sql/tbl_essay_book.sql:18` — update — `CONSTRAINT `essayBookStudent` FOREIGN KEY (`studentid`) REFERENCES `tbl_users` (`userId`)`
+- `modules/essay/sql/tbl_essay_zipfiles.sql:18` — update — `CONSTRAINT `essayBookStudent` FOREIGN KEY (`studentid`) REFERENCES `tbl_users` (`userId`)`
+- `modules/internalmail/classes/dbrouting_class_inc.php:30` — reference — `$this->tblUsers = 'tbl_users';`
+- `modules/internalmail/classes/dbemailusers_class_inc.php:2` — reference — `/* ----------- data class extends dbTable for tbl_users ----------*/`
+- `modules/internalmail/classes/dbemailusers_class_inc.php:27` — reference — `parent::init('tbl_users');`
+- `modules/internalmail/classes/dbemailusers_class_inc.php:28` — reference — `$this->table = 'tbl_users';`
+- `modules/oer/classes/groupmanager_class_inc.php:329` — update/unknown — `$groupEditors = $objManageGroups->contextUsers('Lecturers', $contextCode, array('tbl_users.userId', 'firstName', 'surname'));`
+- `modules/oer/classes/groupmanager_class_inc.php:330` — update/unknown — `$groupReadOnly = $objManageGroups->contextUsers('Students', $contextCode, array('tbl_users.userId', 'firstName', 'surname'));`
+- `modules/assignment/classes/dbassignmentsubmit_class_inc.php:77` — select — `$sql = ' SELECT tbl_assignment_submit.*, tbl_users.username, firstName, surname, staffnumber FROM tbl_assignment_submit`
+- `modules/assignment/classes/dbassignmentsubmit_class_inc.php:78` — select — `INNER JOIN tbl_users ON tbl_assignment_submit.userid = tbl_users.userid  WHERE assignmentid=\'' . $assignmentId . '\' ORDER BY ' . $orderBy;`
+- `modules/assignment/classes/dbassignmentsubmit_class_inc.php:78` — select — `INNER JOIN tbl_users ON tbl_assignment_submit.userid = tbl_users.userid  WHERE assignmentid=\'' . $assignmentId . '\' ORDER BY ' . $orderBy;`
+- `modules/dbmanager/classes/dbmanagerdb_class_inc.php:40` — reference — `//$listf = $this->listTableFields('tbl_users');`
+- `modules/podcaster/classes/dbpodcastertags_class_inc.php:243` — select — `$sql = 'SELECT DISTINCT tbl_podcaster_metadata_media.id, tbl_podcaster_metadata_media.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_podcaster_metadata_media, tbl_podcaster_tags, tbl_users`
+- `modules/podcaster/classes/dbpodcastertags_class_inc.php:243` — select — `$sql = 'SELECT DISTINCT tbl_podcaster_metadata_media.id, tbl_podcaster_metadata_media.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_podcaster_metadata_media, tbl_podcaster_tags, tbl_users`
+- `modules/podcaster/classes/dbpodcastertags_class_inc.php:243` — select — `$sql = 'SELECT DISTINCT tbl_podcaster_metadata_media.id, tbl_podcaster_metadata_media.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_podcaster_metadata_media, tbl_podcaster_tags, tbl_users`
+- `modules/podcaster/classes/dbpodcastertags_class_inc.php:244` — select — `WHERE (tbl_podcaster_tags.fileid = tbl_podcaster_metadata_media.id AND tbl_podcaster_metadata_media.creatorid = tbl_users.userid) AND tbl_podcaster_tags.tag LIKE \''.$tag.'\' AND tbl_podcaster_metadata_media.publishstatus="'.$published.'" ORDER BY '.$sortstring;`
+- `modules/podcaster/classes/eventutils_class_inc.php:284` — reference — `'tbl_users.id'`
+- `modules/podcaster/classes/eventutils_class_inc.php:418` — reference — `'tbl_users.id'`
+- `modules/podcaster/classes/eventutils_class_inc.php:535` — reference — `'tbl_users.id'`
+- `modules/podcaster/classes/dbfolderpermissions_class_inc.php:164` — select — `$sql="select userid,username,firstname,surname from tbl_users where`
+- `modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php:36` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded LIKE \''.date('Y-m-d').'%\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php:36` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded LIKE \''.date('Y-m-d').'%\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php:60` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded > \''.$startOfWeek .'\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php:60` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded > \''.$startOfWeek .'\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php:71` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid) GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/podcaster/classes/dbpodcasteruploadscounter_class_inc.php:71` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid) GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/kngimport/classes/remoteimportexportutils_class_inc.php:284` — select — `$query="SELECT * from tbl_users where id='".$line['user_id']."'";`
+- `modules/kngimport/classes/remoteimportexportutils_class_inc.php:285` — select — `$user=$this->importDBData($this->dsn,'tbl_users',$query);`
+- `modules/foaf/controller.php:153` — insert/unknown — `//create the basic foaf profile from tbl_users`
+- `modules/foaf/classes/dbfoaf_class_inc.php:10` — reference — `* Model class to get as much FOAF useable information from tbl_users`
+- `modules/foaf/classes/dbfoaf_class_inc.php:59` — reference — `parent::init('tbl_users');`
+- `modules/foaf/classes/dbfoaf_class_inc.php:74` — reference — `* Method to get a recordset from tbl_users for a particular userId`
+- `modules/foaf/classes/dbfoaf_class_inc.php:107` — reference — `* Method to get all known users from tbl_users`
+- `modules/foaf/classes/dbfoaf_class_inc.php:114` — read/unknown — `$this->_changeTable('tbl_users');`
+- `modules/foaf/classes/dbfoaf_class_inc.php:133` — read/unknown — `$this->_changeTable('tbl_users');`
+- `modules/foaf/classes/foafops_class_inc.php:95` — reference — `* Method to create a basic FOAF RDF file based on the info in tbl_users`
+- `modules/foaf/classes/foafops_class_inc.php:111` — reference — `//retrieve what ever other info about the user we can get from tbl_users`
+- `modules/foaf/classes/foafops_class_inc.php:112` — reference — `$uarr = $this->dbFoaf->getRecordSet($userid, 'tbl_users');`
+- `modules/foaf/classes/foafops_class_inc.php:434` — reference — `$uarr = $this->dbFoaf->getRecordSet($fuserid, 'tbl_users');`
+- `modules/foaf/classes/dbfoafusers_class_inc.php:10` — reference — `* Model class to get as much FOAF useable information from tbl_users`
+- `modules/foaf/classes/dbfoafusers_class_inc.php:47` — reference — `parent::init('tbl_users');`
+- `modules/foaf/classes/dbfoafusers_class_inc.php:62` — reference — `* Method to get a recordset from tbl_users for a particular userId`
+- `modules/websearch/sql/tbl_websearch.sql:13` — update — `FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE`
+- `modules/homepage/sql/tbl_homepages.sql:20` — update — `CONSTRAINT `tbl_homepages_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE`
+- `modules/homepage/classes/dbhomepages_class_inc.php:106` — reference — `* Join on the tbl_users and tbl_hompages tables and returns`
+- `modules/homepage/classes/dbhomepages_class_inc.php:115` — select — `tbl_users.firstname,`
+- `modules/homepage/classes/dbhomepages_class_inc.php:116` — select — `tbl_users.surname`
+- `modules/homepage/classes/dbhomepages_class_inc.php:117` — reference — `FROM tbl_users, tbl_homepages`
+- `modules/homepage/classes/dbhomepages_class_inc.php:118` — reference — `WHERE tbl_homepages.userid = tbl_users.userid";`
+- `modules/homepage/classes/dbhomepages_class_inc.php:140` — reference — `INNER JOIN tbl_users ON ( tbl_homepages.userid = tbl_users.userid )`
+- `modules/homepage/classes/dbhomepages_class_inc.php:140` — reference — `INNER JOIN tbl_users ON ( tbl_homepages.userid = tbl_users.userid )`
+- `modules/homepage/classes/dbhomepages_class_inc.php:170` — reference — `INNER JOIN tbl_users ON ( tbl_homepages.userid = tbl_users.userid )`
+- `modules/homepage/classes/dbhomepages_class_inc.php:170` — reference — `INNER JOIN tbl_users ON ( tbl_homepages.userid = tbl_users.userid )`
+- `modules/contextinstructor/classes/manager_class_inc.php:23` — reference — `$lecturers = $this->objManageGroups->contextUsers('Lecturers', $this->contextCode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:74` — select — `$sql = "SELECT {$this->_tableName}.userid, tbl_users.username, tbl_users.firstname, tbl_users.surname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:74` — select — `$sql = "SELECT {$this->_tableName}.userid, tbl_users.username, tbl_users.firstname, tbl_users.surname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:74` — select — `$sql = "SELECT {$this->_tableName}.userid, tbl_users.username, tbl_users.firstname, tbl_users.surname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:74` — select — `$sql = "SELECT {$this->_tableName}.userid, tbl_users.username, tbl_users.firstname, tbl_users.surname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:75` — select — `WHERE {$this->_tableName}.userid=tbl_users.userid`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:77` — select — `ORDER BY tbl_users.surname, tbl_users.firstname ASC";`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:77` — select — `ORDER BY tbl_users.surname, tbl_users.firstname ASC";`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:95` — select — `$sql = "SELECT {$this->_tableName}.userid,'tbl_users.firstName' || ' ' || 'tbl_users.surname' AS fullname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:95` — select — `$sql = "SELECT {$this->_tableName}.userid,'tbl_users.firstName' || ' ' || 'tbl_users.surname' AS fullname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:95` — select — `$sql = "SELECT {$this->_tableName}.userid,'tbl_users.firstName' || ' ' || 'tbl_users.surname' AS fullname FROM $this->_tableName, tbl_users`
+- `modules/workgroup/classes/dbworkgroupusers_class_inc.php:96` — select — `WHERE {$this->_tableName}.userid=tbl_users.userid`
+- `modules/workgroup/classes/dbusers_class_inc.php:10` — reference — `* Model class for the table tbl_users`
+- `modules/workgroup/classes/dbusers_class_inc.php:21` — reference — `parent::init('tbl_users');`
+- `modules/events/classes/dbevents_class_inc.php:988` — read/unknown — `$this->changeTable('tbl_users');`
+- `modules/eportfolio/controller.php:2102` — reference — `'tbl_users.id'`
+- `modules/eportfolio/controller.php:2156` — reference — `'tbl_users.id'`
+- `modules/eportfolio/controller.php:2193` — reference — `'tbl_users.id'`
+- `modules/eportfolio/controller.php:2302` — reference — `'tbl_users.id'`
+- `modules/eportfolio/controller.php:2588` — reference — `'tbl_users.id'`
+- `modules/eportfolio/controller.php:2701` — reference — `'tbl_users.id'`
+- `modules/eportfolio/templates/content/view_others_tpl.php:116` — reference — `'tbl_users.id'`
+- `modules/eportfolio/templates/content/view_others_tpl.php:154` — reference — `'tbl_users.id'`
+- `modules/eportfolio/templates/content/main_tpl.php:215` — reference — `'tbl_users.id'`
+- `modules/eportfolio/templates/content/main_tpl.php:252` — reference — `'tbl_users.id'`
+- `modules/sportsadmin/sql/tbl_tournament.sql:13` — update — `CONSTRAINT `FK_sports_userId` FOREIGN KEY (`creator`) REFERENCES `tbl_users` (`userId`)`
+- `modules/sportsadmin/sql/tbl_sportsnews.sql:18` — update — `REFERENCES tbl_users(userId)`
+- `modules/sportsadmin/sql/tbl_sportsnews.sql:26` — update — `REFERENCES tbl_users (userId)`
+- `modules/sportsadmin/sql/tbl_sports.sql:13` — update — `REFERENCES tbl_users(userId)`
+- `modules/sportsadmin/sql/tbl_playerdata.sql:17` — update — `REFERENCES tbl_users(userId)`
+- `modules/sportsadmin/sql/tbl_playerdata.sql:21` — update — `REFERENCES tbl_users(userId)`
+- `modules/mcqtests/sql/tbl_test_results.sql:12` — update — `CONSTRAINT `testResultsStudent` FOREIGN KEY (`studentId`) REFERENCES `tbl_users` (`userId`)`
+- `modules/mcqtests/sql/tbl_tests.sql:24` — update — `CONSTRAINT `testStudent` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`)`
+- `modules/mcqtests/sql/tbl_test_marked.sql:14` — update — `CONSTRAINT `testMarkedStudent` FOREIGN KEY (`studentId`) REFERENCES `tbl_users` (`userId`)`
+- `modules/mcqtests/classes/dbresults_class_inc.php:128` — select — `tbl_users.username,`
+- `modules/mcqtests/classes/dbresults_class_inc.php:129` — select — `tbl_users.firstname,`
+- `modules/mcqtests/classes/dbresults_class_inc.php:130` — reference — `tbl_users.surname`
+- `modules/mcqtests/classes/dbresults_class_inc.php:131` — reference — `FROM {$this->table}, tbl_users`
+- `modules/mcqtests/classes/dbresults_class_inc.php:133` — reference — `AND {$this->table}.studentid = tbl_users.userId";`
+- `modules/mcqtests/classes/dbmarked_class_inc.php:36` — reference — `$this->usersTable = 'tbl_users';`
+- `modules/courselecturers/sql/tbl_courselecturers.sql:13` — update — `CONSTRAINT `tbl_buddies_ibfk_2` FOREIGN KEY (`buddyId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,`
+- `modules/courselecturers/sql/tbl_courselecturers.sql:14` — update — `CONSTRAINT `tbl_buddies_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE`
+- `modules/forum/controller.php:2389` — reference — `$recipients = $this->objManageGroups->contextUsers('Students', $this->contextCode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `modules/forum/controller.php:2408` — reference — `$members = $this->objManageGroups->contextUsers('Students', $this->contextCode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `modules/forum/classes/forumstats_class_inc.php:108` — select — `$sql = 'SELECT count(DISTINCT(tbl_forum_post.id)) as posts, tbl_users.userId, firstName, surname`
+- `modules/forum/classes/forumstats_class_inc.php:112` — reference — `INNER JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/forumstats_class_inc.php:112` — reference — `INNER JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/forumstats_class_inc.php:114` — reference — `GROUP BY tbl_users.userId ORDER BY firstName DESC';`
+- `modules/forum/classes/forumstats_class_inc.php:128` — select — `$sql = 'SELECT tbl_users.userId, firstName, surname, count( tbl_forum_topic.userId ) AS topics`
+- `modules/forum/classes/forumstats_class_inc.php:131` — select — `INNER JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId )`
+- `modules/forum/classes/forumstats_class_inc.php:131` — select — `INNER JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId )`
+- `modules/forum/classes/forumstats_class_inc.php:147` — select — `$sql = 'SELECT tbl_users.userId, firstName, surname, count( tbl_forum_topic.userId ) AS tangents`
+- `modules/forum/classes/forumstats_class_inc.php:150` — select — `INNER JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId )`
+- `modules/forum/classes/forumstats_class_inc.php:150` — select — `INNER JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId )`
+- `modules/forum/classes/dbtopicsubscriptions_class_inc.php:101` — select — `INNER JOIN tbl_users`
+- `modules/forum/classes/dbtopicsubscriptions_class_inc.php:102` — select — `ON ( tbl_forum_subscribe_topic.userid = tbl_users.userid )`
+- `modules/forum/classes/dbpost_class_inc.php:273` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/forum/classes/dbpost_class_inc.php:273` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/forum/classes/dbpost_class_inc.php:273` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/forum/classes/dbpost_class_inc.php:276` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:276` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:324` — reference — `tbl_users.firstname,`
+- `modules/forum/classes/dbpost_class_inc.php:325` — reference — `tbl_users.surname,`
+- `modules/forum/classes/dbpost_class_inc.php:326` — reference — `tbl_users.username,`
+- `modules/forum/classes/dbpost_class_inc.php:336` — reference — `tbl_users ON (tbl_forum_post.userId = tbl_users.userId)`
+- `modules/forum/classes/dbpost_class_inc.php:336` — reference — `tbl_users ON (tbl_forum_post.userId = tbl_users.userId)`
+- `modules/forum/classes/dbpost_class_inc.php:404` — reference — `tbl_users.firstname,`
+- `modules/forum/classes/dbpost_class_inc.php:405` — reference — `tbl_users.surname,`
+- `modules/forum/classes/dbpost_class_inc.php:406` — reference — `tbl_users.username,`
+- `modules/forum/classes/dbpost_class_inc.php:422` — reference — `tbl_users ON (tbl_forum_post.userId = tbl_users.userId)`
+- `modules/forum/classes/dbpost_class_inc.php:422` — reference — `tbl_users ON (tbl_forum_post.userId = tbl_users.userId)`
+- `modules/forum/classes/dbpost_class_inc.php:495` — update/unknown — `tbl_users.firstname,`
+- `modules/forum/classes/dbpost_class_inc.php:496` — update/unknown — `tbl_users.surname,`
+- `modules/forum/classes/dbpost_class_inc.php:497` — reference — `tbl_users.username,`
+- `modules/forum/classes/dbpost_class_inc.php:511` — reference — `tbl_users ON (tbl_forum_post.userId = tbl_users.userId)`
+- `modules/forum/classes/dbpost_class_inc.php:511` — reference — `tbl_users ON (tbl_forum_post.userId = tbl_users.userId)`
+- `modules/forum/classes/dbpost_class_inc.php:540` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_forum_topic.*, tbl_users.firstname, tbl_users.surname, tbl_forum_post.datelastupdated AS datelastupdated, tbl_forum_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage`
+- `modules/forum/classes/dbpost_class_inc.php:540` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_forum_topic.*, tbl_users.firstname, tbl_users.surname, tbl_forum_post.datelastupdated AS datelastupdated, tbl_forum_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage`
+- `modules/forum/classes/dbpost_class_inc.php:544` — reference — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:544` — reference — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1335` — select — `$sql = 'SELECT tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/forum/classes/dbpost_class_inc.php:1335` — select — `$sql = 'SELECT tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/forum/classes/dbpost_class_inc.php:1335` — select — `$sql = 'SELECT tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/forum/classes/dbpost_class_inc.php:1338` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1338` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1358` — select — `$sql = 'SELECT distinct tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/forum/classes/dbpost_class_inc.php:1358` — select — `$sql = 'SELECT distinct tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/forum/classes/dbpost_class_inc.php:1358` — select — `$sql = 'SELECT distinct tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/forum/classes/dbpost_class_inc.php:1361` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1361` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1385` — select — `$sql = 'SELECT tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname`
+- `modules/forum/classes/dbpost_class_inc.php:1385` — select — `$sql = 'SELECT tbl_forum_post_text. * , tbl_forum_post.topic_id, tbl_users.firstname, tbl_users.surname`
+- `modules/forum/classes/dbpost_class_inc.php:1388` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1388` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1983` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_users.firstname, tbl_users.surname FROM tbl_forum_post`
+- `modules/forum/classes/dbpost_class_inc.php:1983` — select — `$sql = 'SELECT tbl_forum_post.*, tbl_forum_post_text.*, tbl_users.firstname, tbl_users.surname FROM tbl_forum_post`
+- `modules/forum/classes/dbpost_class_inc.php:1985` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbpost_class_inc.php:1985` — select — `LEFT  JOIN tbl_users ON ( tbl_forum_post.userId = tbl_users.userId )`
+- `modules/forum/classes/dbforumsubscriptions_class_inc.php:69` — select — `$sql = 'SELECT DISTINCT emailAddress FROM tbl_forum_subscribe_forum INNER JOIN tbl_users ON ( tbl_forum_subscribe_forum.userid = tbl_users.userid ) WHERE forum_id = "'.$forum_id.'"';`
+- `modules/forum/classes/dbforumsubscriptions_class_inc.php:69` — select — `$sql = 'SELECT DISTINCT emailAddress FROM tbl_forum_subscribe_forum INNER JOIN tbl_users ON ( tbl_forum_subscribe_forum.userid = tbl_users.userid ) WHERE forum_id = "'.$forum_id.'"';`
+- `modules/forum/classes/dbtopic_class_inc.php:174` — select — `tbl_users.firstname,`
+- `modules/forum/classes/dbtopic_class_inc.php:175` — reference — `tbl_users.surname, tbl_users.username,`
+- `modules/forum/classes/dbtopic_class_inc.php:175` — reference — `tbl_users.surname, tbl_users.username,`
+- `modules/forum/classes/dbtopic_class_inc.php:191` — reference — `.' LEFT  JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId ) '`
+- `modules/forum/classes/dbtopic_class_inc.php:191` — reference — `.' LEFT  JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId ) '`
+- `modules/forum/classes/dbtopic_class_inc.php:203` — reference — `.' LEFT  JOIN tbl_users as lastPostUser ON ( post2.userId = lastPostUser.userId ) '`
+- `modules/forum/classes/dbtopic_class_inc.php:276` — select — `$sql = 'SELECT tbl_forum_topic. * , tbl_forum_post_text.post_title, tbl_users.firstname, tbl_users.surname,tbl_users.username,lastPostUser.firstName AS lastFirstName, lastPostUser.surname AS lastSurname, lastPostUser.username AS lastusername, post2.dateLastUpdated AS lastdate`
+- `modules/forum/classes/dbtopic_class_inc.php:276` — select — `$sql = 'SELECT tbl_forum_topic. * , tbl_forum_post_text.post_title, tbl_users.firstname, tbl_users.surname,tbl_users.username,lastPostUser.firstName AS lastFirstName, lastPostUser.surname AS lastSurname, lastPostUser.username AS lastusername, post2.dateLastUpdated AS lastdate`
+- `modules/forum/classes/dbtopic_class_inc.php:276` — select — `$sql = 'SELECT tbl_forum_topic. * , tbl_forum_post_text.post_title, tbl_users.firstname, tbl_users.surname,tbl_users.username,lastPostUser.firstName AS lastFirstName, lastPostUser.surname AS lastSurname, lastPostUser.username AS lastusername, post2.dateLastUpdated AS lastdate`
+- `modules/forum/classes/dbtopic_class_inc.php:281` — reference — `LEFT JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId )`
+- `modules/forum/classes/dbtopic_class_inc.php:281` — reference — `LEFT JOIN tbl_users ON ( tbl_forum_topic.userId = tbl_users.userId )`
+- `modules/forum/classes/dbtopic_class_inc.php:282` — reference — `LEFT  JOIN tbl_users as lastPostUser ON ( post2.userId = lastPostUser.userId )`
+- `modules/userextra/classes/dbuserextra_class_inc.php:13` — reference — `parent::init('tbl_users');`
+- `modules/userextra/classes/dbuserextra_class_inc.php:14` — reference — `$this->tablename = 'tbl_users';`
+- `modules/userextra/classes/dbuserextra_class_inc.php:25` — select — `"select puid  from tbl_users where userid = '$userid'";`
+- `modules/userextra/classes/dbuserextra_class_inc.php:34` — select — `"select puid  from tbl_users where username = '$username'";`
+- `modules/sudoku/sql/tbl_sudoku.sql:16` — reference — `CONSTRAINT `sudoku` FOREIGN KEY (`creatorId`) REFERENCES `tbl_users` (`userId`)`
+- `modules/blog/controller.php:670` — select — `$sql = "SELECT * FROM tbl_users WHERE userid = '" . $blogs['userid'] . "'";`
+- `modules/blog/classes/dbblog_class_inc.php:882` — read/unknown — `$this->_changeTable('tbl_users');`
+- `modules/blog/classes/blogmail_class_inc.php:263` — insert/unknown — `// check the address against tbl_users to see if its valid.`
+- `modules/blog/classes/blogimporter_class_inc.php:266` — select — `$this->_tableName = 'tbl_users';`
+- `modules/blog/classes/blogimporter_class_inc.php:268` — select — `$fil1 = "SELECT * FROM tbl_users WHERE username = '$username'";`
+- `modules/blog/classes/blogimporter_class_inc.php:312` — select — `tbl_users AS u`
+- `modules/fossad/classes/dbregistration_class_inc.php:68` — select — `$sql="select * from  tbl_users where username= '".$username."'";`
+- `modules/jukskei/classes/dbgroups_class_inc.php:36` — select — `$sql="select * from tbl_users";`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:32` — select — `AS lastOn, tbl_users.title, tbl_users.firstname,`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:32` — select — `AS lastOn, tbl_users.title, tbl_users.firstname,`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:33` — select — `tbl_users.surname, tbl_users.country, tbl_users.sex,`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:33` — select — `tbl_users.surname, tbl_users.country, tbl_users.sex,`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:33` — select — `tbl_users.surname, tbl_users.country, tbl_users.sex,`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:34` — insert/unknown — `tbl_users.emailaddress, tbl_users.userid FROM  tbl_userloginhistory`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:34` — insert/unknown — `tbl_users.emailaddress, tbl_users.userid FROM  tbl_userloginhistory`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:35` — insert/unknown — `LEFT JOIN tbl_users  ON tbl_userloginhistory.userid = tbl_users.userid`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:35` — insert/unknown — `LEFT JOIN tbl_users  ON tbl_userloginhistory.userid = tbl_users.userid`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:58` — select — `FROM tbl_users WHERE sex='F' ";`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:66` — select — `$sql = "SELECT COUNT(tbl_users.sex) As males,  COUNT(DISTINCT(tbl_users.userId)) As users, COUNT(DISTINCT(tbl_userloginhistory.userid))`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:66` — select — `$sql = "SELECT COUNT(tbl_users.sex) As males,  COUNT(DISTINCT(tbl_users.userId)) As users, COUNT(DISTINCT(tbl_userloginhistory.userid))`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:67` — select — `FROM tbl_users, tbl_userloginhistory`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:68` — select — `WHERE tbl_userloginhistory.userid = tbl_users.userid AND tbl_users.sex = 'M'";`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:68` — select — `WHERE tbl_userloginhistory.userid = tbl_users.userid AND tbl_users.sex = 'M'";`
+- `modules/userstats/classes/dbloginhistory_class_inc.php:79` — select — `FROM tbl_users WHERE sex='M' ";`
+- `modules/apo/classes/dbapousers_class_inc.php:174` — select — `"select * from tbl_users";`
+- `modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php:36` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded LIKE \''.date('Y-m-d').'%\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php:36` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded LIKE \''.date('Y-m-d').'%\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php:60` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded > \''.$startOfWeek .'\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php:60` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid AND dateuploaded > \''.$startOfWeek .'\') GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php:71` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid) GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/webpresent/classes/dbwebpresentuploadscounter_class_inc.php:71` — select — `$sql = 'SELECT count( tbl_webpresent_files.id ) AS viewcount, tbl_webpresent_files . *, firstname, surname FROM tbl_webpresent_files, tbl_users WHERE (tbl_webpresent_files.creatorid = tbl_users.userid) GROUP BY tbl_webpresent_files.creatorid ORDER BY viewcount DESC LIMIT 5';`
+- `modules/webpresent/classes/dbwebpresenttags_class_inc.php:251` — select — `$sql = 'SELECT DISTINCT tbl_webpresent_files.id, tbl_webpresent_files.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_webpresent_files, tbl_webpresent_tags, tbl_users`
+- `modules/webpresent/classes/dbwebpresenttags_class_inc.php:251` — select — `$sql = 'SELECT DISTINCT tbl_webpresent_files.id, tbl_webpresent_files.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_webpresent_files, tbl_webpresent_tags, tbl_users`
+- `modules/webpresent/classes/dbwebpresenttags_class_inc.php:251` — select — `$sql = 'SELECT DISTINCT tbl_webpresent_files.id, tbl_webpresent_files.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_webpresent_files, tbl_webpresent_tags, tbl_users`
+- `modules/webpresent/classes/dbwebpresenttags_class_inc.php:252` — select — `WHERE (tbl_webpresent_tags.fileid = tbl_webpresent_files.id AND tbl_webpresent_files.creatorid = tbl_users.userid) AND tbl_webpresent_tags.tag LIKE \''.$tag.'\' ORDER BY '.$order;`
+- `modules/examiners/classes/dbexams_class_inc.php:209` — reference — `return $this->_changeTable('tbl_users');`
+- `modules/jturnitin/classes/turnitinsubmittedassignments_class_inc.php:67` — select — `"select * from tbl_users where emailAddress='$email'";`
+- `modules/survey/sql/tbl_survey_response.sql:17` — update — `CONSTRAINT `FK_tbl_survey_response` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`)`
+- `modules/survey/sql/tbl_survey.sql:27` — update — `CONSTRAINT `FK_tbl_survey_creatorId` FOREIGN KEY (`creatorId`) REFERENCES `tbl_users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE`
+- `modules/survey/classes/groups_class_inc.php:70` — reference — `parent::init('tbl_users');`
+- `modules/survey/classes/groups_class_inc.php:71` — reference — `$this->table = 'tbl_users';`
+- `modules/wicid/classes/dbforwardto_class_inc.php:33` — select — `$sql="select userid,firstname,surname,emailaddress from tbl_users where`
+- `modules/wicid/classes/dbfolderpermissions_class_inc.php:159` — select — `$sql="select userid,username,firstname,surname from tbl_users where`
+- `modules/fullprofile/classes/dbfullprofile_class_inc.php:77` — select — `$this->_changeTable('tbl_users');`
+- `modules/fullprofile/classes/dbfullprofile_class_inc.php:79` — select — `$sql = "SELECT userid FROM tbl_users WHERE username LIKE '%".$searchTerm."%' OR firstname LIKE '%".$searchTerm."%' OR surname LIKE '%".$searchTerm."%'";`
+- `modules/fullprofile/classes/fpdisplay_class_inc.php:264` — create — `$userDetails = $this->objDbFoaf->getRecordSet($userId, 'tbl_users');`
+- `modules/speak4free/classes/dbgroups_class_inc.php:31` — select — `$sql="select * from tbl_users";`
+- `modules/speak4free/classes/dbspeak4freetags_class_inc.php:225` — select — `$sql = 'SELECT DISTINCT tbl_speak4free_files.id, tbl_speak4free_files.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_speak4free_files, tbl_speak4free_tags, tbl_users`
+- `modules/speak4free/classes/dbspeak4freetags_class_inc.php:225` — select — `$sql = 'SELECT DISTINCT tbl_speak4free_files.id, tbl_speak4free_files.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_speak4free_files, tbl_speak4free_tags, tbl_users`
+- `modules/speak4free/classes/dbspeak4freetags_class_inc.php:225` — select — `$sql = 'SELECT DISTINCT tbl_speak4free_files.id, tbl_speak4free_files.*, tbl_users.firstName as firstname, tbl_users.surname FROM tbl_speak4free_files, tbl_speak4free_tags, tbl_users`
+- `modules/speak4free/classes/dbspeak4freetags_class_inc.php:226` — select — `WHERE (tbl_speak4free_tags.fileid = tbl_speak4free_files.id AND tbl_speak4free_files.creatorid = tbl_users.userid) AND tbl_speak4free_tags.tag LIKE \''.$tag.'\' ORDER BY '.$order;`
+- `modules/messaging/classes/dbmessaging_class_inc.php:60` — reference — `$this->tblUsers = 'tbl_users';`
+- `modules/messaging/classes/dbmessaging_class_inc.php:922` — reference — `/* ------------------ Functions for tbl_users ------------------*/`
+- `modules/messaging/classes/dbmessaging_class_inc.php:962` — select — `$sql .= " LEFT JOIN tbl_users as u";`
+- `modules/hivaids/sql/tbl_hivaids_users.sql:7` — reference — `$options = array('comment' => 'Table extending the tbl_users table', 'collate' => 'utf8_general_ci', 'character_set' => 'utf8');`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:42` — select — `$sql .= ", tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:66` — select — `$sql = "SELECT count(*) as cnt FROM {$this->table} l, tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:90` — select — `$sql = "SELECT count(*) as cnt FROM {$this->table} l, tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:119` — select — `$sql .= ", tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:146` — select — `$sql = "SELECT DISTINCT(ipaddress), count(*) as cnt FROM {$this->table} l, tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:175` — select — `FROM {$this->table} l, tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:206` — select — `FROM {$this->table} l, tbl_hivaids_users hu, tbl_users u`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:355` — select — `$sql = "SELECT l.eventparamvalue, hu.user_id, hu.course, hu.study_year, hu.language, u.sex FROM tbl_logger l, tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:438` — select — `FROM tbl_forum_post p, tbl_forum_post_text t, tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbloggercalc_class_inc.php:791` — select — `LEFT JOIN tbl_users u ON hu.user_id = u.userid`
+- `modules/hivaids/classes/dbusers_class_inc.php:29` — reference — `$this->tblUser = 'tbl_users';`
+- `modules/hivaids/classes/dbusers_class_inc.php:70` — select — `$sql = "SELECT u.userid, u.username FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbusers_class_inc.php:119` — select — `$sql = "SELECT {$select} FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbusers_class_inc.php:192` — select — `AS lastOn, tbl_users.title, tbl_users.firstname,`
+- `modules/hivaids/classes/dbusers_class_inc.php:192` — select — `AS lastOn, tbl_users.title, tbl_users.firstname,`
+- `modules/hivaids/classes/dbusers_class_inc.php:193` — select — `tbl_users.surname, tbl_users.country,`
+- `modules/hivaids/classes/dbusers_class_inc.php:193` — select — `tbl_users.surname, tbl_users.country,`
+- `modules/hivaids/classes/dbusers_class_inc.php:194` — insert/unknown — `tbl_users.emailaddress, tbl_users.userid FROM  tbl_userloginhistory`
+- `modules/hivaids/classes/dbusers_class_inc.php:194` — insert/unknown — `tbl_users.emailaddress, tbl_users.userid FROM  tbl_userloginhistory`
+- `modules/hivaids/classes/dbusers_class_inc.php:195` — insert/unknown — `LEFT JOIN tbl_users  ON tbl_userloginhistory.userid = tbl_users.userid`
+- `modules/hivaids/classes/dbusers_class_inc.php:195` — insert/unknown — `LEFT JOIN tbl_users  ON tbl_userloginhistory.userid = tbl_users.userid`
+- `modules/hivaids/classes/dbusers_class_inc.php:210` — select — `$sql = "SELECT count(u.userid) AS cnt FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbusers_class_inc.php:234` — select — `$sql = "SELECT count(sex) AS cnt, sex FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbusers_class_inc.php:255` — select — `$sql = "SELECT count(language) as cnt, language FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbusers_class_inc.php:278` — select — `$sql = "SELECT count(study_year) as cnt, study_year FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/hivaids/classes/dbusers_class_inc.php:301` — select — `$sql = "SELECT count(course) as cnt, course FROM tbl_users u, tbl_hivaids_users hu`
+- `modules/openaris/classes/ahisuser_class_inc.php:97` — select — `FROM tbl_users AS u, tbl_ahis_users AS au`
+- `modules/openaris/classes/ahisuser_class_inc.php:111` — select — `FROM tbl_users AS u, tbl_ahis_users AS au`
+- `modules/openaris/classes/ahisuser_class_inc.php:125` — select — `FROM tbl_ahis_users AS au, tbl_users AS u`
+- `modules/discussion/controller.php:2298` — reference — `$recipients = $this->objManageGroups->contextUsers('Students', $this->contextCode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `modules/discussion/controller.php:2317` — reference — `$members = $this->objManageGroups->contextUsers('Students', $this->contextCode, array('tbl_users.userId', 'email', 'firstName', 'surname'));`
+- `modules/discussion/classes/discussionstats_class_inc.php:108` — select — `$sql = 'SELECT count(DISTINCT(tbl_discussion_post.id)) as posts, tbl_users.userId, firstName, surname`
+- `modules/discussion/classes/discussionstats_class_inc.php:112` — reference — `INNER JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/discussionstats_class_inc.php:112` — reference — `INNER JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/discussionstats_class_inc.php:114` — reference — `GROUP BY tbl_users.userId ORDER BY firstName DESC';`
+- `modules/discussion/classes/discussionstats_class_inc.php:128` — select — `$sql = 'SELECT tbl_users.userId, firstName, surname, count( tbl_discussion_topic.userId ) AS topics`
+- `modules/discussion/classes/discussionstats_class_inc.php:131` — select — `INNER JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId )`
+- `modules/discussion/classes/discussionstats_class_inc.php:131` — select — `INNER JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId )`
+- `modules/discussion/classes/discussionstats_class_inc.php:147` — select — `$sql = 'SELECT tbl_users.userId, firstName, surname, count( tbl_discussion_topic.userId ) AS tangents`
+- `modules/discussion/classes/discussionstats_class_inc.php:150` — select — `INNER JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId )`
+- `modules/discussion/classes/discussionstats_class_inc.php:150` — select — `INNER JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbtopicsubscriptions_class_inc.php:83` — select — `$sql = 'SELECT DISTINCT emailAddress FROM tbl_discussion_subscribe_topic INNER JOIN tbl_users ON ( tbl_discussion_subscribe_topic.userid = tbl_users.userid ) WHERE topic_id = "'.$topic_id.'"';`
+- `modules/discussion/classes/dbtopicsubscriptions_class_inc.php:83` — select — `$sql = 'SELECT DISTINCT emailAddress FROM tbl_discussion_subscribe_topic INNER JOIN tbl_users ON ( tbl_discussion_subscribe_topic.userid = tbl_users.userid ) WHERE topic_id = "'.$topic_id.'"';`
+- `modules/discussion/classes/dbpost_class_inc.php:276` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:276` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:276` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:279` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:279` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:297` — select — `$sql = 'SELECT tbl_discussion_post.*,  tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:297` — select — `$sql = 'SELECT tbl_discussion_post.*,  tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:297` — select — `$sql = 'SELECT tbl_discussion_post.*,  tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:301` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:301` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:317` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_topic.*,  tbl_discussion_post_text.*, discussion_name, discussion_id, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:317` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_topic.*,  tbl_discussion_post_text.*, discussion_name, discussion_id, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:317` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_topic.*,  tbl_discussion_post_text.*, discussion_name, discussion_id, tbl_users.firstname, tbl_users.surname, tbl_users.username,`
+- `modules/discussion/classes/dbpost_class_inc.php:323` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:323` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:346` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_discussion_topic.*, tbl_users.firstname, tbl_users.surname, tbl_users.username, tbl_discussion_post.datelastupdated AS datelastupdated, tbl_discussion_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage, tbl_discussion_post_ratings.rating, tbl_discussion_post.lft as postleft, tbl_discussion_post.rght as postright`
+- `modules/discussion/classes/dbpost_class_inc.php:346` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_discussion_topic.*, tbl_users.firstname, tbl_users.surname, tbl_users.username, tbl_discussion_post.datelastupdated AS datelastupdated, tbl_discussion_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage, tbl_discussion_post_ratings.rating, tbl_discussion_post.lft as postleft, tbl_discussion_post.rght as postright`
+- `modules/discussion/classes/dbpost_class_inc.php:346` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_discussion_topic.*, tbl_users.firstname, tbl_users.surname, tbl_users.username, tbl_discussion_post.datelastupdated AS datelastupdated, tbl_discussion_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage, tbl_discussion_post_ratings.rating, tbl_discussion_post.lft as postleft, tbl_discussion_post.rght as postright`
+- `modules/discussion/classes/dbpost_class_inc.php:350` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:350` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:373` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_discussion_topic.*, tbl_users.firstname, tbl_users.surname, tbl_discussion_post.datelastupdated AS datelastupdated, tbl_discussion_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage`
+- `modules/discussion/classes/dbpost_class_inc.php:373` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_discussion_topic.*, tbl_users.firstname, tbl_users.surname, tbl_discussion_post.datelastupdated AS datelastupdated, tbl_discussion_post_attachment.attachment_id, replyPost.id AS replypost, languagecheck.id AS anotherlanguage`
+- `modules/discussion/classes/dbpost_class_inc.php:377` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:377` — reference — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1304` — select — `$sql = 'SELECT tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/discussion/classes/dbpost_class_inc.php:1304` — select — `$sql = 'SELECT tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/discussion/classes/dbpost_class_inc.php:1304` — select — `$sql = 'SELECT tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/discussion/classes/dbpost_class_inc.php:1307` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1307` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1327` — select — `$sql = 'SELECT distinct tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/discussion/classes/dbpost_class_inc.php:1327` — select — `$sql = 'SELECT distinct tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/discussion/classes/dbpost_class_inc.php:1327` — select — `$sql = 'SELECT distinct tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname, tbl_users.username`
+- `modules/discussion/classes/dbpost_class_inc.php:1330` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1330` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1354` — select — `$sql = 'SELECT tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname`
+- `modules/discussion/classes/dbpost_class_inc.php:1354` — select — `$sql = 'SELECT tbl_discussion_post_text. * , tbl_discussion_post.topic_id, tbl_users.firstname, tbl_users.surname`
+- `modules/discussion/classes/dbpost_class_inc.php:1357` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1357` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1960` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname FROM tbl_discussion_post`
+- `modules/discussion/classes/dbpost_class_inc.php:1960` — select — `$sql = 'SELECT tbl_discussion_post.*, tbl_discussion_post_text.*, tbl_users.firstname, tbl_users.surname FROM tbl_discussion_post`
+- `modules/discussion/classes/dbpost_class_inc.php:1962` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbpost_class_inc.php:1962` — select — `LEFT  JOIN tbl_users ON ( tbl_discussion_post.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbdiscussionsubscriptions_class_inc.php:69` — select — `$sql = 'SELECT DISTINCT emailAddress FROM tbl_discussion_subscribe_discussion INNER JOIN tbl_users ON ( tbl_discussion_subscribe_discussion.userid = tbl_users.userid ) WHERE discussion_id = "'.$discussion_id.'"';`
+- `modules/discussion/classes/dbdiscussionsubscriptions_class_inc.php:69` — select — `$sql = 'SELECT DISTINCT emailAddress FROM tbl_discussion_subscribe_discussion INNER JOIN tbl_users ON ( tbl_discussion_subscribe_discussion.userid = tbl_users.userid ) WHERE discussion_id = "'.$discussion_id.'"';`
+- `modules/discussion/classes/dbtopic_class_inc.php:169` — select — `$sql = 'SELECT tbl_discussion_topic.id AS topic_id,tbl_discussion_topic.*, tbl_discussion_topic.status AS topicstatus, tbl_users.firstname, tbl_users.surname, tbl_users.username, tbl_discussion_discussiontype.*, tbl_discussion_post_text.post_title, tbl_discussion_topic_read.id AS readtopic, tbl_discussion_topic_read.post_id AS lastreadpost, lastPostUser.firstname AS lastfirstname, lastPostUser.surname AS lastsurname, lastPostUser.username AS lastusername, post2.datelastupdated AS lastdate, tangentCheck.id AS tangentcheck'`
+- `modules/discussion/classes/dbtopic_class_inc.php:169` — select — `$sql = 'SELECT tbl_discussion_topic.id AS topic_id,tbl_discussion_topic.*, tbl_discussion_topic.status AS topicstatus, tbl_users.firstname, tbl_users.surname, tbl_users.username, tbl_discussion_discussiontype.*, tbl_discussion_post_text.post_title, tbl_discussion_topic_read.id AS readtopic, tbl_discussion_topic_read.post_id AS lastreadpost, lastPostUser.firstname AS lastfirstname, lastPostUser.surname AS lastsurname, lastPostUser.username AS lastusername, post2.datelastupdated AS lastdate, tangentCheck.id AS tangentcheck'`
+- `modules/discussion/classes/dbtopic_class_inc.php:169` — select — `$sql = 'SELECT tbl_discussion_topic.id AS topic_id,tbl_discussion_topic.*, tbl_discussion_topic.status AS topicstatus, tbl_users.firstname, tbl_users.surname, tbl_users.username, tbl_discussion_discussiontype.*, tbl_discussion_post_text.post_title, tbl_discussion_topic_read.id AS readtopic, tbl_discussion_topic_read.post_id AS lastreadpost, lastPostUser.firstname AS lastfirstname, lastPostUser.surname AS lastsurname, lastPostUser.username AS lastusername, post2.datelastupdated AS lastdate, tangentCheck.id AS tangentcheck'`
+- `modules/discussion/classes/dbtopic_class_inc.php:176` — reference — `.' LEFT  JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId ) '`
+- `modules/discussion/classes/dbtopic_class_inc.php:176` — reference — `.' LEFT  JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId ) '`
+- `modules/discussion/classes/dbtopic_class_inc.php:188` — reference — `.' LEFT  JOIN tbl_users as lastPostUser ON ( post2.userId = lastPostUser.userId ) '`
+- `modules/discussion/classes/dbtopic_class_inc.php:260` — select — `$sql = 'SELECT tbl_discussion_topic. * , tbl_discussion_post_text.post_title, tbl_users.firstname, tbl_users.surname,tbl_users.username,lastPostUser.firstName AS lastFirstName, lastPostUser.surname AS lastSurname, lastPostUser.username AS lastusername, post2.dateLastUpdated AS lastdate`
+- `modules/discussion/classes/dbtopic_class_inc.php:260` — select — `$sql = 'SELECT tbl_discussion_topic. * , tbl_discussion_post_text.post_title, tbl_users.firstname, tbl_users.surname,tbl_users.username,lastPostUser.firstName AS lastFirstName, lastPostUser.surname AS lastSurname, lastPostUser.username AS lastusername, post2.dateLastUpdated AS lastdate`
+- `modules/discussion/classes/dbtopic_class_inc.php:260` — select — `$sql = 'SELECT tbl_discussion_topic. * , tbl_discussion_post_text.post_title, tbl_users.firstname, tbl_users.surname,tbl_users.username,lastPostUser.firstName AS lastFirstName, lastPostUser.surname AS lastSurname, lastPostUser.username AS lastusername, post2.dateLastUpdated AS lastdate`
+- `modules/discussion/classes/dbtopic_class_inc.php:265` — reference — `LEFT JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbtopic_class_inc.php:265` — reference — `LEFT JOIN tbl_users ON ( tbl_discussion_topic.userId = tbl_users.userId )`
+- `modules/discussion/classes/dbtopic_class_inc.php:266` — reference — `LEFT  JOIN tbl_users as lastPostUser ON ( post2.userId = lastPostUser.userId )`
+- `modules/maillist/classes/mail_class_inc.php:127` — insert/unknown — `//check the address against tbl_users to see if its valid.`
+- `modules/maillist/classes/dbmaillist_class_inc.php:152` — read/unknown — `$this->changeTable('tbl_users');`
+- `modules/maillist/classes/dbmaillist_class_inc.php:168` — insert/unknown — `//change to tbl_users`
+- `modules/maillist/classes/dbmaillist_class_inc.php:169` — read/unknown — `$this->changeTable('tbl_users');`
+- `modules/maillist/classes/dbmaillist_class_inc.php:196` — insert/unknown — `* method to retrieve email addys from tbl_users array`
+- `modules/maillist/classes/dbmaillist_class_inc.php:202` — read/unknown — `$this->changeTable('tbl_users');`
+- `modules/maillist/classes/dbmaillist_class_inc.php:210` — read/unknown — `$this->_changeTable('tbl_users');`
+- `modules/practicals/classes/dbpracticalssubmit_class_inc.php:78` — select — `INNER JOIN tbl_users ON tbl_practicals_submit.userid = tbl_users.userid  WHERE practicalid=\'' . $practicalId . '\' ORDER BY ' . $orderBy;`
+- `modules/practicals/classes/dbpracticalssubmit_class_inc.php:78` — select — `INNER JOIN tbl_users ON tbl_practicals_submit.userid = tbl_users.userid  WHERE practicalid=\'' . $practicalId . '\' ORDER BY ' . $orderBy;`
+- `modules/podcast/classes/dbpodcast_class_inc.php:276` — select — `$sql = 'SELECT DISTINCT tbl_users.id, userid, username, firstname, surname FROM tbl_podcast`
+- `modules/podcast/classes/dbpodcast_class_inc.php:277` — select — `INNER JOIN tbl_users ON (tbl_podcast.creatorid = tbl_users.userid)`
+- `modules/podcast/classes/dbpodcast_class_inc.php:277` — select — `INNER JOIN tbl_users ON (tbl_podcast.creatorid = tbl_users.userid)`
+
+## `tbl_perms_groups`
+
+Moderate coupling: introduce repository classes first, then move existing callers behind the authentication adapter.
+
+- Operations: `reference`: 6, `select`: 12, `update`: 4
+- Fields: Not detected
+
+### Capabilities
+
+- **group definition and lookup:** 22 references; `changeEventName()`, `getGroups()`, `getTopLevelGroups()`, `getUserGroups()`, `jsonCheckGroupAvailable()`, `jsonEditGroup()`, `jsonGetGroup()`, `jsonGetGroups()`, `processAction()`, `processLDAPIntegration()`, `rolecontextcodes()`, `sendMailNotification()`, `updateSubGroup()`, `usercontextcodes()`, `usercontextcodeslimited()`
+
+### Owning methods
+
+- `DbCreateAction::processAction()`
+- `auth_ldap::processLDAPIntegration()`
+- `auth_ldap::sendMailNotification()`
+- `groupAdminModel::getGroups()`
+- `groupAdminModel::getTopLevelGroups()`
+- `groupAdminModel::getUserGroups()`
+- `groupops::changeEventName()`
+- `groupops::jsonCheckGroupAvailable()`
+- `groupops::jsonEditGroup()`
+- `groupops::jsonGetGroup()`
+- `groupops::jsonGetGroups()`
+- `groupops::updateSubGroup()`
+- `in::rolecontextcodes()`
+- `in::usercontextcodes()`
+- `in::usercontextcodeslimited()`
+
+### Source references
+
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:150` — select — `$sql = "SELECT pu.group_define_name, pu.group_id, ct.title FROM tbl_perms_groups as pu LEFT join tbl_context as ct on pu.group_define_name = ct.contextcode WHERE group_define_name NOT LIKE '%^%'" . $where;`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:285` — select — `$recordCount = $this->objUser->getArray("SELECT count(group_id) as cnt FROM tbl_perms_groups WHERE lower(group_define_name) = lower('" . $groupName . "')");`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:317` — update — `$sql = "UPDATE tbl_perms_groups SET group_define_name = '" . $newgroupname . "' WHERE group_id = " . $id;`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:324` — select — `$sql = "SELECT group_define_name FROM tbl_perms_groups WHERE group_define_name LIKE '" . $oldgroupname . "^%'";`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:329` — update — `$sql = "UPDATE tbl_perms_groups SET group_define_name = '" . $newgroupname . "^" . $pieces[1] . "' WHERE group_define_name = '" . $grp['group_define_name'] . "'";`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:333` — update — `//$sql = "UPDATE tbl_perms_groups SET group_define_name = '".$newgroupname."' WHERE group_id = ".$id;`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:339` — select — `$sql = "Select group_define_name from tbl_perms_groups WHERE group_id = '" . $id . "'";`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:176` — select — `$sql = "SELECT group_define_name, group_id FROM tbl_perms_groups $filter";`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:177` — select — `parent::init('tbl_perms_groups ');`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:178` — select — `$groups = $this->getArray($sql, 'tbl_perms_groups');`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:378` — select — `$sql = "SELECT group_define_name, group_id FROM tbl_perms_groups`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:383` — reference — `parent::init('tbl_perms_groups');`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:384` — reference — `$groups = $this->getArray($sql); //, 'tbl_perms_groups'`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:575` — select — `$sql .= " LEFT JOIN tbl_perms_groups AS g";`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:283` — reference — `LEFT JOIN tbl_perms_groups as gr`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:318` — reference — `LEFT JOIN tbl_perms_groups as gr`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:415` — select — `FROM tbl_perms_groups as gr`
+- `framework/app/core_modules/security/sql/tbl_perms_groups.sql:3` — reference — `$tablename = 'tbl_perms_groups';`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:252` — select — `$groupidarr=$this->getArray("select * from tbl_perms_groups where group_define_name='elearnadmins'");`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:265` — select — `$groupidarr=$this->getArray("select * from tbl_perms_groups where group_define_name='elearnadmins'");`
+- `framework/app/installer/steps/databasecreate.inc:163` — reference — `$this->_installDb32('core_modules/security/sql/tbl_perms_groups.sql');`
+- `modules/podcaster/classes/eventutils_class_inc.php:855` — update — `parent::init('tbl_perms_groups');`
+
+## `tbl_perms_groupusers`
+
+Moderate coupling: introduce repository classes first, then move existing callers behind the authentication adapter.
+
+- Operations: `read/unknown`: 1, `reference`: 3, `select`: 9
+- Fields: Not detected
+
+### Capabilities
+
+- **group membership:** 13 references; `getJsonGroupUsers()`, `getUserGroups()`, `getUserPermGroups()`, `processAction()`, `processLDAPIntegration()`, `rolecontextcodes()`, `sendMailNotification()`, `usercontextcodes()`, `usercontextcodeslimited()`
+
+### Owning methods
+
+- `DbCreateAction::processAction()`
+- `auth_ldap::processLDAPIntegration()`
+- `auth_ldap::sendMailNotification()`
+- `db_eportfolio_activitystreamer::getUserGroups()`
+- `groupAdminModel::getUserGroups()`
+- `groupops::getJsonGroupUsers()`
+- `groupops::getUserPermGroups()`
+- `in::rolecontextcodes()`
+- `in::usercontextcodes()`
+- `in::usercontextcodeslimited()`
+
+### Source references
+
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:203` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstname, us.surname, us.username, us.staffnumber, us.last_login, us.logins, us.emailAddress, us.isActive from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on pu.auth_user_id = us.userId WHERE group_id = " . $groupId . $where . " ORDER BY us.surname " . $filter;`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:572` — select — `parent::init('tbl_perms_groupusers ');`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:574` — select — `$sql = "SELECT * FROM tbl_perms_groupusers AS u";`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:579` — reference — `$groups = $this->getArray($sql, 'tbl_perms_groupusers');`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:280` — select — `from tbl_perms_groupusers as gu`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:315` — select — `from tbl_perms_groupusers as gu`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:416` — select — `INNER JOIN tbl_perms_groupusers as gu`
+- `framework/app/core_modules/security/sql/tbl_perms_groupusers.sql:3` — reference — `$tablename = 'tbl_perms_groupusers';`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:254` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on CAST(pu.auth_user_id AS CHAR(25)) = us.userId WHERE group_id = ".$groupId." ORDER BY us.surname ";`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:268` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on CAST(pu.auth_user_id AS CHAR(25)) = us.userId WHERE group_id = ".$groupId." ORDER BY us.surname ";`
+- `framework/app/installer/steps/databasecreate.inc:165` — reference — `$this->_installDb32('core_modules/security/sql/tbl_perms_groupusers.sql');`
+- `modules/podcaster/classes/eventutils_class_inc.php:868` — read/unknown — `parent::init('tbl_perms_groupusers');`
+- `modules/eportfolio/classes/db_eportfolio_activitystreamer_class_inc.php:204` — select — `$sql = "SELECT gu.perm_user_id, gu.group_id FROM tbl_perms_groupusers as gu where gu.perm_user_id='".$permUserId."'";`
+
+## `tbl_perms_perm_users`
+
+Moderate coupling: introduce repository classes first, then move existing callers behind the authentication adapter.
+
+- Operations: `reference`: 5, `select`: 10
+- Fields: Not detected
+
+### Capabilities
+
+- **direct user permissions:** 15 references; `dispatch()`, `getAuthUserId()`, `getJsonGroupUsers()`, `getPermUserId()`, `getRecord()`, `jsonGetAllUsers()`, `processAction()`, `processLDAPIntegration()`, `rolecontextcodes()`, `sendMailNotification()`, `usercontextcodes()`, `usercontextcodeslimited()`
+
+### Owning methods
+
+- `DbCreateAction::processAction()`
+- `auth_ldap::processLDAPIntegration()`
+- `auth_ldap::sendMailNotification()`
+- `db_eportfolio_activitystreamer::getAuthUserId()`
+- `db_eportfolio_activitystreamer::getRecord()`
+- `groupAdminModel::getPermUserId()`
+- `groupops::getJsonGroupUsers()`
+- `groupops::jsonGetAllUsers()`
+- `in::rolecontextcodes()`
+- `in::usercontextcodes()`
+- `in::usercontextcodeslimited()`
+- `openaris::dispatch()`
+
+### Source references
+
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:203` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstname, us.surname, us.username, us.staffnumber, us.last_login, us.logins, us.emailAddress, us.isActive from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on pu.auth_user_id = us.userId WHERE group_id = " . $groupId . $where . " ORDER BY us.surname " . $filter;`
+- `framework/app/core_modules/groupadmin/classes/groupops_class_inc.php:457` — select — `$sql = "SELECT pu.perm_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress FROM tbl_users as us INNER join tbl_perms_perm_users as pu on us.userId = pu.auth_user_id" . $where . " ORDER BY us.surname " . $filter;`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:781` — select — `$sql = 'SELECT perm_user_id FROM tbl_perms_perm_users WHERE auth_user_id = \'' . $userId . '\'';`
+- `framework/app/core_modules/groupadmin/classes/groupadminmodel_class_inc.php:782` — select — `parent::init('tbl_perms_perm_users');`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:281` — select — `LEFT JOIN tbl_perms_perm_users as pu`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:316` — select — `LEFT JOIN tbl_perms_perm_users as pu`
+- `framework/app/core_modules/contextgroups/classes/managegroups_class_inc.php:418` — reference — `INNER JOIN tbl_perms_perm_users as us`
+- `framework/app/core_modules/security/sql/tbl_perms_perm_users.sql:3` — reference — `$tablename = 'tbl_perms_perm_users';`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:254` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on CAST(pu.auth_user_id AS CHAR(25)) = us.userId WHERE group_id = ".$groupId." ORDER BY us.surname ";`
+- `framework/app/core_modules/security/classes/auth_witsldap_class_inc.php:268` — select — `$sql = "SELECT gu.perm_user_id, pu.auth_user_id, us.firstName, us.surname, us.username, us.last_login, us.logins, us.emailAddress from tbl_perms_groupusers as gu INNER join tbl_perms_perm_users as pu on gu.perm_user_id = pu.perm_user_id INNER join tbl_users as us on CAST(pu.auth_user_id AS CHAR(25)) = us.userId WHERE group_id = ".$groupId." ORDER BY us.surname ";`
+- `framework/app/installer/steps/databasecreate.inc:166` — reference — `$this->_installDb32('core_modules/security/sql/tbl_perms_perm_users.sql');`
+- `modules/eportfolio/classes/db_eportfolio_activitystreamer_class_inc.php:182` — reference — `* @param string $permUserId $perm User Id from tbl_perms_perm_users`
+- `modules/eportfolio/classes/db_eportfolio_activitystreamer_class_inc.php:187` — select — `$sql = "SELECT pu.perm_user_id FROM tbl_perms_perm_users as pu where pu.auth_user_id='".$userId."'";`
+- `modules/eportfolio/classes/db_eportfolio_activitystreamer_class_inc.php:199` — reference — `* @param string $permUserId $perm User Id from tbl_perms_perm_users`
+- `modules/openaris/controller.php:1367` — select — `$urec = $this->objUserAdmin->getArray("SELECT perm_user_id FROM tbl_perms_perm_users WHERE auth_user_id = '$userid'");`
+
+## Limitations
+
+- Dynamic table names cannot be detected reliably.
+- Operations assembled over many variables may be classified as unknown.
+- This audit maps source coupling, not runtime query frequency.
+- The PHP 7.4 baseline remains the behavioural reference.

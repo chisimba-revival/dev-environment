@@ -1,0 +1,328 @@
+#!/usr/bin/env python3
+
+"""
+Add a PHP 8 __construct() wrapper to one explicitly named legacy class.
+
+The pass:
+
+* modifies only the specified class in the specified file;
+* preserves the legacy constructor;
+* copies its complete parameter declaration;
+* forwards its named parameters directly;
+* supports parameters declared by reference;
+* is idempotent;
+* refuses ambiguous files with multiple matching classes or methods.
+
+Usage:
+
+    modernise-targeted-constructor.py --dry-run FILE CLASS
+    modernise-targeted-constructor.py --apply FILE CLASS
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from pathlib import Path
+
+
+def find_matching(
+    text: str,
+    opening: int,
+    open_char: str,
+    close_char: str,
+) -> int:
+    depth = 0
+    quote: str | None = None
+    escaped = False
+
+    for index in range(opening, len(text)):
+        char = text[index]
+
+        if quote is not None:
+            if escaped:
+                escaped = False
+                continue
+
+            if char == "\\":
+                escaped = True
+                continue
+
+            if char == quote:
+                quote = None
+
+            continue
+
+        if char in ("'", '"'):
+            quote = char
+            continue
+
+        if char == open_char:
+            depth += 1
+        elif char == close_char:
+            depth -= 1
+
+            if depth == 0:
+                return index
+
+    raise ValueError(
+        f"Could not find closing {close_char!r} after offset {opening}"
+    )
+
+
+def extract_parameter_names(parameters: str) -> list[str]:
+    """
+    Extract top-level PHP parameter variable names.
+
+    This deliberately returns only variable names, not '&' or defaults.
+    A variable passed to a legacy reference parameter remains a variable and
+    can therefore be accepted by reference.
+    """
+
+    names: list[str] = []
+    depth_round = 0
+    depth_square = 0
+    depth_curly = 0
+    quote: str | None = None
+    escaped = False
+    current = ""
+
+    parts: list[str] = []
+
+    for char in parameters:
+        if quote is not None:
+            current += char
+
+            if escaped:
+                escaped = False
+                continue
+
+            if char == "\\":
+                escaped = True
+                continue
+
+            if char == quote:
+                quote = None
+
+            continue
+
+        if char in ("'", '"'):
+            quote = char
+            current += char
+            continue
+
+        if char == "(":
+            depth_round += 1
+        elif char == ")":
+            depth_round -= 1
+        elif char == "[":
+            depth_square += 1
+        elif char == "]":
+            depth_square -= 1
+        elif char == "{":
+            depth_curly += 1
+        elif char == "}":
+            depth_curly -= 1
+
+        if (
+            char == ","
+            and depth_round == 0
+            and depth_square == 0
+            and depth_curly == 0
+        ):
+            parts.append(current)
+            current = ""
+            continue
+
+        current += char
+
+    if current.strip():
+        parts.append(current)
+
+    for part in parts:
+        variables = re.findall(r"\$[A-Za-z_][A-Za-z0-9_]*", part)
+
+        if not variables:
+            raise ValueError(
+                f"Could not identify a parameter variable in: {part!r}"
+            )
+
+        names.append(variables[0])
+
+    return names
+
+
+def class_extent(text: str, class_name: str) -> tuple[int, int, int]:
+    class_pattern = re.compile(
+        rf"\bclass\s+{re.escape(class_name)}\b[^{{]*\{{",
+        re.IGNORECASE,
+    )
+
+    matches = list(class_pattern.finditer(text))
+
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected exactly one class {class_name}; found {len(matches)}"
+        )
+
+    match = matches[0]
+    opening = text.find("{", match.start())
+    closing = find_matching(text, opening, "{", "}")
+
+    return match.start(), opening, closing
+
+
+def transform(text: str, class_name: str) -> tuple[str, bool, str]:
+    _, class_open, class_close = class_extent(text, class_name)
+    class_body = text[class_open + 1 : class_close]
+
+    if re.search(
+        r"\bfunction\s+__construct\s*\(",
+        class_body,
+        re.IGNORECASE,
+    ):
+        return text, False, "already modernised"
+
+    method_pattern = re.compile(
+        rf"""
+        (?P<indent>^[ \t]*)
+        (?:
+            public|protected|private|static|final|abstract
+        )?
+        [ \t]*
+        function
+        [ \t]+
+        &?
+        [ \t]*
+        {re.escape(class_name)}
+        [ \t]*
+        \(
+        """,
+        re.IGNORECASE | re.MULTILINE | re.VERBOSE,
+    )
+
+    matches = list(method_pattern.finditer(class_body))
+
+    if len(matches) != 1:
+        raise ValueError(
+            f"Expected exactly one legacy {class_name}() method; "
+            f"found {len(matches)}"
+        )
+
+    method = matches[0]
+    absolute_method_start = class_open + 1 + method.start()
+    absolute_open_paren = (
+        class_open
+        + 1
+        + class_body.find("(", method.start(), method.end())
+    )
+
+    absolute_close_paren = find_matching(
+        text,
+        absolute_open_paren,
+        "(",
+        ")",
+    )
+
+    parameters = text[
+        absolute_open_paren + 1 : absolute_close_paren
+    ]
+
+    parameter_names = extract_parameter_names(parameters)
+    indent = method.group("indent")
+
+    if parameter_names:
+        forwarded = ", ".join(parameter_names)
+        call = f"$this->{class_name}({forwarded});"
+    else:
+        call = f"$this->{class_name}();"
+
+    wrapper = (
+        f"{indent}/**\n"
+        f"{indent} * PHP 8 constructor wrapper generated by the targeted\n"
+        f"{indent} * legacy-constructor moderniser.\n"
+        f"{indent} */\n"
+        f"{indent}public function __construct({parameters})\n"
+        f"{indent}{{\n"
+        f"{indent}    {call}\n"
+        f"{indent}}}\n\n"
+    )
+
+    updated = (
+        text[:absolute_method_start]
+        + wrapper
+        + text[absolute_method_start:]
+    )
+
+    return updated, True, parameters.strip()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+
+    mode_group = parser.add_mutually_exclusive_group(required=True)
+    mode_group.add_argument(
+        "--dry-run",
+        dest="mode",
+        action="store_const",
+        const="--dry-run",
+    )
+    mode_group.add_argument(
+        "--apply",
+        dest="mode",
+        action="store_const",
+        const="--apply",
+    )
+
+    parser.add_argument("file")
+    parser.add_argument("class_name")
+    args = parser.parse_args()
+
+    path = Path(args.file)
+
+    if not path.is_file():
+        print(f"ERROR: File not found: {path}", file=sys.stderr)
+        return 2
+
+    source = path.read_text()
+
+    try:
+        updated, changed, parameters = transform(
+            source,
+            args.class_name,
+        )
+    except ValueError as error:
+        print(f"ERROR: {error}", file=sys.stderr)
+        return 1
+
+    print(f"File: {path}")
+    print(f"Class: {args.class_name}")
+    print(f"Mode: {args.mode}")
+
+    if not changed:
+        print("Result: no change required")
+        return 0
+
+    print("Result: constructor wrapper required")
+    print(f"Parameters: ({parameters})")
+
+    if args.mode == "--dry-run":
+        return 0
+
+    backup = path.with_name(path.name + ".before-targeted-constructor")
+
+    if not backup.exists():
+        backup.write_text(source)
+        print(f"Backup: {backup}")
+
+    temporary = path.with_name(path.name + ".targeted-constructor.tmp")
+    temporary.write_text(updated)
+    temporary.replace(path)
+
+    print("Applied: yes")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
