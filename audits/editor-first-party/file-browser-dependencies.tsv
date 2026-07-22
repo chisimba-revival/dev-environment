@@ -1,0 +1,16 @@
+repository	file	line	match
+framework	app/core_modules/filemanager/classes/previewfolder_class_inc.php	441	                    if ($mode == 'fckimage' || $mode == 'fckflash' || $mode == 'fcklink') {
+framework	app/core_modules/filemanager/controller.php	261	        $suppressModes = array('selectfilewindow', 'selectimagewindow', 'fckimage', 'fckflash', 'fcklink');
+framework	app/core_modules/filemanager/controller.php	1405	    private function __fckimage() {
+framework	app/core_modules/filemanager/controller.php	1409	            return $this->showFCKEditorInterface($restriction, 'fckimage');
+framework	app/core_modules/filemanager/controller.php	1411	            return $this->nextAction(NULL, array('mode' => 'fckimage', 'restriction' => 'jpg____gif____png____jpeg', 'loadwindow' => 'yes', 'url' => $this->getParam('url')));
+framework	app/core_modules/filemanager/controller.php	1419	    public function showFCKEditorInterface($restriction = array(), $action = 'fcklink') {
+framework	app/core_modules/filemanager/controller.php	1464	    private function __fckflash() {
+framework	app/core_modules/filemanager/controller.php	1465	        return $this->nextAction(NULL, array('mode' => 'fckflash', 'restriction' => 'swf', 'loadwindow' => 'yes'));
+framework	app/core_modules/filemanager/controller.php	1473	    private function __fcklink() {
+framework	app/core_modules/filemanager/controller.php	1474	        return $this->nextAction(NULL, array('mode' => 'fcklink', 'loadwindow' => 'yes'));
+framework	app/core_modules/filemanager/templates/content/fileinfo_tpl.php	76	if ($mode == 'selectfilewindow' || $mode == 'selectimagewindow' || $mode == 'fckimage' || $mode == 'fckflash' || $mode == 'fcklink') {
+framework	app/core_modules/filemanager/templates/content/fileinfo_tpl.php	83	    if ($mode == 'fckimage' || $mode == 'fckflash') {
+framework	app/core_modules/filemanager/templates/content/fileinfo_tpl.php	93	    if ($mode == 'fckimage' || $mode == 'fckflash' || $mode == 'fcklink') {
+modules	cmsadmin/classes/cmsutils_class_inc.php	5611	                //window.open('?module=filemanager&mode=fckimage&restriction=jpg_gif_png_jpeg&context=no','selectimage','width=600,height=600,scrollbars=1,resizable=1') //TEMPLATE_IMAGE
+modules	sitemap/controller.php	76	            case 'fcklink'

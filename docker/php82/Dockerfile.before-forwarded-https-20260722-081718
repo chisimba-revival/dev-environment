@@ -48,7 +48,3 @@ COPY docker/php74/chisimba-runtime-errors.php \
 
 COPY docker/php74/99-chisimba-runtime-errors.ini \
     /usr/local/etc/php/conf.d/99-chisimba-runtime-errors.ini
-
-# Trust the local nginx TLS terminator.
-COPY local-https/chisimba-forwarded-https.conf /etc/apache2/conf-available/chisimba-forwarded-https.conf
-RUN a2enmod setenvif && a2enconf chisimba-forwarded-https

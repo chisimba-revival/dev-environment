@@ -1,0 +1,26 @@
+legacy-public	init($name=null, $value=null, $rows=4, $cols=50, $context=false)	line 135
+public	setVersion($fckVersion)	line 169
+legacy-public	setSiteRootPath($siteRootPath)	line 178
+legacy-public	setExtraPlugins($plugins)	line 185
+legacy-public	setName($name)	line 194
+legacy-public	setCssClass($value)	line 202
+legacy-public	setRows($rows)	line 211
+legacy-public	setColumns($cols)	line 220
+legacy-public	setContent($value=null)	line 228
+legacy-public	show()	line 235
+legacy-public	saveUnsavedContent()	line 262
+legacy-public	showFCKEditor($version = '2.6.3')	line 319
+legacy-public	showFCKEditorWakeupJS()	line 386
+legacy-public	wakeUpFireFoxFckeditor(fckEditorInstance)	line 389
+legacy-public	copyFCKData(fckEditorInstance)	line 404
+legacy-public	showTinyMCE()	line 429
+legacy-public	setBasicToolBar()	line 441
+legacy-public	setDefaultToolBarSet()	line 448
+legacy-public	setDefaultToolBarSetWithoutSave()	line 455
+legacy-public	setMCQToolBar()	line 462
+legacy-public	setCMSToolBar()	line 469
+legacy-public	setFormsToolBar()	line 476
+legacy-public	loadCMSTemplates()	line 486
+public	getJavaScripts()	line 495
+legacy-public	fileBrowserCallBack(field_name, url, type, win)	line 528
+private	getSiteRoot()	line 552

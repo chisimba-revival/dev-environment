@@ -1,0 +1,398 @@
+framework/app/core_modules/htmlelements/resources/tabcontent/tabcontent.php:8:<link rel="stylesheet" type="text/css" href="tabcontent.css" />
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:45:$images_array = extract_tags($string, 'img');
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:46:$images = array();
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:47:for ($i = 0; $i <= (is_countable($images_array) ? sizeof($images_array) : 0); $i++) {
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:48:        $img = trim(@$images_array[$i]['attributes']['src']);
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:49:        $width = preg_replace("/[^0-9.]/", '', $images_array[$i]['attributes']['width']);
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:50:        $height = preg_replace("/[^0-9.]/", '', $images_array[$i]['attributes']['height']);
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:63:                        $details = @getimagesize($img);
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:77:                                $images[] = array("img" => $img, "width" => $width, "height" => $height, 'area' => ($width * $height), 'offset' => $images_array[$i]['offset']);
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:82:$return_array['images'] = array_values(($images));
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:83:$return_array['total_images'] = count($return_array['images']);
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:136:        $selfclosing_tags = array('area', 'base', 'basefont', 'br', 'hr', 'input', 'img', 'link', 'meta', 'col', 'param');
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:195:                                        //to extract link URLs or something like that. You might want to remove
+framework/app/core_modules/htmlelements/resources/linkparser/fetch.php:229:                $this->headers[] = 'Accept: image/gif, image/x-bitmap, image/jpeg, image/pjpeg';
+framework/app/core_modules/htmlelements/templates/content/submodalexample_tpl.php:12:echo $objSubModalWindow->show('Click this Link', $this->uri(array('action'=>'submodalexample_content')), 'link', 400, 200);
+framework/app/core_modules/htmlelements/templates/content/other_tpl.php:19:$mop3 = new mouseoverpopup('Go visit Google','Click on the link');
+framework/app/core_modules/htmlelements/controller.php:18: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:61: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:62: * @link      http://www.sitepoint.com/print/exploring-limits-css-layout
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:105:            //Inhouse browser detection
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:106:            var browser=navigator.appName;
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:119:            if ((browser!="Microsoft Internet Explorer")) {
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:150:            //Inhouse browser detection
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:151:            var browser=navigator.appName;
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:164:            if ((browser!="Microsoft Internet Explorer")) {
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:201:            //Inhouse browser detection
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:202:            var browser=navigator.appName;
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:213:            if ((browser!="Microsoft Internet Explorer")) {
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:245:            //Inhouse browser detection
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:246:            var browser=navigator.appName;
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:256:            if ((browser!="Microsoft Internet Explorer")) {
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:304:            //Inhouse browser detection
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:305:            var browser=navigator.appName;
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:315:            if ((browser!="Microsoft Internet Explorer")) {
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:350:            //Inhouse browser detection
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:351:            var browser=navigator.appName;
+framework/app/core_modules/htmlelements/classes/cssfixlength_class_inc.php:361:            if ((browser!="Microsoft Internet Explorer")) {
+framework/app/core_modules/htmlelements/classes/tabber_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/tabber_class_inc.php:92:        $link = '<link id="tabber" type="text/css" rel="stylesheet" href="core_modules/htmlelements/resources/css/tabber.css" />';
+framework/app/core_modules/htmlelements/classes/tabber_class_inc.php:93:        $this->appendArrayVar('headerParams', $link);
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:56: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:63:    public $linkText;
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:72:     * @param string $linkText The text of the anchor tag
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:77:    public function show($title = NULL, $message = NULL, $linkText = NULL, $url = NULL, $extra = NULL)
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:84:        if ($linkText) {
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:85:            $this->linkText = $linkText;
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:93:        $str = "<a  ".$extra."  href=\"".$this->url."\" onmouseover=\"this.style.color = '#D17E62'; domTT_activate(this, event, 'content', '".$this->title."&lt;p&gt;".$this->message."&lt;/p&gt;', 'trail', true, 'fade', 'both', 'fadeMax', 87, 'styleClass', 'niceTitle');\" onmouseout=\"this.style.color = ''; domTT_mouseout(this, event);\">".$this->linkText."</a>";
+framework/app/core_modules/htmlelements/classes/domtt_class_inc.php:117:        // <link rel="stylesheet" href="core_modules/htmlelements/resources/domtt/example.css" type="text/css" />
+framework/app/core_modules/htmlelements/classes/abhtmlbase_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/abhtmlbase_class_inc.php:46: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/hiddeninput_class_inc.php:14: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/htmltable_class_inc.php:37:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/htmltable_class_inc.php:147:    *              passed to arrayToTable so that the edit links can be inserted
+framework/app/core_modules/htmlelements/classes/htmltable_class_inc.php:209:    * @var string $summary: Specifies a summary of the table for speech-synthesizing/non-visual browsers
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:31:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:156:        // Create the button objects as links.
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:158:        $this->setBtnObject( 'btnRight', $this->newObject('link','htmlelements'), $params );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:159:        $this->setBtnObject( 'btnAllRight', $this->newObject('link','htmlelements'), $params );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:160:        $this->setBtnObject( 'btnLeft', $this->newObject('link','htmlelements'), $params );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:161:        $this->setBtnObject( 'btnAllLeft', $this->newObject('link','htmlelements'), $params );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:164:        $this->setBtnLabel( 'btnRight', htmlspecialchars('>>'), 'link' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:165:        $this->setBtnLabel( 'btnAllRight', htmlspecialchars('All >>'), 'link' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:166:        $this->setBtnLabel( 'btnLeft', htmlspecialchars('<<'), 'link' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:167:        $this->setBtnLabel( 'btnAllLeft', htmlspecialchars('All <<'), 'link' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:175:        // Create the control button objects as links
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:176:        $this->setBtnObject( 'btnSave', $this->newObject('link','htmlelements'), $params, 'arrBtnCntrlObject' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:177:        $this->setBtnObject( 'btnCancel', $this->newObject('link','htmlelements'), $params, 'arrBtnCntrlObject' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:180:        $this->setBtnLabel( 'btnSave', $this->objLanguage->languageText( 'word_save' ), 'link', 'arrBtnCntrlObject' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:181:        $this->setBtnLabel( 'btnCancel', $this->objLanguage->languageText( 'word_cancel' ), 'link', 'arrBtnCntrlObject' );
+framework/app/core_modules/htmlelements/classes/selectbox_class_inc.php:351:    * @param  object  A   new instance of the button/link htmlelement object.
+framework/app/core_modules/htmlelements/classes/input_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/label_class_inc.php:30: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/copytoclipboard_class_inc.php:5: * This class generates javascript to enable a cross browser
+framework/app/core_modules/htmlelements/classes/copytoclipboard_class_inc.php:32: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/copytoclipboard_class_inc.php:47: * This class generates javascript to enable a cross browser
+framework/app/core_modules/htmlelements/classes/tooltip_class_inc.php:30: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/div_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/div_class_inc.php:54: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:35:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:62:    * @var string $alt: The alt text for the icon image
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:66:    * @var string $title: The title text for the icon image
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:70:    * @var string $extra: Additional attributes for the icon image
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:230:    * Method to return edit linked icon
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:238:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:240:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:246:   * Method to return delete linked icon
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:254:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:256:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:263:   * Method to return a delete icon linked to confirm
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:303:    * Method to return delete linked icon
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:309:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:311:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:316:    * Method to return upload linked icon
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:322:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:324:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:329:    * Method to return upload linked icon
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:335:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:337:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:342:    * Method to return upload linked icon
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:348:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:353:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:359:    * Method to return an icon with a link
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:374:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:376:        $objLink->link=$this->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:382:    * Method to return an icon with a FQDN link
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:401:        $objLink = $this->newObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:403:        $objLink->link = '<img src="'.$this->_objConfig->getSiteRoot().$this->_objConfig->getskinRoot()."_common/".$folder.$name.".".$type.'" />';
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:408:    * Method to return an icon / text combination link - an icon with text below encapsulated in a div
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:413:    * @param  string $linkText   The text to display below the icon.
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:417:    public function getTextIcon($url, $name, $linkText, $type = 'gif', $iconfolder='icons/', $extra = NULL, $width = '40px', $height = '40px')
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:420:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:424:        $this->title = $linkText;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:427:        $icStr .= '<span>'.$linkText.'</span>';
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:429:        $objLink = new link($url);
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:430:        $objLink->link = $icStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:432:        $linkStr = $objLink->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:434:        $objLayer->str = $linkStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:441:    * Method to return an icon / text combination link - an icon with text below encapsulated in a div
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:446:    * @param  string $linkText   The text to display below the icon.
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:450:    public function getCleanTextIcon($divId, $url, $name, $linkText, $type = 'gif', $iconfolder='icons/', $extra = NULL, $width = '40px', $height = '40px')
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:453:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:457:        $this->title = $linkText;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:460:        $icStr .= '<span>'.$linkText.'</span>';
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:462:        $objLink = new link($url);
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:463:        $objLink->link = $icStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:465:        $linkStr = $objLink->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:467:        $objLayer->str = $linkStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:476:    * Method to return an icon / text combination link - an icon with text below encapsulated in a div
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:482:    * @param  string $linkText   The text to display below the icon.
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:486:    public function getBlockIcon($url, $name, $linkText, $type = 'gif', $iconfolder='icons/', $extra = NULL)
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:489:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:493:        $this->title = $linkText;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:496:        $icStr .= '<span>'.$linkText.'</span>';
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:498:        $objLink = new link($url);
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:499:        $objLink->link = $icStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:500:        $linkStr = $objLink->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:502:        $objLayer->str = $linkStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:514:    * @param  string $linkText   The text to display below the icon.
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:518:    public function getCleanBlockIcon($url, $name, $linkText, $type = 'gif', $iconfolder='icons/', $extra = NULL)
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:521:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:525:        $this->title = $linkText;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:528:        $icStr .= '<span>'.$linkText.'</span>';
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:530:        $objLink = new link($url);
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:531:        $objLink->link = $icStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:532:        $linkStr = $objLink->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:534:        $objLayer->str = $linkStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:547:    * @param  string $linkText   The text to display below the icon.
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:551:    public function getCleanBlockIconId($divId, $url, $name, $linkText, $type = 'gif', $iconfolder='icons/', $extra = NULL)
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:554:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:558:        $this->title = $linkText;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:561:        $icStr .= '<span>'.$linkText.'</span>';
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:563:        $objLink = new link($url);
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:564:        $objLink->link = $icStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:565:        $linkStr = $objLink->show();
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:567:        $objLayer->str = $linkStr;
+framework/app/core_modules/htmlelements/classes/geticon_class_inc.php:619:    * Method to get the src url of the image.
+framework/app/core_modules/htmlelements/classes/layer_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/layer_class_inc.php:118:    * @var string $background_image: URL for an image to apply to the background
+framework/app/core_modules/htmlelements/classes/layer_class_inc.php:120:    public $background_image;
+framework/app/core_modules/htmlelements/classes/layer_class_inc.php:189:        $this->background_image = null;
+framework/app/core_modules/htmlelements/classes/layer_class_inc.php:266:            if ($this->background_image) {
+framework/app/core_modules/htmlelements/classes/layer_class_inc.php:267:                $ret .= "background_image: " . $this->background_image . "; ";
+framework/app/core_modules/htmlelements/classes/formtags_class_inc.php:16: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:104:     * @param string  $link            Link. The tab will be a link to a URL instead of having content
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:107:    public function addTab($label, $content, $link='', $defaultSelected=FALSE, $height='')
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:112:        // If link is provided, tab should not have content, as well as vice-versa
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:113:        if ($link=='') {
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:115:            $tab['link'] = '';
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:118:            $tab['link'] = $link;
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:169:                // If tab is a link, create link
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:170:                if ($tab['link'] != '') {
+framework/app/core_modules/htmlelements/classes/tabcontent_class_inc.php:171:                    $tabnavigation .= '<li><a href="'.$tab['link'].'">'.$tab['label'].'</a></li>';
+framework/app/core_modules/htmlelements/classes/frames_class_inc.php:15: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/mouseoverpopup_class_inc.php:28: * Used to create links with a Tooltip 
+framework/app/core_modules/htmlelements/classes/mouseoverpopup_class_inc.php:39: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/mouseoverpopup_class_inc.php:109:    * @param string $urltext : the text of the link
+framework/app/core_modules/htmlelements/classes/mouseoverpopup_class_inc.php:112:    * @param string $url : the url of the link
+framework/app/core_modules/htmlelements/classes/checkbox_class_inc.php:30: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/checkbox_class_inc.php:53: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/frameset_class_inc.php:37: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:60:class link extends abhtmlbase implements ifhtml
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:65:        $this->link($href);
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:71:    * @var string $linkType The type of link, e.g. http, mailto, etc.
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:74:    public $linkType;
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:92:    * @var string $link The text to display in the link.
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:95:    public $link;
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:153:    * @var string $anchor specifies the anchor (#) on a page for the link
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:159:    * @var string $title specifies the link title
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:172:        public function link($href=null)
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:188:    * Method to build the link from the parameters
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:194:        if ($this->linkType!="none" && $this->linkType!=Null) {
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:195:            if ($this->linkType=='mailto') {
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:196:                $ret .= $this->linkType.":";
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:198:                $ret .= $this->linkType."://";
+framework/app/core_modules/htmlelements/classes/link_class_inc.php:253:        $ret .= ">".$this->link."</a>";
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:134:            $link =null;
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:146:                    $link = '<link id="luna-tab-style-sheet" type="text/css" rel="stylesheet" href="core_modules/htmlelements/resources/css/luna/tab.css" />';
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:147:                    $this->appendArrayVar('headerParams', $link);
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:149:                    $link = '<link id="winclassic-tab-style-sheet" type="text/css" rel="stylesheet" href="core_modules/htmlelements/resources/css/tab.winclassic.css" />';
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:150:                    $this->appendArrayVar('headerParams', $link);
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:152:                    $link = '<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="core_modules/htmlelements/resources/css/tab.webfx.css" />';
+framework/app/core_modules/htmlelements/classes/tabpane_class_inc.php:153:                    $this->appendArrayVar('headerParams', $link);                
+framework/app/core_modules/htmlelements/classes/colorpicker_class_inc.php:32: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/colorpicker_class_inc.php:51: * @link      http://www.mattkruse.com/javascript/colorpicker/index.html
+framework/app/core_modules/htmlelements/classes/colorpicker_class_inc.php:52: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/sortdirection_class_inc.php:7: * Explanation: Often you want to have links that sort columns, e.g.
+framework/app/core_modules/htmlelements/classes/sortdirection_class_inc.php:26: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/datepicker_class_inc.php:44: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/datepicker_class_inc.php:45: * @link      http://www.dynamicdrive.com/dynamicindex7/jasoncalendar.htm
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:16: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:128:    public function linkedButton($type, $link, $target="_top",$alt=Null) 
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:130:        $strout='<a href="'.$link.'" target="'.$target.'">'.$this->button($type,Null,'gif',$alt).'</a>';
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:174:    * style link. Make sure that $linktext is translated
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:176:    * @param string $link: the URL to which the button links
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:177:    * @param string $linktext: the text to appear on the button
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:180:    public function pseudoButton($link, $linktext, $space=FALSE)
+framework/app/core_modules/htmlelements/classes/navbuttons_class_inc.php:185:        return $space."<a href='".$link."' class='pseudobutton'>".$linktext.'</a>'.$space."\n";
+framework/app/core_modules/htmlelements/classes/radio_class_inc.php:49:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/marquee_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/marquee_class_inc.php:61:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/marquee_class_inc.php:143:     * link management
+framework/app/core_modules/htmlelements/classes/marquee_class_inc.php:194:        * for the firefox browser esp, this shall ensure
+framework/app/core_modules/htmlelements/classes/marquee_class_inc.php:650:        * link should only be displayed within the corresponding
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:24: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:295:                     			filebrowserBrowseUrl : '$this->siteRoot?module=filemanager&action=fcklink&context=yes&loadwindow=yes',
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:296:                     			filebrowserImageBrowseUrl : '$this->siteRoot?module=filemanager&action=fckimage&context=yes&loadwindow=yes&scrollbars=yes',
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:297:	                     		filebrowserFlashBrowseUrl : '$this->siteRoot?module=filemanager&action=fckflash&context=yes&loadwindow=yes',
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:299:                        filebrowserWindowWidth : '80%',
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:300:                        filebrowserWindowHeight : '100%',
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:505:                        plugins : "style,layer,table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,flash,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable",
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:520:                        external_link_list_url : "example_link_list.js",
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:521:                        external_image_list_url : "example_image_list.js",
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:523:                        file_browser_callback : "fileBrowserCallBack",
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:529:                        // This is where you insert your custom filebrowser logic
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:530:                        //alert("Example of filebrowser callback: field_name: " + field_name + ", url: " + url + ", type: " + type);
+framework/app/core_modules/htmlelements/classes/htmlarea_class_inc.php:531:                        mywindow = window.open ("' . $this->uri(array('action' => 'showmedia'), 'mediamanager') . '",  "imagewindow","location=1,status=1,scrollbars=0,  width=200,height=200");  mywindow.moveTo(0,0);
+framework/app/core_modules/htmlelements/classes/sysconfig_extjs_theme_class_inc.php:15: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/button_class_inc.php:56: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/button_class_inc.php:140:     * Can be one of: ok, cancel, add, delete, download, download2, upload, search, find, first, prev, next, last, play, pause, 
+framework/app/core_modules/htmlelements/classes/dropdown_class_inc.php:31: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/dropdown_class_inc.php:53: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/slider_class_inc.php:26: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/slider_class_inc.php:46:* The images used also comes from the above website
+framework/app/core_modules/htmlelements/classes/textarea_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/textarea_class_inc.php:191:    * @return string The formatted link
+framework/app/core_modules/htmlelements/classes/highlightlabels_class_inc.php:18: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/firebug_class_inc.php:7:* firebug to run on non-firefox browsers.
+framework/app/core_modules/htmlelements/classes/firebug_class_inc.php:15:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/roundcorners_class_inc.php:25:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/timeoutmessage_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/timeoutmessage_class_inc.php:187:                $objLink = $this->getObject('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/timeoutmessage_class_inc.php:189:                $objLink->link = '';
+framework/app/core_modules/htmlelements/classes/form_class_inc.php:18: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/form_class_inc.php:569:     *                         uploadedfile
+framework/app/core_modules/htmlelements/classes/form_class_inc.php:642:            case 'uploadedfile';
+framework/app/core_modules/htmlelements/classes/switchmenu_class_inc.php:20: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/inputmasks_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:4: /* Simple class for outputting '<a href' links>
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:15: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:40:     * Holds the href link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:44:        public $link;
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:47:     * Holds the text for the link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:61:     * A method to set the href link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:63:     * @param  unknown $link  Parameter description (if any) ...
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:69:                public function href($link=Null,$text=Null,$other=Null)
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:71:            $this->link=$link;
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:77:     * A method to show the href link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:79:     * @return string Return href link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:84:            $href="<a href='".$this->link."' ".$this->other.">".$this->text."</a>\n";
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:89:     * A method to display the link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:91:     * @param  string $link  Parameter description (if any) ...
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:94:     * @return string Return link
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:97:        public function showlink($link,$text,$other=Null)
+framework/app/core_modules/htmlelements/classes/href_class_inc.php:99:            $href="<a href='".$link."' ".$other.">".$text."</a>\n";
+framework/app/core_modules/htmlelements/classes/calendar_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/calendar_class_inc.php:50: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/calendar_class_inc.php:144:        $str.="<a href=\"#\" onclick=\"window.open('core_modules/htmlelements/classes/cal.php','win','width=350,height=200'); return false\"><img src=\"core_modules/htmlelements/resources/images/schedule_ico.gif\" /></a>";
+framework/app/core_modules/htmlelements/classes/mischtml_class_inc.php:29: * @link      http://avoir.uwc.ac.za/
+framework/app/core_modules/htmlelements/classes/mischtml_class_inc.php:56: * @link      http://avoir.uwc.ac.za/
+framework/app/core_modules/htmlelements/classes/mischtml_class_inc.php:71:     * Generates a script element linking to an external file to import code from.
+framework/app/core_modules/htmlelements/classes/iframe_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/sorttable_class_inc.php:23:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/sorttable_class_inc.php:46:*        $lnkEntry = $this->newObject( 'link', 'htmlelments' );
+framework/app/core_modules/htmlelements/classes/sorttable_class_inc.php:47:*        $lnkEntry->href = Your link stuff;
+framework/app/core_modules/htmlelements/classes/sorttable_class_inc.php:48:*        $lnkEntry->link = Your link text which get used for the sort;
+framework/app/core_modules/htmlelements/classes/sorttable_class_inc.php:49:*        $tblEntries->sortData = $lnkEntry->link;
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:7: * This generates Facebook-style lightbox which can display images, divs, or entire remote pages.
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:31: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:37:* This generates Facebook-style lightbox which can display images, divs, or entire remote pages.
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:49:* @link      http://famspam.com/facebox/
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:50:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:60:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:81:     * Show a link such that it will open in a facebox modal window
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:83:     * @param string $text The text for the link
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:84:     * @param string $link The URL to open in facebox
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:85:     * @return string The formatted link
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:88:    public function show($text, $link)
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:91:        $link = new link ($link);
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:92:        $link->link = $text;
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:93:        $link->extra = 'rel="facebox"';
+framework/app/core_modules/htmlelements/classes/alertbox_class_inc.php:94:        return $link->show();
+framework/app/core_modules/htmlelements/classes/fieldset_class_inc.php:33:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:26: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:58:*            $this->objPop->set('linktext','Click me baby');
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:86:    * @var boolean $directories: Controls the standard browser directory buttons
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:131:    * @var boolean $toolbar: Controls the standard browser toolbar
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:136:    * @var string $linktext: The text (or image tag) for the link
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:138:    public $linktext;
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:150:    * @var string Type of link to use. Can either be 'link' or 'button'
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:152:    public $linkType = 'link';
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:154:    * @var string $title The onmouseover title for a link
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:205:    * Method to show the window link
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:206:    * @return string The formatted link
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:226:        // Either show as button or link (default)
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:227:        if ($this->linkType=='button') {
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:229:            if (preg_match('/<.+?>/', $this->linktext)) {
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:232:         . $this->linktext . "</span></span></button>";
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:236:         . $this->linktext . "</span></span></button>";
+framework/app/core_modules/htmlelements/classes/windowpop_class_inc.php:243:         . $this->linktext . "</a>";
+framework/app/core_modules/htmlelements/classes/tabbedbox_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/htmlbase_class_inc.php:27: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/csslayout_class_inc.php:71: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/csslayout_class_inc.php:72: * @link      http://www.sitepoint.com/print/exploring-limits-css-layout
+framework/app/core_modules/htmlelements/classes/htmlheading_class_inc.php:21: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/fieldsetex_class_inc.php:34:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/tigramenu_class_inc.php:37:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/tigramenu_class_inc.php:141:    *              passed to arrayToTable so that the edit links can be inserted
+framework/app/core_modules/htmlelements/classes/tigramenu_class_inc.php:203:    * @var string $summary: Specifies a summary of the table for speech-synthesizing/non-visual browsers
+framework/app/core_modules/htmlelements/classes/extjs_class_inc.php:30: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/extjs_class_inc.php:73:		$extall_css = '<link rel="stylesheet" href="'.$this->getResourceUri('ext-3.0-rc2/resources/css/ext-all.css', 'htmlelements').'" type="text/css" />';
+framework/app/core_modules/htmlelements/classes/extjs_class_inc.php:74:		$extall_css .= '<link rel="stylesheet" href="skins/_common/css/extjs/silk/silk.css" type="text/css" />';
+framework/app/core_modules/htmlelements/classes/extjs_class_inc.php:75:		$extall_css .= '<link rel="stylesheet" href="skins/_common/css/extjs/menus.css" type="text/css" />';
+framework/app/core_modules/htmlelements/classes/extjs_class_inc.php:76:		$extall_css .= '<link rel="stylesheet" href="skins/_common/css/extjs/buttons.css" type="text/css" />';
+framework/app/core_modules/htmlelements/classes/extjs_class_inc.php:86:                $xtheme_css = '<link rel="stylesheet" href="skins/_common/css/extjs/themes/'.$this->theme.'/css/xtheme.css" type="text/css" />';
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:31:    * @var string $link: The link target of the menu item
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:33:    public $link;
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:65:        public function tigranode($caption, $link = null, $scope = null)
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:68:        $this->link = $link;
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:88:                    ['File Manager', '?module=filemanager']
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:109:    * @param string $link       : The link of the menu item
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:112:    public function addChild($caption, $link = null, $scope = null)
+framework/app/core_modules/htmlelements/classes/tigranode_class_inc.php:114:        $node = new tigranode($caption, $link, $scope);    
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:19: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:39: * Since then, many others have developed cross-browser solutions to this. This implementation was released by 
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:48: * $this->uri(array('action'=>'submodalexample_content')), 'link');
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:76:    * @var string $optionType - Either 'button' or 'link'
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:81:    * @var string $text Text of button or link
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:133:        $this->loadClass('link', 'htmlelements');
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:136:        $link = new link ($this->url);
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:137:        $link->link = $this->text;
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:139:        $link->cssClass = 'submodal-'.$this->width.'-'.$this->height;
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:142:        return $link->show();
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:146:    * Method to Display the Sub Modal Window Opener - either button or link
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:149:    * @param string $type   Type of Opener - Either button or link
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:176:        // Show either as link or button
+framework/app/core_modules/htmlelements/classes/submodalwindow_class_inc.php:177:        if ($this->optionType == 'link') {
+framework/app/core_modules/htmlelements/classes/textinput_class_inc.php:29: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/multitabbedbox_class_inc.php:38:* @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:5: * HTML control class to create image tags
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:48:* HTML control class to create image tags
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:55:class image implements ifhtml
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:95:    public $imageTag;
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:132:    public $over_image_src;
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:137:        public function image()
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:140:        $this->imageTag = null;
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:150:        //echo htmlentities($this->imageTag);
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:151:        return $this->imageTag;
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:160:        $this->imageTag = "<img src=\"" . $this->src . "\"";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:162:            $this->imageTag .= " width=\"" . $this->width . "\"";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:163:            $this->imageTag .= " height=\"" . $this->height . "\"";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:166:            $this->imageTag .= " align=\"" . $this->align . "\"";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:169:            $this->imageTag .= " alt=\"" . $this->alt . "\"";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:172:            $this->imageTag .= " border=\"" . $this->border . "\"";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:174:        $this->imageTag .= " />";
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:178:    * Get the size of an image
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:181:    * @return string the width and height tag for the image
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:185:        $image_size = getimagesize ($this->src);
+framework/app/core_modules/htmlelements/classes/image_class_inc.php:187:        return $image_size['3']; 
+framework/app/core_modules/htmlelements/classes/timepicker_class_inc.php:26: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/validator_class_inc.php:28: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/validator_class_inc.php:52: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/ajaxsearch_class_inc.php:72: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/ajaxsearch_class_inc.php:199:        //<img src="/images/spinner.gif" alt="Working..." />
+framework/app/core_modules/htmlelements/classes/display_class_inc.php:30: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/htmlelements/classes/display_class_inc.php:38:<link rel=StyleSheet href="../config/<?php echo $skincss ?>" type="text/css">
+framework/app/core_modules/htmlelements/classes/display_class_inc.php:51: * @link      http://avoir.uwc.ac.za
+framework/app/core_modules/ckeditor2/controller.php:29: * @link      http://www.chisimba.com
+framework/app/core_modules/ckeditor2/classes/block_ckeditor2right_class_inc.php:26: * @link       http://www.chisimba.com
+framework/app/core_modules/ckeditor2/classes/block_ckeditor2left_class_inc.php:26: * @link       http://www.chisimba.com
+framework/app/core_modules/ckeditor2/classes/block_ckeditor2middle_class_inc.php:26: * @link       http://www.chisimba.com
+framework/app/core_modules/ckeditor2/classes/dbckeditor2_class_inc.php:30: * @link      http://www.chisimba.com
+framework/app/core_modules/ckeditor2/classes/dbckeditor2_class_inc.php:67:    * Intialiser for the ckeditor2 database connector
+framework/app/core_modules/tinymce/controller.php:31: * @link      http://avoir.uwc.ac.za

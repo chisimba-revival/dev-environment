@@ -1,0 +1,13 @@
+vendor	repository	file	line	match
+fckeditor	framework	app/core_modules/htmlelements/classes/htmlarea_class_inc.php	296	        $oFCKeditor = new FCKeditor($this->name);
+fckeditor	framework	app/core_modules/htmlelements/classes/htmlarea_class_inc.php	348	            var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+fckeditor	framework	app/core_modules/htmlelements/classes/htmlarea_class_inc.php	363	            var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+tinymce	framework	app/core_modules/htmlelements/classes/htmlarea_class_inc.php	457	                    tinyMCE.init({
+fckeditor	framework	app/core_modules/htmlelements/resources/validation.js	8		var oEditor = FCKeditorAPI.GetInstance(elemId);
+fckeditor	modules	cmsadmin/classes/cmsutils_class_inc.php	604	                        var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+fckeditor	modules	discussion/templates/content/discussion_moderatetopic.php	414	                    // var oEditor = FCKeditorAPI.GetInstance('reason') ;
+fckeditor	modules	discussion/templates/content/discussion_moderatetopic.php	435	    //var oEditor = collAll.FCKeditorAPI.GetInstance('reason') ;
+fckeditor	modules	forms/classes/ui_class_inc.php	425	                        var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+fckeditor	modules	forum/templates/content/forum_moderatetopic.php	414	                    // var oEditor = FCKeditorAPI.GetInstance('reason') ;
+fckeditor	modules	forum/templates/content/forum_moderatetopic.php	435	    //var oEditor = collAll.FCKeditorAPI.GetInstance('reason') ;
+fckeditor	modules	worksheetadmin/templates/content/addedit_question_tpl.php	138	               var oEditor = FCKeditorAPI.GetInstance('question') ;

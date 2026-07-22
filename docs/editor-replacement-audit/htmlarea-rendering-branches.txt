@@ -1,0 +1,73 @@
+=== Configuration reads ===
+138:        $this->fckVersion = $this->sysConf->getValue('FCKEDITOR_VERSION', 'htmlelements');
+140:        $this->sysEditor = $this->sysConf->getValue('SYSTEM_EDITOR', 'htmlelements');
+141:        $this->autoSaveTime = $this->sysConf->getValue('AUTOSAVE_TIME', 'htmlelements');
+142:        $this->enableAutoSave = $this->sysConf->getValue('ENABLE_AUTOSAVE', 'htmlelements');
+
+=== Rendering branches ===
+99:     * @var string $sysEditor Which Editor to load (fckeditor or ckeditor)
+103:     * @var string $templatePath Path to fckeditor templates
+107:     * this var stores the instance of ckeditor when its created
+138:        $this->fckVersion = $this->sysConf->getValue('FCKEDITOR_VERSION', 'htmlelements');
+143:        $this->disableSpellChecker = $this->sysConf->getValue('DISABLE_SPELLCHECKER', 'ckeditor', true);
+239:          return $this->showFCKEditor($this->fckVersion);
+242:        $base = '<script language="JavaScript" src="' . $this->getResourceUri('ckeditor/ckeditor.js', 'ckeditor') . '" type="text/javascript"></script>';
+243:        $baseajax = '<script language="JavaScript" src="' . $this->getResourceUri('ckeditor/_source/core/ajax.js', 'ckeditor') . '" type="text/javascript"></script>';
+293:        CKEDITOR.replace( '$this->name',
+303:                        contentsCss: '$this->sitePath/core_modules/ckeditor/resources/ckeditor/chisimba.css',
+319:    function showFCKEditor($version = '2.6.3') {
+321:            require_once($this->getResourcePath('fckeditor_2.5.1/fckeditor.php', 'fckeditor'));
+323:            require_once($this->getResourcePath('fckeditor/fckeditor_2.6.3/fckeditor_php5.php', 'fckeditor'));
+334:            $sBasePath .= '/core_modules/fckeditor/resources/fckeditor/fckeditor_2.6.3/';
+338:            $sBasePath .= 'core_modules/fckeditor/resources/fckeditor_2.5.1/';
+341:        $oFCKeditor = new FCKeditor($this->name);
+342:        $oFCKeditor->BasePath = $sBasePath;
+343:        $oFCKeditor->Width = $this->width;
+344:        $oFCKeditor->Height = $this->height;
+345:        $oFCKeditor->ToolbarSet = $this->toolbarSet;
+346:        //$oFCKeditor->SiteRoot=$objConfig->getsiteRoot();
+356:        $oFCKeditor->SiteRoot = $siteRootPath;
+358:        $oFCKeditor->Config['SkinPath'] = $sBasePath . 'editor/skins/default/';
+359:        $oFCKeditor->Config['CustomConfigurationsPath'] = $sBasePath . 'chisimba_config.js';
+364:            $oFCKeditor->Config['TemplatesXmlPath'] = $this->templatePath;
+368:            $oFCKeditor->Context = 'Yes';
+370:            $oFCKeditor->Context = 'No';
+373:        $oFCKeditor->Value = $this->value;
+375:        $this->showFCKEditorWakeupJS();
+377:        return '<span onmouseover="wakeUpFireFoxFckeditor(\'' . $this->name . '\');">' . $oFCKeditor->CreateHtml() . '</span>';
+384:     *         Taken from: http://www.tohir.co.za/2006/06/fckeditor-doesnt-want-to-focus-in.html
+386:    function showFCKEditorWakeupJS() {
+389:    function wakeUpFireFoxFckeditor(fckEditorInstance)
+393:            var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+408:            var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+426:     * Method to show the tinyMCE Editor
+429:    function showTinyMCE() {
+497:                <script language="javascript" type="text/javascript" src="core_modules/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+502:                    tinyMCE.init({
+
+=== JavaScript emission ===
+135:    function init($name=null, $value=null, $rows=4, $cols=50, $context=false) {
+136:        $this->sysConf = $this->getObject('dbsysconfig', 'sysconfig');
+155:        //$this->_objConfig =& $this->getObject('config', 'config');
+157:        $objConfig = $this->getObject('altconfig', 'config');
+161:        $this->context = $context;
+242:        $base = '<script language="JavaScript" src="' . $this->getResourceUri('ckeditor/ckeditor.js', 'ckeditor') . '" type="text/javascript"></script>';
+243:        $baseajax = '<script language="JavaScript" src="' . $this->getResourceUri('ckeditor/_source/core/ajax.js', 'ckeditor') . '" type="text/javascript"></script>';
+251:<script type="text/javascript">
+290:        <script type=\"text/javascript\">
+293:        CKEDITOR.replace( '$this->name',
+295:                     			filebrowserBrowseUrl : '$this->siteRoot?module=filemanager&action=fcklink&context=yes&loadwindow=yes',
+296:                     			filebrowserImageBrowseUrl : '$this->siteRoot?module=filemanager&action=fckimage&context=yes&loadwindow=yes&scrollbars=yes',
+297:	                     		filebrowserFlashBrowseUrl : '$this->siteRoot?module=filemanager&action=fckflash&context=yes&loadwindow=yes',
+325:        $objConfig = $this->newObject('altconfig', 'config');
+368:            $oFCKeditor->Context = 'Yes';
+370:            $oFCKeditor->Context = 'No';
+377:        return '<span onmouseover="wakeUpFireFoxFckeditor(\'' . $this->name . '\');">' . $oFCKeditor->CreateHtml() . '</span>';
+388:<script type="text/javascript">
+393:            var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+408:            var oEditor = FCKeditorAPI.GetInstance(fckEditorInstance);
+487:        $objConfig = $this->newObject('altconfig', 'config');
+497:                <script language="javascript" type="text/javascript" src="core_modules/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+500:                <script language="javascript" type="text/javascript">
+502:                    tinyMCE.init({
+545:     *   $objConfig=$this->getObject('altconfig','config');
