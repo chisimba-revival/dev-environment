@@ -35,6 +35,7 @@ esac
 
 COMPOSE="${DEV}/compose/${PROFILE}.yml"
 RUNTIME="${DEV}/runtime/${PROFILE}-ch"
+PRESERVED_INSTALLDONE=""
 
 FRAMEWORK="${ROOT}/framework/app"
 MODULES="${ROOT}/modules"
@@ -72,6 +73,14 @@ else
         -f "${COMPOSE}" \
         stop web \
         || true
+
+    if [[ -f "${RUNTIME}/config/installdone.txt" ]]; then
+        PRESERVED_INSTALLDONE="$(mktemp)"
+        cp -a "${RUNTIME}/config/installdone.txt" "${PRESERVED_INSTALLDONE}"
+        echo "Preserving installer completion state..."
+    else
+        echo "WARNING: No existing installdone.txt was found to preserve."
+    fi
 fi
 
 echo "Removing disposable runtime..."
@@ -96,10 +105,17 @@ rm -rf "${RUNTIME}/canvases"
 mkdir -p "${RUNTIME}/canvases"
 cp -a "${CANVASES}/." "${RUNTIME}/canvases/"
 
-echo "Removing installer completion state..."
-rm -f \
-    "${RUNTIME}/config/installdone.txt" \
-    "${RUNTIME}/tmpinstallfile"
+if [[ "${MODE}" == "--fresh-db" ]]; then
+    echo "Removing installer completion state for fresh database..."
+    rm -f \
+        "${RUNTIME}/config/installdone.txt" \
+        "${RUNTIME}/tmpinstallfile"
+elif [[ -n "${PRESERVED_INSTALLDONE}" ]]; then
+    echo "Restoring installer completion state..."
+    mkdir -p "${RUNTIME}/config"
+    cp -a "${PRESERVED_INSTALLDONE}" "${RUNTIME}/config/installdone.txt"
+    rm -f "${PRESERVED_INSTALLDONE}"
+fi
 
 mkdir -p \
     "${RUNTIME}/config" \
