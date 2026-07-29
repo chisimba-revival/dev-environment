@@ -35,7 +35,7 @@ esac
 
 COMPOSE="${DEV}/compose/${PROFILE}.yml"
 RUNTIME="${DEV}/runtime/${PROFILE}-ch"
-PRESERVED_INSTALLDONE=""
+PRESERVED_STATE_DIR=""
 
 FRAMEWORK="${ROOT}/framework/app"
 MODULES="${ROOT}/modules"
@@ -61,6 +61,25 @@ echo "Runtime: ${RUNTIME}"
 echo "============================================================"
 
 if [[ "${MODE}" == "--fresh-db" ]]; then
+    mapfile -t compose_services < <(
+        docker compose -f "${COMPOSE}" config --services
+    )
+
+    for required_service in web db
+    do
+        if ! printf '%s\n' "${compose_services[@]}" \
+            | grep -Fxq "${required_service}"
+        then
+            echo "ERROR: ${COMPOSE} does not define service ${required_service}." >&2
+            exit 1
+        fi
+    done
+
+    echo "Validated services: web, db"
+    echo "Compose-managed ${PROFILE} volumes scheduled for deletion:"
+    docker compose -f "${COMPOSE}" config --volumes \
+        | sed 's/^/  - /'
+    echo
     echo "Stopping stack and deleting only the ${PROFILE} volumes..."
 
     docker compose \
@@ -74,13 +93,20 @@ else
         stop web \
         || true
 
-    if [[ -f "${RUNTIME}/config/installdone.txt" ]]; then
-        PRESERVED_INSTALLDONE="$(mktemp)"
-        cp -a "${RUNTIME}/config/installdone.txt" "${PRESERVED_INSTALLDONE}"
-        echo "Preserving installer completion state..."
-    else
-        echo "WARNING: No existing installdone.txt was found to preserve."
-    fi
+    for required_state in         "${RUNTIME}/config/installdone.txt"         "${RUNTIME}/config/dbdetails_inc.php"         "${RUNTIME}/config/config.xml"         "${RUNTIME}/tmpinstallfile"
+    do
+        if [[ ! -f "${required_state}" ]]; then
+            echo "ERROR: Cannot preserve the installed state."
+            echo "Missing: ${required_state}"
+            echo "The runtime has not been removed."
+            exit 1
+        fi
+    done
+
+    PRESERVED_STATE_DIR="$(mktemp -d)"
+    cp -a "${RUNTIME}/config" "${PRESERVED_STATE_DIR}/config"
+    cp -a "${RUNTIME}/tmpinstallfile" "${PRESERVED_STATE_DIR}/tmpinstallfile"
+    echo "Preserving complete installed configuration state..."
 fi
 
 echo "Removing disposable runtime..."
@@ -110,11 +136,12 @@ if [[ "${MODE}" == "--fresh-db" ]]; then
     rm -f \
         "${RUNTIME}/config/installdone.txt" \
         "${RUNTIME}/tmpinstallfile"
-elif [[ -n "${PRESERVED_INSTALLDONE}" ]]; then
-    echo "Restoring installer completion state..."
-    mkdir -p "${RUNTIME}/config"
-    cp -a "${PRESERVED_INSTALLDONE}" "${RUNTIME}/config/installdone.txt"
-    rm -f "${PRESERVED_INSTALLDONE}"
+elif [[ -n "${PRESERVED_STATE_DIR}" ]]; then
+    echo "Restoring complete installed configuration state..."
+    rm -rf "${RUNTIME}/config"
+    cp -a "${PRESERVED_STATE_DIR}/config" "${RUNTIME}/config"
+    cp -a "${PRESERVED_STATE_DIR}/tmpinstallfile" "${RUNTIME}/tmpinstallfile"
+    rm -rf "${PRESERVED_STATE_DIR}"
 fi
 
 mkdir -p \
@@ -136,6 +163,40 @@ echo
 docker compose \
     -f "${COMPOSE}" \
     ps -a
+
+if [[ "${MODE}" == "--fresh-db" ]]; then
+    echo
+    echo "Fresh-database post-rebuild verification..."
+
+    if [[ -e "${RUNTIME}/config/installdone.txt" ]]; then
+        echo "ERROR: installdone.txt remains after the fresh reset." >&2
+        exit 1
+    fi
+
+    if [[ -e "${RUNTIME}/tmpinstallfile" ]]; then
+        echo "ERROR: tmpinstallfile remains after the fresh reset." >&2
+        exit 1
+    fi
+
+    mapfile -t running_services < <(
+        docker compose -f "${COMPOSE}" ps \
+            --services \
+            --filter status=running
+    )
+
+    for required_service in web db
+    do
+        if ! printf '%s\n' "${running_services[@]}" \
+            | grep -Fxq "${required_service}"
+        then
+            echo "ERROR: ${required_service} is not running after rebuild." >&2
+            exit 1
+        fi
+    done
+
+    echo "Verified: web and db are running."
+    echo "Verified: installer completion markers are absent."
+fi
 
 echo
 echo "Runtime rebuild complete."
