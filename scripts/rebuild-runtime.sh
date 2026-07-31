@@ -93,7 +93,7 @@ else
         stop web \
         || true
 
-    for required_state in         "${RUNTIME}/config/installdone.txt"         "${RUNTIME}/config/dbdetails_inc.php"         "${RUNTIME}/config/config.xml"         "${RUNTIME}/tmpinstallfile"
+    for required_state in         "${RUNTIME}/config/installdone.txt"         "${RUNTIME}/config/dbdetails_inc.php"         "${RUNTIME}/config/config.xml"
     do
         if [[ ! -f "${required_state}" ]]; then
             echo "ERROR: Cannot preserve the installed state."
@@ -105,7 +105,6 @@ else
 
     PRESERVED_STATE_DIR="$(mktemp -d)"
     cp -a "${RUNTIME}/config" "${PRESERVED_STATE_DIR}/config"
-    cp -a "${RUNTIME}/tmpinstallfile" "${PRESERVED_STATE_DIR}/tmpinstallfile"
     echo "Preserving complete installed configuration state..."
 fi
 
@@ -140,7 +139,6 @@ elif [[ -n "${PRESERVED_STATE_DIR}" ]]; then
     echo "Restoring complete installed configuration state..."
     rm -rf "${RUNTIME}/config"
     cp -a "${PRESERVED_STATE_DIR}/config" "${RUNTIME}/config"
-    cp -a "${PRESERVED_STATE_DIR}/tmpinstallfile" "${RUNTIME}/tmpinstallfile"
     rm -rf "${PRESERVED_STATE_DIR}"
 fi
 
