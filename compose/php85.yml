@@ -1,0 +1,25 @@
+name: chisimba-php85
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/php85/Dockerfile
+    container_name: chisimba-php85-web
+    ports:
+      - "8085:80"
+    volumes:
+      - ../runtime/php85-ch:/var/www/html/ch
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.11.18
+    container_name: chisimba-php85-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - php85_db:/var/lib/mysql
+
+volumes:
+  php85_db:
