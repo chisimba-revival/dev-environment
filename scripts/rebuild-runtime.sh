@@ -12,11 +12,11 @@ usage()
 {
     echo "Usage:"
     echo "  $0 php74 [--preserve-db|--fresh-db]"
-    echo "  $0 php82 [--preserve-db|--fresh-db]"
+    echo "  $0 php82 [--preserve-db|--fresh-db]\n    echo "  $0 php85 [--preserve-db|--fresh-db]""
 }
 
 case "${PROFILE}" in
-    php74|php82)
+    php74|php82|php85)
         ;;
     *)
         usage >&2
