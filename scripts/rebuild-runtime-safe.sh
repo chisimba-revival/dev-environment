@@ -2,13 +2,13 @@
 set -Eeuo pipefail
 
 usage() {
-    echo "Usage: sudo -E $0 php82 --preserve-db|--fresh-db" >&2
+    echo "Usage: sudo -E $0 php82|php85 --preserve-db|--fresh-db" >&2
 }
 
 [[ $# -eq 2 ]] || { usage; exit 64; }
 environment=$1
 mode=$2
-[[ $environment == php82 ]] || { echo "ERROR: only the proven php82 runtime is supported" >&2; exit 65; }
+[[ $environment == php82 || $environment == php85 ]] || { echo "ERROR: supported runtimes are php82 and php85" >&2; exit 65; }
 [[ $mode == --preserve-db || $mode == --fresh-db ]] || { usage; exit 66; }
 [[ ${EUID:-$(id -u)} -eq 0 ]] || { echo "ERROR: run with sudo" >&2; exit 67; }
 [[ -n ${SUDO_USER:-} && ${SUDO_USER} != root ]] || {
@@ -18,14 +18,16 @@ mode=$2
 
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 dev_dir=$(cd -- "$script_dir/.." && pwd)
-runtime="$dev_dir/runtime/php82-ch"
+runtime="$dev_dir/runtime/${environment}-ch"
 usrfiles="$runtime/usrfiles"
-compose="$dev_dir/compose/php82.yml"
+compose="$dev_dir/compose/${environment}.yml"
 assembler="$script_dir/rebuild-runtime.sh"
 lock="$dev_dir/.rebuild-runtime-safe.lock"
 archive_dir=$(mktemp -d "${TMPDIR:-/tmp}/chisimba-usrfiles.XXXXXX")
 archive="$archive_dir/usrfiles.tar"
+config_archive="$archive_dir/config.tar"
 had_usrfiles=0
+had_config=0
 rebuild_ok=0
 
 cleanup() {
@@ -43,6 +45,17 @@ cleanup() {
         echo "PERSISTENT_DATA_DISCARDED_FOR_FRESH_DB=yes"
     fi
 
+    if [[ $mode == --preserve-db && $had_config -eq 1 ]]; then
+        rm -rf -- "$runtime/config"
+        tar --numeric-owner -xpf "$config_archive" -C "$runtime"
+        echo "PERSISTENT_CONFIG_RESTORED=yes"
+    fi
+
+    if [[ $rebuild_ok -eq 0 ]]; then
+        docker compose -f "$compose" up -d || true
+        echo "STACK_RESTART_ATTEMPTED_AFTER_FAILURE=yes"
+    fi
+
     rm -rf -- "$archive_dir"
     exit "$status"
 }
@@ -54,7 +67,14 @@ flock -n 9 || { echo "ERROR: another safe rebuild is already running" >&2; exit 
 [[ -x "$assembler" ]] || { echo "ERROR: assembler missing: $assembler" >&2; exit 70; }
 [[ -f "$compose" ]] || { echo "ERROR: compose file missing: $compose" >&2; exit 71; }
 
-echo "Stopping php82 stack before moving application-owned data"
+if [[ $mode == --preserve-db && -d "$runtime/config" ]]; then
+    tar --numeric-owner -cpf "$config_archive" -C "$runtime" config
+    chmod -R a+rX "$runtime/config"
+    had_config=1
+    echo "PERSISTENT_CONFIG_CAPTURED=yes"
+fi
+
+echo "Stopping ${environment} stack before moving application-owned data"
 docker compose -f "$compose" down
 
 if [[ -d "$usrfiles" ]]; then
