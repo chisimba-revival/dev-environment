@@ -12,6 +12,8 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - ../runtime/php85-ch:/var/www/html/ch
+      - ../../modules:/var/www/html/ch/packages
+      - ../../framework/app/core_modules:/var/www/html/ch/core_modules
     depends_on:
       - db
 
