@@ -14,6 +14,7 @@ services:
       - ../runtime/php85-ch:/var/www/html/ch
       - ../../modules:/var/www/html/ch/packages
       - ../../framework/app/core_modules:/var/www/html/ch/core_modules
+      - ../../framework/app/classes:/var/www/html/ch/classes
       - ../../framework/app/skins:/var/www/html/ch/skins
       - ../../private-storage/php85/filemanager:/var/data/filemanager
     depends_on:
