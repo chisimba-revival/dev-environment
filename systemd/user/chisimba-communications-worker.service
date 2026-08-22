@@ -1,0 +1,8 @@
+[Unit]
+Description=Process the Chisimba Communications outbox
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=/run/media/derek/main/chisimba-revival/dev-environment/scripts/run-communications-worker.sh 20
+
