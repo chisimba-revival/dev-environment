@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+config_file="${CHISIMBA_COMMUNICATIONS_CONFIG:-/etc/chisimba/communications-worker.conf}"
+if [[ -r "$config_file" ]]; then
+    # The installer writes this root-owned file using shell-safe quoted values.
+    # shellcheck disable=SC1090
+    source "$config_file"
+fi
+
+container_name="${CHISIMBA_CONTAINER_NAME:-chisimba-web}"
+worker_path="${CHISIMBA_WORKER_PATH:-/var/www/html/ch/core_modules/communications/scripts/run_outbox_worker.php}"
+batch_size="${CHISIMBA_BATCH_SIZE:-20}"
+docker_binary="${CHISIMBA_DOCKER_BINARY:-/usr/bin/docker}"
+
+if [[ ! "$batch_size" =~ ^[0-9]+$ ]] || (( batch_size < 1 || batch_size > 100 )); then
+    echo "CHISIMBA_BATCH_SIZE must be an integer from 1 to 100." >&2
+    exit 64
+fi
+
+if [[ ! -x "$docker_binary" ]]; then
+    echo "Docker is not executable at $docker_binary." >&2
+    exit 69
+fi
+
+if [[ "$("$docker_binary" inspect --format '{{.State.Running}}' "$container_name" 2>/dev/null || true)" != "true" ]]; then
+    echo "Communications worker skipped: $container_name is not running."
+    exit 0
+fi
+
+exec /usr/bin/flock --nonblock /run/chisimba-communications-worker.lock \
+    "$docker_binary" exec "$container_name" php "$worker_path" "$batch_size"

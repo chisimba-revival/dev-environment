@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the Chisimba Communications worker
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=1min
+AccuracySec=5s
+Persistent=true
+Unit=chisimba-communications-worker.service
+
+[Install]
+WantedBy=timers.target
