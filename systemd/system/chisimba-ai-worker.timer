@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the Chisimba AI background worker
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=10s
+AccuracySec=2s
+Persistent=true
+Unit=chisimba-ai-worker.service
+
+[Install]
+WantedBy=timers.target
