@@ -1,0 +1,12 @@
+[Unit]
+Description=Process the Chisimba Communications outbox
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+Environment=CHISIMBA_COMMUNICATIONS_CONFIG=/etc/chisimba/communications-worker.conf
+ExecStart=/usr/local/libexec/chisimba-communications-worker
+
+[Install]
+WantedBy=multi-user.target
