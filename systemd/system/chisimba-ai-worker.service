@@ -1,0 +1,12 @@
+[Unit]
+Description=Process one Chisimba AI background-job step
+Wants=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+Environment=CHISIMBA_AI_WORKER_CONFIG=/etc/chisimba/ai-worker.conf
+ExecStart=/usr/local/libexec/chisimba-ai-worker
+
+[Install]
+WantedBy=multi-user.target
