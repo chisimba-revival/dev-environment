@@ -43,3 +43,9 @@ COPY docker/php74/99-chisimba-runtime-errors.ini \
 
 COPY local-https/chisimba-forwarded-https.conf /etc/apache2/conf-available/chisimba-forwarded-https.conf
 RUN a2enmod setenvif && a2enconf chisimba-forwarded-https
+
+# Course and generated-file URLs must remain guarded after a container rebuild.
+COPY local-https/chisimba-course-files.conf /etc/apache2/conf-available/chisimba-course-files.conf
+RUN a2enconf chisimba-course-files
+# php85.ini uses this path; create it in the image rather than by hand at runtime.
+RUN install -d -o www-data -g www-data -m 0700 /var/lib/php/sessions
