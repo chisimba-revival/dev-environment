@@ -1,5 +1,8 @@
 # AI chapter-quiz worker production installation
 
+See the [complete worker installation checklist](workers.md) for all queues,
+including the separate [registration cleanup worker](registration-cleanup-worker-production.md).
+
 Whole-course quiz generation is deliberately not performed inside a browser
 request. The MCQ Tests module creates a durable job in
 `tbl_mcq_chapter_quiz_jobs`; this worker processes the queued chapters and saves

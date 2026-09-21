@@ -1,5 +1,8 @@
 # Communications worker production installation
 
+See the [complete worker installation checklist](workers.md) for all queues,
+including the separate [registration cleanup worker](registration-cleanup-worker-production.md).
+
 The registration flow queues email. A worker must process that queue regularly.
 For a Docker-based production host using systemd, install the supplied system
 timer after the framework and modules have been deployed:

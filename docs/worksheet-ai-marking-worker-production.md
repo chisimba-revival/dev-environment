@@ -1,5 +1,8 @@
 # Worksheet AI marking worker production installation
 
+See the [complete worker installation checklist](workers.md) for all queues,
+including the separate [registration cleanup worker](registration-cleanup-worker-production.md).
+
 AI-assisted Worksheet marking is deliberately performed outside the browser
 request. A lecturer queues a durable job in
 `tbl_worksheet_ai_marking_jobs`; the worker prepares editable marks and

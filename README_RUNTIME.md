@@ -2,6 +2,13 @@
 
 This document contains the routine commands for starting, stopping, checking, and rebuilding the Chisimba PHP 7.4 development environment.
 
+## Background workers
+
+Runtime startup does not install worker schedules. See the
+[complete worker installation checklist](docs/workers.md), including registration
+cleanup, email and optional AI queues. Use the actual container and paths for
+your selected PHP runtime; do not copy production schedules into a test database.
+
 ## Workspace
 
 ```text
