@@ -24,6 +24,16 @@ Registration cleanup is separate from Communications and does not send email.
 It has no AI or Cloudflare dependency. AI workers can incur provider charges when
 processing queued jobs; a manual invocation is not necessarily an idle test.
 
+## Host backups and restore rehearsals
+
+The separate [automatic backup installation and recovery guide](../../shellscripts/backup-service/README.md)
+covers source capture, encrypted cross-server storage, nightly backups, hourly
+health alerts, weekly retention/integrity checks and monthly isolated restore
+rehearsals. Install and verify all four backup timers on the receiving server;
+application worker installers do not enable them. Keep the independent recovery
+password safe. The initial implementation protects KengaLearn; other sites need
+separate tested configuration and schedules.
+
 ## Establish the actual deployment paths
 
 These examples assume a Linux Docker host with cron/systemd and `flock`:
