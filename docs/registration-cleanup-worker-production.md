@@ -160,3 +160,31 @@ Verified 21 September 2026: `/etc/cron.d/chisimba-registration-cleanup` runs at
 It uses `/run/chisimba-registration-cleanup.lock` and logs to
 `/var/log/chisimba-registration-cleanup.log`. The policy is enabled. This is a
 site-specific example, not a default container name for new installations.
+
+## Shared production host examples
+
+Verified 21 September 2026 on the Learnthebirds/Kengasolutions/Chisimba.com host:
+cron uses the host's `Africa/Johannesburg` timezone. Each site has its own job,
+lock and log; do not replace these with a single shared lock or duplicate timer.
+
+| Site | Container | Application root | Daily time (SAST) | Cron filename / lock / log stem |
+| --- | --- | --- | --- | --- |
+| Learnthebirds | `learnthebirds-migrate-web-1` | `/var/www/html` | 04:30 | `chisimba-registration-ltb` |
+| Kengasolutions | `kengasolutions-chisimba-web-1` | `/var/www/html/ch` | 04:40 | `chisimba-registration-kenga` |
+| Chisimba.com | `chisimba-com-web-1` | `/var/www/html` | 04:50 | `chisimba-registration-chisimba` |
+
+For each stem, the schedule is `/etc/cron.d/STEM`, the lock is
+`/run/lock/STEM.lock` and the log is `/var/log/STEM.log`. All run the cleanup
+entry point with `--apply`; the policy is enabled. Initial runs found no eligible
+requests. These are deployment examples; verify container names when installing.
+
+Public login-account registration is closed on Learnthebirds and Kengasolutions
+using `KEWL_ALLOW_SELFREGISTER=FALSE`, and remains open on Chisimba.com. Since
+registration-service 1.023, both the public form and shared pending-registration
+service honour this switch. Login, password recovery, existing email confirmations,
+webinar bookings and newsletter subscriptions remain separate.
+
+These sites use Apache on the host as the reverse proxy. Trusted peer addresses
+were verified as `172.20.0.1`, `172.22.0.1` and `172.18.0.1`, respectively;
+Kengasolutions also uses Apache's existing `RemoteIP` configuration. Never copy
+these addresses to another installation without checking its network.
