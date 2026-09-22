@@ -18,6 +18,10 @@ usual application-module directory; verify your installation before using a path
 | Essay marking | Queued AI marking suggestions | `packages/essay/scripts/run_ai_marking_worker.php` | Every minute, 5 jobs (1–20) | AI options below |
 | Discussion marking | Queued AI marking suggestions | `packages/discussion/scripts/run_ai_marking_worker.php` | Every minute, 5 jobs (1–20) | AI options below |
 
+Password recovery requires Communications even when public registration is off.
+Contact-form SMTP and queued account-mail settings are separate; configure and
+verify both when installing a public publishing site.
+
 The Communications entry point also runs due Live Class reminders when `liveclass`
 is installed. Do not create a second reminder schedule for that service.
 Registration cleanup is separate from Communications and does not send email.
