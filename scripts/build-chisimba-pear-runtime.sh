@@ -195,6 +195,11 @@ while IFS='|' read -r id version source_type source status purpose; do
 
 done < "$MANIFEST"
 
+# Keep reviewed local compatibility changes reproducible after upstream extraction.
+patch --batch --forward -d "$STAGING_ROOT" -p1 < "$DEV_ENV_DIR/dependencies/patches/xml-parser-php8-callbacks.patch"
+
+patch --batch --forward -d "$STAGING_ROOT" -p1 < "$DEV_ENV_DIR/dependencies/patches/mdb2-iterator-php8-signatures.patch"
+
 cat > "$STAGING_ROOT/CHISIMBA_DEPENDENCY_MANIFEST.txt" <<EOF
 Chisimba curated PEAR compatibility pack
 
