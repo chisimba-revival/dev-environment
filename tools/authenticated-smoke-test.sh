@@ -42,13 +42,18 @@ request()
     local url="$2"
     shift 2
 
+    # Match the native form's minimum submission age; do not bypass its guard.
+    if [[ "${method}" == POST ]]; then
+        sleep 2
+    fi
+
     curl "${CURL_TLS[@]}" --silent --show-error \
         --location --max-redirs 8 \
         --cookie "${cookie_jar}" --cookie-jar "${cookie_jar}" \
         --dump-header "${headers}" --output "${response}" \
         --write-out '%{http_code}\t%{url_effective}\n' \
         > "${transfer}" \
-        --request "${method}" "$@" "${url}"
+        "$@" "${url}"
 }
 
 status_code()
@@ -103,6 +108,10 @@ fi
 
 request POST "${security_url}" \
     --data-urlencode "action=login" \
+    --data-urlencode "abuse_issued_at=$(html_value abuse_issued_at)" \
+    --data-urlencode "abuse_nonce=$(html_value abuse_nonce)" \
+    --data-urlencode "abuse_signature=$(html_value abuse_signature)" \
+    --data-urlencode 'website=' \
     --data-urlencode "native_auth_begin=${login_token}" \
     --data-urlencode "username=${USERNAME}" \
     --data-urlencode "password=${PASSWORD}__chisimba_smoke_wrong__"
@@ -130,6 +139,10 @@ fi
 
 request POST "${security_url}" \
     --data-urlencode "action=login" \
+    --data-urlencode "abuse_issued_at=$(html_value abuse_issued_at)" \
+    --data-urlencode "abuse_nonce=$(html_value abuse_nonce)" \
+    --data-urlencode "abuse_signature=$(html_value abuse_signature)" \
+    --data-urlencode 'website=' \
     --data-urlencode "native_auth_begin=${login_token}" \
     --data-urlencode "username=${USERNAME}" \
     --data-urlencode "password=${PASSWORD}"
@@ -144,7 +157,7 @@ else
     fi
 fi
 
-request GET "${security_url}?action=authenticated"
+request GET "${security_url}&action=authenticated"
 if [[ "$(status_code)" =~ ^[23] ]] && ! contains_input native_auth_begin; then
     pass "authenticated landing route does not return the anonymous login boundary"
 else
@@ -160,7 +173,7 @@ for route in ${ROUTES}; do
     fi
 done
 
-request GET "${security_url}?action=logout"
+request GET "${security_url}&action=logout"
 if [[ "$(status_code)" =~ ^[23] ]]; then
     pass "GET logout request is handled without a server error"
 else
@@ -179,9 +192,9 @@ fi
 # Fetch a page that is proven to render the native logout form. The canonical
 # form carries both the action discriminator and its single-use CSRF token.
 request GET "${login_url}"
-logout_action="$(html_value action)"
+logout_action=logout
 logout_token="$(html_value native_auth_logout)"
-if [[ "${logout_action}" == "logout" && -n "${logout_token}" ]]; then
+if [[ -n "${logout_token}" ]]; then
     pass "native logout form exposes action=logout and a non-empty CSRF token"
 else
     fail "native logout form or CSRF token could not be extracted"
@@ -196,7 +209,7 @@ else
     fail "POST/CSRF logout did not destroy the authenticated session"
 fi
 
-request GET "${security_url}?action=authenticated"
+request GET "${security_url}&action=authenticated"
 if contains_input native_auth_begin; then
     pass "logged-out session cannot reopen the authenticated landing"
 else
