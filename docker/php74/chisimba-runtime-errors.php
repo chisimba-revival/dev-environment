@@ -2,8 +2,8 @@
 /*
  * Chisimba PHP 7.4 runtime error policy.
  *
- * Legacy warnings, notices, strict messages, and deprecations are logged
- * but not rendered into HTML. Fatal errors remain visible and logged.
+ * Legacy warnings, notices, strict messages, deprecations and fatal errors
+ * are logged but never rendered into an HTTP response.
  */
 
 $fatalMask = E_ERROR
@@ -15,8 +15,8 @@ $fatalMask = E_ERROR
 
 error_reporting($fatalMask);
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
+ini_set('display_errors', '0');
+ini_set('display_startup_errors', '0');
 ini_set('log_errors', '1');
 
 set_error_handler(

@@ -1,4 +1,4 @@
-FROM php:8.5.4-apache-bookworm
+FROM php:8.5.11-apache-bookworm
 
 RUN set -eux; \
     apt-get update; \
@@ -40,6 +40,9 @@ COPY docker/php74/chisimba-runtime-errors.php \
 
 COPY docker/php74/99-chisimba-runtime-errors.ini \
     /usr/local/etc/php/conf.d/99-chisimba-runtime-errors.ini
+
+COPY docker/php85/99-chisimba-security.ini \
+    /usr/local/etc/php/conf.d/zz-chisimba-security.ini
 
 COPY local-https/chisimba-forwarded-https.conf /etc/apache2/conf-available/chisimba-forwarded-https.conf
 RUN a2enmod setenvif && a2enconf chisimba-forwarded-https
