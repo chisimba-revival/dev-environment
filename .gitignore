@@ -3,3 +3,6 @@ runtime/
 
 # Local database backups
 backups/
+
+# Machine-specific TLS identity and backups (never share private keys).
+/local-https/certs/
