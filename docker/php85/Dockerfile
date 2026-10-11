@@ -22,6 +22,7 @@ RUN set -eux; \
     docker-php-ext-install -j"$(nproc)" \
         gd \
         mysqli \
+        pdo_mysql \
         mbstring \
         xml \
         zip \
