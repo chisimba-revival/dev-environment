@@ -1,0 +1,4010 @@
+[
+  {
+    "repo": "framework",
+    "source": "app/classes/core/chisimbadatabaseconnection.php",
+    "path": "classes/core/chisimbadatabaseconnection.php",
+    "after": "792f4c6751e268ae31ef59b029b100bb2c9635339eb812681d119f7df3a276c6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/chisimbadatabasedsn.php",
+    "path": "classes/core/chisimbadatabasedsn.php",
+    "after": "4621a6a2596c26404f86de87389413bfba9971282bb86f24cb08bcb0ba6eb87e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/chisimbadatabaseschema.php",
+    "path": "classes/core/chisimbadatabaseschema.php",
+    "after": "fd08b159225a6ea69d795e62ba37153ab9af034d69caa9b9f72f41e003467bf7"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/dbtable_class_inc.php",
+    "path": "classes/core/dbtable_class_inc.php",
+    "after": "ad9733446457ce623c3f569fd1f96ae6753bfdc1bbfa32a877fee6eebdf3cc16"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/dbtablemanager_class_inc.php",
+    "path": "classes/core/dbtablemanager_class_inc.php",
+    "after": "acf9deba5477ba3a1b9ed459a60ae3e4560b80bb20b8294e4579249cd932f058"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/engine_class_inc.php",
+    "path": "classes/core/engine_class_inc.php",
+    "after": "e51a38b78afd425593fa13f987c738391b415554371bf49ec15c0ae8c55b5dfa"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/nativeeventdispatcher.php",
+    "path": "classes/core/nativeeventdispatcher.php",
+    "after": "d7d54028eebf8f3fd5bcc8de1558bad40f16754d316e2a0500adf048eeae3c11"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/nativeeventnotification.php",
+    "path": "classes/core/nativeeventnotification.php",
+    "after": "d7d5fc7366cf587c216021dfc98bdd4820fb2b3c136ab8a2fdfd2271577d8b5c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/classes/abuseprotectionprovider_class_inc.php",
+    "path": "core_modules/abuseprotection/classes/abuseprotectionprovider_class_inc.php",
+    "after": "282d2e3451ae89acd4b262090028fae781266f195fbc62a2121db565e161a3b3"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/classes/dbtableabuseeventrepository.php",
+    "path": "core_modules/abuseprotection/classes/dbtableabuseeventrepository.php",
+    "after": "c223843070f0692f950ef508d72d243246e091b9f8c08f2a849dae40bace57c6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/classes/mdb2abuseeventrepository.php",
+    "path": "core_modules/abuseprotection/classes/mdb2abuseeventrepository.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/classes/submissioncontentpolicy_class_inc.php",
+    "path": "core_modules/abuseprotection/classes/submissioncontentpolicy_class_inc.php",
+    "after": "40a05d4ef8d76a219a4b2eb443b96721f5337ca1d5dea061efe01341b538e699"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/register.conf",
+    "path": "core_modules/abuseprotection/register.conf",
+    "after": "1ea9f82c469e0c409507b58014bfe383a50df7e7193925afe9c372ce9c489d70"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/tests/submission_budget_test.php",
+    "path": "core_modules/abuseprotection/tests/submission_budget_test.php",
+    "after": "6024557e4720284f198098bc5cd90215f1e809609efcfd5aaec23746cd858753"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/tests/submission_content_test.php",
+    "path": "core_modules/abuseprotection/tests/submission_content_test.php",
+    "after": "9d7a57922ca4f10e6b535a68757b97dd960aa1cc8824c44d0604e80853724f0a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ai/tests/capacity_test.php",
+    "path": "core_modules/ai/tests/capacity_test.php",
+    "after": "d2833c92dbedd465ed2ccaf1db3a139af67f0277229861293170ebcc1643e58e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ai/tests/transport_failure_test.php",
+    "path": "core_modules/ai/tests/transport_failure_test.php",
+    "after": "b9b079d1f300335ff1317d541100396177a6ab30c76544f9f484a72e299d298e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/blocks/classes/dynamicblocks_class_inc.php",
+    "path": "core_modules/blocks/classes/dynamicblocks_class_inc.php",
+    "after": "b065e817574b7836d2ac476501a71d01d94a44d2954da5eedfca14a2f37162de"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/canvas/classes/block_canvasviewer_class_inc.php",
+    "path": "core_modules/canvas/classes/block_canvasviewer_class_inc.php",
+    "after": "81872541bb05e169646e0393a9b6b84f491c709a9414c717cbb3da94cd61764d"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/canvas/classes/block_selecttype_class_inc.php",
+    "path": "core_modules/canvas/classes/block_selecttype_class_inc.php",
+    "after": "dc22b07a31fc25c4858320c356ce209f1582f754e362c5b9ff90dc2f480913f0"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/canvas/classes/buildcanvas_class_inc.php",
+    "path": "core_modules/canvas/classes/buildcanvas_class_inc.php",
+    "after": "b0efc092dfd7a1c7e62456a5d6e571dbe883956de7a0c5728ee123019b03e32f"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/canvas/controller.php",
+    "path": "core_modules/canvas/controller.php",
+    "after": "18b5a8210a0a55bb5dfcce2f5a1902bf2ed760a9f6f8e65ec2aeef71390239b6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/canvas/register.conf",
+    "path": "core_modules/canvas/register.conf",
+    "after": "dbcafe4db0db1eda88c77d0b225b7a3f35d57d7a0ec0034e12d215e6435fed3a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/classification/classes/classificationstore_class_inc.php",
+    "path": "core_modules/classification/classes/classificationstore_class_inc.php",
+    "after": "ade570138a226021b00c7872c523c9a7c67ebbb2ebfe2b35a2ae759ff3a66f83"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/communications/classes/communicationdeliverygate_class_inc.php",
+    "path": "core_modules/communications/classes/communicationdeliverygate_class_inc.php",
+    "after": "90c8efc6e3c248990cbb5bf280aee09ea79cffef05795a3acdab6dfb8cee26b8"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/communications/classes/communicationservice_class_inc.php",
+    "path": "core_modules/communications/classes/communicationservice_class_inc.php",
+    "after": "6881b6699479500f32ebff47fc2780d87242cb1b895903334e854ae2cfa76313"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/communications/classes/communicationworker_class_inc.php",
+    "path": "core_modules/communications/classes/communicationworker_class_inc.php",
+    "after": "1c4cb6f93a3760cb969d9b719ded69635b156e2835af0e5b3f79569c33f31d7e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/communications/register.conf",
+    "path": "core_modules/communications/register.conf",
+    "after": "57a954083cd85971885b435f9f54be972a8984f988e6b638a713d6aa99b387ac"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/communications/scripts/run_outbox_worker.php",
+    "path": "core_modules/communications/scripts/run_outbox_worker.php",
+    "after": "20acf931e021508c654799fcaa1c94d2395b094f48c14bfde3c1a61a5a9e070d"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/communications/tests/delivery_gate_test.php",
+    "path": "core_modules/communications/tests/delivery_gate_test.php",
+    "after": "8e61afdbf9db99e0876c55c212246aa3b4e148764f9b3426605a3c70844efd4f"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/altconfig_class_inc.php",
+    "path": "core_modules/config/classes/altconfig_class_inc.php",
+    "after": "589397b89baf1596bbb7aa97fe35f40f87407097c3701290b6f233085b7cc46d"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/configurationdocument.php",
+    "path": "core_modules/config/classes/configurationdocument.php",
+    "after": "e379b83c4a727538b80077646f7dfae32b13d5bb5b62d1c44cfcf09bb8222a11"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/configurationfile.php",
+    "path": "core_modules/config/classes/configurationfile.php",
+    "after": "d67626504baf59773cfdc7687fa29d274a7213f59f1cc10afc24edabfa9e5164"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/configurationini.php",
+    "path": "core_modules/config/classes/configurationini.php",
+    "after": "a5792b865fff31523469ac056d88649c0cf7844d6e64c7dbebfb8bcce9d62bbd"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/configurationnode.php",
+    "path": "core_modules/config/classes/configurationnode.php",
+    "after": "5aac83ed883eac54bfcf2d5c8735277fc49c637fc9ac376295232cf674f544d4"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/configurationxml.php",
+    "path": "core_modules/config/classes/configurationxml.php",
+    "after": "9cedc7e4cd6296307419ad7a9128a501e4ff2e8e82901171a247e266c3b9d629"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/ini_class_inc.php",
+    "path": "core_modules/config/classes/ini_class_inc.php",
+    "after": "bbdbbaf943163d66943905574ed894feb84c05a5efead22666599f7ee33a9614"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/register.conf",
+    "path": "core_modules/config/register.conf",
+    "after": "fe3143073cf308c1ae2f3cd640ed6e2fdc2c5c9b667e384d6f38001ab1a4abd4"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/block_aboutcontext_class_inc.php",
+    "path": "core_modules/context/classes/block_aboutcontext_class_inc.php",
+    "after": "50ddc4ef31372c98ab6f081a4907a4c588f51450b516d893e2deccdb7c367fd6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/block_contextmodules_class_inc.php",
+    "path": "core_modules/context/classes/block_contextmodules_class_inc.php",
+    "after": "1cda68c67418156c0427c988a0ed943d622aecba9fc143891cc41ebaa7592441"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/block_contextsettings_class_inc.php",
+    "path": "core_modules/context/classes/block_contextsettings_class_inc.php",
+    "after": "8e3926b4ab4caf82e275231453b33915781a0d51a8f7e2a4be7c4b418dfe491e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/block_learningjourney_class_inc.php",
+    "path": "core_modules/context/classes/block_learningjourney_class_inc.php",
+    "after": "fc617417b3b3c71c14fdec22cfcbaf1f2b86abf170da8dee4059a7850c0500db"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/block_mycontexts_class_inc.php",
+    "path": "core_modules/context/classes/block_mycontexts_class_inc.php",
+    "after": "ca509fac72baf22fb9e0e9907efdd03ed4c506d919d5cb04044ffde26f8b5598"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/contextsidebar_class_inc.php",
+    "path": "core_modules/context/classes/contextsidebar_class_inc.php",
+    "after": "7b2b8962777437e269fcb3114b6095eb884b3f664c5e535e9c057e0f7fa7e963"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/dbcontentnodes_class_inc.php",
+    "path": "core_modules/context/classes/dbcontentnodes_class_inc.php",
+    "after": "5b1aaec012045c437671df5b8f8772eb9be1085f2b50bb2c0404b9ec0976b4aa"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/context/classes/helpcontent_class_inc.php",
+    "path": "core_modules/context/classes/helpcontent_class_inc.php",
+    "after": "963c156c83d1022ea232b8b3fb98ebcc631f82a15be897a0fcd8cd0a13c71707"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/contextadmin/tests/format_help_language_test.php",
+    "path": "core_modules/contextadmin/tests/format_help_language_test.php",
+    "after": "9ba21ca254ccb3718663183e5c11b7e06b9a54669d646d58d0cbe132d513956f"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/contextgroups/classes/block_contextmembers_class_inc.php",
+    "path": "core_modules/contextgroups/classes/block_contextmembers_class_inc.php",
+    "after": "dd767a36377bf97eaf3a7d250cff1711fd667f766e4333f7643286afd37cf98a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/contextgroups/tests/authorisation_dispatch_contract_test.php",
+    "path": "core_modules/contextgroups/tests/authorisation_dispatch_contract_test.php",
+    "after": "02b14cfca647fcac5f13ea4b8de459510208a613e519518160cba3cd45d1aef2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/contextpermissions/classes/contextcondition_class_inc.php",
+    "path": "core_modules/contextpermissions/classes/contextcondition_class_inc.php",
+    "after": "01fb519764d3ab92491e680359d0c4f3a120361738426ee2a4b29cda0c21a4bb"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/contextpermissions/controller.php",
+    "path": "core_modules/contextpermissions/controller.php",
+    "after": "645899b39b05c5ef0ae3cd1fcec048ff619a421e18ff27e5d2050c3eaa305d0b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/contextpermissions/tests/admin_authorisation_contract_test.php",
+    "path": "core_modules/contextpermissions/tests/admin_authorisation_contract_test.php",
+    "after": "0dded16b8877c62639f89e18bf80a5241a40363977281e7b551e81dc5269b37b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/decisiontable/classes/condition_class_inc.php",
+    "path": "core_modules/decisiontable/classes/condition_class_inc.php",
+    "after": "c327e4600c25cd8b22f4d37846516f367a2ce6c40f3bf8fa33b677fbef093af9"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/decisiontable/classes/decisiontable_class_inc.php",
+    "path": "core_modules/decisiontable/classes/decisiontable_class_inc.php",
+    "after": "8511e3e51d74b3bf69269cacf40f38ba27efe1c4eb57664505ba57f0cc0d35e9"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/decisiontable/classes/decisiontableaggregate_class_inc.php",
+    "path": "core_modules/decisiontable/classes/decisiontableaggregate_class_inc.php",
+    "after": "95410befcad2b653f97b751bf1b7bad1395292cc91647dba573ed5d5e43dbaa2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/decisiontable/classes/rule_class_inc.php",
+    "path": "core_modules/decisiontable/classes/rule_class_inc.php",
+    "after": "26e09b8cf9eab963319137591c722b69be2410faf8341b7017750320c05e9600"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/classes/block_contextfiles_class_inc.php",
+    "path": "core_modules/filemanager/classes/block_contextfiles_class_inc.php",
+    "after": "b4821efc5dd67289ac9a0ec34fded607a6059e125dabf5753dfc66822ea9a744"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/classes/block_userfiles_class_inc.php",
+    "path": "core_modules/filemanager/classes/block_userfiles_class_inc.php",
+    "after": "f8f6d14abdee5e3e93082e08bb103ea8ec0c68bab9302b31aae86d14c3da293c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/classes/emailthumbnail_class_inc.php",
+    "path": "core_modules/filemanager/classes/emailthumbnail_class_inc.php",
+    "after": "d20b6dd73899e7b0c77866e23f6adaef5f0ce1200f0c3095baf01d19c07b6b90"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/classes/fileapi_class_inc.php",
+    "path": "core_modules/filemanager/classes/fileapi_class_inc.php",
+    "after": "d7c585eb93093f63acaabee32394cdf4baa9468905908eb3a561973bb1a36290"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/classes/filedelivery_class_inc.php",
+    "path": "core_modules/filemanager/classes/filedelivery_class_inc.php",
+    "after": "7c1b8cd38b5b5b75b3e5310818f1936c3b29121ca8cda6e1df205dc0612979a7"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/controller.php",
+    "path": "core_modules/filemanager/controller.php",
+    "after": "8e6de583bad5f3e65e8cf245bdde3fec415f0919c5c7b09ab642c869308c0018"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/register.conf",
+    "path": "core_modules/filemanager/register.conf",
+    "after": "ea2ab190a96523485c7b09957bf68a1002840e898c74e56d3c62d77f84af7a3e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filemanager/tests/download_picker_policy_test.php",
+    "path": "core_modules/filemanager/tests/download_picker_policy_test.php",
+    "after": "b8de5d06c205a91e4945c72bd08c30b20f804d9a4f5b0e8446d349c41db6b0c0"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/groupadmin/classes/groupops_class_inc.php",
+    "path": "core_modules/groupadmin/classes/groupops_class_inc.php",
+    "after": "35e5b284bc023d5950817c0e7b686c674597b32be433b822364239e46b101953"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/htmlelements/classes/button_class_inc.php",
+    "path": "core_modules/htmlelements/classes/button_class_inc.php",
+    "after": "c0f3517c92524f2af1399ae283b620bc346020c93224281b6150dd3c618c7696"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/htmlelements/classes/dropdown_class_inc.php",
+    "path": "core_modules/htmlelements/classes/dropdown_class_inc.php",
+    "after": "a5992f6d04cc3db4fdaa234317a3903ad197d710eecca91b5cbf1560b1c1faad"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/htmlelements/classes/textinput_class_inc.php",
+    "path": "core_modules/htmlelements/classes/textinput_class_inc.php",
+    "after": "fdd5a3745967358785ac0615f2a493f280a9689b0ea9c56d4a7cd83edb801db8"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/htmlelements/resources/draftform.js",
+    "path": "core_modules/htmlelements/resources/draftform.js",
+    "after": "9379badddf7801df217b02f0a7b8fff2f0b2bd18d7d949654ae63bb65769c87b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/classes/block_language_class_inc.php",
+    "path": "core_modules/language/classes/block_language_class_inc.php",
+    "after": "a408b8b58e54e79c1ed40647ad3d20f718c03d363e1b04cb66a428e3096d74f7"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/classes/language_class_inc.php",
+    "path": "core_modules/language/classes/language_class_inc.php",
+    "after": "6c7178969e08c6eca8505209537b7113484cfbb2593a79c56239f166b40ac836"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/classes/languagecode_class_inc.php",
+    "path": "core_modules/language/classes/languagecode_class_inc.php",
+    "after": "a5ead8edb2179e0b3e381c51c2c9dad7a29b536c3455b1be43201e8ad0aa1af9"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/classes/languageconfig_class_inc.php",
+    "path": "core_modules/language/classes/languageconfig_class_inc.php",
+    "after": "e4b9c0c1c576b2c33c759e76ecd4eb4b0130f59a550330e99a30130a02fc9cb5"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/classes/nativetranslation.php",
+    "path": "core_modules/language/classes/nativetranslation.php",
+    "after": "e723b1a2164ce50367b758c551cc41dbfd9709219b58a49231929f7c94b335c8"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/classes/translationstore_class_inc.php",
+    "path": "core_modules/language/classes/translationstore_class_inc.php",
+    "after": "f3f4d0350b21ca0973d78f89e0e357f3444930a2bcc06cc843a35dfbb8cf8291"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/register.conf",
+    "path": "core_modules/language/register.conf",
+    "after": "40457a360d1cb23fb609acb8d7fd803c9e7f5d4d8c64f88ca35f5dfa3cc50d76"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/resources/locale/LICENSE-PHP-3.0.txt",
+    "path": "core_modules/language/resources/locale/LICENSE-PHP-3.0.txt",
+    "after": "19eaaa202d35b5bedbdc114b87c07dc7fcd2d39aeffdf68745798ba48bbb2cfc"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/resources/locale/NOTICE",
+    "path": "core_modules/language/resources/locale/NOTICE",
+    "after": "417d68ea1dd82ad29359aff054e6975703ab78b5cf8aaa62ef873276cd236311"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/resources/locale/names.json",
+    "path": "core_modules/language/resources/locale/names.json",
+    "after": "e2e6f5401ab0c65ee575c17597fdd1f4707e768b40e799508dcb1a10a51eb07a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/language/sql/tbl_langs_avail.sql",
+    "path": "core_modules/language/sql/tbl_langs_avail.sql",
+    "after": "f03b426ed95771264191d673f6f81d4916334fe7dd593c48f233bad61df7e3e8"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/logger/classes/logactivity_class_inc.php",
+    "path": "core_modules/logger/classes/logactivity_class_inc.php",
+    "after": "49421a0b5ec07a417e1b545aacb3b3506399bbea86387a6d9da237ca2a98a8b4"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/classes/plainmailservice_class_inc.php",
+    "path": "core_modules/mail/classes/plainmailservice_class_inc.php",
+    "after": "d8227a1534d1a5a7abe060fc0f7bb46785392c78d9fdb2b0ea747cb5be4cc1f5"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/classes/sendgridtransport_class_inc.php",
+    "path": "core_modules/mail/classes/sendgridtransport_class_inc.php",
+    "after": "9df806f4639512bc5fc7581e9ea04f5a4d472a9b076de21753931a7dcfeb4da8"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/vendor/phpmailer/LICENSE",
+    "path": "core_modules/mail/vendor/phpmailer/LICENSE",
+    "after": "a1a33180d02960ab1c5de36cf20b1a2f0fe9888d83826ad263da5db52f1b183b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/vendor/phpmailer/UPSTREAM.json",
+    "path": "core_modules/mail/vendor/phpmailer/UPSTREAM.json",
+    "after": "fe5bd1e1129becea4adca51b0ea519a5a2bc75f544a1d78633ceb4a376c8c522"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/vendor/phpmailer/composer.json",
+    "path": "core_modules/mail/vendor/phpmailer/composer.json",
+    "after": "0d29d0a9c86be376433530333bee758ba563e7267347300c181299f5a1d920a4"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/vendor/phpmailer/src/Exception.php",
+    "path": "core_modules/mail/vendor/phpmailer/src/Exception.php",
+    "after": "22ab858ae438d98f58f41f38ad2191d1b0d59570aebea0463a7948cfae1021b7"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/vendor/phpmailer/src/PHPMailer.php",
+    "path": "core_modules/mail/vendor/phpmailer/src/PHPMailer.php",
+    "after": "45599a196ae7944ee2dcd4f3d3da0ac4243513d346b2d77bbd15dbd0c37f7064"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/vendor/phpmailer/src/SMTP.php",
+    "path": "core_modules/mail/vendor/phpmailer/src/SMTP.php",
+    "after": "522bcf0d07be7e7e00114711db5c9ce2b4d59ac041c5ec36eaadd979d5fa7046"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/classes/block_updates_class_inc.php",
+    "path": "core_modules/modulecatalogue/classes/block_updates_class_inc.php",
+    "after": "1cdb56541764a5c53e54634926af2491d527f523fd67bdab0a552e63e17a5e2d"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/classes/catalogueconfig_class_inc.php",
+    "path": "core_modules/modulecatalogue/classes/catalogueconfig_class_inc.php",
+    "after": "7791f9e03f5553d4acc4b2b85e71abb91f8422c8267546814daa0557517b9f77"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/classes/helpcontent_class_inc.php",
+    "path": "core_modules/modulecatalogue/classes/helpcontent_class_inc.php",
+    "after": "64b53a08fc2d223ab2bf753ed71ee69e8015ec0283a74cbe0e9153883fc54e5b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/classes/modulefile_class_inc.php",
+    "path": "core_modules/modulecatalogue/classes/modulefile_class_inc.php",
+    "after": "e589d5f844ecc9608d7fb669c99230554ada4664e253a23bed662b4d6190a288"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/controller.php",
+    "path": "core_modules/modulecatalogue/controller.php",
+    "after": "90618d9deb5014540a186f5b2fbb907e0895b9ec74cfc60818d6c508cf0f5025"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/register.conf",
+    "path": "core_modules/modulecatalogue/register.conf",
+    "after": "c44a6f1eafe8713f432a2306c74fa36c2b5f8228adfc57597fcfe262b4f7deb3"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/templates/content/updates_tpl.php",
+    "path": "core_modules/modulecatalogue/templates/content/updates_tpl.php",
+    "after": "a8c12e6613cf13568ee67b07bb6556a6a46b38a94c14e33ab902a20c7af53254"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/templates/layout/cat_layout.php",
+    "path": "core_modules/modulecatalogue/templates/layout/cat_layout.php",
+    "after": "cdfcd78f21962bc80ac49d5976308101591d540d75946721eaa51ec8ac4c490e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/tests/installed_block_filter_test.php",
+    "path": "core_modules/modulecatalogue/tests/installed_block_filter_test.php",
+    "after": "8854e81697c06854320bb36eb1eeb0b7b27a42ec70b45731f1bcbe4710592c16"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/tests/module_update_icon_contract_test.php",
+    "path": "core_modules/modulecatalogue/tests/module_update_icon_contract_test.php",
+    "after": "3dee0eaa3eb8241cf270f0547cd7d0f29f5ef6b8d0d1ef312a340ec3149e9528"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/tests/update_block_contract_test.php",
+    "path": "core_modules/modulecatalogue/tests/update_block_contract_test.php",
+    "after": "9f1bf76d5ce9915c69171756cd0561276514237ea98ab0b848ed33e810c1f9f9"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/tests/update_dependencies_test.php",
+    "path": "core_modules/modulecatalogue/tests/update_dependencies_test.php",
+    "after": "3d307aec45b39bc09fae29947e604d22e1614fd0fbab10acec98b3f018e0d820"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/navigation/classes/sidebar_class_inc.php",
+    "path": "core_modules/navigation/classes/sidebar_class_inc.php",
+    "after": "e6e77e0994576f6dd0278e23f5e426e4d0c60a080cf9d0c3fdc91872b70db190"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/permissions/classes/permissions_acl_class_inc.php",
+    "path": "core_modules/permissions/classes/permissions_acl_class_inc.php",
+    "after": "62022c85f13c15d62de6536bcbdef0f7a31218f8d99d4f11cc2c34e6b666dfa6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/permissions/templates/content/main_tpl.php",
+    "path": "core_modules/permissions/templates/content/main_tpl.php",
+    "after": "842481b75df8f52a53cf928599d331e49ae90c0dcdbb98fdabac3f2e095d2e2d"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/postlogin/classes/landingresolver_class_inc.php",
+    "path": "core_modules/postlogin/classes/landingresolver_class_inc.php",
+    "after": "79127ffd4ac30fc335266ef38d0bd22bd4135ec3c2219cbc685ea93b3ccb9e8a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/postlogin/controller.php",
+    "path": "core_modules/postlogin/controller.php",
+    "after": "24648aa88e9dd802304fe57a2e4f24a4f2e9d47cdb68213695bb0e9da8b6d169"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/search/classes/indexdata_class_inc.php",
+    "path": "core_modules/search/classes/indexdata_class_inc.php",
+    "after": "29978ea1ecabe6f81c54f982a01a8aceeb6ab038b0ae6ef3c710964e8956bc86"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/search/resources/1.7.3/Search/Lucene/Field.php",
+    "path": "core_modules/search/resources/1.7.3/Search/Lucene/Field.php",
+    "after": "449b155a430a1f086a2d62064f21656041cd933d35ee107a1a6e8fe50109c692"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/search/resources/1.7.3/Search/Lucene/Index/Writer.php",
+    "path": "core_modules/search/resources/1.7.3/Search/Lucene/Index/Writer.php",
+    "after": "963ba448d9bfd11c842cd413b400816da3d71a9597078ca68f3af1e4db3c44ef"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/search/resources/1.7.3/Search/Lucene/Storage/File/Filesystem.php",
+    "path": "core_modules/search/resources/1.7.3/Search/Lucene/Storage/File/Filesystem.php",
+    "after": "89d3b463bb3311a815a66c1a8341602dd488cbdb95cccb7a9b2f78e5374a365e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/accountcredentialservice_class_inc.php",
+    "path": "core_modules/security/classes/accountcredentialservice_class_inc.php",
+    "after": "b27685af188b2360b2f2e7c1675e0914f540a02783cec96c94d321d2d63ed6af"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/auth_database_class_inc.php",
+    "path": "core_modules/security/classes/auth_database_class_inc.php",
+    "after": "d89531a93b7c5bc983e35ea056397350d4064255815de5dda79ddb4d3bdd7e92"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/README.md",
+    "path": "core_modules/security/classes/nativeauth/README.md",
+    "after": "e15d0371f5a92859c8aba71617131bc089e3e404562fae9f91ac8a1a9627c094"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/csrftokenservice.php",
+    "path": "core_modules/security/classes/nativeauth/csrftokenservice.php",
+    "after": "09ef1bd2a78996bc0c0f82bcaa7d7a5ec0dec34b389482598f681b760eef4715"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/dbtablemfarepository.php",
+    "path": "core_modules/security/classes/nativeauth/dbtablemfarepository.php",
+    "after": "6c644578c49126012960f8acc88b242251867c114903b7fa6697bb6199212497"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/dbtablenativedatabaseadapter.php",
+    "path": "core_modules/security/classes/nativeauth/dbtablenativedatabaseadapter.php",
+    "after": "92ca8d7cd5182000b2088b7c1085d4829a7e7a1fafb364935e9a1fa83d4a9330"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/dbtablepersistentloginrepository.php",
+    "path": "core_modules/security/classes/nativeauth/dbtablepersistentloginrepository.php",
+    "after": "1fe1f2dd6514a9d51b23a93db472912c0e47c31545d94eddcb199fdfa568e507"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/mdb2mfarepository.php",
+    "path": "core_modules/security/classes/nativeauth/mdb2mfarepository.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/mdb2nativedatabaseadapter.php",
+    "path": "core_modules/security/classes/nativeauth/mdb2nativedatabaseadapter.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/mdb2persistentloginrepository.php",
+    "path": "core_modules/security/classes/nativeauth/mdb2persistentloginrepository.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/nativeauthwebcompositionfactory.php",
+    "path": "core_modules/security/classes/nativeauth/nativeauthwebcompositionfactory.php",
+    "after": "36d35281e742546ee7b44694b6520e113689e68128b9128143b8db17561ef57d"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauth/nativesessionservice.php",
+    "path": "core_modules/security/classes/nativeauth/nativesessionservice.php",
+    "after": "7a725f908ae2627b9c4bbb02598476915002d0bb175d92f79ad3e540516ca353"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/nativeauthwebcomposition_class_inc.php",
+    "path": "core_modules/security/classes/nativeauthwebcomposition_class_inc.php",
+    "after": "0c642bea01d538929f42f95408e78777107487ac1bb00a3f6bff79a71601dbaf"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/controller.php",
+    "path": "core_modules/security/controller.php",
+    "after": "af6dbf1b66cf333c1b54081508fa3b6e35f0839f45aa38a523344f78c7fc76d3"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/register.conf",
+    "path": "core_modules/security/register.conf",
+    "after": "9540ed5f7e5f3338f681965eeb6880264d1298d27c22ecbdb354d08cede074db"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/templates/content/native_login_tpl.php",
+    "path": "core_modules/security/templates/content/native_login_tpl.php",
+    "after": "2156b7108753a8888d315871a50d5197dab600a29db93a871a2449a3ff1eb696"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/skin/classes/block_skinchooser_class_inc.php",
+    "path": "core_modules/skin/classes/block_skinchooser_class_inc.php",
+    "after": "3091d946b55b49143d81168e0472832f0f86fd4983b76651cfff51c050d08f27"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/stories/classes/block_stories_class_inc.php",
+    "path": "core_modules/stories/classes/block_stories_class_inc.php",
+    "after": "fb43d7403d1366a80cb59a831c40216544f59181223aa1fcce900550e032dc31"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/sysconfig/classes/helpcontent_class_inc.php",
+    "path": "core_modules/sysconfig/classes/helpcontent_class_inc.php",
+    "after": "3de4eff4bae75ccb3072e83618d2f356c7a32eb7c3d9cb2e5229bb29be993ce5"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/sysconfig/classes/sysconfiginterface_class_inc.php",
+    "path": "core_modules/sysconfig/classes/sysconfiginterface_class_inc.php",
+    "after": "3e0e18768a6e4eddc92d78ea14b13b2b7e23076c766d60e38b9b4205fc35153c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/sysconfig/controller.php",
+    "path": "core_modules/sysconfig/controller.php",
+    "after": "fa28d5a4f3e324dd8a1e6c233af5a19ae85ddcd14e9f4831c46c93144e4acc0c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/sysconfig/register.conf",
+    "path": "core_modules/sysconfig/register.conf",
+    "after": "427d3306b849aff08fdccfd9761e77b724a7947a2fad9b339051c0dfc5e7bd19"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/sysconfig/templates/content/edit_add_tpl.php",
+    "path": "core_modules/sysconfig/templates/content/edit_add_tpl.php",
+    "after": "aeb17ad01838a990b2151d3037055b08ba0d276f5bae58757d34673f5241c9dd"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/systext/classes/systext_facet_class_inc.php",
+    "path": "core_modules/systext/classes/systext_facet_class_inc.php",
+    "after": "44846f94423c594c5cfcb17b5e9444106d49d9b5675eb65182274ffae07fac26"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/systext/patches/installscripts_class_inc.php",
+    "path": "core_modules/systext/patches/installscripts_class_inc.php",
+    "after": "29e126ad04330458dc964f30807ec0fad93b7d119c02779e73791f568d6e969b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/systext/register.conf",
+    "path": "core_modules/systext/register.conf",
+    "after": "42617db975b324704a972d87bcbaf467fcce017df2fdd68a0e974a779aadde3a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/systext/sql/systextdata.xml",
+    "path": "core_modules/systext/sql/systextdata.xml",
+    "after": "dd86931b45af3fb6e50e5ffb279b359e4bb27e0a8fc394422f77557424deaca7"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/systext/tests/modern_upgrade_test.php",
+    "path": "core_modules/systext/tests/modern_upgrade_test.php",
+    "after": "df2c96aee1b1ddf4a5d00caa7c6f7e953d5de77e36ab3bff0d06f4b52538e809"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/tagging/sql/tbl_tags.sql",
+    "path": "core_modules/tagging/sql/tbl_tags.sql",
+    "after": "f84cb5b7ee1483e1f04ebbe4bd7286eb463576d95c1d55a8bff0165c06521b92"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/dbmenu_class_inc.php",
+    "path": "core_modules/toolbar/classes/dbmenu_class_inc.php",
+    "after": "8917d009021a0ac66ee8935f3a00fb57f24561fc0a1303a3c0a2da40f2f5139c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/page_class_inc.php",
+    "path": "core_modules/toolbar/classes/page_class_inc.php",
+    "after": "6259bae19749b961043d4beb07a71d5e13430aa193acdb73c7c75dbb207d852c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/postloginmenu_class_inc.php",
+    "path": "core_modules/toolbar/classes/postloginmenu_class_inc.php",
+    "after": "5ed8bf1af3ce63eafbd304ed5e2dd79c5abed1a8948b4b2ee96d22dcc80e0f60"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/sitenavigation_class_inc.php",
+    "path": "core_modules/toolbar/classes/sitenavigation_class_inc.php",
+    "after": "d75df13b1036731b043a58d25ee155dc72048dd8820220061a5f61be29b3e5e7"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/tools_class_inc.php",
+    "path": "core_modules/toolbar/classes/tools_class_inc.php",
+    "after": "39a178df49ae5b6caf112750c77c85e780c5b6258bf88e6124c07c31cdf231de"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/register.conf",
+    "path": "core_modules/toolbar/register.conf",
+    "after": "0de33555f92caf4bf2a69357eb8523579b1f3011e30e4d95a86647a97a3e9269"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/tests/admin_workbench_contract_test.php",
+    "path": "core_modules/toolbar/tests/admin_workbench_contract_test.php",
+    "after": "6245f65ca1e728c6b337c2e85e205113f824677452d2b70409a5f408b7bb4c72"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/tests/shop_account_navigation_test.php",
+    "path": "core_modules/toolbar/tests/shop_account_navigation_test.php",
+    "after": "06c2c58ab1fcca45d68bee6047cd9dffb92c8a59f3e36b2c5102c0f9efa27e69"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/tests/site_navigation_arguments_test.php",
+    "path": "core_modules/toolbar/tests/site_navigation_arguments_test.php",
+    "after": "39f6a738b19352a0f172d79c5e7e4f38d323db7d3de6ed2bc9b92df6576387af"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/tests/site_navigation_behavior_test.php",
+    "path": "core_modules/toolbar/tests/site_navigation_behavior_test.php",
+    "after": "0afa523f292d5e40c9e41d9c20dbef0a36422d17f0e5fd56de0b39152a423e99"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/tests/student_navigation_audience_contract_test.php",
+    "path": "core_modules/toolbar/tests/student_navigation_audience_contract_test.php",
+    "after": "84f1336693a60bfdd7b96289d82dc4db3afc2b5af5af70d43b1ee89a52a32624"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/tree/classes/htmllist_class_inc.php",
+    "path": "core_modules/tree/classes/htmllist_class_inc.php",
+    "after": "6b8f4450bdcf94c7c3b71262427faeda100099903d0aa27b3d8f5be8751a348e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ui/README.md",
+    "path": "core_modules/ui/README.md",
+    "after": "f6e5afffc2e3f24b461fc680e91dd86d0523cdf83fc6951730033754406f1c5c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ui/resources/icons/brands/README.md",
+    "path": "core_modules/ui/resources/icons/brands/README.md",
+    "after": "c9ac1f1beb63953e1b096ce09ecba70b5c0b453a701eeaad012faf5fb7fad0b9"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ui/resources/js/ui.js",
+    "path": "core_modules/ui/resources/js/ui.js",
+    "after": "e9a402b724d80760719e44b7b5564a5a56cecbf63b35799d3bbe3deeff1d8b9c"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ui/tests/page_metadata_test.php",
+    "path": "core_modules/ui/tests/page_metadata_test.php",
+    "after": "6dfd1b1021687d2cbe57704fcc1456450599382cb1cebcad171afe19d3fba22a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/useradmin/classes/userbizcard_class_inc.php",
+    "path": "core_modules/useradmin/classes/userbizcard_class_inc.php",
+    "after": "1fae4e43acc5cb788fca9060f66f60047f0627acfe99535e6b3800382799d96f"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userdetails/classes/block_userdetails_class_inc.php",
+    "path": "core_modules/userdetails/classes/block_userdetails_class_inc.php",
+    "after": "057c4dbd184026d6a31563322208278793a592aaf48af97482cf6dc1e9f474c2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/classes/dbuserparamsadmin_class_inc.php",
+    "path": "core_modules/userparamsadmin/classes/dbuserparamsadmin_class_inc.php",
+    "after": "5749f62cabd4316ab9feb829f85ab5b95f167cf8bf302e9b5aeb358d298fb95b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/classes/helpcontent_class_inc.php",
+    "path": "core_modules/userparamsadmin/classes/helpcontent_class_inc.php",
+    "after": "4f686a8aa5822b5dfe0cc74c8ddd6464e5f366e83f8f3233b701425f76316205"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/controller.php",
+    "path": "core_modules/userparamsadmin/controller.php",
+    "after": "eb738d0620f17a3a115fd956b56e982783b8e11b9ec530da4574b717e13cce4e"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/register.conf",
+    "path": "core_modules/userparamsadmin/register.conf",
+    "after": "13a853158a14fdc07641f7a5d6365e94efb4ef1d0b1f634e5b80185800660c55"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/templates/content/edit_tpl.php",
+    "path": "core_modules/userparamsadmin/templates/content/edit_tpl.php",
+    "after": "0cc80a324d1c9bf015fe8f4cada70382b16bae507ce86dcb899acdf3bd091f62"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/templates/content/main_tpl.php",
+    "path": "core_modules/userparamsadmin/templates/content/main_tpl.php",
+    "after": "1cc8248a398af96da384ae973b9862913ff218809380fad912ba46d9fce293be"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/userparamsadmin/templates/layout/preferences_layout_tpl.php",
+    "path": "core_modules/userparamsadmin/templates/layout/preferences_layout_tpl.php",
+    "after": "ac41a1f9f42da3e0306014f169448afa88011942d5b28aef73d9ffdd2bd6fa36"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/utilities/classes/microformats_class_inc.php",
+    "path": "core_modules/utilities/classes/microformats_class_inc.php",
+    "after": "5ad421d67669012ddd1b53451ec1e0dfd437559ccec98916f2d462f5d8477359"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/utilities/classes/serializevars_class_inc.php",
+    "path": "core_modules/utilities/classes/serializevars_class_inc.php",
+    "after": "7c53add1babe20ee3310f3a626058a8975bcabe693247a401c1b5488e9cfdefb"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/utilities/classes/tagcloud_class_inc.php",
+    "path": "core_modules/utilities/classes/tagcloud_class_inc.php",
+    "after": "7d9ce672fb72abbab59237a0ffaa3cba7ae5e8dede1013fa88e7a10d71fd9968"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/utilities/register.conf",
+    "path": "core_modules/utilities/register.conf",
+    "after": "8a96192fd62cb6eaa17107e685781b92909282461739e7ee93efd90c5061e0b0"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/5ivestepaction.inc",
+    "path": "installer/5ivestepaction.inc",
+    "after": "1ec25a9cfe31ec29e1ed965583d8c78328aca32c460f55b3eb3f810590521b10"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/dbhandlers/dbhandler.inc",
+    "path": "installer/dbhandlers/dbhandler.inc",
+    "after": "59c69aa1e2524dcda799a4cbaecb3f816b8051413de37e448a2d98e8a43b9ab4"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/dbhandlers/dbhandlermanager.inc",
+    "path": "installer/dbhandlers/dbhandlermanager.inc",
+    "after": "ca11b1890d28516b39714aeba2dfb6c25ebcdcde28cca31e6aeaf15b28197015"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/steps/createconfigs.inc",
+    "path": "installer/steps/createconfigs.inc",
+    "after": "549925b2434253c2a29e627ad1792fe1bcd5bab495532b1d6fbd596e540229b2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/steps/versioncheck.inc",
+    "path": "installer/steps/versioncheck.inc",
+    "after": "d7ad05cdf53be3fca55dd070913f0712f9895197eaa075281d8cc8904277d922"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/README.md",
+    "path": "skins/chisimba-reborn/README.md",
+    "after": "051b5349f4ce65312d4619756778a9e9cd9c2db5862199d4bd30b1d688c19105"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/canvases/learn-the-birds/canvas.json",
+    "path": "skins/chisimba-reborn/canvases/learn-the-birds/canvas.json",
+    "after": "0b23bff9b7369a61ed3cba509f08b95ab441e2d8bd456b217659930a394694f9"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/canvases/learn-the-birds/favicon.png",
+    "path": "skins/chisimba-reborn/canvases/learn-the-birds/favicon.png",
+    "after": "bea4abf90be47071897e0cd713415b04d21930383c1b589b2d50b14258343808"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/canvases/learn-the-birds/images/logo.png",
+    "path": "skins/chisimba-reborn/canvases/learn-the-birds/images/logo.png",
+    "after": "f77d5b3afcfb8cc8e1adf79367fcc04ce2ea29a3d42a995841ada5e7e71d8452"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/canvases/learn-the-birds/settings.php",
+    "path": "skins/chisimba-reborn/canvases/learn-the-birds/settings.php",
+    "after": "5432709040d6e31d1d0eea16ebbf3a51cb8244b05fb578a4f043e365c185148a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/canvases/learn-the-birds/stylesheet.css",
+    "path": "skins/chisimba-reborn/canvases/learn-the-birds/stylesheet.css",
+    "after": "abb39906fe27f0138aa1c065b0893620736f9436f4ced706491768604ca447e3"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/stylesheet.css",
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "after": "b09150d48ab5a43a347989006f08e1378a56495d9767d2639de38b5302722e1b"
+  },
+  {
+    "repo": "modules",
+    "source": "AGENTS.md",
+    "path": "packages/AGENTS.md",
+    "after": "b6dc29b7cd35e3fb5f85a567aadc9f680ae37a8578ee6fe6cd6944ee0bc910af"
+  },
+  {
+    "repo": "modules",
+    "source": "README.md",
+    "path": "packages/README.md",
+    "after": "0e79a252be08a340410791b31d44108cb053cd96484259ff08d1f2f630e96840"
+  },
+  {
+    "repo": "modules",
+    "source": "account-event-service/classes/accounteventservice_class_inc.php",
+    "path": "packages/account-event-service/classes/accounteventservice_class_inc.php",
+    "after": "5a1ac554ef657bb50e30ac6b068d7dc6f132a7e919b59efa435bc01a88b65141"
+  },
+  {
+    "repo": "modules",
+    "source": "account-event-service/tests/account_event_service_contract_test.php",
+    "path": "packages/account-event-service/tests/account_event_service_contract_test.php",
+    "after": "314452114d2a25ec30397e04c445f89124cc5977afb832cf07b8bae65ab28c2e"
+  },
+  {
+    "repo": "modules",
+    "source": "announcements/classes/block_whatsnewauthors_class_inc.php",
+    "path": "packages/announcements/classes/block_whatsnewauthors_class_inc.php",
+    "after": "a8707aa5694b8f324f977d108d12490e51d7fd7b1e2f451c98c136f8f064c5a6"
+  },
+  {
+    "repo": "modules",
+    "source": "announcements/classes/dbannouncements_class_inc.php",
+    "path": "packages/announcements/classes/dbannouncements_class_inc.php",
+    "after": "908ae944d8be90870351a35bf128daa376729c30f93869fe4c0ce88254aaeffb"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/README.md",
+    "path": "packages/audience/README.md",
+    "after": "f96ae3d10f76235b84212947c0ffa0a29d507d243fabbe7a743557cc652dd0cc"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/audienceadmin_class_inc.php",
+    "path": "packages/audience/classes/audienceadmin_class_inc.php",
+    "after": "9b1f86cdcb6e1ea4a3b55aea3ebb548638ee24248b1b6cd00f53dd0e89fb8271"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/audiencecampaigns_class_inc.php",
+    "path": "packages/audience/classes/audiencecampaigns_class_inc.php",
+    "after": "8def3014583c8bfec1886adfb152d2d9e378595522cff5ef5d06aee262fdd030"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/audiencecommunicationpolicy_class_inc.php",
+    "path": "packages/audience/classes/audiencecommunicationpolicy_class_inc.php",
+    "after": "03c1d422eb3ab95b6f46e869415299d6b7b756403c15e7074e9c445a4a7e79b7"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/audiencerenderer_class_inc.php",
+    "path": "packages/audience/classes/audiencerenderer_class_inc.php",
+    "after": "63fd276f52a7b8c0b60bebc81e8f4a3ac86c771d622a7f048217e01079ce567f"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/audienceservice_class_inc.php",
+    "path": "packages/audience/classes/audienceservice_class_inc.php",
+    "after": "f5e1e73a952cc76397718910fbc67e4d27c3034e4cb10245aff2b6165e73c15c"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/helpcontent_class_inc.php",
+    "path": "packages/audience/classes/helpcontent_class_inc.php",
+    "after": "69c1f4c7b408e35138699ae0197aba25a0d82714f6ef70cfb421d656f41b462c"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/classes/icegramimportplan_class_inc.php",
+    "path": "packages/audience/classes/icegramimportplan_class_inc.php",
+    "after": "c53850644f9094d95e36857ef6d3df5271bbb54a949de940672935a3e9fbd12d"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/controller.php",
+    "path": "packages/audience/controller.php",
+    "after": "1756b175e2fcad99cb54b01d6c3f904f3a428f3457531d1010b6240573e64758"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/patches/installscripts_class_inc.php",
+    "path": "packages/audience/patches/installscripts_class_inc.php",
+    "after": "2ef28eb091d4f59cba0030c5a86309f3d2b8adef62fe557fb72cbd3d9bf94258"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/register.conf",
+    "path": "packages/audience/register.conf",
+    "after": "b969d85d1560ce2563c94866aa5c0ade9ee425999329bd67316e45aad97e6bb9"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/resources/admin.js",
+    "path": "packages/audience/resources/admin.js",
+    "after": "f2ad3f458447c314f28f6bfc0f15a1f05482624d7ed8226ea45fa5d9893a0651"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/scripts/export-icegram-users.php",
+    "path": "packages/audience/scripts/export-icegram-users.php",
+    "after": "49731eeaacde0c70b8d5ae1dcc328772f60d9e0a8df67401b6ab2a51d3fcb83c"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/scripts/import-icegram-users.php",
+    "path": "packages/audience/scripts/import-icegram-users.php",
+    "after": "9441e09c649356e31970fb1f3b770484c973f266994dcdff977ecf785a8a5999"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/sql/tbl_audience_campaigns.sql",
+    "path": "packages/audience/sql/tbl_audience_campaigns.sql",
+    "after": "b07b4e8bd506eb0f8a8e2e2a57126de741aca62d7411e8e8a3e9b784e924b498"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/sql/tbl_audience_consent.sql",
+    "path": "packages/audience/sql/tbl_audience_consent.sql",
+    "after": "086807a814244d2d4fc229889e33d90057c4f7cc0f9f18ffaade2d2f3d2c6ada"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/sql/tbl_audience_contacts.sql",
+    "path": "packages/audience/sql/tbl_audience_contacts.sql",
+    "after": "7dcc940991f3af346caddad8e5c6f23c126b70a724ad2643027c7a553e99c544"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/sql/tbl_audience_limits.sql",
+    "path": "packages/audience/sql/tbl_audience_limits.sql",
+    "after": "a97b9ded8780c00fc69fb59e4981f0809082f619e483b02a859cb556deebf14b"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/sql/tbl_audience_tokens.sql",
+    "path": "packages/audience/sql/tbl_audience_tokens.sql",
+    "after": "c298bb35c696986ca3cf25a14f182278be245d21467dd0552d6781452d20dd87"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/templates/content/admin_tpl.php",
+    "path": "packages/audience/templates/content/admin_tpl.php",
+    "after": "d6a25f15ba02c98a4e48f58af558eb426a24dc86710551ecd9ff4d0c8ae83f37"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/templates/content/denied_tpl.php",
+    "path": "packages/audience/templates/content/denied_tpl.php",
+    "after": "67ac728048cbc83313635cc10aa74d40190344e7cc5314c0b54c2e35582d0283"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/templates/content/unsubscribe_tpl.php",
+    "path": "packages/audience/templates/content/unsubscribe_tpl.php",
+    "after": "451464a6b529b076daf4b576c065d32b2d64258853cf65d8359932849a9d2941"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/campaign_integration_test.php",
+    "path": "packages/audience/tests/campaign_integration_test.php",
+    "after": "5d21746f1eee13e0ff6572f8b413241a639c0e8b00955b4f277c621a0bfa3064"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/delivery_progress_test.php",
+    "path": "packages/audience/tests/delivery_progress_test.php",
+    "after": "2b22f8190bbe144a40a2de25c1b856bc48001b8c24f741098da1cd23e82e2110"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/icegram_import_plan_test.php",
+    "path": "packages/audience/tests/icegram_import_plan_test.php",
+    "after": "5ff9cf0d523dcb0083e5b3421abb0c699ca3f48ea3842f6356cb23ddc5326101"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/message_heading_test.php",
+    "path": "packages/audience/tests/message_heading_test.php",
+    "after": "0ac00a3b35d8084edb165d31b97002f9e9601d9729850af4c9672ebdec06a02f"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/queue_feedback_test.cjs",
+    "path": "packages/audience/tests/queue_feedback_test.cjs",
+    "after": "723bfc4042776165a0e354153949655ab2cc5708490472ca6a5176d0141cc07f"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/subject_validation_test.cjs",
+    "path": "packages/audience/tests/subject_validation_test.cjs",
+    "after": "36751511ea91077d310fb32510a97f84d15ee5d2bca2f929aabcce57b1329d20"
+  },
+  {
+    "repo": "modules",
+    "source": "audience/tests/subject_validation_test.php",
+    "path": "packages/audience/tests/subject_validation_test.php",
+    "after": "ff50e2dac1a01f9cada6788929123bb634b250b99b542df222ecded2e7fcab6f"
+  },
+  {
+    "repo": "modules",
+    "source": "calendar/classes/attachments_class_inc.php",
+    "path": "packages/calendar/classes/attachments_class_inc.php",
+    "after": "6c6f88116a70ae7436aa440aee94be2055a2aa0b73f02fe00efcebc3d7b7f614"
+  },
+  {
+    "repo": "modules",
+    "source": "calendar/classes/block_smallcalendar_class_inc.php",
+    "path": "packages/calendar/classes/block_smallcalendar_class_inc.php",
+    "after": "610944fae5a95f08a498fd2a079351f5b9c7b6227e5670e113f1a908a470242f"
+  },
+  {
+    "repo": "modules",
+    "source": "calendar/classes/block_widecalendar_class_inc.php",
+    "path": "packages/calendar/classes/block_widecalendar_class_inc.php",
+    "after": "5eb1b96f7185fa3da28c7df207ee145ece609fa7dcb16e1d3def1133cf173e32"
+  },
+  {
+    "repo": "modules",
+    "source": "calendar/classes/calendarinterface_class_inc.php",
+    "path": "packages/calendar/classes/calendarinterface_class_inc.php",
+    "after": "21ad7abd32402add35370baaa8ed021a34023fa18f1ef9740c3e59327f7eb172"
+  },
+  {
+    "repo": "modules",
+    "source": "calendarbase/classes/calendargenerator_class_inc.php",
+    "path": "packages/calendarbase/classes/calendargenerator_class_inc.php",
+    "after": "8d3662d3bddd01e38aee2b6532a48ea389b36b85d292ab481e39d516222285c2"
+  },
+  {
+    "repo": "modules",
+    "source": "calendarbase/classes/dbcalendar_class_inc.php",
+    "path": "packages/calendarbase/classes/dbcalendar_class_inc.php",
+    "after": "4f92dc7b7835d4df35a0c9ea829d42d6ddfafaa67e0f92555f976c4dd3d01f6e"
+  },
+  {
+    "repo": "modules",
+    "source": "certificate-service/classes/certificateservice_class_inc.php",
+    "path": "packages/certificate-service/classes/certificateservice_class_inc.php",
+    "after": "0a14929d278c736d751e0613f09b643057e37446b39facca11b1e3085432b82a"
+  },
+  {
+    "repo": "modules",
+    "source": "certificate-service/controller.php",
+    "path": "packages/certificate-service/controller.php",
+    "after": "5fbdb319bdf5a73f19fe54febd5ae1f5c489726e039d4ca5d0588b054486fcb1"
+  },
+  {
+    "repo": "modules",
+    "source": "chisimba_modules.txt",
+    "path": "packages/chisimba_modules.txt",
+    "after": "a979c701aa22c4615e81f8fbacc8b9c25e355f738bd4bea73d95df5a453bc2fc"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/README.md",
+    "path": "packages/contactform/README.md",
+    "after": "102b8ad645f1c68a1582e858c6122e1ce12d5e33e753b6d67127312bda897a64"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/classes/contactguard_class_inc.php",
+    "path": "packages/contactform/classes/contactguard_class_inc.php",
+    "after": "09f35e2d139b7a5df7620720c4448490934529398ec98b5e84441f7715c6a3c3"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/classes/contactservice_class_inc.php",
+    "path": "packages/contactform/classes/contactservice_class_inc.php",
+    "after": "c334e20a77904f1b1458c161b1389994e69d546a0ad4d8cb148e9a71cc09861d"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/classes/contactstore_class_inc.php",
+    "path": "packages/contactform/classes/contactstore_class_inc.php",
+    "after": "3ee3ac9dd4c70b380a5803a8e7d2eede2cd59363e841d26c43f108676714ea1b"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/classes/helpcontent_class_inc.php",
+    "path": "packages/contactform/classes/helpcontent_class_inc.php",
+    "after": "8fbe7c6f0f1ac00ac830a9cb50c63899fa3495dcc084eddc985ef5ce0e2276e0"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/controller.php",
+    "path": "packages/contactform/controller.php",
+    "after": "35ae66c21de40bf7dd1182abbfaf26ee6f7422c18dd4fbebdb3f8a7f36436f22"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/patches/installscripts_class_inc.php",
+    "path": "packages/contactform/patches/installscripts_class_inc.php",
+    "after": "34feb573b020438dc3fbb11dcd18a62340c88c2524a5fd61d0a085d8984a7495"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/register.conf",
+    "path": "packages/contactform/register.conf",
+    "after": "eab5d0be0d76688810cb1fc1a41f5f464108c5e35ba394f547cd41c9208653e6"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/sql/tbl_contactform_blocks.sql",
+    "path": "packages/contactform/sql/tbl_contactform_blocks.sql",
+    "after": "4a0524dfcd41904e7410436578f933120ea375d46de8d1fb5416b3a85daf7ae3"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/sql/tbl_contactform_limits.sql",
+    "path": "packages/contactform/sql/tbl_contactform_limits.sql",
+    "after": "91233f2d6b4f2307879d8379aba34ea2d3889b7c6e108892a73ae99a5967cc2f"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/sql/tbl_contactform_messages.sql",
+    "path": "packages/contactform/sql/tbl_contactform_messages.sql",
+    "after": "6300d174e482b075343f1bddba9b5c244065a20bafe62ddc0ba33c47b27157bc"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/sql/tbl_contactform_review.sql",
+    "path": "packages/contactform/sql/tbl_contactform_review.sql",
+    "after": "7c32f8fc5bef91e02a31dfcd453952d5d09be0e998412d32522bd63bb99f6e47"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/templates/content/common.php",
+    "path": "packages/contactform/templates/content/common.php",
+    "after": "57824a3309cafceaa3445266a4a84c091589208875698dc21a95a484aee6c453"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/templates/content/form_tpl.php",
+    "path": "packages/contactform/templates/content/form_tpl.php",
+    "after": "ec9d7cc529e58f2162b8fefadd2661fdb85abe0872c297b9158c20368cfd5e59"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/templates/content/manage_tpl.php",
+    "path": "packages/contactform/templates/content/manage_tpl.php",
+    "after": "c027ad1472a1dfb5776cc7efafaf7264fea8de4089954410727babd188db734f"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/templates/content/message_tpl.php",
+    "path": "packages/contactform/templates/content/message_tpl.php",
+    "after": "c34ec9f82a861e9b35e7b42eed482f9cd83f2ab8687450c3940f13fb7250cf29"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/templates/layout/layout_tpl.php",
+    "path": "packages/contactform/templates/layout/layout_tpl.php",
+    "after": "48ca8386c989773f7b012a742b83f9b1029c6c3db09ec5cba8cc3703f24ba253"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/tests/browser_fixture.php",
+    "path": "packages/contactform/tests/browser_fixture.php",
+    "after": "d88afc0d88c1823501cffe9ed106af18ce211b61e3b59f506feacfd1e4fb7b88"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/tests/guard_test.php",
+    "path": "packages/contactform/tests/guard_test.php",
+    "after": "93e19d5b8fe9f4c078221a278f07b72a282c62b5435ae03658cf60324921ff6b"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/tests/install_local.php",
+    "path": "packages/contactform/tests/install_local.php",
+    "after": "5c18b316ccd5fab10e7d2611ddcc4e61246de6d7a1c319527bc4156a9f691b9d"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/tests/runtime_test.php",
+    "path": "packages/contactform/tests/runtime_test.php",
+    "after": "7130cc27b48ba414d1f47bd924a446d7ea998ce068565ca60e7da5c435979a51"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/tests/service_test.php",
+    "path": "packages/contactform/tests/service_test.php",
+    "after": "dc7b5c65f3c452a3b5e1106be691d01781496efd31881956518a9451496cab6d"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/README.md",
+    "path": "packages/contentblocks/README.md",
+    "after": "337c0e521fc2de334339b31f145e58ab399590a75ffe0b13494ae99cf16bdbc8"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/classes/compositioneditor_class_inc.php",
+    "path": "packages/contentblocks/classes/compositioneditor_class_inc.php",
+    "after": "d585df8237a2e0bf00c396102709a77d2d7f233ac0a657866212e71fb3e7da7d"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/classes/compositionservice_class_inc.php",
+    "path": "packages/contentblocks/classes/compositionservice_class_inc.php",
+    "after": "6c5b24121c323d1c7b718c2f124f6a17ff7e52bff0e528bf4f5a0b02657556c3"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/register.conf",
+    "path": "packages/contentblocks/register.conf",
+    "after": "5e51c8e277dce7fe328d4fb3d4d3085cc561c46e3fbb2df1aa1654ef2f7038dc"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/scripts/configure-publication-imports.php",
+    "path": "packages/contentblocks/scripts/configure-publication-imports.php",
+    "after": "c35aed884e7d3e5a3d656a54bc9b0044c2ff3063ff3e030a2231e722b7f9c1e0"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/scripts/migration-media.php",
+    "path": "packages/contentblocks/scripts/migration-media.php",
+    "after": "af2fb44f3120646582c395dd257818196b4ecf41c5fefcbd21995f8b591be4b9"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/tests/composition_ajax_test.js",
+    "path": "packages/contentblocks/tests/composition_ajax_test.js",
+    "after": "eb9784c0174faf0c3cdb0cbe4a4c90cc4f95f266814c4c110f4093d71bdf004d"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/tests/composition_test.php",
+    "path": "packages/contentblocks/tests/composition_test.php",
+    "after": "0773d0943f59483e298109c1c634815826ecdb3656857cf2bcf06b018d2a1223"
+  },
+  {
+    "repo": "modules",
+    "source": "contentblocks/tests/video_cards_test.php",
+    "path": "packages/contentblocks/tests/video_cards_test.php",
+    "after": "e60e3470bd892ce6d90534e3db52f52a8e7f0eab22ef727a459c3095af1c152c"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/alertutils_class_inc.php",
+    "path": "packages/contextcontent/classes/alertutils_class_inc.php",
+    "after": "96cc8dedbebb355eff39db1b7b4201b2285bf51fe9359c856e2da11a5b96c959"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/chapterstagegateservice_class_inc.php",
+    "path": "packages/contextcontent/classes/chapterstagegateservice_class_inc.php",
+    "after": "18fbba4b7b2a7a9fbc69061b007126dcf36f8ea8bbf4e8a0b6b00f6617548166"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/contentauthoringservice_class_inc.php",
+    "path": "packages/contextcontent/classes/contentauthoringservice_class_inc.php",
+    "after": "917d9bc96b5640dbf5a02c4f0d34c0ca2ff1e32f2a66ef5783e81741da4aab81"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/contenttyperegistry_class_inc.php",
+    "path": "packages/contextcontent/classes/contenttyperegistry_class_inc.php",
+    "after": "4973b3eb96bf51fbfea1fbe466dfbb065a2694e2fea8a840b9a25ccaefe557d3"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/coursecompletioneligibilityservice_class_inc.php",
+    "path": "packages/contextcontent/classes/coursecompletioneligibilityservice_class_inc.php",
+    "after": "c4ac05f73c197251872e8671a89c08eab3d58cae12f5d897cc983f58c953bc76"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_activitystreamer_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_activitystreamer_class_inc.php",
+    "after": "b0fb218a9ffd8bfcdbc437fb65a4c9b427aee604317fe89642b38553e2c4d282"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_bookmarks_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_bookmarks_class_inc.php",
+    "after": "1a3c25991b4d3d429a0791e957fc4f30c802f70fc9392040244bc2c70ec3634f"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_chaptercontent_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_chaptercontent_class_inc.php",
+    "after": "d15e5c148ec6c0d5fdd62b2c14bc560dceeab26a5b75a0ef69f0e12e6dba832d"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_chapters_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_chapters_class_inc.php",
+    "after": "e33d95952e28f1d23927cdeddf4e0a5e497a0d51f22101b6a0520ef3b9ac9262"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_comment_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_comment_class_inc.php",
+    "after": "b658cfe8d8e11568266349511559cf29e6b4f34be38efb6e26a49fc38d223d02"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_contextchapter_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_contextchapter_class_inc.php",
+    "after": "a9ddd0a1a0d954497578ae0bcc3065e93b4d12a589248cfe33e4fdce272095f6"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_order_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_order_class_inc.php",
+    "after": "1e74dea1aa1314002093f3a3a1b4777b7f60ad3f43e058b255c33299a12d0e6d"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_pages_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_pages_class_inc.php",
+    "after": "049b0cdf133a5f76b5c83e1824f3fd45a5dd47329a74ade21c503328df7ca121"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_sections_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_sections_class_inc.php",
+    "after": "ce003217bc5cff638fe57f3440bceece65ff8ca45dd448bbbf91d582221c7129"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/db_contextcontent_titles_class_inc.php",
+    "path": "packages/contextcontent/classes/db_contextcontent_titles_class_inc.php",
+    "after": "243c9681488fadc0e1e2b78413aaadc08349ffea24df3b2f64427e4e4946bfd0"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/classes/sectionprogressionservice_class_inc.php",
+    "path": "packages/contextcontent/classes/sectionprogressionservice_class_inc.php",
+    "after": "832fde007914214776ed234cd6a48d5f72466eed51a02ef1e0b29a29536ac0fa"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/controller.php",
+    "path": "packages/contextcontent/controller.php",
+    "after": "742e2cb85d1fa302899fc19691bf728d627be0ff209704e808bb752004c3d6de"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/templates/content/listchapters_tpl.php",
+    "path": "packages/contextcontent/templates/content/listchapters_tpl.php",
+    "after": "5f684ca40a9472aa1e9ad878206c4b5214740c30367b46dd21db1d5f159b3d5e"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/templates/layout/layout_chapter_tpl.php",
+    "path": "packages/contextcontent/templates/layout/layout_chapter_tpl.php",
+    "after": "41405ca37efad4131cbaf4aa81f5ffedc796a3349892188125fb9720bda61752"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/templates/layout/layout_firstpage_tpl.php",
+    "path": "packages/contextcontent/templates/layout/layout_firstpage_tpl.php",
+    "after": "0d5814bcfa24300b5de10c9d04023a80b7c35eeceec17a8958a8f45353828999"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/tests/contextcontent_ingest_browser_contract_test.php",
+    "path": "packages/contextcontent/tests/contextcontent_ingest_browser_contract_test.php",
+    "after": "89a6043c22b4000281d2ffa521a473cb5a8d309247aa3c9f83d2ff5d3d100ff4"
+  },
+  {
+    "repo": "modules",
+    "source": "contextcontent/tests/contextcontent_rebuild_contract_test.php",
+    "path": "packages/contextcontent/tests/contextcontent_rebuild_contract_test.php",
+    "after": "1187518d8edc4be994f8a3c8a77d2155a329e7901093d5a0556e4d140ce6aec5"
+  },
+  {
+    "repo": "modules",
+    "source": "discussion/classes/dbdiscussionsubscriptions_class_inc.php",
+    "path": "packages/discussion/classes/dbdiscussionsubscriptions_class_inc.php",
+    "after": "961c2de607d18f7d8a105f300aa1c920ba0a81ec339cfc7247c70ef7720929bc"
+  },
+  {
+    "repo": "modules",
+    "source": "discussion/classes/dbtopic_class_inc.php",
+    "path": "packages/discussion/classes/dbtopic_class_inc.php",
+    "after": "5f70699d1dd357115928b1a1f23effcd73bee3f690a361b44eb054ff0179d1d0"
+  },
+  {
+    "repo": "modules",
+    "source": "discussion/classes/dbtopicsubscriptions_class_inc.php",
+    "path": "packages/discussion/classes/dbtopicsubscriptions_class_inc.php",
+    "after": "9dfe194e03b7e4421d9eeb8ce5b7b483a4b716e7c12ec45221c537dd438ab6e6"
+  },
+  {
+    "repo": "modules",
+    "source": "discussion/classes/dynamicblocks_discussionview_class_inc.php",
+    "path": "packages/discussion/classes/dynamicblocks_discussionview_class_inc.php",
+    "after": "fe743936e5605157de2155155e75ec78f9500b5ea5b56a36d9e6c211d7566100"
+  },
+  {
+    "repo": "modules",
+    "source": "discussion/controller.php",
+    "path": "packages/discussion/controller.php",
+    "after": "93b64dd62e8720fda71387355f3cdd2220e62219187b2b17b64a515ae788ac13"
+  },
+  {
+    "repo": "modules",
+    "source": "entitlement-service/classes/entitlementservice_class_inc.php",
+    "path": "packages/entitlement-service/classes/entitlementservice_class_inc.php",
+    "after": "0f530f32a346ff7fb4991eae4bc31ec9e8cfc80da0dba6d72badcb1758202bca"
+  },
+  {
+    "repo": "modules",
+    "source": "entitlement-service/tests/entitlement_service_contract_test.php",
+    "path": "packages/entitlement-service/tests/entitlement_service_contract_test.php",
+    "after": "03b7a20468e56f6b3154f992a7a0cef77675802d740422ca0a42b77e6a1ab459"
+  },
+  {
+    "repo": "modules",
+    "source": "essay/classes/dbessay_book_class_inc.php",
+    "path": "packages/essay/classes/dbessay_book_class_inc.php",
+    "after": "99be147e759d70ef8dd41d0c30889668fdb6ab2822957fcfd9abeb2887079422"
+  },
+  {
+    "repo": "modules",
+    "source": "essay/classes/dbessay_topics_class_inc.php",
+    "path": "packages/essay/classes/dbessay_topics_class_inc.php",
+    "after": "6945f57694c513cd6f04ddb0635fa44d3d70bad307c5c7339182be5717abb979"
+  },
+  {
+    "repo": "modules",
+    "source": "events/README.md",
+    "path": "packages/events/README.md",
+    "after": "8f235f060b5766f22dc39bdce3df762eb86afb4520490ebf29c6e6bd631c462f"
+  },
+  {
+    "repo": "modules",
+    "source": "events/classes/block_events_class_inc.php",
+    "path": "packages/events/classes/block_events_class_inc.php",
+    "after": "93779c577ed91ef8ca95bb86ece991e73d24410279d01f73c5e27d685a998566"
+  },
+  {
+    "repo": "modules",
+    "source": "events/classes/eventpolicy_class_inc.php",
+    "path": "packages/events/classes/eventpolicy_class_inc.php",
+    "after": "f94adac0dacd0d83eb21afbdf23d19f13597275f472ce29a100bb5c89426b649"
+  },
+  {
+    "repo": "modules",
+    "source": "events/classes/eventservice_class_inc.php",
+    "path": "packages/events/classes/eventservice_class_inc.php",
+    "after": "969357d07d411ce6eb3b10b548e580fcbd2ddbde18b62baae2fb06d4ed9be93b"
+  },
+  {
+    "repo": "modules",
+    "source": "events/classes/eventstore_class_inc.php",
+    "path": "packages/events/classes/eventstore_class_inc.php",
+    "after": "02c3db8a98247bce619c4d7ccf7e28b4fd304e7e696fa7b13b69c44844bc4247"
+  },
+  {
+    "repo": "modules",
+    "source": "events/classes/helpcontent_class_inc.php",
+    "path": "packages/events/classes/helpcontent_class_inc.php",
+    "after": "952b9d4db8339e2fd2e8ee9e60208f942deff1738787e5bc50dec99661aeba12"
+  },
+  {
+    "repo": "modules",
+    "source": "events/controller.php",
+    "path": "packages/events/controller.php",
+    "after": "d1350ed3cfa820723cf633393bbd22922f3fae392753b72eb6a599718c6992bd"
+  },
+  {
+    "repo": "modules",
+    "source": "events/patches/installscripts_class_inc.php",
+    "path": "packages/events/patches/installscripts_class_inc.php",
+    "after": "2fd1d3f10bbeb9687486d5b182e7e7f788e6bb19c7c07bea7ae2f18165a86378"
+  },
+  {
+    "repo": "modules",
+    "source": "events/register.conf",
+    "path": "packages/events/register.conf",
+    "after": "c76f5ebdd4cdd118df75f67eb601a7d4001e1c694feb22ad1581bb9fea05e884"
+  },
+  {
+    "repo": "modules",
+    "source": "events/resources/editor.js",
+    "path": "packages/events/resources/editor.js",
+    "after": "1216189a5455d4754812ec3444d5f2d2380a38bc97a5b1df901d00f24d7efb8a"
+  },
+  {
+    "repo": "modules",
+    "source": "events/resources/scanner.js",
+    "path": "packages/events/resources/scanner.js",
+    "after": "769aaf33a86ed2c31aae341c712c2bb18c6702a62c6df2c2743b8deac357ca0e"
+  },
+  {
+    "repo": "modules",
+    "source": "events/resources/sharing.js",
+    "path": "packages/events/resources/sharing.js",
+    "after": "c306259f00572476ea5f8fc4202f2c8cb2c3afb655b940731e75a43163429443"
+  },
+  {
+    "repo": "modules",
+    "source": "events/resources/tickets.js",
+    "path": "packages/events/resources/tickets.js",
+    "after": "673f451ab7bb4fe9605c351ac6ae890802fe01b9d616b381b4c9493f3e093acc"
+  },
+  {
+    "repo": "modules",
+    "source": "events/scripts/maintain.php",
+    "path": "packages/events/scripts/maintain.php",
+    "after": "32b619adc32b9eb1b1cae8db92c79a03fbf4548955e9daad82ccdd372adb2924"
+  },
+  {
+    "repo": "modules",
+    "source": "events/sql/tbl_events_bookings.sql",
+    "path": "packages/events/sql/tbl_events_bookings.sql",
+    "after": "e038f765ebd3dbe15afb3df1753ab15419db2fa7fce284cb509d5d03630c393d"
+  },
+  {
+    "repo": "modules",
+    "source": "events/sql/tbl_events_events.sql",
+    "path": "packages/events/sql/tbl_events_events.sql",
+    "after": "712b826a7ec99a84786c658d7f02f427d2e229b4326636dc05704d8036e3b0dd"
+  },
+  {
+    "repo": "modules",
+    "source": "events/sql/tbl_events_occurrences.sql",
+    "path": "packages/events/sql/tbl_events_occurrences.sql",
+    "after": "a3271689fc7fb116b89c807b50108c1c93684b41a29f592af86dac974828853c"
+  },
+  {
+    "repo": "modules",
+    "source": "events/sql/tbl_events_reviews.sql",
+    "path": "packages/events/sql/tbl_events_reviews.sql",
+    "after": "abe152a066062d8d32afb3341c90cbf3e5c11e1686380e4fdd7276710b9459da"
+  },
+  {
+    "repo": "modules",
+    "source": "events/sql/tbl_events_tickets.sql",
+    "path": "packages/events/sql/tbl_events_tickets.sql",
+    "after": "dd78b318aa61981ee0fe746bea201cb7f097d628bdc30e94001569394a412fcf"
+  },
+  {
+    "repo": "modules",
+    "source": "events/sql/tbl_events_waitlist.sql",
+    "path": "packages/events/sql/tbl_events_waitlist.sql",
+    "after": "d65b666d53ee66a5155b9f75693c3ab0905b39716e324bd2709f177218a0f303"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/booking_tpl.php",
+    "path": "packages/events/templates/content/booking_tpl.php",
+    "after": "6566c14d5d6a9e65902642188301b98f976a6c5eb88534599c00bed8565e7e59"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/catalogue_tpl.php",
+    "path": "packages/events/templates/content/catalogue_tpl.php",
+    "after": "6f3d139cfdf10170410a76ec8364b5b7dc33a5658a64f6f1d661deeb1c5677b7"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/cataloguecard_tpl.php",
+    "path": "packages/events/templates/content/cataloguecard_tpl.php",
+    "after": "69726bae06e307f3d719291e3fe3dfa66868b6d89ec9d156e252cac79673e2a6"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/checkins_tpl.php",
+    "path": "packages/events/templates/content/checkins_tpl.php",
+    "after": "c1cf012233219f6b6a4ebb60c5d184adbc5c0956a10964f0b32b695bad8a887f"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/common.php",
+    "path": "packages/events/templates/content/common.php",
+    "after": "f10e99a605052596938d909a27daee7ceb747f16b3c803c15f295ba55ad74117"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/editor_tpl.php",
+    "path": "packages/events/templates/content/editor_tpl.php",
+    "after": "6b601c15c7765db8045ba2f900daebee24f0a02c68dd9ea9bfa86af9d02db027"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/error_tpl.php",
+    "path": "packages/events/templates/content/error_tpl.php",
+    "after": "ff1e63e9dd27ec2e1dd27dca92368d49f1664f98999a093d72ef0cd7a4533cd8"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/eventsblock_tpl.php",
+    "path": "packages/events/templates/content/eventsblock_tpl.php",
+    "after": "da221231cf05b08a28c635e294e553f73c6e29c170a6c572a79f91b6a40894e7"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/manage_tpl.php",
+    "path": "packages/events/templates/content/manage_tpl.php",
+    "after": "66619fa190d6fe868ed08436910cfe56413bdb5b40a38f78479dbbf7897b8a85"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/message_tpl.php",
+    "path": "packages/events/templates/content/message_tpl.php",
+    "after": "e41b9add30b0bd475cc324470e156eaf96c8dd25e5fb456fdaf5617f3066f507"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/operations_tpl.php",
+    "path": "packages/events/templates/content/operations_tpl.php",
+    "after": "5557cc4a173735c1f361a7e68a3f42765f461692faa62ec881c6d7ecbee889f8"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/scan_tpl.php",
+    "path": "packages/events/templates/content/scan_tpl.php",
+    "after": "f3a12208144da55ab2efa4d519688ef63fa0f35eee43a5eeb627222dda7f6ec6"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/schedule_tpl.php",
+    "path": "packages/events/templates/content/schedule_tpl.php",
+    "after": "db7992475dedd0d9d02eca6aa5167a525d0f17908dbaf3ef3b39438cda8d3049"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/ticket_tpl.php",
+    "path": "packages/events/templates/content/ticket_tpl.php",
+    "after": "372eb43596789ca956f6b0204bf1e3fba09ef9dc9fe5eb5f6904c72681144340"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/view_tpl.php",
+    "path": "packages/events/templates/content/view_tpl.php",
+    "after": "b7c51d5514a1c6b420bb57c6669a4051dc88639cb09c781175e5a4e8efd372f5"
+  },
+  {
+    "repo": "modules",
+    "source": "events/templates/content/waitlist_confirm_tpl.php",
+    "path": "packages/events/templates/content/waitlist_confirm_tpl.php",
+    "after": "8e417b8abf150313788fb9c1db831765b1226aa7660ddd643243268856907682"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/browser_fixture.php",
+    "path": "packages/events/tests/browser_fixture.php",
+    "after": "9e2bffc6a05bb1ecf0d8f10e44d0d5db721504107eb018693d07e764fdacead4"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/catalogue_sections_test.php",
+    "path": "packages/events/tests/catalogue_sections_test.php",
+    "after": "27fe8057024796cf4966c026d310909d10228862050148e8df79098cf7e54c9e"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/editor_test.php",
+    "path": "packages/events/tests/editor_test.php",
+    "after": "ae5c7741c4510fe684ae258c1bb004abcd221718dc9e62ebce99133f806ddd2a"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/runtime_test.php",
+    "path": "packages/events/tests/runtime_test.php",
+    "after": "2e5bf603f0b5abbc2eb15a148efe77842e2f069bbb1c351ecac76efe72a511fc"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/sample_scenarios.php",
+    "path": "packages/events/tests/sample_scenarios.php",
+    "after": "6b4a9cfdab1c7d5a66caef49d2c6aafa35d143708687f7716503ba8b1bf70db1"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/template_test.php",
+    "path": "packages/events/tests/template_test.php",
+    "after": "fe78afc13a94f6928345f5b83f570db0965c198a271732567a780d2d4b1dd9fe"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/update_local.php",
+    "path": "packages/events/tests/update_local.php",
+    "after": "01ab74aeab9d544fa9e299b3c57e1842de6830c69a6d7cf45a69125194ed8c12"
+  },
+  {
+    "repo": "modules",
+    "source": "events/tests/vat_percentage_test.php",
+    "path": "packages/events/tests/vat_percentage_test.php",
+    "after": "eaf4ab326f59c734b8ee3b974e8c0a0a0de2038a500e0d922e76a44d54f0d1f2"
+  },
+  {
+    "repo": "modules",
+    "source": "gradebook/docs/schema-upgrade.md",
+    "path": "packages/gradebook/docs/schema-upgrade.md",
+    "after": "1560ce1df29ed1b8bb91dca88639748f5ffdee7fd237122717c9703c99e9b60b"
+  },
+  {
+    "repo": "modules",
+    "source": "gradebook/patches/installscripts_class_inc.php",
+    "path": "packages/gradebook/patches/installscripts_class_inc.php",
+    "after": "e7c796cb558edebaf1e2f6c39112f4bf2d5f512ee9b0d3eacedcf0efab6755d4"
+  },
+  {
+    "repo": "modules",
+    "source": "gradebook/tests/schema_upgrade_test.php",
+    "path": "packages/gradebook/tests/schema_upgrade_test.php",
+    "after": "631a3efb953d2d4e3a0791dd35e2e5ea763bfcbd241a8d476a49db02bf2eff33"
+  },
+  {
+    "repo": "modules",
+    "source": "host-service/README.md",
+    "path": "packages/host-service/README.md",
+    "after": "b5aa941a325756031325714612cd88237cfa9a838a2e24fee565b700d18deb62"
+  },
+  {
+    "repo": "modules",
+    "source": "host-service/classes/hostservice_class_inc.php",
+    "path": "packages/host-service/classes/hostservice_class_inc.php",
+    "after": "f02aa65d67d52c4454fe0fc498ca75ab873186ad8fc33f11f2d62cbc59aa5cb6"
+  },
+  {
+    "repo": "modules",
+    "source": "host-service/patches/installscripts_class_inc.php",
+    "path": "packages/host-service/patches/installscripts_class_inc.php",
+    "after": "6629d11eac669128658de67f2bc785535fe4824ac4950f9520e11190c250104e"
+  },
+  {
+    "repo": "modules",
+    "source": "host-service/register.conf",
+    "path": "packages/host-service/register.conf",
+    "after": "f9226dc54ff70bcf3084140ffd6e7c5f911d76dec249bbb1af575eb55bb96803"
+  },
+  {
+    "repo": "modules",
+    "source": "host-service/sql/tbl_host_service_profiles.sql",
+    "path": "packages/host-service/sql/tbl_host_service_profiles.sql",
+    "after": "ff0dd01479ede6bbb87fa4c12c1f2ce8c37d799dc87611b83d798de494b1bcfe"
+  },
+  {
+    "repo": "modules",
+    "source": "ingestservice/classes/db_ingestservice_runs_class_inc.php",
+    "path": "packages/ingestservice/classes/db_ingestservice_runs_class_inc.php",
+    "after": "659763fc503c865f3a1af776a70a651c217f3392d112e972475bf271b1417bac"
+  },
+  {
+    "repo": "modules",
+    "source": "ingestservice/classes/ingestservice_class_inc.php",
+    "path": "packages/ingestservice/classes/ingestservice_class_inc.php",
+    "after": "8a665cb6dd23baa608ed52d86375a25be9b5ffcca81e36a2645a4b9945e5cd30"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/README.md",
+    "path": "packages/kanban/README.md",
+    "after": "a3521444851eacaa925d1939f6dcd89226fb518684ddee43f10de94cba2445d1"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/dbkanbanaccess_class_inc.php",
+    "path": "packages/kanban/classes/dbkanbanaccess_class_inc.php",
+    "after": "9ecef2bd6edf4eed73831fdbb8956eadd418e7d152663d334fb3aec07e7d5934"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/dbkanbanboards_class_inc.php",
+    "path": "packages/kanban/classes/dbkanbanboards_class_inc.php",
+    "after": "e4c6f13b7536e48cd2979657b8d98cbf28d0bc67e98e97f1f63515b5ad9d597b"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/dbkanbansubtasks_class_inc.php",
+    "path": "packages/kanban/classes/dbkanbansubtasks_class_inc.php",
+    "after": "e5099054a77a42f80314be5045aced5c9538b77c0f98d7627738f671eec0dfc1"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/dbkanbantasks_class_inc.php",
+    "path": "packages/kanban/classes/dbkanbantasks_class_inc.php",
+    "after": "2cdff3aeb99a0113683260ff623cd117716193f2859ba2f400562aacda5ca19f"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/README.md",
+    "path": "packages/kanban/tests/README.md",
+    "after": "0259c79a41ca64fc0c338a63a31bfb8dbc4a34665a3649c90c9e2c0a58d1b67b"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/boards_focus_browser_test.cjs",
+    "path": "packages/kanban/tests/boards_focus_browser_test.cjs",
+    "after": "b035d505e07bb4a30f31d03677b5cac5ace51a527fa8cfbf43b1720c8c0b4b9a"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/fixtures/board.php",
+    "path": "packages/kanban/tests/fixtures/board.php",
+    "after": "8934679b06470416a378a579c7b271102ec4475528012819948148194edd65ac"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/grant_recovery_test.php",
+    "path": "packages/kanban/tests/grant_recovery_test.php",
+    "after": "2dfa003e3672b3e825023706c48fa6acf5d21366b048dfec005cebe36da73786"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/kanban_contract_test.php",
+    "path": "packages/kanban/tests/kanban_contract_test.php",
+    "after": "400a0bb95aeb0706afe5429bd65f0b28c852c28596becb591b555f27fc039258"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/public_link_browser_test.cjs",
+    "path": "packages/kanban/tests/public_link_browser_test.cjs",
+    "after": "8b817ee6ca4ca652860fa72cf498eb8eab577624424d9f6a0d021865bae543bf"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/public_link_payload_test.mjs",
+    "path": "packages/kanban/tests/public_link_payload_test.mjs",
+    "after": "20c80850c01f7518cb7cf6855978951e894995c0b2f2c0d42cfcd8d7a6d36764"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/recovery_browser_test.cjs",
+    "path": "packages/kanban/tests/recovery_browser_test.cjs",
+    "after": "acf1fd03efda4b9a40314e895e2e91162d1cc97ef56825060d2dd5d0f26e5b6d"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/recovery_test.php",
+    "path": "packages/kanban/tests/recovery_test.php",
+    "after": "d4000f4f1b2d1c41c83d3891798296855bf09acd9249b9d72040bd0482569192"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/remembered_session_browser_test.cjs",
+    "path": "packages/kanban/tests/remembered_session_browser_test.cjs",
+    "after": "57b987834eeba0fafa893f6f8f2158e931443c779994fc44c9d6220808b748e6"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/subtask_edit_browser_test.cjs",
+    "path": "packages/kanban/tests/subtask_edit_browser_test.cjs",
+    "after": "45d9fa37fd11d67b90ad02c15796dacab4b2680cd27985dad2d1425bd4513076"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/subtask_edit_test.php",
+    "path": "packages/kanban/tests/subtask_edit_test.php",
+    "after": "908f71dc051b72f814cb7750df97a4733c9145a4173a12ca6b055b62e324cd47"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/task_creation_browser_test.cjs",
+    "path": "packages/kanban/tests/task_creation_browser_test.cjs",
+    "after": "e20bc6028571285cc10deaa9f65a03ead0f06a7b0e9e599d6d23826e6ff42bb8"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/tests/task_creation_test.php",
+    "path": "packages/kanban/tests/task_creation_test.php",
+    "after": "43ba24c2e1e919a0b8a3f6ffff368529b8b603e7e0c96545b690979b0553fa89"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/classes/dbknowledgemapaccess_class_inc.php",
+    "path": "packages/knowledgemap/classes/dbknowledgemapaccess_class_inc.php",
+    "after": "db2d51e0ab59d17c35435a2df6bd4dbb9fbe382d05f61428cd0c2f06d7d6d10b"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/classes/dbknowledgemapnodes_class_inc.php",
+    "path": "packages/knowledgemap/classes/dbknowledgemapnodes_class_inc.php",
+    "after": "500bf43568bebad27623bca6897ee3537dbc07eca562603ff7f4819002649c57"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/classes/dbknowledgemaprelationships_class_inc.php",
+    "path": "packages/knowledgemap/classes/dbknowledgemaprelationships_class_inc.php",
+    "after": "743918286fd47861b06ea51b394aa1f83e73c83343630fd4328ad1f07bd3f144"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/classes/dbknowledgemaps_class_inc.php",
+    "path": "packages/knowledgemap/classes/dbknowledgemaps_class_inc.php",
+    "after": "f5b8e88d77c2b1d75be15c06cd323a78a4579a79121eb67334f1544e86be0852"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/classes/knowledgemapimportservice_class_inc.php",
+    "path": "packages/knowledgemap/classes/knowledgemapimportservice_class_inc.php",
+    "after": "9ff8131fa6bf25a254b5bda8cfdc4196a14fd7f90c51f5b943d84f7e81ee077f"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/classes/knowledgemapservice_class_inc.php",
+    "path": "packages/knowledgemap/classes/knowledgemapservice_class_inc.php",
+    "after": "cc96e7e05af0c00cea4c9f105ad1545639bd04bf2f3ac7a30e11df440ec3d5eb"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/controller.php",
+    "path": "packages/knowledgemap/controller.php",
+    "after": "004f6ee20c9f3defb4f0840105978ec87134f323091f57cd49f6757c7d395bab"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/register.conf",
+    "path": "packages/knowledgemap/register.conf",
+    "after": "bce0246be11b503c2e29fc2375238cc40cdc5aede33a5c00636cc3100b499133"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/templates/content/view_tpl.php",
+    "path": "packages/knowledgemap/templates/content/view_tpl.php",
+    "after": "6f2708bc10ccfaa367b4df827b54eb9f23ac1acab090b802ab3846b9dc0ad668"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/tests/editor_test.js",
+    "path": "packages/knowledgemap/tests/editor_test.js",
+    "after": "ed078a255f9c60ab17910f97922fb8e2e2209ce03cce11bd932f838c02d7695b"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/tests/knowledgemap_contract_test.php",
+    "path": "packages/knowledgemap/tests/knowledgemap_contract_test.php",
+    "after": "15b0fb3509117d4d26b35768b8397647605a65ce0c8d4cbde1005c5186b2eaa1"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/tests/public_link_test.js",
+    "path": "packages/knowledgemap/tests/public_link_test.js",
+    "after": "13a946ef8b929f86ac47d504cc89b24fbe9bcac4b57ff6cada85c459e3c84238"
+  },
+  {
+    "repo": "modules",
+    "source": "knowledgemap/tests/public_view_test.php",
+    "path": "packages/knowledgemap/tests/public_view_test.php",
+    "after": "f660a860da236c81dbb179013cbadc440dd37842b3552b80e39974bca25b1b7b"
+  },
+  {
+    "repo": "modules",
+    "source": "legal-acceptance-service/classes/legalacceptanceservice_class_inc.php",
+    "path": "packages/legal-acceptance-service/classes/legalacceptanceservice_class_inc.php",
+    "after": "7b0de7118425737e2753714173399fdc0baad8786db395e9eb63ee204efd420f"
+  },
+  {
+    "repo": "modules",
+    "source": "legal-acceptance-service/tests/legal_acceptance_service_contract_test.php",
+    "path": "packages/legal-acceptance-service/tests/legal_acceptance_service_contract_test.php",
+    "after": "098f88eb8218c5829f5105454e0572ad61d16830bb9f06d1ba0a525932240928"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/bigbluebuttonprovider_class_inc.php",
+    "path": "packages/liveclass/classes/bigbluebuttonprovider_class_inc.php",
+    "after": "d5b047193b0fcf23ac31ecc301676bf1762f5722ccdde0faf6aabd301a21b2cd"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/dbliveclassreminders_class_inc.php",
+    "path": "packages/liveclass/classes/dbliveclassreminders_class_inc.php",
+    "after": "fd106d78805b5f0af8ed396772a96680454fa3bcfba76efc541da453e156c444"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/dbliveclasssessions_class_inc.php",
+    "path": "packages/liveclass/classes/dbliveclasssessions_class_inc.php",
+    "after": "19734adbba497175f4d6262f86c40b31eb12eb18a7086ba05e6b5bc4c392f434"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/liveclassauthorizationservice_class_inc.php",
+    "path": "packages/liveclass/classes/liveclassauthorizationservice_class_inc.php",
+    "after": "03dcc2d999b3b8f2cd812830b2d0d77dbe405c2ece4634e5a69adef21251c808"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/liveclasscalendarservice_class_inc.php",
+    "path": "packages/liveclass/classes/liveclasscalendarservice_class_inc.php",
+    "after": "9ca597abbafb2cf2f3cc6257c8e9bde9d0d1f445fa007cb713b29c2c7acf9d70"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/liveclasslifecycle_class_inc.php",
+    "path": "packages/liveclass/classes/liveclasslifecycle_class_inc.php",
+    "after": "65a24f3c31de897e025eac6c614728e4db26cc2b3e81aed5d8aa55e855ac2075"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/liveclassreminderservice_class_inc.php",
+    "path": "packages/liveclass/classes/liveclassreminderservice_class_inc.php",
+    "after": "631ab354a45aa1236d6b1d2fa951b5b75dc5ce0117476d794a88590cbeb2db5f"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/classes/liveclassservice_class_inc.php",
+    "path": "packages/liveclass/classes/liveclassservice_class_inc.php",
+    "after": "4fc78df1d262757a5792e689343ddab20f894904f8c6969bcd3b960832a2d26a"
+  },
+  {
+    "repo": "modules",
+    "source": "liveclass/controller.php",
+    "path": "packages/liveclass/controller.php",
+    "after": "230e0fe84425a4755bcb61e26d89a747a9bdb354355b40ad27d2f1d21be3a2a6"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqgenerator/README.md",
+    "path": "packages/mcqgenerator/README.md",
+    "after": "42a1de2f665441666ad11ed4d3aa9e73de935d7464069ed9d25fafb2364d67a4"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqgenerator/tests/legacy_route_test.php",
+    "path": "packages/mcqgenerator/tests/legacy_route_test.php",
+    "after": "26d811508377ff37c401bf5d132a6789f54e7b6a06bc3852d177db1eba0354d4"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/bankservice_class_inc.php",
+    "path": "packages/mcqtests/classes/bankservice_class_inc.php",
+    "after": "4fffdc2e109571e8bc100e8f09879ed1e9dbbbf493322715c4554b487368ef1e"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/bankstore_class_inc.php",
+    "path": "packages/mcqtests/classes/bankstore_class_inc.php",
+    "after": "973cbcc5475d55a60dc33e365f40641d1dc7b44bd74d2309ac1ab7606580b965"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/dbcategory_class_inc.php",
+    "path": "packages/mcqtests/classes/dbcategory_class_inc.php",
+    "after": "bf2123af563931fda3b5548115e2aa9185399fcfc2fec56baf1f87c201bf0e1c"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/dbdescription_class_inc.php",
+    "path": "packages/mcqtests/classes/dbdescription_class_inc.php",
+    "after": "600359a8e81c5b5c92965dab0216fd434b6a36aa48028302417c2031c88426cb"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/dbquestion_answers_class_inc.php",
+    "path": "packages/mcqtests/classes/dbquestion_answers_class_inc.php",
+    "after": "c938e91e1040526cd32da077c1b0a5f228d08d9f2f60c9e59597e94a00e154c3"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/dbquestion_calculated_class_inc.php",
+    "path": "packages/mcqtests/classes/dbquestion_calculated_class_inc.php",
+    "after": "71a74cc40a852113d7d357f7ea1dcafe103a6b6af7f65551c456979676b55337"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/dbrandom_matching_class_inc.php",
+    "path": "packages/mcqtests/classes/dbrandom_matching_class_inc.php",
+    "after": "f35fc0a24baccc2d24f03e190fc7fc0a70c9a4d534b52735deee6bdcf08f47a6"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/classes/formmanager_class_inc.php",
+    "path": "packages/mcqtests/classes/formmanager_class_inc.php",
+    "after": "9341eef1414d6736b8d49d9876362603a0a758b981ddd2bdf7055006f650a02b"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/controller.php",
+    "path": "packages/mcqtests/controller.php",
+    "after": "4b5738507a3fde2e687fcb7fcf6d180f0320730b06b3c4fdb2c2fa242790955e"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/patches/installscripts_class_inc.php",
+    "path": "packages/mcqtests/patches/installscripts_class_inc.php",
+    "after": "4efa575be62a445333af3480a59a18eb86cbcc97eb37a5d5d069d7906a3361a1"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/tests/QUESTION_BANKS.md",
+    "path": "packages/mcqtests/tests/QUESTION_BANKS.md",
+    "after": "2467f80a803acc0969f190037514770b29ba63e9059d061551628f6ab500fad1"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/tests/bank_integration_test.php",
+    "path": "packages/mcqtests/tests/bank_integration_test.php",
+    "after": "19b36fcc69395c5c665d2732085b9fcbcc9a68e835454c8b5ab0b028e000d172"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/tests/bank_question_test.php",
+    "path": "packages/mcqtests/tests/bank_question_test.php",
+    "after": "dd7ae8a60d565d8fe2598aa458c0bbff27d82725c9d63f55b6507d5f92ff2be7"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/tests/fixtures/bank_seed.php",
+    "path": "packages/mcqtests/tests/fixtures/bank_seed.php",
+    "after": "fb65da9d3d86c7e432c72b7ff6311adf6678a343d4417bd2dcc1b82fe2b923fd"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/tests/fixtures/bank_setup.php",
+    "path": "packages/mcqtests/tests/fixtures/bank_setup.php",
+    "after": "15e850cee77f976f72df14deb4f5d445eccdd072e951dad9ad667e3bb33df26f"
+  },
+  {
+    "repo": "modules",
+    "source": "membership-service/classes/membershipauthorizationservice_class_inc.php",
+    "path": "packages/membership-service/classes/membershipauthorizationservice_class_inc.php",
+    "after": "20546f2866eeb87a8d7ab18885e741ec444d6bbc817f2ef026b8f51ed4672ef7"
+  },
+  {
+    "repo": "modules",
+    "source": "membership-service/classes/membershipservice_class_inc.php",
+    "path": "packages/membership-service/classes/membershipservice_class_inc.php",
+    "after": "9fd2f5df5acf3d043c0ad9822dd10c90bfd8bd66d59511dd80e6655774484328"
+  },
+  {
+    "repo": "modules",
+    "source": "membership-service/classes/privateadmissionservice_class_inc.php",
+    "path": "packages/membership-service/classes/privateadmissionservice_class_inc.php",
+    "after": "375cec85e5f6dadb80b533d39c2b16687f56bd74c94aa54ce171d535d4986520"
+  },
+  {
+    "repo": "modules",
+    "source": "membership-service/tests/membership_service_contract_test.php",
+    "path": "packages/membership-service/tests/membership_service_contract_test.php",
+    "after": "f958756cad826f5964427856d0262c75640351497abe86f828eb69105223ab91"
+  },
+  {
+    "repo": "modules",
+    "source": "membership-service/tests/tier_catalogue_test.php",
+    "path": "packages/membership-service/tests/tier_catalogue_test.php",
+    "after": "eff56c4eb05002cd0d1169e034cb9be31bec135c4f12cfad8a793c4f937c85fc"
+  },
+  {
+    "repo": "modules",
+    "source": "myadmin/classes/sitemetrics_class_inc.php",
+    "path": "packages/myadmin/classes/sitemetrics_class_inc.php",
+    "after": "2648ad2c57996dea28b5e3e9cd47b690eb88109acf10e5abe6c1f95dfdf33ca1"
+  },
+  {
+    "repo": "modules",
+    "source": "myadmin/controller.php",
+    "path": "packages/myadmin/controller.php",
+    "after": "704a318c8f0693a605e4f64d9a79c2aa353251e0db4333b41bec8811d4fb8b20"
+  },
+  {
+    "repo": "modules",
+    "source": "myadmin/tests/myadmin_contract_test.php",
+    "path": "packages/myadmin/tests/myadmin_contract_test.php",
+    "after": "c204b04503e8ebeda7607ea72247fde8a12ef175c25a7ce277abb3cb2ac3bd89"
+  },
+  {
+    "repo": "modules",
+    "source": "notifications/classes/dbnotificationrecipients_class_inc.php",
+    "path": "packages/notifications/classes/dbnotificationrecipients_class_inc.php",
+    "after": "bf2493600633b513813eff12242257b2a06e5dc48b21943666ff9c412c8ab250"
+  },
+  {
+    "repo": "modules",
+    "source": "notifications/tests/notifications_contract_test.php",
+    "path": "packages/notifications/tests/notifications_contract_test.php",
+    "after": "2ad2d77d8672c6ce1f99f6277278a15d88e3d421f42bf18b8d71f3bf9dbc40b1"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes/README.md",
+    "path": "packages/pagenotes/README.md",
+    "after": "773c84e5e576de92c847ed4787b87e5110410f371816a32bb335462d031c33c2"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes/classes/dbnoteaccess_class_inc.php",
+    "path": "packages/pagenotes/classes/dbnoteaccess_class_inc.php",
+    "after": "ad527fa160113b0e6bb5a456c987f0e8579ea10ce810b75bc03c2e369f6e26a5"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes/classes/dbnotelinks_class_inc.php",
+    "path": "packages/pagenotes/classes/dbnotelinks_class_inc.php",
+    "after": "2617487199fd9c309c7eac9ea185e538b38c54eda407e1728b87c7a98494bacb"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes/classes/dbnotes_class_inc.php",
+    "path": "packages/pagenotes/classes/dbnotes_class_inc.php",
+    "after": "91d4f73483da18d826dbd1740bbf5e2ee5afe01dc74c76e40933764be7e7cf92"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes/tests/pagenotes_contract_test.php",
+    "path": "packages/pagenotes/tests/pagenotes_contract_test.php",
+    "after": "ca1815d5b4753170372f031512c38ec531833e3fbe7a5e0b2cc539e557d8b0fa"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/README.md",
+    "path": "packages/payment-service/README.md",
+    "after": "8388ecd5fd7152218c47ea64fe2f1d3890acc7aefe6f94ee2deb7a1a9132f5e9"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/contributionservice_class_inc.php",
+    "path": "packages/payment-service/classes/contributionservice_class_inc.php",
+    "after": "350b818b2e8bda3df2052c4a46825438b227fbd6bddf3fb539e7426c6810af81"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/dbpaymentevents_class_inc.php",
+    "path": "packages/payment-service/classes/dbpaymentevents_class_inc.php",
+    "after": "01e69a483c080903a453f31c9a748f93eca2864efb4a054b7fc49597cb7333b9"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/dbpaymentintents_class_inc.php",
+    "path": "packages/payment-service/classes/dbpaymentintents_class_inc.php",
+    "after": "71fc49007127514a10c01f6cba6da038c14b70c330df558b0b68e1a745e9e958"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/dbpaymentprices_class_inc.php",
+    "path": "packages/payment-service/classes/dbpaymentprices_class_inc.php",
+    "after": "ec782eb51067674ad68a9a85d5ec097aca2453d7ba415347cb5623c222d451c3"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/dbpaymentproviderplans_class_inc.php",
+    "path": "packages/payment-service/classes/dbpaymentproviderplans_class_inc.php",
+    "after": "c839cfdb7964067142eac0d3f4d58b7bfe4bef0fd5853e2e488d4dd3b13d0c79"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/dbpayments_class_inc.php",
+    "path": "packages/payment-service/classes/dbpayments_class_inc.php",
+    "after": "45d3df147d114ac3132c4cdf8006a0e78551125b1dc23e09c77c3d64dfd57b0a"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/dbpaymentsubscriptions_class_inc.php",
+    "path": "packages/payment-service/classes/dbpaymentsubscriptions_class_inc.php",
+    "after": "be8686c7a88ebf8b3a5200c4c2ecf9130f9da8938261528d5fe0ea21041c21c9"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/paymentcatalogservice_class_inc.php",
+    "path": "packages/payment-service/classes/paymentcatalogservice_class_inc.php",
+    "after": "aef123f7cb2e99b69fea8f0f012a36a70a012e559ed7173fe9b880c100bb6215"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/paymentservice_class_inc.php",
+    "path": "packages/payment-service/classes/paymentservice_class_inc.php",
+    "after": "dca30e7249313aba333b55083cc87a574965642df20486bc617cf877791af4e2"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/paystackpaymentprovider_class_inc.php",
+    "path": "packages/payment-service/classes/paystackpaymentprovider_class_inc.php",
+    "after": "1fc56afe65538e61f34f4bb23c28df712a56dc2257683488474aa63cd3f73a8a"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/classes/yocopaymentprovider_class_inc.php",
+    "path": "packages/payment-service/classes/yocopaymentprovider_class_inc.php",
+    "after": "97b8fddb33db5c3481860fa82a35a831f41883d438ae2a78a04420c0853f3754"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/controller.php",
+    "path": "packages/payment-service/controller.php",
+    "after": "c1847c366738e51295efdec4fd015634f91aa5de71da71a04d3ed3229e62f9d0"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/patches/installscripts_class_inc.php",
+    "path": "packages/payment-service/patches/installscripts_class_inc.php",
+    "after": "54e06cd99a2b79b149c58aa15e04d4657583ffcaf2af6e8d9e431bd740f097aa"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/register.conf",
+    "path": "packages/payment-service/register.conf",
+    "after": "94cf48231a987e5685f225aeb35ca6170b89b19e0ef1038c6349b91bc0e5b11a"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/CONTRIBUTIONS.md",
+    "path": "packages/payment-service/tests/CONTRIBUTIONS.md",
+    "after": "2d1a18875c5f48e01c31cfe626faa822df8f30fd230ce145efa731dde902af1d"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/contribution_service_test.php",
+    "path": "packages/payment-service/tests/contribution_service_test.php",
+    "after": "3bc066555ff60c9eb7c62a88a15cefea13eb4545a6bdfca5684f02de8bb1e1c6"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/contribution_test.php",
+    "path": "packages/payment-service/tests/contribution_test.php",
+    "after": "2925a77551a9a92a7632d22d56a4ea84e83e8dbeb062b2644af475d8053c185a"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/event_payment_test.php",
+    "path": "packages/payment-service/tests/event_payment_test.php",
+    "after": "f7cbcd9d9e04c668375a01cce3d4110c2683477ee9ac86d958ffbba4a4abb6f5"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/payment_catalogue_contract_test.php",
+    "path": "packages/payment-service/tests/payment_catalogue_contract_test.php",
+    "after": "29f1dfd456bdb26115f0a9f26486529499892c8de4933ded4ef1b9620c28b06a"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/paystack_payment_provider_test.php",
+    "path": "packages/payment-service/tests/paystack_payment_provider_test.php",
+    "after": "2191916b02505435b65d45953ace23114b28ae170eefab0d62d305ba506247b9"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/shop_membership_catalogue_test.php",
+    "path": "packages/payment-service/tests/shop_membership_catalogue_test.php",
+    "after": "300e61254888e3a5931d37afa9f8fbbd950be59669ecfdebe6339d1894190f20"
+  },
+  {
+    "repo": "modules",
+    "source": "payment-service/tests/shop_payment_test.php",
+    "path": "packages/payment-service/tests/shop_payment_test.php",
+    "after": "8449e0c4f0c3ca869807ada066453165fa9fdc38c3321671da42a58651cc51d8"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/README.md",
+    "path": "packages/questiongenerator/README.md",
+    "after": "d7cbf7993210a0079a7e06bfaaf4f614b9aee8228654a9c01e3ece34b80d2886"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/classes/examstore_class_inc.php",
+    "path": "packages/questiongenerator/classes/examstore_class_inc.php",
+    "after": "56a8eb2749a8b9cc4a29c74bb82d944c9fd3610f8118311518730cbd640f61ce"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/classes/workshopservice_class_inc.php",
+    "path": "packages/questiongenerator/classes/workshopservice_class_inc.php",
+    "after": "bafc928d7a4da414982e6d130073f9c66f5608177f74e85b77f768329c1dc4ce"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/classes/workshopstore_class_inc.php",
+    "path": "packages/questiongenerator/classes/workshopstore_class_inc.php",
+    "after": "5454477f8c6bcff421c0910440d36e9647a8a16ca366d2af651cb8f9c1439359"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/patches/installscripts_class_inc.php",
+    "path": "packages/questiongenerator/patches/installscripts_class_inc.php",
+    "after": "815037482721e56ec88c5a7750e30b09217617c70f0c7354feb77f18b4bf5dbf"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/delete_browser.cjs",
+    "path": "packages/questiongenerator/tests/delete_browser.cjs",
+    "after": "4ccc95fa54482da3c5a82867c19e3300953d6aed59fcf09ca472edb1bf0864c2"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/exam_counts_test.php",
+    "path": "packages/questiongenerator/tests/exam_counts_test.php",
+    "after": "e54bf8353b483dd7a9eea911fa066d0e53899c84ea8c6ae85913540557397dc7"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/exam_integration.php",
+    "path": "packages/questiongenerator/tests/exam_integration.php",
+    "after": "511b548ae5cd780b55915f1f61b9986dc20f23e620587d2f544ea932a28b98aa"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/exam_paging_browser_test.cjs",
+    "path": "packages/questiongenerator/tests/exam_paging_browser_test.cjs",
+    "after": "87276504896946fcc94de4ffb8c26c3cd290e394e20ad42e5e6a008df3b9a253"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/exam_selection_browser.cjs",
+    "path": "packages/questiongenerator/tests/exam_selection_browser.cjs",
+    "after": "fbf0137628260a45252d811d210b571c4a6157947e56cb9280f1107d2c4f4c53"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/exam_test.php",
+    "path": "packages/questiongenerator/tests/exam_test.php",
+    "after": "279f6d4c12f4a48e0880e24888fb82a28c48c2bb594d8679a340ded749e5cc5b"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/fixtures/provision.php",
+    "path": "packages/questiongenerator/tests/fixtures/provision.php",
+    "after": "1ae4aba7a858cb54d7798d58267b94f5f99ab73dc908aa0001ebeef8fdae1687"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/fixtures/seed.php",
+    "path": "packages/questiongenerator/tests/fixtures/seed.php",
+    "after": "9f58cabfcbcecc53d1f9ee3f1c145005f5573aba00d433688461938b8410279c"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/generation_busy_browser.cjs",
+    "path": "packages/questiongenerator/tests/generation_busy_browser.cjs",
+    "after": "d32b8331c2c6561e3191317456dc9b7580b5927b39cb4d5f59c6e1f90d7e438c"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/import_integration.php",
+    "path": "packages/questiongenerator/tests/import_integration.php",
+    "after": "c9e03e5babf017d9bc0cabd0a3d8d3e2083a76a532d6d7a15a40958df78dd9f6"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/more_integration.php",
+    "path": "packages/questiongenerator/tests/more_integration.php",
+    "after": "aad64abe1b797fb02b16cbd39f022e4ab3fd6d326eaa9f4c8d256f5718f6d329"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/more_questions_test.php",
+    "path": "packages/questiongenerator/tests/more_questions_test.php",
+    "after": "acf4cb7a692310b7810eaf8352b7b569154089eb3aba677dcb7cd169d3768435"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/review_browser.cjs",
+    "path": "packages/questiongenerator/tests/review_browser.cjs",
+    "after": "0487b42066f33de7182e0e1125fef9bc8ee53dff27ada91ee184f3c280786a4d"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/section_processing_test.php",
+    "path": "packages/questiongenerator/tests/section_processing_test.php",
+    "after": "b4d8014494f379009741734058d6b68c214c349439ff54d407c70ae41080d37e"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/section_structure_test.php",
+    "path": "packages/questiongenerator/tests/section_structure_test.php",
+    "after": "b62ec3a15f45abf7fea4ac81ce3196066c612effb96d32d86049020e464d328e"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/short_answer_create_browser.cjs",
+    "path": "packages/questiongenerator/tests/short_answer_create_browser.cjs",
+    "after": "785e26bb754fb3477b9398b57c96710d58bc83e1c8cf15524393399eb1f44c3e"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/short_answer_integration.php",
+    "path": "packages/questiongenerator/tests/short_answer_integration.php",
+    "after": "852c9f9e4ca9d14aecdbf18cf6847642aa1387ff223df6ffb9c3b931fa4f1e33"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/short_answer_review_browser.cjs",
+    "path": "packages/questiongenerator/tests/short_answer_review_browser.cjs",
+    "after": "7355091bc0892547c354545f22e9327c7a5857f95188655739c7b887b7e6f970"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/short_answer_test.php",
+    "path": "packages/questiongenerator/tests/short_answer_test.php",
+    "after": "a11f52480698c65a7f704b0fb7db3f43adb2fd3e94ab56d6928af20206a18904"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/source_browser.cjs",
+    "path": "packages/questiongenerator/tests/source_browser.cjs",
+    "after": "7254e35aacdc0d1dc1ff49a3caa72748c60b56ae0aecc118e8a5ac4d96683c2d"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/workshop_test.php",
+    "path": "packages/questiongenerator/tests/workshop_test.php",
+    "after": "8621cda43ec33eeda49a580c0112988a6dcee357cdb0b95af68b0121d8895817"
+  },
+  {
+    "repo": "modules",
+    "source": "questiongenerator/tests/workspace_integration.php",
+    "path": "packages/questiongenerator/tests/workspace_integration.php",
+    "after": "022bb97a2c3f180a7d5732e96ee260ef1945af5d23ed596ccae27534a1267238"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/README.md",
+    "path": "packages/registration-service/README.md",
+    "after": "9926b5eeb1122ac1d887e70d74f017d4e40532fde2afba1605695504a959c2b9"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/classes/registrationcleanup_class_inc.php",
+    "path": "packages/registration-service/classes/registrationcleanup_class_inc.php",
+    "after": "1b128aea73dc4981b31c581ac030c43c566dd8d4a6adb1fbbbb963fed12b9fd3"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/classes/registrationguard_class_inc.php",
+    "path": "packages/registration-service/classes/registrationguard_class_inc.php",
+    "after": "3edc82d19ef84edb20d84547122dc127e46175a1ad3b0045fc523bcff7ef79de"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/classes/registrationidentityservice_class_inc.php",
+    "path": "packages/registration-service/classes/registrationidentityservice_class_inc.php",
+    "after": "fe53e20fa72bdf93c12bab3295e851236c3ae949654eb16f09d6f01824128b8c"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/classes/registrationservice_class_inc.php",
+    "path": "packages/registration-service/classes/registrationservice_class_inc.php",
+    "after": "4aca6d68b0946c0ed398942ffff4f81ecb666cf3156b0f97dea1a17b7342fba7"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/classes/registrationtokenservice_class_inc.php",
+    "path": "packages/registration-service/classes/registrationtokenservice_class_inc.php",
+    "after": "f2d63b2e0a0eef85a57f7ea1e246c980cb9a15f4d52115055c10362ed38ad39f"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/register.conf",
+    "path": "packages/registration-service/register.conf",
+    "after": "50ba34e758ccb5242f640d0f5680ac98f7b74087bb66d403e558c41ebedde2f0"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/scripts/README.md",
+    "path": "packages/registration-service/scripts/README.md",
+    "after": "f2f5a99face78221071212c3e179ebd6a9fe30206e11366c4dc6ba2e6923ebe9"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/tests/public_registration_setting_test.php",
+    "path": "packages/registration-service/tests/public_registration_setting_test.php",
+    "after": "c95a1a3754f03888ec89dc1a7f03333319daf1aa610f2dc7b69388edeec1203e"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/tests/registration_cleanup_integration_test.php",
+    "path": "packages/registration-service/tests/registration_cleanup_integration_test.php",
+    "after": "7fc0b0d00a30ebfd43cec73b54ade48f07f792226543ec22254c18da0c5c62ea"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/tests/registration_expiry_test.php",
+    "path": "packages/registration-service/tests/registration_expiry_test.php",
+    "after": "0ee00b725817235d5efda12ccd0f1eadbfc5fb3bea079cdd95609b64144a2566"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/tests/registration_service_foundation_contract_test.php",
+    "path": "packages/registration-service/tests/registration_service_foundation_contract_test.php",
+    "after": "df43a0767e1f4a7b747ffddbb33f3b07ac844f6ad557ea4f1f78631093483861"
+  },
+  {
+    "repo": "modules",
+    "source": "registration-service/tests/registration_web_workflow_contract_test.php",
+    "path": "packages/registration-service/tests/registration_web_workflow_contract_test.php",
+    "after": "f2f9144b88a92e2181b63d51ae6ddc55bac8a1a94645a18204e71f46c2289306"
+  },
+  {
+    "repo": "modules",
+    "source": "rtt/classes/rttutil_class_inc.php",
+    "path": "packages/rtt/classes/rttutil_class_inc.php",
+    "after": "80a9a7c90fadfd9e1f6035e05af3ed7cce76ccda3b65797b373fd86329d087b3"
+  },
+  {
+    "repo": "modules",
+    "source": "rtt/register.conf",
+    "path": "packages/rtt/register.conf",
+    "after": "0802817b2ccba3479dfc4dcd122e293a9a669bb4f2afbaa3a7cda224048e5fa8"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/README.md",
+    "path": "packages/shop/README.md",
+    "after": "352dd6db4a83fb63d0099b908dc06eb3a2ce99fc09184097f20350a009b35fb1"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/helpcontent_class_inc.php",
+    "path": "packages/shop/classes/helpcontent_class_inc.php",
+    "after": "5c91b8aa2491f716669e1e5bfc8169e21f81cf2fe5c6eefc4ddd944ae5d961b9"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/productbuttons_class_inc.php",
+    "path": "packages/shop/classes/productbuttons_class_inc.php",
+    "after": "604c838bd83948193fe0ce112cbd91121f319a2640a3ced8863f48c4b5f1d4b1"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/salepromotion_class_inc.php",
+    "path": "packages/shop/classes/salepromotion_class_inc.php",
+    "after": "f82348ff6b311e57968bc069947ce9dd5ea86e592d5beccf6cd46116f94d5b52"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shopcartsession.php",
+    "path": "packages/shop/classes/shopcartsession.php",
+    "after": "a4c65641a20a4d01f821166762726746a6fd5c0a5a1be8601f6717ef0b8da511"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shopdownloads_class_inc.php",
+    "path": "packages/shop/classes/shopdownloads_class_inc.php",
+    "after": "e94a953977e808276c4d70507d26cacb1b87485487b0a4e25457d5462522ca16"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shopprice.php",
+    "path": "packages/shop/classes/shopprice.php",
+    "after": "7003ddc0f96ae8d12e63406dc1247340278441a90d97134a4318d6a513404c8d"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shoprules.php",
+    "path": "packages/shop/classes/shoprules.php",
+    "after": "a42938288b81957859457e1d9c3781ab9e563787704ea37abbdef187031fbdec"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shopsalerules.php",
+    "path": "packages/shop/classes/shopsalerules.php",
+    "after": "10be7f904b3a8de13b31e6f4278931a0ebb2a27dec013c8235cae68a22fe1150"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shopservice_class_inc.php",
+    "path": "packages/shop/classes/shopservice_class_inc.php",
+    "after": "caf684a24e23cdc18f451f00963cf3e7978de5d246029b24e022f10a83eb89cd"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/classes/shopstore_class_inc.php",
+    "path": "packages/shop/classes/shopstore_class_inc.php",
+    "after": "89bd0160ad5605646910b151ea9e733333afee7d06a56241c922353f27dd0122"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/controller.php",
+    "path": "packages/shop/controller.php",
+    "after": "28f7de6c875cffcc1d386b36c723832b5ea0f52e3dd8b0df5b1a6b8e3a479b9e"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/patches/installscripts_class_inc.php",
+    "path": "packages/shop/patches/installscripts_class_inc.php",
+    "after": "2d0725f998bcc1eec86c31b2712acceb0de80e233a011c2a4f35b0ed8a65c50e"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/register.conf",
+    "path": "packages/shop/register.conf",
+    "after": "f1a59e32da4cdc624cd02bfefabfe43532a04019f04517301746b3576ef0b46c"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/resources/pagecart.js",
+    "path": "packages/shop/resources/pagecart.js",
+    "after": "287a2259a214b188b12304019c5cad9a89f77565a2e228e56aa65c3ebfccb7c4"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/resources/shop.js",
+    "path": "packages/shop/resources/shop.js",
+    "after": "cc22c91bd5bc471e6fba49399518a283acc529dd1d7b040689cfb2b6178fb20d"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/scripts/import_catalogue.php",
+    "path": "packages/shop/scripts/import_catalogue.php",
+    "after": "4ad714c04fbbc94d4c9a250725cdfb948135c682eeb6047a88f031453d71bc1c"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/sql/tbl_shop_books.sql",
+    "path": "packages/shop/sql/tbl_shop_books.sql",
+    "after": "dc40b4e9fa8f404b68aa48ee7f4585b74e160aab6db1f55860c093ba482935f0"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/sql/tbl_shop_history.sql",
+    "path": "packages/shop/sql/tbl_shop_history.sql",
+    "after": "b3dd450a529f66652cd495d9d07306aebf785da00883340fd456de7125b64276"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/sql/tbl_shop_orders.sql",
+    "path": "packages/shop/sql/tbl_shop_orders.sql",
+    "after": "b3bf8abc45502612e7be4eb206e96fedbb6a097544c66c0a30eb4b6ef9a1a122"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/sql/tbl_shop_settings.sql",
+    "path": "packages/shop/sql/tbl_shop_settings.sql",
+    "after": "23a59db4bfc0528b07126ee800ac7d9aee406476af61548d07429ec112536d35"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/archive_tpl.php",
+    "path": "packages/shop/templates/content/archive_tpl.php",
+    "after": "fd7944141aad6112953e7ba62d48b26dd07abce9d1624ceebba790ebf1a5e1c4"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/cart_tpl.php",
+    "path": "packages/shop/templates/content/cart_tpl.php",
+    "after": "5dfff672ba3e767bd1a19144b94fb9c67ef63172749409798f1c166a206d638c"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/catalogue_tpl.php",
+    "path": "packages/shop/templates/content/catalogue_tpl.php",
+    "after": "de6598fb8103aba52a7b01ba8952baf2a395a4aacb4237fce8038fb71d49a520"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/common.php",
+    "path": "packages/shop/templates/content/common.php",
+    "after": "cefc9a9677fa81aca78c0849dd18d5bebaf8c2d2bc6452cc502739c77351c504"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/editor_tpl.php",
+    "path": "packages/shop/templates/content/editor_tpl.php",
+    "after": "08fd26fe8c306e8218763c2b2d7061a7d0950a3fff636d1cd9b04a73fdbcd9ef"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/error_tpl.php",
+    "path": "packages/shop/templates/content/error_tpl.php",
+    "after": "a22aeb14f9c53bc9c51350752b4b8c1357324663a4da7df9c6875b0e13bf182a"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/manage_tpl.php",
+    "path": "packages/shop/templates/content/manage_tpl.php",
+    "after": "db85d9d337b07b1712fc041e45f86d5ef33f54647e20b48218b46ea63438b3e6"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/order_tpl.php",
+    "path": "packages/shop/templates/content/order_tpl.php",
+    "after": "12d8f2b879fdea0dbd337e557aaffd1afa0608a87400299a45cdda462d217b5b"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/orders_tpl.php",
+    "path": "packages/shop/templates/content/orders_tpl.php",
+    "after": "b0b0c8de38d4bb01eec1bb8376fedc12901ee0e2e254f3cc6006242f398a078a"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/purchases_tpl.php",
+    "path": "packages/shop/templates/content/purchases_tpl.php",
+    "after": "47ab925506ae9ec5d10fd4d8c8b51de59906448c0950396158a9c3bee5c93aef"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/sales_tpl.php",
+    "path": "packages/shop/templates/content/sales_tpl.php",
+    "after": "b8c6687b74ff9b36dcb46e59da6fea57655044ba7ccf72538cca6ffd11d3ef82"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/templates/content/settings_tpl.php",
+    "path": "packages/shop/templates/content/settings_tpl.php",
+    "after": "e40607a334915aefd07237d7218a17b434787e81b66d26922dec4acf102aacbc"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/cart_session_test.php",
+    "path": "packages/shop/tests/cart_session_test.php",
+    "after": "5918aefc7a8dea836348595f6eae9273851f4613876195770714efcea9f6d61e"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/cleanup_browser.php",
+    "path": "packages/shop/tests/cleanup_browser.php",
+    "after": "af3bab42dd7eaad9df22c8efd1e33a806f2539b27eb816c2f69275fc891ca883"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/combos_test.php",
+    "path": "packages/shop/tests/combos_test.php",
+    "after": "2ad0cbccda221e480cba78c79292d218b3f17571d70ec1e956c72fd255c5fd05"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/fixtures.php",
+    "path": "packages/shop/tests/fixtures.php",
+    "after": "d8c51d75a0e3a07f15a9ff0e3e8fba21a174cc06483e8c5046f9438ff21309fe"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/image_badge_test.php",
+    "path": "packages/shop/tests/image_badge_test.php",
+    "after": "3f4d115c15cc7fcb98d095c111308b9eeafd7a87b8fe08c8110769a3be6ec13c"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/install_local.php",
+    "path": "packages/shop/tests/install_local.php",
+    "after": "78bc131b0ad3a8cc3e0e792fd00af272105f5277b9015b494abb18d2082dec7e"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/pagecart_test.php",
+    "path": "packages/shop/tests/pagecart_test.php",
+    "after": "5239b30ee84b6414944e787c43340559b9f227c4396077baafd328f25305b6d3"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/payment_status_test.php",
+    "path": "packages/shop/tests/payment_status_test.php",
+    "after": "c8cd3bb128389aae2ef4515603a97adaefc7f1f990df64d32d41e47fe0c4ece6"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/promotion_test.php",
+    "path": "packages/shop/tests/promotion_test.php",
+    "after": "1baf0891b5cc728cf7d51424db97f1e37d7c518d17b2df462bf7664ea678a896"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/rules_test.php",
+    "path": "packages/shop/tests/rules_test.php",
+    "after": "5679e131cb3cb5c6473fde3266bf7ce0de0bae1f9ca8c88a789366089424cfb6"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/runtime_test.php",
+    "path": "packages/shop/tests/runtime_test.php",
+    "after": "9e94df2b5c8783c43d064f290294057f9ea373d520c5302d10c9d148a76e70ee"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/sales_test.php",
+    "path": "packages/shop/tests/sales_test.php",
+    "after": "8648ab64d068d6fe9e36b4ddb4aa15a4026aec698b945d2cec0971906da41049"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/service_test.php",
+    "path": "packages/shop/tests/service_test.php",
+    "after": "731aaeee0b0af5d29e43825c9ccff996aa6767e7f1681d8e0b08a8d3269572a4"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/template_test.php",
+    "path": "packages/shop/tests/template_test.php",
+    "after": "9025fd47dddcaa842db27ccaf333c6680ad3b19700fa802f3849615cdaef91fd"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/thank_you_test.php",
+    "path": "packages/shop/tests/thank_you_test.php",
+    "after": "2edfffc827c1d7ae09d420c155f554ec60b933102d9db11a00a534fdb2e7541c"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/upgrade_test.php",
+    "path": "packages/shop/tests/upgrade_test.php",
+    "after": "8dc52e2f93732dc4fc7c7a60a60b6c332b09ddd551ef9c0d51da95f4123faabc"
+  },
+  {
+    "repo": "modules",
+    "source": "shop/tests/virtual_products_test.php",
+    "path": "packages/shop/tests/virtual_products_test.php",
+    "after": "537ee326080d1f776b428f4ea6f6999574d9e441d4db41c821505ee94a649ca6"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/classes/publishingstore_class_inc.php",
+    "path": "packages/simpleblog/classes/publishingstore_class_inc.php",
+    "after": "399fb0f9dcdd214b8e5f8312ef07d998df10112cfab6a1d56b371d695a643a5e"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/patches/installscripts_class_inc.php",
+    "path": "packages/simpleblog/patches/installscripts_class_inc.php",
+    "after": "df61b70476f20881c113ecae0dc6d9d6c62c4e5f11440fc6cfd591c10c62b292"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/scripts/export-wordpress-posts.php",
+    "path": "packages/simpleblog/scripts/export-wordpress-posts.php",
+    "after": "1dd01079962a16e78b541bdb9ba1e1ec2cb6e7d36efafd67e89f53ae178da4ee"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/scripts/import-wordpress-posts.php",
+    "path": "packages/simpleblog/scripts/import-wordpress-posts.php",
+    "after": "cb9fd40494d0fc1a2e2508f6be311a386acb12cd9df9e897c229131dd79797be"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/ACCESS.md",
+    "path": "packages/simpleblog/tests/ACCESS.md",
+    "after": "442ab28d1dd532c0ba21f88e511d8ee34b2a4a98de2c1a6d226f6b202176ebef"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/access_preview_test.php",
+    "path": "packages/simpleblog/tests/access_preview_test.php",
+    "after": "322b5fd7b11e38104b0167cc4d245c9df5cad3d94d217a730dfb889b7ae2d522"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/help_language_test.php",
+    "path": "packages/simpleblog/tests/help_language_test.php",
+    "after": "45b215c5513281e4cd16dd21d9c70b0bee0c0244d94fab1089fbbdc08bc3518f"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/import_record_test.php",
+    "path": "packages/simpleblog/tests/import_record_test.php",
+    "after": "6adb47825c974db86b69c45c6d0ebcdfe09bfd6ac9a6de20ebccfcf47721ca35"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/install_permissions_test.php",
+    "path": "packages/simpleblog/tests/install_permissions_test.php",
+    "after": "632534db1e89c287e145750707ed0cdfe344360cf8e094b28b7936fc7d472b7b"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/publishing_test.php",
+    "path": "packages/simpleblog/tests/publishing_test.php",
+    "after": "8ec0ba4c655d8cb37ddb792d353aa1e2be64693d967c669f70bdcdb7d7ec7b6f"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/schema_upgrade_test.mjs",
+    "path": "packages/simpleblog/tests/schema_upgrade_test.mjs",
+    "after": "aec510d12116069e092147da8b4242a81d66bb46b36d0bb42b0dfb388b477985"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/tests/wordpress_converter_test.php",
+    "path": "packages/simpleblog/tests/wordpress_converter_test.php",
+    "after": "bc7c0861de6701744d03773d91c58256880c461f36d65727a6483b8a0200f184"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/classes/dbsitepages_class_inc.php",
+    "path": "packages/sitepages/classes/dbsitepages_class_inc.php",
+    "after": "09386e33d2c62b4aab86851cf3e3f0b2dcbe64b3acbd4a75e85deb1abac863fa"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/classes/helpcontent_class_inc.php",
+    "path": "packages/sitepages/classes/helpcontent_class_inc.php",
+    "after": "cca85985797dfa75f034714adad00842530ec2c0660cbbe4902842cde37fe2c1"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/classes/pagepolicy_class_inc.php",
+    "path": "packages/sitepages/classes/pagepolicy_class_inc.php",
+    "after": "a2baa0fa4b9df897cbd0cb9b2186713c1d05c8d839e6d208c0caf7ae7404bbba"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/controller.php",
+    "path": "packages/sitepages/controller.php",
+    "after": "9effaecbb34588032fd9cd9beba181576d4156fc30818ef9f38f0c89e7671832"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/register.conf",
+    "path": "packages/sitepages/register.conf",
+    "after": "b33887728cb9da1fc965d9889249c15960a9e0a812d6ec50b3398ac98dc8bbac"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/scripts/configure-composition.php",
+    "path": "packages/sitepages/scripts/configure-composition.php",
+    "after": "9afd380d23cf7c2d5b64c4485a600a16c5e29b93b15c2a291fde88fa5e3496e9"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/templates/content/manage_tpl.php",
+    "path": "packages/sitepages/templates/content/manage_tpl.php",
+    "after": "72b006e0e85c77b82d298d0912cc6a42f56656b08f68fe1c9d74d725985a3395"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/templates/content/view_tpl.php",
+    "path": "packages/sitepages/templates/content/view_tpl.php",
+    "after": "03f99cb8881b09c8e9424c6aa69c08bd0dedbce0568ed3085fb61b1b3758a836"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/tests/page_policy_test.php",
+    "path": "packages/sitepages/tests/page_policy_test.php",
+    "after": "1747f97ff2833fb7e9bfb6667a03cb3c97554bbf3e9a57967ee45b3b1fee5a8e"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/tests/public_entry_test.php",
+    "path": "packages/sitepages/tests/public_entry_test.php",
+    "after": "4e3c29cf3f1431695885bd696e62775cd0d58a5ae31e64ea5c2eb42736c412d3"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/tests/sitepages_contract_test.php",
+    "path": "packages/sitepages/tests/sitepages_contract_test.php",
+    "after": "8156101a5fab8fb3707da697e7a47432df49f3980acfe1965871b0eb25459e9d"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/tests/title_visibility_test.php",
+    "path": "packages/sitepages/tests/title_visibility_test.php",
+    "after": "a6f5d6ad38124bf37f1ebc5c4a79096099cd03b8f1c99e5175a10fb3e7c78408"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/classes/streamapplet_class_inc.php",
+    "path": "packages/stream__PAUSED/classes/streamapplet_class_inc.php",
+    "after": "39afc2a8b71688b43abc4c5fb6b201e393407522735fd3e79e230c326c65eaf6"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/controller.php",
+    "path": "packages/stream__PAUSED/controller.php",
+    "after": "b6faee49f49ac545c1d0901493373e38086807523dac77ac0b9c543c5ba12de3"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/register.conf",
+    "path": "packages/stream__PAUSED/register.conf",
+    "after": "2a454ba8061450918fddbf32631963b2d2040be6f9e43a9bab189e6f49afe23b"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/resources/cortado-ovt.jar",
+    "path": "packages/stream__PAUSED/resources/cortado-ovt.jar",
+    "after": "0601d3c0fdd5ce1a3c1209741be417d8f55b6c7b945d632a5ba69dc0c3b81f5a"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/resources/img/browser.png",
+    "path": "packages/stream__PAUSED/resources/img/browser.png",
+    "after": "cf6983c9e1c9ae54345e7759d855b547ec8092a5e5437b96bcbe9ce73617bf26"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/resources/index.html",
+    "path": "packages/stream__PAUSED/resources/index.html",
+    "after": "e10b17017a932e12b921515344f14d5a973d04e828be65321a905b7988065688"
+  },
+  {
+    "repo": "modules",
+    "source": "stream__PAUSED/templates/content/dump_tpl.php",
+    "path": "packages/stream__PAUSED/templates/content/dump_tpl.php",
+    "after": "601660b8a2f5d44d961582aba5945d2067d01e8e5d975fffc8d8c686e1d00329"
+  },
+  {
+    "repo": "modules",
+    "source": "systemmanagement/classes/dbsystemnotices_class_inc.php",
+    "path": "packages/systemmanagement/classes/dbsystemnotices_class_inc.php",
+    "after": "b6f66efe6c5564af05ecc1bd25b59a91b173994c769c7bcecabdb7c956921084"
+  },
+  {
+    "repo": "modules",
+    "source": "systemmanagement/docs/maintenance.md",
+    "path": "packages/systemmanagement/docs/maintenance.md",
+    "after": "3218c500d8a6ef632673472cc7f926ba930ea9e6c1f647ac4f878b78f29572fa"
+  },
+  {
+    "repo": "modules",
+    "source": "systemmanagement/tests/maintenance_email_test.php",
+    "path": "packages/systemmanagement/tests/maintenance_email_test.php",
+    "after": "671ae68d14381e4281aef07fe58812dfdf4de578b0158aab6295f85a1014e5ef"
+  },
+  {
+    "repo": "modules",
+    "source": "systemmanagement/tests/systemmanagement_contract_test.php",
+    "path": "packages/systemmanagement/tests/systemmanagement_contract_test.php",
+    "after": "3ba943603b33883502c6ea9d15a6af86f9196d9c259a530e5f646d69889966ec"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/README.md",
+    "path": "packages/webinar/README.md",
+    "after": "538fa159fad596a66a01925a68c3ebf6ec457baa44ca0b85733ef62403dec393"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/communicationpolicy_class_inc.php",
+    "path": "packages/webinar/classes/communicationpolicy_class_inc.php",
+    "after": "957c0bf517bb308cef612f0e16c10d38b80873c5f3ac0a71b421e4541c6598a4"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/helpcontent_class_inc.php",
+    "path": "packages/webinar/classes/helpcontent_class_inc.php",
+    "after": "42b8da312be46a0513441b9c7a7345d64cb4597d350be8ce281241d869111ede"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarannouncements_class_inc.php",
+    "path": "packages/webinar/classes/webinarannouncements_class_inc.php",
+    "after": "23065747f6dac8af78510120e9b6dac2b203c70575f5871d0a6ddbabf702fdbf"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarclassificationui_class_inc.php",
+    "path": "packages/webinar/classes/webinarclassificationui_class_inc.php",
+    "after": "a5dab96b82a2507b3fb22d1381f61a751b880a3d2ab1cb9187a3ac18c5da0b76"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinareditpolicy_class_inc.php",
+    "path": "packages/webinar/classes/webinareditpolicy_class_inc.php",
+    "after": "16de40a3ed9debe5aa860781c4f40bd8ffb909d1d979f1fe6f5859c5c011824e"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinareditservice_class_inc.php",
+    "path": "packages/webinar/classes/webinareditservice_class_inc.php",
+    "after": "477d718056a9d7a46e5609e6c172dd5b9961153cda9a073185b4777e247817f3"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinareditstore_class_inc.php",
+    "path": "packages/webinar/classes/webinareditstore_class_inc.php",
+    "after": "6f91c7b2ad68469b2ee66c248d367e764574c50a70c024bb1435df4cb3438f8b"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinaremailimage_class_inc.php",
+    "path": "packages/webinar/classes/webinaremailimage_class_inc.php",
+    "after": "118cab10e73aa90d97dad3614a692fee6a986d3539e656eda4bfdbe217238b0c"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarmanagement_class_inc.php",
+    "path": "packages/webinar/classes/webinarmanagement_class_inc.php",
+    "after": "e317791ee7776cdd5404748a17a94e8c8164c907f3a6b59a3737915d20d74bb2"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarregistrations_class_inc.php",
+    "path": "packages/webinar/classes/webinarregistrations_class_inc.php",
+    "after": "42362b84457d79ff072b7475d8bd6cf3497bcf61ae8ad0e5c495992beb8b0956"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarregistrationservice_class_inc.php",
+    "path": "packages/webinar/classes/webinarregistrationservice_class_inc.php",
+    "after": "83826eaf2d14a022e849a06bd904737becb6f109fd84193ff9601e679f138cf1"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarrenderer_class_inc.php",
+    "path": "packages/webinar/classes/webinarrenderer_class_inc.php",
+    "after": "130dbd688782d96fdeede763f69225dafef5b2959106754883131adbbbb9de46"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarschedule_class_inc.php",
+    "path": "packages/webinar/classes/webinarschedule_class_inc.php",
+    "after": "209f525359eb5ad1d45a2da39992cd17b7f3a423355d747fd32295b0a9d2dce1"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarstore_class_inc.php",
+    "path": "packages/webinar/classes/webinarstore_class_inc.php",
+    "after": "397554b927d366ef41f094cc97fc0e14901103dd8917359d51b7b2130ec799e3"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/classes/webinarvideos_class_inc.php",
+    "path": "packages/webinar/classes/webinarvideos_class_inc.php",
+    "after": "150e6840cc45df43dee78b95b6f00d6ce31b3629e039e9e5bbb7bbef4d078c69"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/controller.php",
+    "path": "packages/webinar/controller.php",
+    "after": "c52c33afc56dc36ae2fd71c113ce94fa9543c11c395f5ac626c1a7ac15acdd13"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/docs/editor-and-taxonomy.md",
+    "path": "packages/webinar/docs/editor-and-taxonomy.md",
+    "after": "55ff0dec47b49f69ad6c316f7cb602a2616a4ea0140bdf5847c7722d1be18322"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/docs/recordings-and-news-import.md",
+    "path": "packages/webinar/docs/recordings-and-news-import.md",
+    "after": "b821e4fc56c9d831e2050c6b761c4306f577571a2ea53f703196e076ce75fda2"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/patches/installscripts_class_inc.php",
+    "path": "packages/webinar/patches/installscripts_class_inc.php",
+    "after": "28c6572e43705378c43a74d9279c13d03d437a1c908418523d049679ca398c94"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/register.conf",
+    "path": "packages/webinar/register.conf",
+    "after": "987e2a5f92a1aeb0b77e8c90c07c68897b1d0de747652ddebfc110e1b6e71943"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/resources/booking.js",
+    "path": "packages/webinar/resources/booking.js",
+    "after": "6848da78fa7807757fb328cd3afdc4de31f1b4e968a19e215e29a5c14f520284"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/resources/editor.js",
+    "path": "packages/webinar/resources/editor.js",
+    "after": "8262803e8ac285001cfe77e7ee4cba6d73dcfea355903678998385155e5e6729"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/ARCHIVE-IMPORT.md",
+    "path": "packages/webinar/scripts/ARCHIVE-IMPORT.md",
+    "after": "dcd75e6ecd50770cffcc082b3816c243be42bc3abd0d96cfbbfe490ab2627172"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/configure-editor.php",
+    "path": "packages/webinar/scripts/configure-editor.php",
+    "after": "4013d80c7b416840e9d2ec9c063aa3627faa54693ed6cf0baeee57730210df29"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/export-wordpress-archive.php",
+    "path": "packages/webinar/scripts/export-wordpress-archive.php",
+    "after": "8e02dd174350a58e09f92b8f565d0e7a53c1232304c806535cd1954bcb15ebaa"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/export-wordpress-taxonomy.php",
+    "path": "packages/webinar/scripts/export-wordpress-taxonomy.php",
+    "after": "e104153fb400239d52c969b9bfd9ffedb9b24f6a4e599416d7def78de2888e48"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/export-youtube-channel.py",
+    "path": "packages/webinar/scripts/export-youtube-channel.py",
+    "after": "60e347ec03200edd4131d3018dbefb21f4e30d43409f23b0776247badb102d01"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/import-full-archive.php",
+    "path": "packages/webinar/scripts/import-full-archive.php",
+    "after": "154cbfb844959d11ce58daecb80294c8222e877a0cfc57ad9bf97c84fc92f53f"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/import-icegram-upcoming.php",
+    "path": "packages/webinar/scripts/import-icegram-upcoming.php",
+    "after": "8161e80aa441d2c57d4450b6f60ca39cd94a6f52aa146daa21f77e818e6a0f15"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/import-trial.php",
+    "path": "packages/webinar/scripts/import-trial.php",
+    "after": "e358935bb2503d19651a671426bb10af8d3d1eeb470831504348422dcfca77e9"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/import-wordpress-taxonomy.php",
+    "path": "packages/webinar/scripts/import-wordpress-taxonomy.php",
+    "after": "afa7b50d39a2b2c6174526ce725035df17d291c1f1bfc64faf3ea62dbd607997"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/import-youtube-channel.php",
+    "path": "packages/webinar/scripts/import-youtube-channel.php",
+    "after": "ff3078dddc19786454e7e2e3ab1d8907f94d34cffca2dd568fcfb0be411d87e6"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/scripts/preserve-icegram-draft.php",
+    "path": "packages/webinar/scripts/preserve-icegram-draft.php",
+    "after": "d8f0a242ca39c6eaef86c245fe72e381d7b1c3789f4312a6c61ee0a9b9c07a70"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/sql/tbl_webinar_records.sql",
+    "path": "packages/webinar/sql/tbl_webinar_records.sql",
+    "after": "08dff52cb5773ac6336f8768a60fa978ef438fb0d323e86a4da701af574baf1d"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/sql/tbl_webinar_registrations.sql",
+    "path": "packages/webinar/sql/tbl_webinar_registrations.sql",
+    "after": "9248544c80226abe0f6427ab2cb709c94d4a2ef5904287fab920e854da63d18c"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/sql/tbl_webinar_videos.sql",
+    "path": "packages/webinar/sql/tbl_webinar_videos.sql",
+    "after": "59a1bde68677df5e46f4f7e28f85e68391e1aca3a80597a5801386441556f0a8"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/archive_tpl.php",
+    "path": "packages/webinar/templates/content/archive_tpl.php",
+    "after": "f9199f3ae333ef0a18e8293e7baab07d762dc009ef99803f8002570a496b97a3"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/booking_tpl.php",
+    "path": "packages/webinar/templates/content/booking_tpl.php",
+    "after": "620e6e5f34c05fffafb093a42738940d888219db9f849bddea01a4f89cadad42"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/editor_tpl.php",
+    "path": "packages/webinar/templates/content/editor_tpl.php",
+    "after": "25491476ef1ddc3d31103bfcc2091f0995e47f3f384a502336bcce6a66ece98f"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/manage_tpl.php",
+    "path": "packages/webinar/templates/content/manage_tpl.php",
+    "after": "a4e6b6205b59b59b4966569db031b5b2133a0ddd67503934c042c76415cb5b58"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/preview_tpl.php",
+    "path": "packages/webinar/templates/content/preview_tpl.php",
+    "after": "eda4ad65c290af0c91d1075e20f6061c129574a06568fa22e2f50b620dcadd8d"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/recordings_tpl.php",
+    "path": "packages/webinar/templates/content/recordings_tpl.php",
+    "after": "189ad9ff96e107c846644945a292c8d033d86e7d4f95048769b0a525e2aa0c2a"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/registration_form_tpl.php",
+    "path": "packages/webinar/templates/content/registration_form_tpl.php",
+    "after": "da97ea9950cd9a29e8e9fb3ed072c973e70727a4efec28619eec330f39dadd0f"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/templates/content/registration_tpl.php",
+    "path": "packages/webinar/templates/content/registration_tpl.php",
+    "after": "f750a7270bc08759ffd58ead887296600976c665f753daf7828a20e19fa3f88a"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/announcements_test.php",
+    "path": "packages/webinar/tests/announcements_test.php",
+    "after": "15f3ed7b58730e14e8398fd300d12b636a954d5bb87d3c471c6f1c27d178bfc7"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/archive_contract_test.php",
+    "path": "packages/webinar/tests/archive_contract_test.php",
+    "after": "f496c1ae357bf88d8d22cbe097bee9b4af8c494fd686023ece231d2bc5b0d1e3"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/booked_reminders_test.php",
+    "path": "packages/webinar/tests/booked_reminders_test.php",
+    "after": "ed47f8f162a64c56e3e3081bfdba92371dbc696e9a852566a07f2ab527432f3c"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/catalogue_schedule_test.php",
+    "path": "packages/webinar/tests/catalogue_schedule_test.php",
+    "after": "311dc498d6f26f1e56ba90bc69aeb605e6cf46953ff34ba12764500ab7845a0c"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/editor_test.php",
+    "path": "packages/webinar/tests/editor_test.php",
+    "after": "cc8d0546270b77135d2afed7e5227987de7bf0179af5e00102a31f7e97d41caa"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/latest_recording_test.php",
+    "path": "packages/webinar/tests/latest_recording_test.php",
+    "after": "5e645021f3e27b4095cdcce908a0bde083e1104a08426c9d3f34b1cb3a4fa232"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/management_groups_test.php",
+    "path": "packages/webinar/tests/management_groups_test.php",
+    "after": "7c195c038206fd6e8a9390f383682e7b6506677f08fe8a5f05f7150580486adb"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/newsletter_format_test.php",
+    "path": "packages/webinar/tests/newsletter_format_test.php",
+    "after": "00594e95f10cb2c8c8b0b2b0728364ac7e88a0cb16d495e956f5285f713687ea"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/registration_counts_test.php",
+    "path": "packages/webinar/tests/registration_counts_test.php",
+    "after": "fc8e1010dc52304ca5c049ac3eb3835bc6fa3bbefe2d128c04511e9be11acf4e"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/registration_modes_test.php",
+    "path": "packages/webinar/tests/registration_modes_test.php",
+    "after": "4aa380a25fe0db79d844ec4401d0ae53ba4ce540e143dbb427d33efbb908b918"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/registration_policy_test.php",
+    "path": "packages/webinar/tests/registration_policy_test.php",
+    "after": "8de04809c09b404036d0b12af94edc6711ba181fcbcf01ede0269e2bfba6cc82"
+  },
+  {
+    "repo": "modules",
+    "source": "webinar/tests/video_catalogue_test.php",
+    "path": "packages/webinar/tests/video_catalogue_test.php",
+    "after": "db8831063b9b55b0fb1d80b428d51901043e4e053325acc94d047124556f2482"
+  },
+  {
+    "repo": "modules",
+    "source": "workgroup/classes/dbworkgroup_class_inc.php",
+    "path": "packages/workgroup/classes/dbworkgroup_class_inc.php",
+    "after": "c52243fa30bdad7f5c55742d5f2c0d05bd085277ce6065e9ec799dff13e080c2"
+  },
+  {
+    "repo": "modules",
+    "source": "worksheet/classes/dbworksheet_class_inc.php",
+    "path": "packages/worksheet/classes/dbworksheet_class_inc.php",
+    "after": "60acd7ed73aebe36e0f66748a67b87eff7d6e4360f4816955cc9aca1033dfb1c"
+  },
+  {
+    "repo": "modules",
+    "source": "worksheet/classes/dbworksheetresults_class_inc.php",
+    "path": "packages/worksheet/classes/dbworksheetresults_class_inc.php",
+    "after": "df06a96cccbe35fe074edf2cc6c2f158bc94d51bce1e76c16339107cbc94441a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/htmlelements/register.conf",
+    "path": "core_modules/htmlelements/register.conf",
+    "after": "b3973e02051f93c9b64b73756752a74ece192da4136efc0aeb7b61af367605ee"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/htmlelements/resources/editoradapter.js",
+    "path": "core_modules/htmlelements/resources/editoradapter.js",
+    "after": "58c239ba05eac44d742d59ac42d17c8ac98c9f4b517254d1db1afe428b94ab22"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/mail/register.conf",
+    "path": "core_modules/mail/register.conf",
+    "after": "2df165a8c4051f89d81b0a0aa97bb762f2a5d6cfd8d60cc49ff415ecb3ad28c8"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/helpcontent_class_inc.php",
+    "path": "core_modules/toolbar/classes/helpcontent_class_inc.php",
+    "after": "178a8114afaffda72bec191b9c6353af5c0b4c2db077d9dd867af2e0b6d65086"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/navigationservice_class_inc.php",
+    "path": "core_modules/toolbar/classes/navigationservice_class_inc.php",
+    "after": "69b06bc3b96d0ee8079429ca5649f2ff751adc6b31808fa0bd8e04be26e238f6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/register_class_inc.php",
+    "path": "core_modules/toolbar/classes/register_class_inc.php",
+    "after": "8ce5f7851c53ea8429d30899ff4abd0fa60d6aa757259e55457ca0be30fe450b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/sitefooter_class_inc.php",
+    "path": "core_modules/toolbar/classes/sitefooter_class_inc.php",
+    "after": "eb408603c3d1208e0471c1aeecd3dbe4ebdeae4c814fca8927af729ad573f1e1"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/controller.php",
+    "path": "core_modules/toolbar/controller.php",
+    "after": "7cb8440bca7dda8af3cebcd2535a78b611b7e3e6474366c9a3c17a92e62f4e3a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/resources/site-navigation.js",
+    "path": "core_modules/toolbar/resources/site-navigation.js",
+    "after": "06eb5abcd43f00937563c77f01582c57b8021c4ca5dfd9552b893cab1eee88e5"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/templates/content/addmenu_tpl.php",
+    "path": "core_modules/toolbar/templates/content/addmenu_tpl.php",
+    "after": "4b330da9c794af31ef9b2e5579efd896884766f9c6a2392af02ed5ee3e044189"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/templates/content/editlinks_tpl.php",
+    "path": "core_modules/toolbar/templates/content/editlinks_tpl.php",
+    "after": "4f5ec957142860b601e18c972c30c9b955859f782f95a86098553c76ad655762"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ui/classes/uiservice_class_inc.php",
+    "path": "core_modules/ui/classes/uiservice_class_inc.php",
+    "after": "5f0474c0a98eb90c206a8dc03c1af915a603eac3b57e6bcb6675fcf39833a578"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/ui/resources/css/ui.css",
+    "path": "core_modules/ui/resources/css/ui.css",
+    "after": "207ee9fc330abef0800bdfb4415ec5bbb6f2c3a645eaf8ac794e3d50f5ff9f57"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/utilities/classes/richtextsanitizer_class_inc.php",
+    "path": "core_modules/utilities/classes/richtextsanitizer_class_inc.php",
+    "after": "bce91227442fc0edbe337f0fee8726473ac31b8bdea0bbde5b2b4daac645d996"
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/templates/page/page_template.php",
+    "path": "skins/chisimba-reborn/templates/page/page_template.php",
+    "after": "d4d9db191ed0ce4cbd2d0f7a33c6b2e35aca57c4b6cf8a91d483156f3a4ede76"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/annotateui_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/annotateui_class_inc.php",
+    "after": "41a0a292d7738520cbc0aa560f09d2dcfdc524da3c2b352d15fa36728105351e"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/block_annotatecontrol_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/block_annotatecontrol_class_inc.php",
+    "after": "5b6df52aa21a59eae8249cf56a4e3962d79781b300f30dffcb7119d7480dab5d"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/block_pagenotecontrol_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/block_pagenotecontrol_class_inc.php",
+    "after": "cd2d360c41d4e78772236c80792716b076dc7c42a1979babf268001054308998"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/block_pagenotesmiddle_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/block_pagenotesmiddle_class_inc.php",
+    "after": "d2c596b68fc73984f4819bdf69b7f74716c83dd2d8583c2ae89c8fb943c1d2ba"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/block_pagenotesright_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/block_pagenotesright_class_inc.php",
+    "after": "27a0ec0b9b5677a58b5a2d1a694b074456c9f0a4fca6669ea571095f4e76a7aa"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/block_pagenoteswidebl_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/block_pagenoteswidebl_class_inc.php",
+    "after": "ac9797a58d3d0e951f1b14d7a9c84733663e3f10050fb12a34ae98ecb3e45cec"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/block_widepagenotecontrol_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/block_widepagenotecontrol_class_inc.php",
+    "after": "fb2e5e71625dad6467105a0aa9b01845b9d3017d22acc0b3c7811b0dae20fad9"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/dbpageannotations_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/dbpageannotations_class_inc.php",
+    "after": "3c5a49ef8c10dcce3a6512cfc2a40e5ab080ec96f495d4555e1b3dbc13cb37eb"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/dbpagenotes_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/dbpagenotes_class_inc.php",
+    "after": "13eabca5043dc999a9baf25589e242f8718cb8f7620279eab9fa2fa681de37f7"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/classes/pagenotesui_class_inc.php",
+    "path": "packages/pagenotes_DEPRECATED/classes/pagenotesui_class_inc.php",
+    "after": "a21d5a1c7cc69f6d85585b94e1a79052c856cf492e51e89b4f5c3bb5c22af3d9"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/controller.php",
+    "path": "packages/pagenotes_DEPRECATED/controller.php",
+    "after": "d1d16736b719c55f0bb07c13a89cdc9c2f4a0786ca46f6788408b64dcba907a7"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/register.conf.deprecated",
+    "path": "packages/pagenotes_DEPRECATED/register.conf.deprecated",
+    "after": "899c254127b5099b801238af48efa511984a738d95bc3e44f078b1da9fe65d4a"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/annotate.js",
+    "path": "packages/pagenotes_DEPRECATED/resources/annotate.js",
+    "after": "07cad0a69bf495e24b8c9d2ca99248e42206f8e5707d4ec5962d602c79c43803"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/LICENSE.txt",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/LICENSE.txt",
+    "after": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/annotate.css",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/annotate.css",
+    "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/delete_icon.gif",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/delete_icon.gif",
+    "after": "2eecf5a23597c54f68db94933094b100b09f65b189205b468a820b99fe299935"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/disableTextselect.js",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/disableTextselect.js",
+    "after": "c93150a6c6c381f261e1c534dbcc43045106e594e9ad796a05268b76a98a44fa"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/index.html",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/index.html",
+    "after": "1d3d21d6009241690823bcb9b9efa738d35e249fd51fd3112a803804b7b46967"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/json2.js",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/json2.js",
+    "after": "8ae3a8c2f44237d9e6ff71227b33f3115dbdb2f6f1637e05444941c8728cd6a7"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/jQuery-annotater/textAnnotater-0.91.js",
+    "path": "packages/pagenotes_DEPRECATED/resources/jQuery-annotater/textAnnotater-0.91.js",
+    "after": "aa692bc7b701621c85199c2a7b7354ffbc818c04cd1a2837f1e3e66a5137d7da"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/resources/pagenotes.js",
+    "path": "packages/pagenotes_DEPRECATED/resources/pagenotes.js",
+    "after": "1b72dc58bd483dce304374ad8f5f620780267ca1c69c8c8df1dc323e89274012"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/sql/tbl_pagenotes_annotations.sql",
+    "path": "packages/pagenotes_DEPRECATED/sql/tbl_pagenotes_annotations.sql",
+    "after": "7c6ccffe93cc66998eb6570f186c2640573ce9bc52c77d6443bf24809491abe9"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/sql/tbl_pagenotes_notes.sql",
+    "path": "packages/pagenotes_DEPRECATED/sql/tbl_pagenotes_notes.sql",
+    "after": "308a940f1dd7a1a0d17819dbcc9706ed075e5076aa35594064048241c5b1c3ad"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/templates/content/dump_tpl.php",
+    "path": "packages/pagenotes_DEPRECATED/templates/content/dump_tpl.php",
+    "after": "601660b8a2f5d44d961582aba5945d2067d01e8e5d975fffc8d8c686e1d00329"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/templates/content/main_tpl.php",
+    "path": "packages/pagenotes_DEPRECATED/templates/content/main_tpl.php",
+    "after": "3d9130a78bea93ae2daa288584dfce13289a6acb83d0e6368a7d2fa8c9494bfd"
+  },
+  {
+    "repo": "modules",
+    "source": "pagenotes_DEPRECATED/templates/layout/layout_tpl.php",
+    "path": "packages/pagenotes_DEPRECATED/templates/layout/layout_tpl.php",
+    "after": "d1f2cfd99db0924811b60d2c2b4f57c52354c67d2cb261b8b5d735f4da6d8ae7"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/sql/tbl_sitepages.sql",
+    "path": "packages/sitepages/sql/tbl_sitepages.sql",
+    "after": "3faa09f7a1572544aca19bfc7d1103aa357b9198498405b3c05a16c53455fa50"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/templates/layout/layout_tpl.php",
+    "path": "packages/sitepages/templates/layout/layout_tpl.php",
+    "after": "c1e9481dd25fd8206e9e98d80e0834bc19c62cc5bd9c10b194385ffcd37bde05"
+  }
+]
