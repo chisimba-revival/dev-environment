@@ -99,16 +99,10 @@ while IFS='|' read -r id version source_type source status purpose; do
     case "$id" in
         PEAR)
             require_path "$root/PEAR.php"
-            require_path "$root/PEAR"
-            require_path "$root/System.php"
-
+            require_path "$root/PEAR/Exception.php"
             cp -a "$root/PEAR.php" "$STAGING_ROOT/"
-            cp -a "$root/PEAR" "$STAGING_ROOT/"
-            cp -a "$root/System.php" "$STAGING_ROOT/"
-
-            if [[ -d "$root/OS" ]]; then
-                cp -a "$root/OS" "$STAGING_ROOT/"
-            fi
+            mkdir -p "$STAGING_ROOT/PEAR"
+            cp -a "$root/PEAR/Exception.php" "$STAGING_ROOT/PEAR/"
             ;;
 
         MDB2)
@@ -159,23 +153,6 @@ while IFS='|' read -r id version source_type source status purpose; do
             cp -a "$root/XML/Unserializer.php" "$STAGING_ROOT/XML/"
             ;;
 
-        Calendar)
-            require_path "$root/Calendar.php"
-            require_path "$root/Day.php"
-            require_path "$root/Decorator"
-            require_path "$root/Engine"
-            require_path "$root/Month"
-            require_path "$root/Table"
-            require_path "$root/Util"
-
-            cp -a "$root/Calendar.php" "$STAGING_ROOT/"
-
-            rm -rf "$STAGING_ROOT/Calendar"
-            mkdir -p "$STAGING_ROOT/Calendar"
-
-            find "$root"                 -mindepth 1                 -maxdepth 1                 \( -type f -o -type d \)                 ! -name 'Calendar.php'                 ! -name 'docs'                 ! -name 'tests'                 ! -name 'package.xml'                 -exec cp -a {} "$STAGING_ROOT/Calendar/" \;
-            ;;
-
         XML_RPC)
             require_path "$root/XML/RPC.php"
             require_path "$root/XML/RPC/Server.php"
@@ -212,7 +189,7 @@ EOF
 
 required_files=(
     "PEAR.php"
-    "System.php"
+    "PEAR/Exception.php"
     "MDB2.php"
     "MDB2/Date.php"
     "MDB2/Schema.php"
@@ -221,7 +198,6 @@ required_files=(
     "XML/Util.php"
     "XML/Serializer.php"
     "XML/Unserializer.php"
-    "Calendar.php"
     "XML/RPC.php"
     "XML/RPC/Server.php"
     "XML/RPC/Dump.php"
