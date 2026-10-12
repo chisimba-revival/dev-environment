@@ -99,10 +99,7 @@ while IFS='|' read -r id version source_type source status purpose; do
     case "$id" in
         PEAR)
             require_path "$root/PEAR.php"
-            require_path "$root/PEAR/Exception.php"
             cp -a "$root/PEAR.php" "$STAGING_ROOT/"
-            mkdir -p "$STAGING_ROOT/PEAR"
-            cp -a "$root/PEAR/Exception.php" "$STAGING_ROOT/PEAR/"
             ;;
 
         MDB2)
@@ -189,7 +186,6 @@ EOF
 
 required_files=(
     "PEAR.php"
-    "PEAR/Exception.php"
     "MDB2.php"
     "MDB2/Date.php"
     "MDB2/Schema.php"
