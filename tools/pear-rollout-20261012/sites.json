@@ -1,0 +1,8 @@
+{
+ "chisimba":{"site":"/srv/chisimba-com","current":"/srv/chisimba-com/app/current","web":"chisimba-com-web-1","root":"/var/www/html","host":"chisimba.com","target":"root@167.99.253.210","timers":[],"locks":[]},
+ "kengalearn":{"site":"/srv/kengalearn","current":"/srv/kengalearn/app/current","web":"kengalearn-production-web-1","root":"/var/www/html","host":"kengalearn.com","target":"derek@104.248.35.30","timers":["chisimba-communications-worker.timer"],"locks":["/srv/kengalearn/app/chisimba-ai-worker.lock","/srv/kengalearn/worksheet-ai-worker.lock"]},
+ "learnthebirds":{"site":"/srv/learnthebirds.com","current":"/srv/learnthebirds.com/app/current","web":"learnthebirds-migrate-web-1","root":"/var/www/html","host":"learnthebirds.com","target":"root@167.99.253.210","timers":["learnthebirds-mail.timer"],"locks":["/run/lock/learnthebirds-mail.lock"]},
+ "kengapub":{"site":"/srv/kengapub.com","current":"/srv/kengapub.com/app","web":"kengapub-chisimba-web-1","root":"/var/www/html/ch","host":"kengapub.com","target":"root@167.99.253.210","timers":["kengapub-mail.timer"],"locks":["/run/lock/kengapub-mail.lock"]},
+ "kengasolutions":{"site":"/srv/kengasolutions.com","current":"/srv/kengasolutions.com/app","web":"kengasolutions-chisimba-web-1","root":"/var/www/html/ch","host":"kengasolutions.com","target":"root@167.99.253.210","timers":[],"locks":[]},
+ "heritagetreazures":{"site":"/srv/heritagetreazures.com","current":"/srv/heritagetreazures.com/app","web":"heritagetreazures-chisimba-web-1","root":"/var/www/html/ch","host":"heritagetreazures.com","target":"root@167.99.253.210","timers":["heritage-mail.timer"],"locks":["/run/lock/heritage-mail.lock"]}
+}

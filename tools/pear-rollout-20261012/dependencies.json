@@ -1,0 +1,106 @@
+{
+  "heritagetreazures": [
+    {
+      "repo": "modules",
+      "source": "pagenotes/README.md",
+      "path": "packages/pagenotes/README.md",
+      "after": "773c84e5e576de92c847ed4787b87e5110410f371816a32bb335462d031c33c2"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/classes/dbnoteaccess_class_inc.php",
+      "path": "packages/pagenotes/classes/dbnoteaccess_class_inc.php",
+      "after": "ad527fa160113b0e6bb5a456c987f0e8579ea10ce810b75bc03c2e369f6e26a5"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/classes/dbnotelinks_class_inc.php",
+      "path": "packages/pagenotes/classes/dbnotelinks_class_inc.php",
+      "after": "2617487199fd9c309c7eac9ea185e538b38c54eda407e1728b87c7a98494bacb"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/classes/dbnotes_class_inc.php",
+      "path": "packages/pagenotes/classes/dbnotes_class_inc.php",
+      "after": "91d4f73483da18d826dbd1740bbf5e2ee5afe01dc74c76e40933764be7e7cf92"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/classes/noteauthorizationservice_class_inc.php",
+      "path": "packages/pagenotes/classes/noteauthorizationservice_class_inc.php",
+      "after": "5e257a09f5ffd8559946848603513bcd44e9c9971aedac437b35804649027e57"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/classes/notescopeservice_class_inc.php",
+      "path": "packages/pagenotes/classes/notescopeservice_class_inc.php",
+      "after": "ffbc7a25542f98ceed147a891f9f159de69f784b6360d1b6a82a05202786215d"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/controller.php",
+      "path": "packages/pagenotes/controller.php",
+      "after": "088bfadb2c68f44cc313024179c9e38c9b6b4d80f9c947df551e5bf667635874"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/register.conf",
+      "path": "packages/pagenotes/register.conf",
+      "after": "a8a5c73057f3b90bf6c0377f2e0b167a37738b31d3d9f5fa36fbfa39eadf20e2"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/resources/notes.css",
+      "path": "packages/pagenotes/resources/notes.css",
+      "after": "6988ac5c2a9c7157c9b514f043aacefd88e3a71ff2b896a8e4a939bf4652fc07"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/resources/notes.js",
+      "path": "packages/pagenotes/resources/notes.js",
+      "after": "8b1181d100e768af46c73c192915766f9fda0974e7d2e5d72f6e1b3d2034551f"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/sql/tbl_pagenotes_access.sql",
+      "path": "packages/pagenotes/sql/tbl_pagenotes_access.sql",
+      "after": "9567d88914724ab332182004f3b445183bfb162059d5e803bb68352b9a05ac4f"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/sql/tbl_pagenotes_items.sql",
+      "path": "packages/pagenotes/sql/tbl_pagenotes_items.sql",
+      "after": "7daf19a5a26a84751c08f064635a775ca29e4009df4e08cbd48c4c0edae6d02e"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/sql/tbl_pagenotes_links.sql",
+      "path": "packages/pagenotes/sql/tbl_pagenotes_links.sql",
+      "after": "8c54100302dd65d60740e5042c88087685635c7d428c4adc71b6830a5d80ae45"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/templates/content/index_tpl.php",
+      "path": "packages/pagenotes/templates/content/index_tpl.php",
+      "after": "967432dc43879bd8a1f30ab5e4e85bf70f6763c90b26d8f67422b5442e414072"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/templates/content/noaccess_tpl.php",
+      "path": "packages/pagenotes/templates/content/noaccess_tpl.php",
+      "after": "c4eaad0a7969720cb4c8bd1aac9b432aae76e1993b44a1f0bc56dc73c61201fc"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/templates/content/view_tpl.php",
+      "path": "packages/pagenotes/templates/content/view_tpl.php",
+      "after": "194d4920e4fdd5537c6899eeb356491fb3110e50e3677d86921fa9abd50cf06c"
+    },
+    {
+      "repo": "modules",
+      "source": "pagenotes/templates/layout/notes_layout_tpl.php",
+      "path": "packages/pagenotes/templates/layout/notes_layout_tpl.php",
+      "after": "0e57cb889468a504ee06ef6f32453959039fa3f15188a1fef733fb89c847dbd1"
+    }
+  ]
+}

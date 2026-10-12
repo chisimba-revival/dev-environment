@@ -1,0 +1,86 @@
+[
+  {
+    "repo": "modules",
+    "source": "discussion/scripts/run_ai_marking_worker.php",
+    "path": "packages/discussion/scripts/run_ai_marking_worker.php",
+    "after": "b32bab1541de5854979aaf9ef2b93ea1e1492cd269e680cb926119bbf4bbbaa5"
+  },
+  {
+    "repo": "modules",
+    "source": "essay/scripts/run_ai_marking_worker.php",
+    "path": "packages/essay/scripts/run_ai_marking_worker.php",
+    "after": "6849dedc601b554b8737bf0a02eb759660d973f7429daf67b7aac4cd9f78a19d"
+  },
+  {
+    "repo": "modules",
+    "source": "mcqtests/scripts/run_chapter_quiz_worker.php",
+    "path": "packages/mcqtests/scripts/run_chapter_quiz_worker.php",
+    "after": "6cf5ae165960d3e745f3da9973e19f4c9d6e340b22e75d4bd367aa32d5a1079c"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/scripts/configure-permissions.php",
+    "path": "packages/simpleblog/scripts/configure-permissions.php",
+    "after": "ab6ecd305e3cf80546c35e45cd6e1df66925c8db0dc016fe8fef93c7a00f1c60"
+  },
+  {
+    "repo": "modules",
+    "source": "simpleblog/scripts/upgrade-composition.php",
+    "path": "packages/simpleblog/scripts/upgrade-composition.php",
+    "after": "a95ea476eb1c2d2cc38f0df009f8c820b83c62670157a30d77e80d5f9d755a89"
+  },
+  {
+    "repo": "modules",
+    "source": "worksheet/scripts/run_ai_marking_worker.php",
+    "path": "packages/worksheet/scripts/run_ai_marking_worker.php",
+    "after": "835bd2ceb2c898825fd30c7efce0fcfaff2ea203dbb4a3ef9a5d3abc274b1aca"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/abuseprotection/classes/submissioncontentpolicy_class_inc.php",
+    "path": "core_modules/abuseprotection/classes/submissioncontentpolicy_class_inc.php",
+    "after": "40a05d4ef8d76a219a4b2eb443b96721f5337ca1d5dea061efe01341b538e699"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/classes/contactguard_class_inc.php",
+    "path": "packages/contactform/classes/contactguard_class_inc.php",
+    "after": "09f35e2d139b7a5df7620720c4448490934529398ec98b5e84441f7715c6a3c3"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/sql/tbl_contactform_blocks.sql",
+    "path": "packages/contactform/sql/tbl_contactform_blocks.sql",
+    "after": "4a0524dfcd41904e7410436578f933120ea375d46de8d1fb5416b3a85daf7ae3"
+  },
+  {
+    "repo": "modules",
+    "source": "contactform/sql/tbl_contactform_review.sql",
+    "path": "packages/contactform/sql/tbl_contactform_review.sql",
+    "after": "7c32f8fc5bef91e02a31dfcd453952d5d09be0e998412d32522bd63bb99f6e47"
+  },
+  {
+    "repo": "modules",
+    "source": "sitepages/classes/pagepolicy_class_inc.php",
+    "path": "packages/sitepages/classes/pagepolicy_class_inc.php",
+    "after": "a2baa0fa4b9df897cbd0cb9b2186713c1d05c8d839e6d208c0caf7ae7404bbba"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/kanbannoteservice_class_inc.php",
+    "path": "packages/kanban/classes/kanbannoteservice_class_inc.php",
+    "after": "9c14cc94ae3af3cc841c43f95a1fb39d382f06365aeb8018f4383b6b969b6031"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/templates/content/note_connections_tpl.php",
+    "path": "packages/kanban/templates/content/note_connections_tpl.php",
+    "after": "e3088e1313b11fce4040adb50ed4dd00cbf05edcacbb6b01a4794d7c14953c58"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/templates/content/subtask_tpl.php",
+    "path": "packages/kanban/templates/content/subtask_tpl.php",
+    "after": "96f34b4723e4ff4de41ff022b7c92dfb4a6aa56de2ab94ff1560f29a263c16f2"
+  }
+]

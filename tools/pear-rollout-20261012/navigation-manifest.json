@@ -1,0 +1,17 @@
+[
+  {
+    "path": "core_modules/toolbar/classes/dbmenu_class_inc.php",
+    "before": "8917d009021a0ac66ee8935f3a00fb57f24561fc0a1303a3c0a2da40f2f5139c",
+    "after": "29ec48ddb39b2b38192b4e8ddbd92aa0ad8cf0fe72c4fe740af1801a873e6f82"
+  },
+  {
+    "path": "core_modules/toolbar/classes/register_class_inc.php",
+    "before": "8ce5f7851c53ea8429d30899ff4abd0fa60d6aa757259e55457ca0be30fe450b",
+    "after": "1ba6a73e2801a26f7e027ef67b38c3fdca8df364fbb1fb03608512efddc688f6"
+  },
+  {
+    "path": "core_modules/toolbar/register.conf",
+    "before": "0de33555f92caf4bf2a69357eb8523579b1f3011e30e4d95a86647a97a3e9269",
+    "after": "e6bedbd537f1ddee2747787b096cb54c1a50196d97a754931567e6ba14fd395f"
+  }
+]
