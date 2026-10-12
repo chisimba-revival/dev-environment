@@ -1,0 +1,40 @@
+{
+  "kengapub": {
+    "site": "/srv/kengapub.com",
+    "current": "/srv/kengapub.com/app",
+    "web": "kengapub-chisimba-web-1",
+    "root": "/var/www/html/ch",
+    "host": "kengapub.com",
+    "target": "root@167.99.253.210",
+    "timers": [
+      "kengapub-mail.timer"
+    ],
+    "locks": [
+      "/run/lock/kengapub-mail.lock"
+    ]
+  },
+  "kengasolutions": {
+    "site": "/srv/kengasolutions.com",
+    "current": "/srv/kengasolutions.com/app",
+    "web": "kengasolutions-chisimba-web-1",
+    "root": "/var/www/html/ch",
+    "host": "kengasolutions.com",
+    "target": "root@167.99.253.210",
+    "timers": [],
+    "locks": []
+  },
+  "heritagetreazures": {
+    "site": "/srv/heritagetreazures.com",
+    "current": "/srv/heritagetreazures.com/app",
+    "web": "heritagetreazures-chisimba-web-1",
+    "root": "/var/www/html/ch",
+    "host": "heritagetreazures.com",
+    "target": "root@167.99.253.210",
+    "timers": [
+      "heritage-mail.timer"
+    ],
+    "locks": [
+      "/run/lock/heritage-mail.lock"
+    ]
+  }
+}
