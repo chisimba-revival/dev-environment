@@ -1,0 +1,1796 @@
+[
+  {
+    "repo": "framework",
+    "source": "app/classes/core/chisimbadatabasedsn.php",
+    "path": "classes/core/chisimbadatabasedsn.php",
+    "after": "1e7e4a4de8340a0084b4226cb2220d7c99af26a47eeee312b3dfe51869820544"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/dbtable_class_inc.php",
+    "path": "classes/core/dbtable_class_inc.php",
+    "after": "4967cbeb35c678aa134fbf628701599c55131111d1981061ea81e5db4180a498"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/dbtablemanager_class_inc.php",
+    "path": "classes/core/dbtablemanager_class_inc.php",
+    "after": "739b0a3a93a65b67a0e7438e2c644f9c558fcc85b005c7833fbd5cbda6373165"
+  },
+  {
+    "repo": "framework",
+    "source": "app/classes/core/engine_class_inc.php",
+    "path": "classes/core/engine_class_inc.php",
+    "after": "59d2afa711848c5202ad471bedd808cb1d3a2e33d34816d6f85bb208a044f963"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/annoteapi_class_inc.php",
+    "path": "core_modules/api/classes/annoteapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/bloggerapi_class_inc.php",
+    "path": "core_modules/api/classes/bloggerapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/chiswikiapi_class_inc.php",
+    "path": "core_modules/api/classes/chiswikiapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/contextapi_class_inc.php",
+    "path": "core_modules/api/classes/contextapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/documentconversionapi_class_inc.php",
+    "path": "core_modules/api/classes/documentconversionapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/ffmpegapi_class_inc.php",
+    "path": "core_modules/api/classes/ffmpegapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/forumapi_class_inc.php",
+    "path": "core_modules/api/classes/forumapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/geordfapi_class_inc.php",
+    "path": "core_modules/api/classes/geordfapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/imagevaultapi_class_inc.php",
+    "path": "core_modules/api/classes/imagevaultapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/imapi_class_inc.php",
+    "path": "core_modules/api/classes/imapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/internalmailapi_class_inc.php",
+    "path": "core_modules/api/classes/internalmailapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/metaweblogapi_class_inc.php",
+    "path": "core_modules/api/classes/metaweblogapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/multisearchapi_class_inc.php",
+    "path": "core_modules/api/classes/multisearchapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/mxitdictionaryapi_class_inc.php",
+    "path": "core_modules/api/classes/mxitdictionaryapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/ohlohapi_class_inc.php",
+    "path": "core_modules/api/classes/ohlohapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/packagesapi_class_inc.php",
+    "path": "core_modules/api/classes/packagesapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/photogalleryapi_class_inc.php",
+    "path": "core_modules/api/classes/photogalleryapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/podcastapi_class_inc.php",
+    "path": "core_modules/api/classes/podcastapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/poprpcclient_class_inc.php",
+    "path": "core_modules/api/classes/poprpcclient_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/popularityapi_class_inc.php",
+    "path": "core_modules/api/classes/popularityapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/sahrisapi_class_inc.php",
+    "path": "core_modules/api/classes/sahrisapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/screenapi_class_inc.php",
+    "path": "core_modules/api/classes/screenapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/skypeapi_class_inc.php",
+    "path": "core_modules/api/classes/skypeapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/tracrpcclient_class_inc.php",
+    "path": "core_modules/api/classes/tracrpcclient_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/twitterizerapi_class_inc.php",
+    "path": "core_modules/api/classes/twitterizerapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/userapi_class_inc.php",
+    "path": "core_modules/api/classes/userapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/webpresentapi_class_inc.php",
+    "path": "core_modules/api/classes/webpresentapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/wikiapi_class_inc.php",
+    "path": "core_modules/api/classes/wikiapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/wikiclient_class_inc.php",
+    "path": "core_modules/api/classes/wikiclient_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/xmlrpcapi_class_inc.php",
+    "path": "core_modules/api/classes/xmlrpcapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/api/classes/xultoolsapi_class_inc.php",
+    "path": "core_modules/api/classes/xultoolsapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/config/classes/altconfig_class_inc.php",
+    "path": "core_modules/config/classes/altconfig_class_inc.php",
+    "after": "407ffd2a0e579b114a87592a87ca7619fd51dce1a4957ae44ad553e67359b7a2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filters/classes/parse4blogpost_class_inc.php",
+    "path": "core_modules/filters/classes/parse4blogpost_class_inc.php",
+    "after": "5455d969c09448033dfa46ef58b5030d3271b5ecd2d8d268a5e35a2f324cf6a2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filters/classes/parse4screenshot_class_inc.php",
+    "path": "core_modules/filters/classes/parse4screenshot_class_inc.php",
+    "after": "cda8627ceb9fc4d0557a3ec1d71307090d830fa8da5766aef199d488f6459cad"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filters/classes/parse4tracwiki_class_inc.php",
+    "path": "core_modules/filters/classes/parse4tracwiki_class_inc.php",
+    "after": "8d0034bce3669e39e455b2dc2457a3f481f5fd9cefa684a1640c89cffda461d1"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/filters/register.conf",
+    "path": "core_modules/filters/register.conf",
+    "after": "4d9de1cc7065a4f48c6dcf4639a5cc3b6e87d954efeeb1394e0747a7563cc36b"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/modulecatalogue/classes/patch_class_inc.php",
+    "path": "core_modules/modulecatalogue/classes/patch_class_inc.php",
+    "after": "eebf6097dacfc3727c52eec607379b7a30c94024bac0f8f80e0238eb8865eee3"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/packages/classes/rpcclient_class_inc.php",
+    "path": "core_modules/packages/classes/rpcclient_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/packages/classes/rpcserver_class_inc.php",
+    "path": "core_modules/packages/classes/rpcserver_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/Auth/OpenID/MDB2Store.php",
+    "path": "core_modules/security/classes/Auth/OpenID/MDB2Store.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/Auth/OpenID/MySQLStore.php",
+    "path": "core_modules/security/classes/Auth/OpenID/MySQLStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/Auth/OpenID/PostgreSQLStore.php",
+    "path": "core_modules/security/classes/Auth/OpenID/PostgreSQLStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/Auth/OpenID/SQLStore.php",
+    "path": "core_modules/security/classes/Auth/OpenID/SQLStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/security/classes/Auth/OpenID/SQLiteStore.php",
+    "path": "core_modules/security/classes/Auth/OpenID/SQLiteStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/dbmenu_class_inc.php",
+    "path": "core_modules/toolbar/classes/dbmenu_class_inc.php",
+    "after": "29ec48ddb39b2b38192b4e8ddbd92aa0ad8cf0fe72c4fe740af1801a873e6f82"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/classes/register_class_inc.php",
+    "path": "core_modules/toolbar/classes/register_class_inc.php",
+    "after": "1ba6a73e2801a26f7e027ef67b38c3fdca8df364fbb1fb03608512efddc688f6"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/toolbar/register.conf",
+    "path": "core_modules/toolbar/register.conf",
+    "after": "e6bedbd537f1ddee2747787b096cb54c1a50196d97a754931567e6ba14fd395f"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/tree/classes/treemenu_class_inc.php",
+    "path": "core_modules/tree/classes/treemenu_class_inc.php",
+    "after": "ce0383ab83b286cc2d21c74a8aace3e2116e87f7e028937f07bd6f54b650f587"
+  },
+  {
+    "repo": "framework",
+    "source": "app/core_modules/utilities/resources/safehtml/HTMLSax3.php",
+    "path": "core_modules/utilities/resources/safehtml/HTMLSax3.php",
+    "after": "8f351868304ca110e0fc899cf8b19ab4303c0f050e8f43bfe271e73021e5a860"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/dbhandlers/dbhandler.inc",
+    "path": "installer/dbhandlers/dbhandler.inc",
+    "after": "a1ecc884c2b07215a26c492d528139cc91429efd61d75bbd6b5d7b7c560d3eed"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/index.php",
+    "path": "installer/index.php",
+    "after": "133160e57450c086839286b94098bcc2c2d47ceddd2ccd690db5a643b1b4bdce"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/installwizard.inc",
+    "path": "installer/installwizard.inc",
+    "after": "46dc5a50cb696b5491eb64673250c37191a7f041b947cc2c31597b08199be378"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/steps/createconfigs.inc",
+    "path": "installer/steps/createconfigs.inc",
+    "after": "e164d7edd6edcfbedec792b57aa182e49d654f619500af07f2f7bb8f2fd812b2"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/steps/databasedetails.inc",
+    "path": "installer/steps/databasedetails.inc",
+    "after": "10bbfcd49c2a4dd2de562ddfc6d570e5e0a9ad6f55af2367757374290dabf167"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/steps/secondarydetails.inc",
+    "path": "installer/steps/secondarydetails.inc",
+    "after": "e6754d1704e70308010d4cf821d16d97b1b257bd8f1e0ed760afa5cec4a37a1a"
+  },
+  {
+    "repo": "framework",
+    "source": "app/installer/steps/versioncheck.inc",
+    "path": "installer/steps/versioncheck.inc",
+    "after": "f172a54bfc58a9e1b7bdb28927c735ab4015c6f8bafddbfb7b957e4241d6ca16"
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/Auth/OpenID/MDB2Store.php",
+    "path": "lib/Auth/OpenID/MDB2Store.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/Auth/OpenID/MySQLStore.php",
+    "path": "lib/Auth/OpenID/MySQLStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/Auth/OpenID/PostgreSQLStore.php",
+    "path": "lib/Auth/OpenID/PostgreSQLStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/Auth/OpenID/SQLStore.php",
+    "path": "lib/Auth/OpenID/SQLStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/Auth/OpenID/SQLiteStore.php",
+    "path": "lib/Auth/OpenID/SQLiteStore.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/archive_tar.reg",
+    "path": "lib/pear/.registry/archive_tar.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/auth_sasl.reg",
+    "path": "lib/pear/.registry/auth_sasl.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/cache_lite.reg",
+    "path": "lib/pear/.registry/cache_lite.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/config.reg",
+    "path": "lib/pear/.registry/config.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/console_getopt.reg",
+    "path": "lib/pear/.registry/console_getopt.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/db.reg",
+    "path": "lib/pear/.registry/db.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/file_archive.reg",
+    "path": "lib/pear/.registry/file_archive.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/file_gettext.reg",
+    "path": "lib/pear/.registry/file_gettext.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/html_bbcodeparser.reg",
+    "path": "lib/pear/.registry/html_bbcodeparser.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/html_common.reg",
+    "path": "lib/pear/.registry/html_common.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/html_quickform.reg",
+    "path": "lib/pear/.registry/html_quickform.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/html_quickform_controller.reg",
+    "path": "lib/pear/.registry/html_quickform_controller.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/html_tagcloud.reg",
+    "path": "lib/pear/.registry/html_tagcloud.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/http_request.reg",
+    "path": "lib/pear/.registry/http_request.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/i18nv2.reg",
+    "path": "lib/pear/.registry/i18nv2.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/image_canvas.reg",
+    "path": "lib/pear/.registry/image_canvas.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/image_graph.reg",
+    "path": "lib/pear/.registry/image_graph.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/log.reg",
+    "path": "lib/pear/.registry/log.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mail.reg",
+    "path": "lib/pear/.registry/mail.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mail_mime.reg",
+    "path": "lib/pear/.registry/mail_mime.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mdb.reg",
+    "path": "lib/pear/.registry/mdb.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mdb2.reg",
+    "path": "lib/pear/.registry/mdb2.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mdb2_driver_pgsql.reg",
+    "path": "lib/pear/.registry/mdb2_driver_pgsql.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mdb2_driver_sqlite.reg",
+    "path": "lib/pear/.registry/mdb2_driver_sqlite.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mdb2_schema.reg",
+    "path": "lib/pear/.registry/mdb2_schema.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/mime_type.reg",
+    "path": "lib/pear/.registry/mime_type.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_checkip.reg",
+    "path": "lib/pear/.registry/net_checkip.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_dns.reg",
+    "path": "lib/pear/.registry/net_dns.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_dnsbl.reg",
+    "path": "lib/pear/.registry/net_dnsbl.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_smtp.reg",
+    "path": "lib/pear/.registry/net_smtp.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_socket.reg",
+    "path": "lib/pear/.registry/net_socket.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_url.reg",
+    "path": "lib/pear/.registry/net_url.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/net_url_mapper.reg",
+    "path": "lib/pear/.registry/net_url_mapper.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/opendocument.reg",
+    "path": "lib/pear/.registry/opendocument.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/pear.reg",
+    "path": "lib/pear/.registry/pear.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/rdf.reg",
+    "path": "lib/pear/.registry/rdf.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/structures_graph.reg",
+    "path": "lib/pear/.registry/structures_graph.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/system_command.reg",
+    "path": "lib/pear/.registry/system_command.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/translation2.reg",
+    "path": "lib/pear/.registry/translation2.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/validate.reg",
+    "path": "lib/pear/.registry/validate.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/xml_beautifier.reg",
+    "path": "lib/pear/.registry/xml_beautifier.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/xml_parser.reg",
+    "path": "lib/pear/.registry/xml_parser.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/xml_rss.reg",
+    "path": "lib/pear/.registry/xml_rss.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/xml_serializer.reg",
+    "path": "lib/pear/.registry/xml_serializer.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/xml_tree.reg",
+    "path": "lib/pear/.registry/xml_tree.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/.registry/xml_util.reg",
+    "path": "lib/pear/.registry/xml_util.reg",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/CHISIMBA_DEPENDENCY_MANIFEST.txt",
+    "path": "lib/pear/CHISIMBA_DEPENDENCY_MANIFEST.txt",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB.php",
+    "path": "lib/pear/DB.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/common.php",
+    "path": "lib/pear/DB/common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/dbase.php",
+    "path": "lib/pear/DB/dbase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/fbsql.php",
+    "path": "lib/pear/DB/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/ibase.php",
+    "path": "lib/pear/DB/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/ifx.php",
+    "path": "lib/pear/DB/ifx.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/msql.php",
+    "path": "lib/pear/DB/msql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/mssql.php",
+    "path": "lib/pear/DB/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/mysql.php",
+    "path": "lib/pear/DB/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/mysqli.php",
+    "path": "lib/pear/DB/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/oci8.php",
+    "path": "lib/pear/DB/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/odbc.php",
+    "path": "lib/pear/DB/odbc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/pgsql.php",
+    "path": "lib/pear/DB/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/sqlite.php",
+    "path": "lib/pear/DB/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/sqlite3.php",
+    "path": "lib/pear/DB/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/storage.php",
+    "path": "lib/pear/DB/storage.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/DB/sybase.php",
+    "path": "lib/pear/DB/sybase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB.php",
+    "path": "lib/pear/MDB.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Common.php",
+    "path": "lib/pear/MDB/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Date.php",
+    "path": "lib/pear/MDB/Date.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Manager.php",
+    "path": "lib/pear/MDB/Manager.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/LOB.php",
+    "path": "lib/pear/MDB/Modules/LOB.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/Common.php",
+    "path": "lib/pear/MDB/Modules/Manager/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/fbsql.php",
+    "path": "lib/pear/MDB/Modules/Manager/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/ibase.php",
+    "path": "lib/pear/MDB/Modules/Manager/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/mssql.php",
+    "path": "lib/pear/MDB/Modules/Manager/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/mysql.php",
+    "path": "lib/pear/MDB/Modules/Manager/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/oci8.php",
+    "path": "lib/pear/MDB/Modules/Manager/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Modules/Manager/pgsql.php",
+    "path": "lib/pear/MDB/Modules/Manager/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/Parser.php",
+    "path": "lib/pear/MDB/Parser.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/fbsql.php",
+    "path": "lib/pear/MDB/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/ibase.php",
+    "path": "lib/pear/MDB/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/metabase_wrapper.php",
+    "path": "lib/pear/MDB/metabase_wrapper.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/mssql.php",
+    "path": "lib/pear/MDB/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/mysql.php",
+    "path": "lib/pear/MDB/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/oci8.php",
+    "path": "lib/pear/MDB/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/peardb_wrapper.php",
+    "path": "lib/pear/MDB/peardb_wrapper.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/pgsql.php",
+    "path": "lib/pear/MDB/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/querysim.php",
+    "path": "lib/pear/MDB/querysim.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB/reverse_engineer_xml_schema.php",
+    "path": "lib/pear/MDB/reverse_engineer_xml_schema.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2.php",
+    "path": "lib/pear/MDB2.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Date.php",
+    "path": "lib/pear/MDB2/Date.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/Common.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/fbsql.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/ibase.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/mssql.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/mysql.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/mysqli.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/oci8.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/odbc.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/odbc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/pgsql.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/querysim.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/querysim.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/sqlite.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/sqlite3.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Datatype/sqlsrv.php",
+    "path": "lib/pear/MDB2/Driver/Datatype/sqlsrv.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/Common.php",
+    "path": "lib/pear/MDB2/Driver/Function/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/fbsql.php",
+    "path": "lib/pear/MDB2/Driver/Function/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/ibase.php",
+    "path": "lib/pear/MDB2/Driver/Function/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/mssql.php",
+    "path": "lib/pear/MDB2/Driver/Function/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/mysql.php",
+    "path": "lib/pear/MDB2/Driver/Function/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/mysqli.php",
+    "path": "lib/pear/MDB2/Driver/Function/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/oci8.php",
+    "path": "lib/pear/MDB2/Driver/Function/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/pgsql.php",
+    "path": "lib/pear/MDB2/Driver/Function/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/sqlite.php",
+    "path": "lib/pear/MDB2/Driver/Function/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/sqlite3.php",
+    "path": "lib/pear/MDB2/Driver/Function/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Function/sqlsrv.php",
+    "path": "lib/pear/MDB2/Driver/Function/sqlsrv.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/Common.php",
+    "path": "lib/pear/MDB2/Driver/Manager/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/fbsql.php",
+    "path": "lib/pear/MDB2/Driver/Manager/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/ibase.php",
+    "path": "lib/pear/MDB2/Driver/Manager/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/mssql.php",
+    "path": "lib/pear/MDB2/Driver/Manager/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/mysql.php",
+    "path": "lib/pear/MDB2/Driver/Manager/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/mysqli.php",
+    "path": "lib/pear/MDB2/Driver/Manager/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/oci8.php",
+    "path": "lib/pear/MDB2/Driver/Manager/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/odbc.php",
+    "path": "lib/pear/MDB2/Driver/Manager/odbc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/pgsql.php",
+    "path": "lib/pear/MDB2/Driver/Manager/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/sqlite.php",
+    "path": "lib/pear/MDB2/Driver/Manager/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/sqlite3.php",
+    "path": "lib/pear/MDB2/Driver/Manager/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Manager/sqlsrv.php",
+    "path": "lib/pear/MDB2/Driver/Manager/sqlsrv.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/Common.php",
+    "path": "lib/pear/MDB2/Driver/Native/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/fbsql.php",
+    "path": "lib/pear/MDB2/Driver/Native/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/ibase.php",
+    "path": "lib/pear/MDB2/Driver/Native/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/mssql.php",
+    "path": "lib/pear/MDB2/Driver/Native/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/mysql.php",
+    "path": "lib/pear/MDB2/Driver/Native/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/mysqli.php",
+    "path": "lib/pear/MDB2/Driver/Native/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/oci8.php",
+    "path": "lib/pear/MDB2/Driver/Native/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/pgsql.php",
+    "path": "lib/pear/MDB2/Driver/Native/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/sqlite.php",
+    "path": "lib/pear/MDB2/Driver/Native/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/sqlite3.php",
+    "path": "lib/pear/MDB2/Driver/Native/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Native/sqlsrv.php",
+    "path": "lib/pear/MDB2/Driver/Native/sqlsrv.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/Common.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/Common.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/fbsql.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/ibase.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/mssql.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/mysql.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/mysqli.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/oci8.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/odbc.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/odbc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/pgsql.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/sqlite.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/sqlite3.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/Reverse/sqlsrv.php",
+    "path": "lib/pear/MDB2/Driver/Reverse/sqlsrv.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/fbsql.php",
+    "path": "lib/pear/MDB2/Driver/fbsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/ibase.php",
+    "path": "lib/pear/MDB2/Driver/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/mssql.php",
+    "path": "lib/pear/MDB2/Driver/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/mysql.php",
+    "path": "lib/pear/MDB2/Driver/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/mysqli.php",
+    "path": "lib/pear/MDB2/Driver/mysqli.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/oci8.php",
+    "path": "lib/pear/MDB2/Driver/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/odbc.php",
+    "path": "lib/pear/MDB2/Driver/odbc.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/pgsql.php",
+    "path": "lib/pear/MDB2/Driver/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/querysim.php",
+    "path": "lib/pear/MDB2/Driver/querysim.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/sqlite.php",
+    "path": "lib/pear/MDB2/Driver/sqlite.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/sqlite3.php",
+    "path": "lib/pear/MDB2/Driver/sqlite3.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Driver/sqlsrv.php",
+    "path": "lib/pear/MDB2/Driver/sqlsrv.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Extended.php",
+    "path": "lib/pear/MDB2/Extended.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Iterator.php",
+    "path": "lib/pear/MDB2/Iterator.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/LOB.php",
+    "path": "lib/pear/MDB2/LOB.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema.php",
+    "path": "lib/pear/MDB2/Schema.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Parser.php",
+    "path": "lib/pear/MDB2/Schema/Parser.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Parser2.php",
+    "path": "lib/pear/MDB2/Schema/Parser2.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Reserved/ibase.php",
+    "path": "lib/pear/MDB2/Schema/Reserved/ibase.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Reserved/mssql.php",
+    "path": "lib/pear/MDB2/Schema/Reserved/mssql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Reserved/mysql.php",
+    "path": "lib/pear/MDB2/Schema/Reserved/mysql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Reserved/oci8.php",
+    "path": "lib/pear/MDB2/Schema/Reserved/oci8.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Reserved/pgsql.php",
+    "path": "lib/pear/MDB2/Schema/Reserved/pgsql.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Tool.php",
+    "path": "lib/pear/MDB2/Schema/Tool.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Tool/ParameterException.php",
+    "path": "lib/pear/MDB2/Schema/Tool/ParameterException.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Validate.php",
+    "path": "lib/pear/MDB2/Schema/Validate.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/MDB2/Schema/Writer.php",
+    "path": "lib/pear/MDB2/Schema/Writer.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF.php",
+    "path": "lib/pear/RDF.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/BlankNode.php",
+    "path": "lib/pear/RDF/BlankNode.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/FindIterator.php",
+    "path": "lib/pear/RDF/FindIterator.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Literal.php",
+    "path": "lib/pear/RDF/Literal.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Model.php",
+    "path": "lib/pear/RDF/Model.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Model/MDB.php",
+    "path": "lib/pear/RDF/Model/MDB.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Model/Memory.php",
+    "path": "lib/pear/RDF/Model/Memory.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Node.php",
+    "path": "lib/pear/RDF/Node.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Parser.php",
+    "path": "lib/pear/RDF/Parser.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Resource.php",
+    "path": "lib/pear/RDF/Resource.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Serializer.php",
+    "path": "lib/pear/RDF/Serializer.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Statement.php",
+    "path": "lib/pear/RDF/Statement.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/StatementIterator.php",
+    "path": "lib/pear/RDF/StatementIterator.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Store/MDB.php",
+    "path": "lib/pear/RDF/Store/MDB.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Util.php",
+    "path": "lib/pear/RDF/Util.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Vocabulary/DC.php",
+    "path": "lib/pear/RDF/Vocabulary/DC.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Vocabulary/OWL.php",
+    "path": "lib/pear/RDF/Vocabulary/OWL.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Vocabulary/RDF.php",
+    "path": "lib/pear/RDF/Vocabulary/RDF.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Vocabulary/RDFS.php",
+    "path": "lib/pear/RDF/Vocabulary/RDFS.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/RDF/Vocabulary/VCARD.php",
+    "path": "lib/pear/RDF/Vocabulary/VCARD.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/Validate.php",
+    "path": "lib/pear/Validate.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/XML/Parser/Simple.php",
+    "path": "lib/pear/XML/Parser/Simple.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/XML/RPC.php",
+    "path": "lib/pear/XML/RPC.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/XML/RPC/Dump.php",
+    "path": "lib/pear/XML/RPC/Dump.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/XML/RPC/Server.php",
+    "path": "lib/pear/XML/RPC/Server.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/XML/Serializer.php",
+    "path": "lib/pear/XML/Serializer.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/XML/Unserializer.php",
+    "path": "lib/pear/XML/Unserializer.php",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/data/MDB2/LICENSE",
+    "path": "lib/pear/data/MDB2/LICENSE",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/data/MDB2_Driver_pgsql/package_pgsql.xml",
+    "path": "lib/pear/data/MDB2_Driver_pgsql/package_pgsql.xml",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/data/MDB2_Driver_sqlite/package_sqlite.xml",
+    "path": "lib/pear/data/MDB2_Driver_sqlite/package_sqlite.xml",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/data/RDF/misc/database_schema.xml",
+    "path": "lib/pear/data/RDF/misc/database_schema.xml",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/lib/pear/data/XML_Serializer/doc/todo.txt",
+    "path": "lib/pear/data/XML_Serializer/doc/todo.txt",
+    "after": null
+  },
+  {
+    "repo": "framework",
+    "source": "app/skins/chisimba-reborn/stylesheet.css",
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "after": "1a85d4141cc9a466dfbf7f934bd70cb384684f59ad6571d6df1b57371ac18885"
+  },
+  {
+    "repo": "modules",
+    "source": "blog__PAUSED/README.md",
+    "path": "packages/blog__PAUSED/README.md",
+    "after": "80d55b68a04979c9422b816309053b48525304f747cc08cd58c3afd40b5c4d89"
+  },
+  {
+    "repo": "modules",
+    "source": "cms/classes/cmsrpcapi_class_inc.php",
+    "path": "packages/cms/classes/cmsrpcapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "modules",
+    "source": "cms/controller.php",
+    "path": "packages/cms/controller.php",
+    "after": "c5d3cd5b9e1515abf0bc5d8b4ccf3b27f83a23d31bcb7cbc326d057f9c4997b7"
+  },
+  {
+    "repo": "modules",
+    "source": "cms/register.conf",
+    "path": "packages/cms/register.conf",
+    "after": "02afe62451524f2b069351abbc9e6826ca792754260fbb198a718e469852a24c"
+  },
+  {
+    "repo": "modules",
+    "source": "cms/templates/content/publishing_retired_tpl.php",
+    "path": "packages/cms/templates/content/publishing_retired_tpl.php",
+    "after": "376ca8e877eb4dcb1d8f848188ca4d05baa1ef7b693950c8ec32eeb1e1cd9430"
+  },
+  {
+    "repo": "modules",
+    "source": "cmsadmin/classes/rpcdbcmsadmin_class_inc.php",
+    "path": "packages/cmsadmin/classes/rpcdbcmsadmin_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "modules",
+    "source": "cmsadmin/register.conf",
+    "path": "packages/cmsadmin/register.conf",
+    "after": "015c8eb84c66c4b53fff8c8486e191811fb2d7300d1229a9ee03d3a213162972"
+  },
+  {
+    "repo": "modules",
+    "source": "cmsadmin/resources/unit_tests/cmsadminChecklist.php",
+    "path": "packages/cmsadmin/resources/unit_tests/cmsadminChecklist.php",
+    "after": "3e2fd60f749ecdc3b419c2d93cf9c354d7b95df55a42801a2fca1bcc3d5c727b"
+  },
+  {
+    "repo": "modules",
+    "source": "foaf__PAUSED/README.md",
+    "path": "packages/foaf__PAUSED/README.md",
+    "after": "0e6071c3ad90f740d6f34920edb68df687117e95454afb900c14056a0c47dee4"
+  },
+  {
+    "repo": "modules",
+    "source": "im/client.php",
+    "path": "packages/im/client.php",
+    "after": "f6f343bd2ce227bcabda08f9843b92f0917fcfba4d33ff8898c80eb55d3eb731"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/README.md",
+    "path": "packages/kanban/README.md",
+    "after": "53cfcdf55fee093af43bf03cdb54f6977331a0bee01fdebb80f00b1008e3f163"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/dbkanbantasks_class_inc.php",
+    "path": "packages/kanban/classes/dbkanbantasks_class_inc.php",
+    "after": "7583b445c1108cf5ffcf9827903401705fef23ec6252b0a22bde205da13947d9"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/classes/helpcontent_class_inc.php",
+    "path": "packages/kanban/classes/helpcontent_class_inc.php",
+    "after": "61965517056ba30ea24274697769f012e51e9e539ee0eb9c2a2255dc8369b10a"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/controller.php",
+    "path": "packages/kanban/controller.php",
+    "after": "7fcd82203d76f419aac4fdb70ee1320cd1a0453223cb54bd989bb34884518456"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/register.conf",
+    "path": "packages/kanban/register.conf",
+    "after": "768019d7bbc2de9d1563c0c95544a53880f7db0294987a4ba2ab6e942b513e2d"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/resources/kanban.css",
+    "path": "packages/kanban/resources/kanban.css",
+    "after": "871cf8094f19a3a44cbb6ad59a696354395b453d80c3308b897cabf55dbda77e"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/resources/kanban.js",
+    "path": "packages/kanban/resources/kanban.js",
+    "after": "1f8aa6f89bf497027f949cfa9135a7edf98675916493d509a726f1a4259411eb"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/templates/content/index_tpl.php",
+    "path": "packages/kanban/templates/content/index_tpl.php",
+    "after": "3151e7c431fcc3cc4364c242bf08d94d2a5a2c6eab8ecd854b8cc75c6721ae65"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/templates/content/task_card_tpl.php",
+    "path": "packages/kanban/templates/content/task_card_tpl.php",
+    "after": "c96a326077ec45068fc0ea70c2599ef4f962b3312079bdbc0feae1dea345e35c"
+  },
+  {
+    "repo": "modules",
+    "source": "kanban/templates/layout/kanban_layout_tpl.php",
+    "path": "packages/kanban/templates/layout/kanban_layout_tpl.php",
+    "after": "1a77b2ee37b847ed12903370e913263104066b18007be301fb3490a60aae8733"
+  },
+  {
+    "repo": "modules",
+    "source": "membership-service/classes/membershipservice_class_inc.php",
+    "path": "packages/membership-service/classes/membershipservice_class_inc.php",
+    "after": "199e6a76ec95c9ba8a7ea5225d66918fa90b83032d26c4ee53579b8037220099"
+  },
+  {
+    "repo": "modules",
+    "source": "simplegal/classes/simplegalmetaweblogapi_class_inc.php",
+    "path": "packages/simplegal/classes/simplegalmetaweblogapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "modules",
+    "source": "simplegal/classes/simplegalxmlrpcapi_class_inc.php",
+    "path": "packages/simplegal/classes/simplegalxmlrpcapi_class_inc.php",
+    "after": null
+  },
+  {
+    "repo": "modules",
+    "source": "simplegal/controller.php",
+    "path": "packages/simplegal/controller.php",
+    "after": "999120b1659e769e9c634625e10732ef8183b5452f6a4b78048b0c2cd004de44"
+  },
+  {
+    "repo": "modules",
+    "source": "simplegal/register.conf",
+    "path": "packages/simplegal/register.conf",
+    "after": "4876a91dc0a3571bdea102b4f597fbc7e18c9e9c63440c1e8df77f209a4dccc6"
+  },
+  {
+    "repo": "modules",
+    "source": "simplegal/templates/content/publishing_retired_tpl.php",
+    "path": "packages/simplegal/templates/content/publishing_retired_tpl.php",
+    "after": "376ca8e877eb4dcb1d8f848188ca4d05baa1ef7b693950c8ec32eeb1e1cd9430"
+  }
+]
