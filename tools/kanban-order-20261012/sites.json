@@ -1,0 +1,17 @@
+{
+  "kengalearn": {
+    "site": "/srv/kengalearn",
+    "current": "/srv/kengalearn/app/current",
+    "web": "kengalearn-production-web-1",
+    "root": "/var/www/html",
+    "host": "kengalearn.com",
+    "target": "derek@104.248.35.30",
+    "timers": [
+      "chisimba-communications-worker.timer"
+    ],
+    "locks": [
+      "/srv/kengalearn/app/chisimba-ai-worker.lock",
+      "/srv/kengalearn/worksheet-ai-worker.lock"
+    ]
+  }
+}

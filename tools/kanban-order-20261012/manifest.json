@@ -1,0 +1,52 @@
+[
+  {
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "before": "cd76788773b0775c4a8e30277b771df579725c1dc0c99cddfb38aad00e1c4cba",
+    "after": "1a85d4141cc9a466dfbf7f934bd70cb384684f59ad6571d6df1b57371ac18885"
+  },
+  {
+    "path": "packages/kanban/classes/dbkanbantasks_class_inc.php",
+    "before": "2cdff3aeb99a0113683260ff623cd117716193f2859ba2f400562aacda5ca19f",
+    "after": "7583b445c1108cf5ffcf9827903401705fef23ec6252b0a22bde205da13947d9"
+  },
+  {
+    "path": "packages/kanban/classes/helpcontent_class_inc.php",
+    "before": "f9902dcc6969ac22bb6989a8d6a3d09cc9fef9cc92fff44ff70c371bc1ab0233",
+    "after": "61965517056ba30ea24274697769f012e51e9e539ee0eb9c2a2255dc8369b10a"
+  },
+  {
+    "path": "packages/kanban/controller.php",
+    "before": "00fe1ac58d686bca4a90df4fadb038deaed1c5ad5a21c76c897393200b7e94dc",
+    "after": "7fcd82203d76f419aac4fdb70ee1320cd1a0453223cb54bd989bb34884518456"
+  },
+  {
+    "path": "packages/kanban/register.conf",
+    "before": "2dd2bea990bd273c8f0be029f8d8cfad601fe29bab7009bc0a096f057d282eb8",
+    "after": "768019d7bbc2de9d1563c0c95544a53880f7db0294987a4ba2ab6e942b513e2d"
+  },
+  {
+    "path": "packages/kanban/resources/kanban.css",
+    "before": "af3a405a3548a2ea92e4f243cd7e88790d1cf32b624e837462bf5d08fd205a3e",
+    "after": "871cf8094f19a3a44cbb6ad59a696354395b453d80c3308b897cabf55dbda77e"
+  },
+  {
+    "path": "packages/kanban/resources/kanban.js",
+    "before": "6efbdd50125ffc80e696b9ba8b831ed5f952fe1ec1c09ea4ae98466b5aabe17a",
+    "after": "1f8aa6f89bf497027f949cfa9135a7edf98675916493d509a726f1a4259411eb"
+  },
+  {
+    "path": "packages/kanban/templates/content/index_tpl.php",
+    "before": "8a2bf2a6b1c1b5814d9d7be24597e3d824b7340e529fd35eaf89f408023b9471",
+    "after": "3151e7c431fcc3cc4364c242bf08d94d2a5a2c6eab8ecd854b8cc75c6721ae65"
+  },
+  {
+    "path": "packages/kanban/templates/content/task_card_tpl.php",
+    "before": "f135cdabbbd276d694e7c2009a3a3c8f7e945f7c52841861656087e014d0c712",
+    "after": "c96a326077ec45068fc0ea70c2599ef4f962b3312079bdbc0feae1dea345e35c"
+  },
+  {
+    "path": "packages/kanban/templates/layout/kanban_layout_tpl.php",
+    "before": "cfe9fe872cda07353cd6598314d641eebd150144b57668007d0dfeae8468d980",
+    "after": "1a77b2ee37b847ed12903370e913263104066b18007be301fb3490a60aae8733"
+  }
+]
