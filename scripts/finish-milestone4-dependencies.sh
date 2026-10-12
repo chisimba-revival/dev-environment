@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Retired: never restore PEAR into a native PDO installation.
+echo 'This historical PEAR installer is retired. Use the native PDO runtime.' >&2
+exit 64
 set -euo pipefail
 
 CALENDAR_VERSION="0.5.5"

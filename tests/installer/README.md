@@ -1,8 +1,8 @@
 # Disposable browser installer test
 
 Use a new database and a fresh copy of `framework/app`, never an installed
-runtime's configuration, uploads or database. The framework bundle includes the
-remaining compatibility libraries; do not use a machine-wide PEAR installation.
+runtime's configuration, uploads or database. The framework bundle uses native services; neither a bundled nor a machine-wide
+PEAR installation is required.
 New installations require PHP 8.2+ with `pdo_mysql` and the other extensions
 checked by the installer. PHP 8.5.11 / MariaDB 10.11.18 were used on 2026-10-11.
 
