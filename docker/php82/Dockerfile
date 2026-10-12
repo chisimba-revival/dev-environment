@@ -28,11 +28,13 @@ RUN set -eux; \
     docker-php-ext-install -j"$(nproc)" \
         gd \
         mysqli \
+        pdo_mysql \
         mbstring \
         xml \
         zip \
     ; \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/*; \
+    php -r 'exit(in_array("mysql", PDO::getAvailableDrivers(), true) ? 0 : 1);'
 
 COPY config/php/php82.ini \
     /usr/local/etc/php/conf.d/chisimba.ini
