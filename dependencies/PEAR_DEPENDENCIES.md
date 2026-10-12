@@ -31,8 +31,8 @@ curated builder does not supply them. FOAF must be modernised before reactivatio
 Both unused bundled OpenID MDB2Store adapters were also removed; Chisimba
 selects FileStore explicitly. This does not retire the OpenID feature.
 
-PEAR DB remains temporarily for two old installer DSN-parser callers. XML-RPC
-remains for legacy RPC callers. The optional MDB2 backend and its XML dependency
+PEAR DB and its drivers were subsequently removed after migrating both installer
+repair-parser callers to native shared parsing. XML-RPC remains for legacy RPC callers. The optional MDB2 backend and its XML dependency
 chain remain until separately retired. The manifest covers curated packages, not
 all historical files still present in framework/app/lib/pear.
 
