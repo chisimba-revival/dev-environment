@@ -150,16 +150,6 @@ while IFS='|' read -r id version source_type source status purpose; do
             cp -a "$root/XML/Unserializer.php" "$STAGING_ROOT/XML/"
             ;;
 
-        XML_RPC)
-            require_path "$root/XML/RPC.php"
-            require_path "$root/XML/RPC/Server.php"
-            require_path "$root/XML/RPC/Dump.php"
-
-            mkdir -p "$STAGING_ROOT/XML"
-            cp -a "$root/XML/RPC.php" "$STAGING_ROOT/XML/"
-            rm -rf "$STAGING_ROOT/XML/RPC"
-            cp -a "$root/XML/RPC" "$STAGING_ROOT/XML/"
-            ;;
 
         *)
             echo "No installation rule exists for package: $id" >&2
@@ -194,9 +184,6 @@ required_files=(
     "XML/Util.php"
     "XML/Serializer.php"
     "XML/Unserializer.php"
-    "XML/RPC.php"
-    "XML/RPC/Server.php"
-    "XML/RPC/Dump.php"
 )
 
 echo
