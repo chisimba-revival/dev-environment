@@ -1,0 +1,12 @@
+[
+  {
+    "path": "core_modules/restapi/classes/messagingendpoints_trait.php",
+    "before": "ea7939254620d5b277f85ab104c58536aa653f2766646143056292016d4bac92",
+    "after": "710d9969d4e9e6488696e63c866ffed92307276cee2197047f39cd4023eb91ca"
+  },
+  {
+    "path": "core_modules/restapi/register.conf",
+    "before": "e82e697b6ecc9da72189c5e5ad313044409ee7713381708beb9afac622d6fe82",
+    "after": "486a6a33c3cba5525ecf0074618184c91722b1cef81a2063a027f25fce66f5dd"
+  }
+]
