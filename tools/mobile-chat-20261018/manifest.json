@@ -1,0 +1,182 @@
+[
+  {
+    "path": "packages/announcements/classes/dbannouncements_class_inc.php",
+    "before": "908ae944d8be90870351a35bf128daa376729c30f93869fe4c0ce88254aaeffb",
+    "after": "a04610991a99fd9b9f500a37c4173b45f4b90d992e91b530623d27f7a5007817"
+  },
+  {
+    "path": "packages/announcements/register.conf",
+    "before": "a490604549d7189ea06c0fb9406a962ffe736b337a3fa764f64ed97806c06fb6",
+    "after": "73b51209be75fa7ead8f79430d935efc6c19dc8bd958414dddad3cd785b92cad"
+  },
+  {
+    "path": "packages/messaging/classes/block_chatreturn_class_inc.php",
+    "before": "e6571389a95ac2f6baf13e735c1b2b5baf5322ad3ca3c04fdeb0c0caffcab4c5",
+    "after": "86d95d40f7cd1a799494989e09cb5222abc44115e58f1896fb716934da665096"
+  },
+  {
+    "path": "packages/messaging/classes/block_contextchat_class_inc.php",
+    "before": "eee7d6828e09447ecc797d3d289242ec0520fb1235c70c95282703f71500cbe4",
+    "after": "3a71eb709f9fc8951d54fec83d9f0eed64c22a1d71b78588611e2816497e0485"
+  },
+  {
+    "path": "packages/messaging/classes/block_formatting_class_inc.php",
+    "before": "32b0f138cafbe8c278ddec26fed631e27f302cd3b8ce0db8408c1ba2ee95ab6f",
+    "after": "cc5401082e9e7e98ca2e20e90e6c79e75ae36c6a0e4ad4f76c45fa5daaaa41c1"
+  },
+  {
+    "path": "packages/messaging/classes/block_onlineusers_class_inc.php",
+    "before": "ba06977592fccb370c5db9cb06875dfd23253b3e1d801646c2ab088589b7587c",
+    "after": "9f8e89954395d2c13bc8f2fd1a680248bb1b3651928dbf7d939c9f30549beda7"
+  },
+  {
+    "path": "packages/messaging/classes/block_smileys_class_inc.php",
+    "before": "1c65aa11e53d455b364381036f12c2f370a9edfac08dda498fe4f80a264fa412",
+    "after": "dc3f1d5b4836555cf3178b1eb862a9ca92da31edf375fa7115a8032ef22c846e"
+  },
+  {
+    "path": "packages/messaging/classes/block_workgroupchat_class_inc.php",
+    "before": "240fa3c4e709be074a303f9983fb46f5478d2a25e2ae1f3a95ce7122931f8428",
+    "after": "b4565db597d5549f70f7fbe03f9047c32b717ea3dc558049b39cacafbaba6277"
+  },
+  {
+    "path": "packages/messaging/classes/chatdisplay_class_inc.php",
+    "before": "63d3d8ca0b53da92ae734f07747442866e788f91528625f3431f16e23f317c5f",
+    "after": "3317022ab1cd49150e9ab736436d7dedb357152372ee4fe8c9faa4c645b4e582"
+  },
+  {
+    "path": "packages/messaging/classes/conversationpolicy_class_inc.php",
+    "before": null,
+    "after": "db186ef8cf4fe81d3f2928355f4e214410568abb8adeea74af45e922d031a389"
+  },
+  {
+    "path": "packages/messaging/classes/conversationservice_class_inc.php",
+    "before": null,
+    "after": "ba0d925d375f644ec771b14229091d4bee42c32bb44ce9d06b3e43558b1b875a"
+  },
+  {
+    "path": "packages/messaging/classes/conversationstore_class_inc.php",
+    "before": null,
+    "after": "fc97aa37824c1041f86c53bd07779b7edf8cb6d8798761aab1b4d4896382fc41"
+  },
+  {
+    "path": "packages/messaging/classes/conversationview_class_inc.php",
+    "before": null,
+    "after": "cdbcd344fe8a3165e33607cb7d4d206f8a7ad030d5b0adf409352851f466a475"
+  },
+  {
+    "path": "packages/messaging/classes/dbmessaging_class_inc.php",
+    "before": "8aa31abf3f728cf5bbf8e4fd9235c1b51a5818200c18692d542b502bda37e9d7",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/classes/helpcontent_class_inc.php",
+    "before": null,
+    "after": "dbce4e74bc47d9547ac79af5a307e909fc23c2463fd9da231d96f49d323eedc5"
+  },
+  {
+    "path": "packages/messaging/controller.php",
+    "before": "e479c6947b55ec045a0d9cf12e616c921854ba41abfd85d9a320cbe257b6be15",
+    "after": "536bcbdd0cfb97e8d4552fa6b7eeb67b275e0d257d63ef1fafd541ee9185ec41"
+  },
+  {
+    "path": "packages/messaging/register.conf",
+    "before": "9f6cb2a3779ed761234b2acd19bf27892d0f53ebddcabbe4e44f7940acdb614b",
+    "after": "d060273da36f8be542562890e786dcddf41dead2a3c81c3164304e0b54ad9837"
+  },
+  {
+    "path": "packages/messaging/resources/conversation.js",
+    "before": null,
+    "after": "94a74e2716d11f6b4925a9518d6d326e839426f6ea25acacc55a410d40baed23"
+  },
+  {
+    "path": "packages/messaging/resources/messaging.js",
+    "before": "8b55fb76338ec8ffe61a2d33f79a9578746a4d751d3af39b8ec8cf710586d1bb",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/sql/defaultdata.xml",
+    "before": "cf28e57cb32a06c70fdd6655e2421170e05cbd9ab9e658261be272f08079acac",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/sql/tbl_messaging_bans_v2.sql",
+    "before": null,
+    "after": "2ff767e252f0570c62e64ab847aad8527d737e4dd8f78bb961b135d0160609df"
+  },
+  {
+    "path": "packages/messaging/sql/tbl_messaging_channels_v2.sql",
+    "before": null,
+    "after": "2a2f4cc92354b10852e7680a1971f521d6ff9885320202dc456ae78a31f960df"
+  },
+  {
+    "path": "packages/messaging/sql/tbl_messaging_posts_v2.sql",
+    "before": null,
+    "after": "9ee576fddb56890488fe8880d10efe263faab6ca9e8bd024fce9859cf0f975bd"
+  },
+  {
+    "path": "packages/messaging/sql/tbl_messaging_reads_v2.sql",
+    "before": null,
+    "after": "794fb56483e76f111401f0f30450eaaf3958d43795b906e2a20fc6b21de3920d"
+  },
+  {
+    "path": "packages/messaging/templates/content/conversation_tpl.php",
+    "before": null,
+    "after": "c6e2a9ea84f703ecff96ea8bc2b78740a9a66b9dcf79a506000232c74a84af05"
+  },
+  {
+    "path": "packages/messaging/templates/content/savelog_tpl.php",
+    "before": "5c195786174d762465f7e74e263ef9dafde5ff1904a77ade6ff84b9aab51678b",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/templates/content/template_tpl.php",
+    "before": "862c235ed24888e07f7db019e5adcd7f07552017f462b4b56d3ef1f3a523efe0",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/templates/layout/layout_tpl.php",
+    "before": "d78a95624777ab7aafa79f67a37b4cd7317627fb8cb791b71b7f764e18b30363",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/templates/layout/room_text_only_tpl.php",
+    "before": "2fa2f4e8acc025af33479a609386aa9a8fa96565139763ba7b8d8d9a5a1eb227",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/templates/layout/room_tpl.php",
+    "before": "0f35f7616ef32da5d6a0d2ddfd7d23fb97190df9749f289340f0820e1e8ac01a",
+    "after": null
+  },
+  {
+    "path": "packages/messaging/templates/page/savelog_page_tpl.php",
+    "before": "0a7fdb3e7d9aa04f802b463526fbe61ad389a4fc0c55a1ea10e419c6f325fa53",
+    "after": null
+  },
+  {
+    "path": "core_modules/restapi/classes/messagingendpoints_trait.php",
+    "before": null,
+    "after": "ea7939254620d5b277f85ab104c58536aa653f2766646143056292016d4bac92"
+  },
+  {
+    "path": "core_modules/restapi/classes/restcontroller_class_inc.php",
+    "before": "2a73bfa3289f4c837616e6de7211a1da41c2c15b3975880befb724777a150486",
+    "after": "6a086256de4dc26892296adc264fa4ec444246a0792e7ff174fedb5dacaba876"
+  },
+  {
+    "path": "core_modules/restapi/controller.php",
+    "before": "22da084b1f98a05ff73e6468f420cdc78f2af7a52543469dae807dcc44263aef",
+    "after": "96de8ae0227fefea193130de410c3947e8894b2df3ad143645e87da9bc9862f2"
+  },
+  {
+    "path": "core_modules/restapi/register.conf",
+    "before": "b0abb9777ef61d9cd10c16c5c05fe4aa085bf9309485f6511035369057477dca",
+    "after": "e82e697b6ecc9da72189c5e5ad313044409ee7713381708beb9afac622d6fe82"
+  },
+  {
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "before": "a19d498009148c8cdd5c63e0cc821354cd9acd587dfebefef2a98ea03c54b4f3",
+    "after": "2ff3dc62c3f218d6e57e8f90b8a7a9f606fe94ce8eab70b10d55b3d77dc6594e"
+  }
+]
