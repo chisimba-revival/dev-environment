@@ -65,3 +65,32 @@ post. Previously attempted local drafts remain bound to their original server
 and account. Then try offline writing and reconnect over Wi-Fi/mobile data.
 Automatic sync, idempotent retries, branding discovery and persistent secure
 login remain future work.
+
+## Branding addition
+
+Framework `fe55c81b4` adds public `GET /api/v1/site/branding`, backed by the
+shared canvas service. REST registration is now 1.002 with an explicit canvas
+dependency. Chisimba.com returns its configured name **Chisimba**, canvas
+`chisimba-classic`, primary `#5a3f1e`, accent `#be792f`, and declared PNG logo.
+No new branding configuration or database tables were introduced.
+
+Release: `/srv/chisimba-com/releases/release-branding-20261018-115703/ch`.
+Backups: `/srv/chisimba-com/backups/branding-20261018-115703/`.
+Previous API release and keys remain intact. The incremental deployment script
+is `tools/restapi-chisimba-20261018/deploy-branding.py`; its exact manifest is
+retained in `/srv/chisimba-com/staging/branding-20261018/` on the host.
+
+Tests passed: shared service fixtures for raster assets, malformed metadata,
+unsafe colours, traversal/symlink confinement and fallbacks; six app model/cache
+checks; local installed branding GET, 405 for POST and 404 for extra segments;
+29 existing route contracts; Android build and update preserving app data.
+The Samsung phone fetched Chisimba.com's name, logo and colours. A simulated
+failure of only its branding request retained the cached name and image;
+changing the server field cleared the old identity. Phone viewport and a visual
+screen check passed. No new PHP diagnostics appeared in the deployed container.
+
+App source is in the workspace's `mobile-app`; its branding-only device check
+is `tests/branding-device-check.mjs`. This check operates before login, does not
+read credentials or draft data, and restores its temporary request override.
+Branding uses data only, scoped per canonical server URL; the real address is
+shown with the identity. The public account/blog flows are unchanged.
