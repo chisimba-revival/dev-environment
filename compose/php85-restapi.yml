@@ -1,0 +1,23 @@
+# Local API development overlay; retains the php85 database and site files.
+services:
+  web:
+    env_file:
+      - ../../private-storage/php85/restapi.env
+    environment:
+      CHISIMBA_JWKS_KEY_PATH: /var/data/restapi/jwks_private.pem
+      CHISIMBA_DENYLIST_REDIS: restapi-redis:6379
+    volumes:
+      - ../../work/rest-api-review-20261018/app/core_modules:/var/www/html/ch/core_modules
+      - ../../work/rest-api-review-20261018/app/classes:/var/www/html/ch/classes
+      - ../../work/rest-api-review-20261018/app/skins:/var/www/html/ch/skins
+      - ../../private-storage/php85/restapi:/var/data/restapi
+      - ../local-https/chisimba-restapi.conf:/etc/apache2/conf-enabled/chisimba-restapi.conf:ro
+    depends_on:
+      - restapi-redis
+  restapi-redis:
+    image: redis:7.4-alpine
+    command: [redis-server, --appendonly, "yes"]
+    volumes:
+      - restapi_redis:/data
+volumes:
+  restapi_redis:
