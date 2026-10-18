@@ -68,3 +68,20 @@ The server independently checks actual media type, byte size and decoded pixel b
 5. Local verification before authorised rollout. No legacy activation is part of this audit.
 
 Checks run in the existing local PHP 8.5 container: notifications service behavioural suite passed (12 checks); announcements revival contract passed. These establish a baseline for those existing suites only. New messaging workflows, offline delivery and image preparation are not implemented or runtime-tested yet.
+
+## Local implementation completed later on 18 October
+
+Messaging 2.000 now supplies the first native web conversation workflow and
+one-way announcement views, with announcements 0.414 adding an optional scope
+filter. See `modules/messaging/README.md` for the implementation, checks and
+remaining mobile/image work. Local inventory found messaging unregistered and
+legacy messaging tables absent. Normal fresh installation and repeat registration
+preserved new records. Legacy source is archived as non-executable text; no legacy
+database records were removed. No production deployment or push was performed.
+
+Policy, real PDO rollback, concurrent retry, HTTP security, history/read position,
+announcement scope/audience/date, syntax and announcement contract checks passed.
+Browser checks covered desktop, 390px and Help/focus return. The shared narrow
+canvas has a small outer horizontal overflow, recorded for follow-up. Mobile
+offline messaging, notification delivery, moderation UI and sightings remain
+unimplemented. Disposable test context/messages/account were cleaned after checks.
