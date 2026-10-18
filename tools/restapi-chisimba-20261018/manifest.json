@@ -1,0 +1,262 @@
+[
+  {
+    "path": "_htaccess",
+    "before": "27f8fbb091695aa299ed2523a753367f17c3ff6d49bc31a869f7381e1c41d6ee",
+    "after": "bf2fa1340ea322eb4f6f91f8bad0b4451e6ea164bb6cac47c8df6e428e26143d"
+  },
+  {
+    "path": "classes/core/apiresponse_class_inc.php",
+    "before": null,
+    "after": "ecc081c8e0ba0e325c2ba2ca1714893ba4d03147e6a545ca82ae5b9a0a292c8e"
+  },
+  {
+    "path": "classes/core/engine_class_inc.php",
+    "before": "8d5df0da0486bebc14b7489abba3b4a0e432703c8bf51ae76b53282bcffb0163",
+    "after": "4da991088acae9354a88c18d3d060f8426d5b8f6bea9a98765cc0b12b50429d3"
+  },
+  {
+    "path": "core_modules/ai/classes/aiservice_class_inc.php",
+    "before": "fe1ae75796320316c820e2b35d08042dab7505a5a46e3bba123593c69972be49",
+    "after": "5eb2212a19759226c10657bbbe5ec8f80e1c9377de4861d35a4ebe068682924d"
+  },
+  {
+    "path": "core_modules/context/classes/dbcontentnodes_class_inc.php",
+    "before": "5b1aaec012045c437671df5b8f8772eb9be1085f2b50bb2c0404b9ec0976b4aa",
+    "after": "f30882859a61c88a8a0f4643a826344397bd8d1d0e9b8955536d6207b5b3db2c"
+  },
+  {
+    "path": "core_modules/context/classes/dbcontext_class_inc.php",
+    "before": "e89efd594f7771f0cfb36b936c248b39b41ee1982d6f183aff196fb6125b16f7",
+    "after": "a1fbdb9306bcefb934d5a75224843296db27e1beecf5f9668a8d3690edf697f3"
+  },
+  {
+    "path": "core_modules/context/scripts/install-schema.php",
+    "before": null,
+    "after": "529288e9cf6b3734fe4d1856cb5e46fd104f4a1bdc838226b84ca2465fdf3d6a"
+  },
+  {
+    "path": "core_modules/filemanager/classes/dbfile_class_inc.php",
+    "before": "2b82face841efd595b37831e146a6b99da93c8fd2eb3008c42058a46ae077cf1",
+    "after": "b13a18cd1db33cf1623460c71ac0ace9e1ad77937435fe1fdea43c75fed7922d"
+  },
+  {
+    "path": "core_modules/filemanager/classes/dbquotas_class_inc.php",
+    "before": "2b9e1d9799471ffa06ff757786fc9d848fcfb95cc421c904bd6a589cbf011f65",
+    "after": "3d4c9b5ef064497e7e5161b577122fe58ba8789ec67422af502097e77af63102"
+  },
+  {
+    "path": "core_modules/filemanager/classes/fileapi_class_inc.php",
+    "before": "d7c585eb93093f63acaabee32394cdf4baa9468905908eb3a561973bb1a36290",
+    "after": "0d6297f8ee194740ac716ebac9ba8c22b65d3041584c3d95a4c727d60d87e2b8"
+  },
+  {
+    "path": "core_modules/filemanager/classes/foldercheck_class_inc.php",
+    "before": "241e672e2954ed5ee38791a11947c728b54fb6216c48b8b95b955e3c9842f479",
+    "after": null
+  },
+  {
+    "path": "core_modules/filemanager/scripts/provision-user-folders.php",
+    "before": null,
+    "after": "129bdfc8e37ff788ad45c9b409e7f947529eeac0549576bb66da0d89c0710407"
+  },
+  {
+    "path": "core_modules/files/classes/mkdir_class_inc.php",
+    "before": "0bc54e80ce0c78c96d71d8b2deb3b7efc38ec60ca15f7d8005edd4c5b043c4fd",
+    "after": "1746ab84569fee377a83ac610f2ee16b88d41ba48ea1faafb59d4a649f80609d"
+  },
+  {
+    "path": "core_modules/files/register.conf",
+    "before": "c65d4a4b28533282fe8030954a110de05486157938fa5ddfc2fe2fe2ecbf2e81",
+    "after": "9fe08691d0030ad3ce9514e845337d602e1bd94994775797b2fcb7ebf96f85ad"
+  },
+  {
+    "path": "core_modules/modulecatalogue/classes/modulefile_class_inc.php",
+    "before": "e589d5f844ecc9608d7fb669c99230554ada4664e253a23bed662b4d6190a288",
+    "after": "977e3ddf3c791adfee92f2d39a781201682d6f9e35d88392c208657fbe91214c"
+  },
+  {
+    "path": "core_modules/restapi/README.md",
+    "before": null,
+    "after": "5d1853179f7e89a61a7b67cc8749e2092b44ca0696756e75fefb849c9331eeca"
+  },
+  {
+    "path": "core_modules/restapi/classes/restcontroller_class_inc.php",
+    "before": null,
+    "after": "b4d27b19b5a360e9c8c1c8f4aeaeb91fce90200ddb0579d75b81d817868592e9"
+  },
+  {
+    "path": "core_modules/restapi/classes/restschema_class_inc.php",
+    "before": null,
+    "after": "99dd02580eb45507f1a11661a4c7fad88ff212e7ed12d2a4534ff88c13e580f4"
+  },
+  {
+    "path": "core_modules/restapi/classes/textpostinput_class_inc.php",
+    "before": null,
+    "after": "3de4a342fea429cb94809aacfa9c481572ca4d4461b716f22d432dfb68c6d3ff"
+  },
+  {
+    "path": "core_modules/restapi/config/restapi_inc.php.example",
+    "before": null,
+    "after": "6c36ca74f2db5b8f8cd82341ae90d217c17a2c6a9cb880729018d00228293c29"
+  },
+  {
+    "path": "core_modules/restapi/controller.php",
+    "before": null,
+    "after": "3955d5b2ad01954e82eb96043629bbef3fab6ba1df57555e21e9bb982a07f88d"
+  },
+  {
+    "path": "core_modules/restapi/patches/installscripts_class_inc.php",
+    "before": null,
+    "after": "84750ffb024851b69052987134536501f36a6a50cc685027790c7079fab499a9"
+  },
+  {
+    "path": "core_modules/restapi/register.conf",
+    "before": null,
+    "after": "24b152e00f0c332a01f540995b6c9720eb06fbbb3cd18fc10e89d4fe9395361d"
+  },
+  {
+    "path": "core_modules/restapi/scripts/configure-service.php",
+    "before": null,
+    "after": "d5770bdc1886c9980f9531572054a718bcab7fd2da9c8d23e2913748e926a571"
+  },
+  {
+    "path": "core_modules/restapi/scripts/install-schema.php",
+    "before": null,
+    "after": "e43dfb4ce2e045a3333c8976cfd3cddae9ef7de0eea273c82600a9d7fa4aaf42"
+  },
+  {
+    "path": "core_modules/restapi/sql/tbl_rest_api_keys.sql",
+    "before": null,
+    "after": "805ab40ed0cb3c91e9a677fa9b2a62768d87b77859d6667159b8a980856f0adf"
+  },
+  {
+    "path": "core_modules/restapi/sql/tbl_rest_identity_epoch.sql",
+    "before": null,
+    "after": "2607c83748b0f4d2d842156867a08fc4fdd0ffaef3a9f2b941c8a8f3878cd230"
+  },
+  {
+    "path": "core_modules/restapi/sql/tbl_rest_refresh_tokens.sql",
+    "before": null,
+    "after": "7b3f8d894e85740974e43e6eb7a925a4d1aa82053c9e9161d7556282c9708096"
+  },
+  {
+    "path": "core_modules/restapi/tests/field_service_e2e_test.php",
+    "before": null,
+    "after": "90bfe8dd4e31f62945e72b1dde363fc64191e2de1a83cc3aa3c95d3894bc9316"
+  },
+  {
+    "path": "core_modules/restapi/tests/rest_api_contract_test.php",
+    "before": null,
+    "after": "fc01e1a25685423475b8f90f116158f1d7499e853a7a7fe8dff9b337e0b44ca0"
+  },
+  {
+    "path": "core_modules/restapi/tests/restcontroller_routing_test.php",
+    "before": null,
+    "after": "7a8f222998ea741df066c9d9809d3a8375ac047413f9c7a975d3aa9bf48249a3"
+  },
+  {
+    "path": "core_modules/restapi/tests/textpostinput_test.php",
+    "before": null,
+    "after": "c3379da966754063cd4ce21038d9e45f50586ba17d1e3609cf6f55c2667bfc5f"
+  },
+  {
+    "path": "core_modules/security/classes/denylistpublisher_class_inc.php",
+    "before": null,
+    "after": "548b73f2bf8f6586030519b1b798933c81c48003c6265d7bd943dc42618a527c"
+  },
+  {
+    "path": "core_modules/security/classes/identityservice_class_inc.php",
+    "before": "4628d97a832aa72ecdacd175b6e08276548c7af20117155beb43003d7308dd9c",
+    "after": "7983d5465ac72dedc927811556bfa3567830eef9f3d2947a3c43e5fa409a37e9"
+  },
+  {
+    "path": "core_modules/security/classes/initialadminprovisioningservice_class_inc.php.orig",
+    "before": "46c494595815eeee381df11eae37c392feb2ecf6c26652454a44bfa21c7b016f",
+    "after": null
+  },
+  {
+    "path": "core_modules/security/classes/nativeauth/authenticationapplicationservice.php",
+    "before": "9b1b5ffbb0bd341714de90669acac76e12084ba30adca8b2e48efa4c18dafc46",
+    "after": "97241c1df05c16b6f2f3471de3d41a35a0c5292be4cfeca16c1e9923e40277e1"
+  },
+  {
+    "path": "core_modules/security/classes/nativeauth/csrftokenservice.php",
+    "before": "09ef1bd2a78996bc0c0f82bcaa7d7a5ec0dec34b389482598f681b760eef4715",
+    "after": "17bc7548255c8146b7b2f79f53ba1d2884c034af1e23197f6eecbd1f21e32459"
+  },
+  {
+    "path": "core_modules/security/classes/nativeauth/guardedloginapplicationservice.php",
+    "before": "538d3a70ab709b2d1022a8420002d9847a70a15b9f1235aa460b1701121f7c25",
+    "after": "71389b03fab80f6efd789af96c8ef1541739d1ba8117b4915a6411d8c0cd8323"
+  },
+  {
+    "path": "core_modules/security/classes/permissionservice_class_inc.php",
+    "before": "be4abcdf0249fe477d67f3c6e2fbfbd8dd61f204303e6baf8f4b374374f1f823",
+    "after": "1759e22897362891f266890416775b2510e7aff36a1f266cfd98ee8ff7744634"
+  },
+  {
+    "path": "core_modules/security/classes/signingkeyservice_class_inc.php",
+    "before": null,
+    "after": "9fafe9abfa50844d0f507361655e59cb145823501a94f2179ba14dba256df045"
+  },
+  {
+    "path": "core_modules/security/classes/tokenauthservice_class_inc.php",
+    "before": null,
+    "after": "5773e21ef1b9b3dd716239cfecca2771c5d2e42e30ab4c94e5dcf81cf5dcc3a6"
+  },
+  {
+    "path": "core_modules/security/classes/userservice_class_inc.php",
+    "before": "5f3261f7b5e5def0d25e3dca31a48484542e3c20c703d46743053ed00b3cd874",
+    "after": "6dce7a1c123ddd046f68c5929156e4f95d4855ee2650f5150171d218a2650aed"
+  },
+  {
+    "path": "core_modules/security/scripts/bootstrap-administrator.php",
+    "before": null,
+    "after": "22be677714a938bdc63444a07d8fc2a1bdf20e6e496cdadfa3846a98629e0cf3"
+  },
+  {
+    "path": "core_modules/security/scripts/install-missing-schema.php",
+    "before": null,
+    "after": "db9a48e1d1362602edd0e37f346f5044104d8673e52b3a7bc5ffa2908c576065"
+  },
+  {
+    "path": "core_modules/security/sql/field_guiding_rights.sql",
+    "before": null,
+    "after": "6951c45607d0557d8030f210e94fefd98d35e9e62b0b439fb3c657d0ce6dc29a"
+  },
+  {
+    "path": "core_modules/security/tests/tokenauthservice_contract_test.php",
+    "before": null,
+    "after": "453b34ba8e9c4d1f3f7f5970dddad01162aa31f5e67c1138d87e0485e3383395"
+  },
+  {
+    "path": "core_modules/systext/classes/systext_facet_class_inc.php",
+    "before": "21a5dcd54c352a93735985a02dfd8d0d5999d534f09765c5cdf5900185d6a615",
+    "after": "936d2684d994370df617bfafc56ecc4095aebdf00588b28836b325d7b17cc584"
+  },
+  {
+    "path": "installer/dbhandlers/dbhandler.inc",
+    "before": "a1ecc884c2b07215a26c492d528139cc91429efd61d75bbd6b5d7b7c560d3eed",
+    "after": "a48280891a7c7c7b2ae26f8bd5dcfab19e48a0c554d2301aa9a6f1113d966cf8"
+  },
+  {
+    "path": "installer/dbhandlers/systemtypes.xml",
+    "before": "50c04df5c38f931db7ecaa6f2e1d8cb374695f86e954eb7b2a897bd22e7bff88",
+    "after": "255fbe66177d979acd47ed7d98b4fddb059587cc86c110c1b0a04b66ea214539"
+  },
+  {
+    "path": "installer/steps/createconfigs.inc",
+    "before": "e164d7edd6edcfbedec792b57aa182e49d654f619500af07f2f7bb8f2fd812b2",
+    "after": "c9e68ddd30e6b8516a2e73f3bf6acfc6e777346493fd30e852ea4364c89e6218"
+  },
+  {
+    "path": "installer/steps/databasecreate.inc",
+    "before": "d4614fdf700bc6950d35828bb2a30229b075143ad9a81c2046906c87cdf6a9b6",
+    "after": "debe8b09711e188294449f880ae4518db23e9491e7db5e38f6731e80e425a7ce"
+  },
+  {
+    "path": "installer/wizard.inc",
+    "before": "c56ceb8665a9d430bf22cdeda68df0f3d724a812d68f8d2af353669c7268a70c",
+    "after": "0c2a5e8176cda73cf0066043c8de6260d5cf9db639def81759ee2648116196dc"
+  }
+]
