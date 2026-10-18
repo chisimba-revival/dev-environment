@@ -10,13 +10,13 @@ if (!$u || $u['username']!==$f['username'] || !str_starts_with($u['username'],'a
 $g=$e->getObject('groupservice','groupadmin'); $p=$e->getObject('permissionservice','security');
 $i=$e->getObject('identityservice','security'); $pid=$i->permissionUserIdForUser($f['userId']);
 $op=$argv[1]??'grant';
-if ($op==='grant') {
+if ($op==='grant' || $op==='bloggrant') {
  $result=$g->ensureGroups([['name'=>$f['username'],'description'=>'Temporary REST HTTP test']]);
  if (empty($result['ok'])) throw new RuntimeException('Fixture group failed');
  $gid=$result['groups'][$f['username']]; $f['groupId']=$gid;
  file_put_contents('/tmp/restapi-local-fixture.json',json_encode($f));
- foreach (['files.view','files.upload'] as $right) {
-  $rid=$p->rightIdForArea($p->areaIdForName('chisimba','restapi'),$right);
+ foreach ($op==='bloggrant' ? ['personal_publish'] : ['files.view','files.upload'] as $right) {
+  $rid=$p->rightIdForArea($p->areaIdForName('chisimba',$op==='bloggrant' ? 'simpleblog' : 'restapi'),$right);
   if (!$p->ensureGroupGrant($gid,$rid)) throw new RuntimeException('Fixture grant failed');
  }
  if (!$g->ensureMembership($gid,$pid)) throw new RuntimeException('Fixture membership failed');

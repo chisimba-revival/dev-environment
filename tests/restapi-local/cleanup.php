@@ -6,7 +6,10 @@ $GLOBALS['kewl_entry_point_run']=true; require 'classes/core/engine_class_inc.ph
 $f=json_decode(file_get_contents('/tmp/restapi-local-fixture.json'),true,512,JSON_THROW_ON_ERROR);
 $u=$e->getObject('userservice','security'); $row=$u->findByUserId($f['userId']);
 if (!$row || $row['id']!==$f['storageId'] || $row['username']!==$f['username'] || !str_starts_with($row['username'],'api_test_') || $row['isactive']) throw new RuntimeException('Refusing cleanup outside inactive fixture');
-$db=$u; $files=$e->getObject('dbfile','filemanager');
+$db=$u;
+// Posts belong only to this newly-created, inactive fixture identity.
+$db->executePrepared('DELETE FROM tbl_simpleblog_posts WHERE userid=?',[$f['userId']]);
+$files=$e->getObject('dbfile','filemanager');
 foreach ($files->selectPrepared('SELECT id, filename FROM tbl_files WHERE userid=?',[$f['userId']]) as $file) {
  if ($file['filename']!=='restapi-test.png') throw new RuntimeException('Unexpected fixture file');
  if (!$files->deleteFile($file['id'])) throw new RuntimeException('Fixture file cleanup failed');

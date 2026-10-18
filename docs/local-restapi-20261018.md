@@ -49,5 +49,7 @@ the API overlay; its exit trap cleans up the fixture. The local development cert
 for these local checks. Production certificate validation must remain enabled.
 
 The tests found missing REST registration metadata and PHP 8.5 warnings in the
-shared upload path; corrections are in the API integration worktree. SimpleBlog
-posting and the mobile client are not yet implemented. No production site changed.
+shared upload path; corrections are in the API integration worktree. The initial text-only SimpleBlog endpoint is available at
+`POST /ch/api/v1/simpleblog/posts`; its contract is in the REST API README.
+Run `tests/restapi-local/run.sh blog` for its installed HTTP checks.
+The mobile client and duplicate-safe offline submission remain subsequent work. No production site changed.
