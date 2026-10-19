@@ -1,0 +1,87 @@
+[
+  {
+    "path": "core_modules/context/classes/contextdeletion_class_inc.php",
+    "before": null,
+    "after": "6a8bd96e19dcc9ac2fc80c4d968050b6e404810a5b9a33036c80f215c5d937ac"
+  },
+  {
+    "path": "core_modules/context/classes/dbcontext_class_inc.php",
+    "before": "a1fbdb9306bcefb934d5a75224843296db27e1beecf5f9668a8d3690edf697f3",
+    "after": "f028a3126ed99f573291a90ccb8389e2d9b1974ea7b72779e30380e892195c45"
+  },
+  {
+    "path": "core_modules/context/register.conf",
+    "before": "9016eb569b57952cc67666dbed3015c111c72b2afa4e8c696269462dded36472",
+    "after": "3e3ebdf74817e421cf5f65288c916cfca4574f335b46914e89bde1c449dbb0c8"
+  },
+  {
+    "path": "core_modules/contextadmin/classes/helpcontent_class_inc.php",
+    "before": "7ab81521733dbe19bde5d3e5450736f6b22e726a4ebd46f52c6b68c91ca8b05e",
+    "after": "913f93817d8b7765f8b1dfb9c95f648ffae849e60bba30a24c6d640770479dd3"
+  },
+  {
+    "path": "core_modules/contextadmin/controller.php",
+    "before": "6495ff31b1d737f4a7c4a5d96c6ff3e77eb5c67c94e07af7968eff115cc40423",
+    "after": "52cd4ed01898d7d2238aee0d231c2c285cd00a7d82ba2a462b8ee8f61133c296"
+  },
+  {
+    "path": "core_modules/contextadmin/register.conf",
+    "before": "6fe456ede06d535ad91972ddc5cfb254e0c9029932dda1524ab8ca577ffb18a7",
+    "after": "6962d30051308ab8709d8e9d61a8b3403b50f075e8c6fb664f6582af7abfcd20"
+  },
+  {
+    "path": "core_modules/contextadmin/templates/content/delete.php",
+    "before": "f14a59b91bfb534d826773437039462c7f4880bca095532526e8d1cd03f423b4",
+    "after": "53a23c86b79621514b2b37f1d6e80ed4fee0d25560a1a8a6b6e323c17690d1e6"
+  },
+  {
+    "path": "core_modules/contextadmin/templates/content/main.php",
+    "before": "94108c36580be4dfffbae0293a11134a9375caff9ead910c6ce4e0d635293d5e",
+    "after": "908b25e1c62f51cd304ce9d4ef6c4d590929979e3e31f0c7525f8d9241f80210"
+  },
+  {
+    "path": "core_modules/contextgroups/classes/managegroups_class_inc.php",
+    "before": "7b59248e1bb76ce9c208e38d3dba13312238ffb0f17df34c5e802b08675bb4fe",
+    "after": "750f1cef4e361c5b86ed5ebbc465b9f4fc44ed7cdb79a53c88c0ccb7d75171f1"
+  },
+  {
+    "path": "core_modules/contextgroups/register.conf",
+    "before": "036d4245c9e69f8e6d4ec4b3bf70e0d4c4067ce59bf8fc89207ca13d46e28a3e",
+    "after": "a18bb893cfa1f4fe7c09c90cf352363a5f59bd0e86fd441dcc264c015aff4ebe"
+  },
+  {
+    "path": "core_modules/groupadmin/classes/groupservice_class_inc.php",
+    "before": "950e8c0f80446c656e947e0034d4b04f611eca9f5870b1fbf2e4b79dfd2e0f3e",
+    "after": "922da95a56f8276a5e2f60e553b8178dc6e176681c7d33dc9ddc78ca0dfc6c58"
+  },
+  {
+    "path": "core_modules/groupadmin/register.conf",
+    "before": "525b0222409a72e66d4c21a3d907dc4620e44bf2ed2095ef4292ed89ab228d78",
+    "after": "654d7312ca11ff983ce2d59aff26dfca64552f149db9ed3cc79fe2dc878697b3"
+  },
+  {
+    "path": "packages/announcements/classes/announcementchat_class_inc.php",
+    "before": "60996a390a5f71b96aaedc4a602f0d49f269cbf0972aaafaaf4d5d47b7739bed",
+    "after": "88e7b6199ae16c6ccb18a9491f77f6763bb3df84c92d7a37c26980643287de40"
+  },
+  {
+    "path": "packages/announcements/classes/dbannouncements_class_inc.php",
+    "before": "a04610991a99fd9b9f500a37c4173b45f4b90d992e91b530623d27f7a5007817",
+    "after": "b4babae3195742973d896f86526ed6f7a6cf424efe08e29b05d2b876cf6c62d7"
+  },
+  {
+    "path": "packages/announcements/register.conf",
+    "before": "6b1c26d52721147ec9e2f09d683e7d36a501fb56d1cdb4801716be42d9313c0f",
+    "after": "dc624b2a2379efa0e6ff116b96f145e814258d79da1b852fbbf901a2b815b513"
+  },
+  {
+    "path": "packages/messaging/classes/conversationstore_class_inc.php",
+    "before": "f695a3b1fb80e2b9fb39918f9802d52bd31952d998ebd42fe330bb5715fcec66",
+    "after": "d697a0cbafc30267eb16c644e1d78481e6cb71bfe26d256d6e22df1bd9784335"
+  },
+  {
+    "path": "packages/messaging/register.conf",
+    "before": "e46bc197efd65fac4b6366639f91e170e7896f818ca64fef2d3741acfc205e3d",
+    "after": "e7766bb825cd5897a5cf1a75546e83ba4324f92caa6a0262c5f0b45f206dd923"
+  }
+]
