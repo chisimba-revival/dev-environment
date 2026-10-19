@@ -1,0 +1,62 @@
+[
+  {
+    "path": "packages/announcements/classes/announcementchat_class_inc.php",
+    "before": null,
+    "after": "60996a390a5f71b96aaedc4a602f0d49f269cbf0972aaafaaf4d5d47b7739bed"
+  },
+  {
+    "path": "packages/announcements/register.conf",
+    "before": "73b51209be75fa7ead8f79430d935efc6c19dc8bd958414dddad3cd785b92cad",
+    "after": "6b1c26d52721147ec9e2f09d683e7d36a501fb56d1cdb4801716be42d9313c0f"
+  },
+  {
+    "path": "packages/announcements/sql/tbl_announcements_chat_receipts.sql",
+    "before": null,
+    "after": "4feeece615491a01c103b9a5eee3bf39f89f0a51f24496dfccccfa286d2c2afd"
+  },
+  {
+    "path": "packages/messaging/classes/conversationview_class_inc.php",
+    "before": "cdbcd344fe8a3165e33607cb7d4d206f8a7ad030d5b0adf409352851f466a475",
+    "after": "ad249d6dcd8d9fc8d313bcc7820417cb04cffc023044342c102a197835f8c39a"
+  },
+  {
+    "path": "packages/messaging/controller.php",
+    "before": "aaae5f16ca410f2308dafba66da76451c3d3c7617d91505dbf435649bd5db7dc",
+    "after": "e4ff6b6cac5724a1ef78a3576ce67227e1852aeadb0870a23aca31cdb0193e3f"
+  },
+  {
+    "path": "packages/messaging/register.conf",
+    "before": "9f9bf70924026dec20f1cca59c11c3b39bc75e0aa63847d9e7dbf84a1e69ce98",
+    "after": "e46bc197efd65fac4b6366639f91e170e7896f818ca64fef2d3741acfc205e3d"
+  },
+  {
+    "path": "packages/messaging/templates/content/conversation_tpl.php",
+    "before": "d7d9b82eaf0374836ede3d7491ce9c80a3ec2d56397ffd8d3687b160e7e923a8",
+    "after": "a3973ee8e5d5d8ba588ecf19ea60c4aef50d9518f75bd2852dfac96bf3991354"
+  },
+  {
+    "path": "core_modules/context/classes/dbcontextmodules_class_inc.php",
+    "before": "02b4615a926d37412f1eb5e5a6d434eebf0b73c7712f5b8194f0ae6a811bc96e",
+    "after": "17ed91470450fab0c268194e5d65a424c62f2be5126c3d4926936fccad46f48d"
+  },
+  {
+    "path": "core_modules/restapi/classes/messagingendpoints_trait.php",
+    "before": "943e91813028e7085315f9cbe2ffd22402d3721feee824299910b0912191d3e3",
+    "after": "c3db56602a6912d8c02df87db6f5c7f1eeb532737e2dff86e2648a1be2a57dca"
+  },
+  {
+    "path": "core_modules/restapi/classes/restcontroller_class_inc.php",
+    "before": "6a086256de4dc26892296adc264fa4ec444246a0792e7ff174fedb5dacaba876",
+    "after": "2dd593ce24b24155907e533bc9ad10c3c771f0eee322699c35cab06f6bd329b5"
+  },
+  {
+    "path": "core_modules/restapi/register.conf",
+    "before": "c5c1d068e536a202e7555152ea5868db134aed496011087fc915e4d03d69c1cf",
+    "after": "e9268ba898b787f2d0e4ed384ef112d3dd7af00761b3867ba729750e239634c2"
+  },
+  {
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "before": "65161d6f53cc3965b9b1d77258304afa6978c213609cd8efbdac22925ab706b3",
+    "after": "809d9b034a20c70d9780d5a9b6588d072d5e17e72fd671ee26afa0d46a4a1f9d"
+  }
+]
