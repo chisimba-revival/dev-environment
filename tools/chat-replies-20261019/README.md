@@ -20,3 +20,8 @@ with text retained, successful quoted send, contextual Help and 390px overflow.
 Disposable local account/conversation/quotes removed and cleanup verified. No live
 messages were posted for testing. The installed Android UI is unchanged; its current
 API calls remain compatible with the additive reply contract.
+
+Deployed release: `/srv/chisimba-com/releases/release-chat-replies-20261019-092556/ch`.
+Backup: `/srv/chisimba-com/backups/chat-replies-20261019-092556/`.
+Live browser verified Reply selection shows the original author and excerpt, and
+Cancel reply clears the selection. No live test message was submitted.
