@@ -1,0 +1,7 @@
+{
+  "source": "f3b5304da16d3f571769aee3549c04b33124391a",
+  "apk_sha256": "df7e6138d3884e727c0f24d8610db84dd958f3b195f09c4756ec98dad10102f0",
+  "device": "SM-S908E",
+  "install": "adb install -r: Success",
+  "acceptance": "User phone check pending"
+}

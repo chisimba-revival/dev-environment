@@ -1,0 +1,24 @@
+{
+  "site": "chisimba",
+  "host": "chisimba.com",
+  "previous": "/srv/chisimba-com/releases/release-sightings-20261019-143926/ch",
+  "release": "/srv/chisimba-com/releases/release-sightings-chat-20261019-145607/ch",
+  "backup": "/srv/chisimba-com/backups/sightings-chat-20261019-145607",
+  "imageId": "sha256:4f30c6e68f5c705a99650cfc8a0f4ae2dbf5a8d9f4a5593d1c7fb2bf619e4a08",
+  "commits": {
+    "framework": "399414f919431af24f50c1503123df944cf6754a",
+    "modules": "5f89f0c38a1c86598f2354962482f8209cf60dde",
+    "mobile": "f3b5304da16d3f571769aee3549c04b33124391a"
+  },
+  "manifest": "0b7dd625f7204350d20410a69bcc1399dd09e72a4d8098cf4eb51f86f00b2533",
+  "startedUTC": "20261019-145607",
+  "status": "online-verified",
+  "database": "8634ded1f98738b248a8c72a90ab9a3871d8849be848b5da6a4e7a5380974865",
+  "persistentFiles": "61e8915a5571bb778be781b5e91fff5c32d9199563bf0502ee887a3d03262087",
+  "protectedTables": 123,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": []
+}

@@ -1,0 +1,9 @@
+{
+  "packages/messaging/classes/sightingservice_class_inc.php": "2b751caaa087e461e11bcb9d47e904fdee15f70f3ffa7f744620f3d644857684",
+  "packages/messaging/classes/conversationstore_class_inc.php": "e18aedb28904438aef9986ff8adffcbe3d519178393edf0f6851b307cbcbfcd2",
+  "packages/messaging/controller.php": "1c305d7d615efc7b8db08fce98cc412f14dfa989ee2a33c0f2d1141cb075ee8f",
+  "packages/messaging/templates/content/conversation_tpl.php": "d07af551d2f4a4b720b1be298b9fd35b2efb483a5028eb749132d27f61597925",
+  "packages/messaging/register.conf": "cd1da8880d44b43ecfde0baa70970774c1d079013d744bd6e50b87c30b2bc362",
+  "core_modules/restapi/classes/messagingendpoints_trait.php": "f3866d82e9d3b699b93ea5eb722d46353fc71cdcc5841479d0365deedb9c6c6e",
+  "core_modules/restapi/register.conf": "861e483768867ddb763c4d19662ec530ac3903d8a1760e461a6028a08614366c"
+}
