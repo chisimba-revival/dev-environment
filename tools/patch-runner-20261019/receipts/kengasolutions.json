@@ -1,0 +1,22 @@
+{
+  "site": "kengasolutions",
+  "host": "kengasolutions.com",
+  "previous": "/srv/kengasolutions.com/releases/release-shared-20261017-141349/ch",
+  "release": "/srv/kengasolutions.com/releases/release-patch-runner-20261019-134941/ch",
+  "backup": "/srv/kengasolutions.com/backups/patch-runner-20261019-134941",
+  "imageId": "sha256:823f958f1919fa220581a40db8188828c0b7f7626d3f699122a0f55680f8e9ad",
+  "commits": {
+    "framework": "a3fa6b839d84a53935a6792317f0f5b9561d42f9"
+  },
+  "manifest": "fd2522c903f481d61c3cad88e61fc5a581f333d447a72aff09a3b4c66e2adc41",
+  "startedUTC": "20261019-134941",
+  "status": "online-verified",
+  "database": "d8132fbf64689842d5c3bd414655bce7f63216cb8a955bc0e43c5c19c1e2f447",
+  "persistentFiles": "a15dab17e172e053c0fff86dd0ade112832a72962581bb51125e6813dd709157",
+  "protectedTables": 218,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": []
+}

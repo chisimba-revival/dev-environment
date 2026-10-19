@@ -1,0 +1,18 @@
+[
+  {
+    "path": "core_modules/modulecatalogue/classes/patch_class_inc.php",
+    "after": "af9b58e75cb78624b3d85c8468ce67785cdcd1ecf05f53661783e104fc458d93"
+  },
+  {
+    "path": "core_modules/modulecatalogue/classes/modulesadmin_class_inc.php",
+    "after": "3640b98aa6540f9503354530cec545e27fa87438413f18a9803b0f813eb6b92b"
+  },
+  {
+    "path": "core_modules/modulecatalogue/controller.php",
+    "after": "09e2cfc2ca92d85c6e57ea506825769881ec1cb48039a86873f8a065147a2e2f"
+  },
+  {
+    "path": "core_modules/modulecatalogue/register.conf",
+    "after": "a89cad1d63723a36927f34913d2fb69e6484df0225d5b3ffb5efcf36a2b7f5fa"
+  }
+]

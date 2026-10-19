@@ -1,0 +1,24 @@
+{
+  "site": "learnthebirds",
+  "host": "learnthebirds.com",
+  "previous": "/srv/learnthebirds.com/releases/release-shared-20261017-140517/ch",
+  "release": "/srv/learnthebirds.com/releases/release-patch-runner-20261019-134811/ch",
+  "backup": "/srv/learnthebirds.com/backups/patch-runner-20261019-134811",
+  "imageId": "sha256:dc956d7e3ee0bcef3cfa3edd997f3b0962c8208f1cb9af88f67a0a7c2656f320",
+  "commits": {
+    "framework": "a3fa6b839d84a53935a6792317f0f5b9561d42f9"
+  },
+  "manifest": "fd2522c903f481d61c3cad88e61fc5a581f333d447a72aff09a3b4c66e2adc41",
+  "startedUTC": "20261019-134811",
+  "status": "online-verified",
+  "database": "92bc434366a0c3f887b1b7e365a119f05bb6d5a00f8e35e1f57c3b47604d68b2",
+  "persistentFiles": "1c1923b6919b400d85f90c51331ae5cb25e094a3eaa17e24eebab780dfe83bb3",
+  "protectedTables": 109,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": [
+    "learnthebirds-mail.timer"
+  ]
+}

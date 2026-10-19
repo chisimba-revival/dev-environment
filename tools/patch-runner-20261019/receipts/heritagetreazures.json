@@ -1,0 +1,24 @@
+{
+  "site": "heritagetreazures",
+  "host": "heritagetreazures.com",
+  "previous": "/srv/heritagetreazures.com/releases/release-shared-20261017-141753/ch",
+  "release": "/srv/heritagetreazures.com/releases/release-patch-runner-20261019-135032/ch",
+  "backup": "/srv/heritagetreazures.com/backups/patch-runner-20261019-135032",
+  "imageId": "sha256:823f958f1919fa220581a40db8188828c0b7f7626d3f699122a0f55680f8e9ad",
+  "commits": {
+    "framework": "a3fa6b839d84a53935a6792317f0f5b9561d42f9"
+  },
+  "manifest": "fd2522c903f481d61c3cad88e61fc5a581f333d447a72aff09a3b4c66e2adc41",
+  "startedUTC": "20261019-135032",
+  "status": "online-verified",
+  "database": "ffe78114f1abc5fcdeeeaca5eca69bdcf42a6acd59319d30934d2bf3b1276988",
+  "persistentFiles": "a0dec2530f001278dac6821a665cd08a19cc594e7befbea0772e8b08633f5570",
+  "protectedTables": 218,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": [
+    "heritage-mail.timer"
+  ]
+}

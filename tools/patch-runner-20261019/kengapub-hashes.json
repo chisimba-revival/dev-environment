@@ -1,0 +1,6 @@
+{
+  "core_modules/modulecatalogue/classes/patch_class_inc.php": "eebf6097dacfc3727c52eec607379b7a30c94024bac0f8f80e0238eb8865eee3",
+  "core_modules/modulecatalogue/classes/modulesadmin_class_inc.php": "30f498cc41f41c29fdab64d84c6f6f92218e9ea4abeb3f9dd18f1dd0eafb7cfa",
+  "core_modules/modulecatalogue/controller.php": "f4301d7379117f50ee13bc02ae8fcc67ab7e4d933a78ff84694d344234fcef12",
+  "core_modules/modulecatalogue/register.conf": "76f1420f0014b52e132c452611c7650af2402842b081375bf813376dbbf66565"
+}

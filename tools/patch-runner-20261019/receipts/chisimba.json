@@ -1,0 +1,22 @@
+{
+  "site": "chisimba",
+  "host": "chisimba.com",
+  "previous": "/srv/chisimba-com/releases/release-context-deletion-20261019-132743/ch",
+  "release": "/srv/chisimba-com/releases/release-patch-runner-20261019-134522/ch",
+  "backup": "/srv/chisimba-com/backups/patch-runner-20261019-134522",
+  "imageId": "sha256:4f30c6e68f5c705a99650cfc8a0f4ae2dbf5a8d9f4a5593d1c7fb2bf619e4a08",
+  "commits": {
+    "framework": "a3fa6b839d84a53935a6792317f0f5b9561d42f9"
+  },
+  "manifest": "fd2522c903f481d61c3cad88e61fc5a581f333d447a72aff09a3b4c66e2adc41",
+  "startedUTC": "20261019-134522",
+  "status": "online-verified",
+  "database": "500efea14d0837fc3865c668e6ac5cd1c7178ed9914e060d60445adc71351fcd",
+  "persistentFiles": "c92ce40eb4bdaf1704c55bbb631ec8615cdbb67819e03ff41e5b488b5355f7e4",
+  "protectedTables": 121,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": []
+}

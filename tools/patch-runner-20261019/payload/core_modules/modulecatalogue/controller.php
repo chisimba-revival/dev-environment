@@ -1,0 +1,1591 @@
+<?php
+/**
+ * This file houses modulecatalogue controller class.
+ *
+ * PHP version 5
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the
+ * Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ * @category  Chisimba
+ * @package   modulecatalogue
+ * @author    Nic Appleby <nappleby@uwc.ac.za>
+ * @author    Paul Scott <pscott@uwc.ac.za>
+ * @copyright 2007 AVOIR
+ * @license   http://www.gnu.org/licenses/gpl-2.0.txt The GNU General Public License
+ * @version   $Id$
+ * @link      http://avoir.uwc.ac.za
+ */
+
+/**
+ * The modulecatalogue class extends the controller class and as such is the controller
+ * for the modulecatalogue module. The main fucntions of this module are module administration
+ * with a catalogue interface. Allows installation and Un-installation of modules
+ * via a cagtalogue interface which groups similar modules. Also incorporates module patching.
+ *
+ * @category  Chisimba
+ * @package   modulecatalogue
+ * @author    Nic Appleby <nappleby@uwc.ac.za>
+ * @author    Paul Scott <pscott@uwc.ac.za>
+ * @copyright 2007 AVOIR
+ * @license   http://www.gnu.org/licenses/gpl-2.0.txt The GNU General Public License
+ * @version   $Id$
+ * @link      http://avoir.uwc.ac.za
+ */
+
+class modulecatalogue extends controller {
+    /** Dependencies and state initialised by this component. */
+    public $objPOFile;
+
+
+    private const UPDATE_CSRF_CONTEXT = 'modulecatalogue_apply_update';
+    private const UPDATE_ALL_CSRF_CONTEXT = 'modulecatalogue_apply_all_updates';
+    /**
+     * Object to connect to Module Catalogue table
+     *
+     * @var object $objDBModCat
+     */
+    protected $objDBModCat;
+
+    /**
+     * Object to read module information from register files
+     *
+     * @var object $objModFile
+     */
+    protected $objModFile;
+
+    /**
+     * Object to read catalogue configuration
+     *
+     * @var object $objCatalogueConfig
+     */
+    protected $objCatalogueConfig;
+
+    /**
+     * Side menu object
+     *
+     * @var object $objSideMenu
+     */
+    public $objSideMenu;
+
+    /**
+     * Logger object to log module calls
+     *
+     * @var object $objLog
+     */
+    public $objLog;
+
+    /**
+     * User object for security
+     *
+     * @var object $objUser
+     */
+    public $objUser;
+
+    /**
+     * Language object for multilingual support
+     *
+     * @var object $objLanguage
+     */
+    public $objLanguage;
+
+    /**
+     * ISO language codes object for multilingual support
+     *
+     * @var object $objLanguageCode
+     */
+    public $objLanguageCode;
+
+    /**
+     * The site configuration object
+     *
+     * @var object $config
+     */
+    public $config;
+
+    /**
+     * object to read/write module data to database
+     *
+     * @var object $objModule
+     */
+    protected $objModule;
+
+    /**
+     * object to read/write administrative module data to database
+     *
+     * @var object $objModuleAdmin
+     */
+    protected $objModuleAdmin;
+
+    /**
+     * object to check system configuration
+     *
+     * @var object $objSysConfig
+     */
+    protected $objSysConfig;
+
+    /**
+     * output varaiable to store user feedback
+     *
+     * @var string $output
+     */
+    protected $output;
+
+    /**
+     * object to manage module patches
+     *
+     * @var object $objPatch
+     */
+    protected $objPatch;
+
+    public $tagCloud;
+
+    protected $objTagCloud;
+
+    protected $extzip = FALSE;
+
+    private $ajaxInstall = FALSE;
+
+    private $csrf;
+
+    /**
+     * Standard initialisation function
+     */
+    public function init() {
+        try {
+            set_time_limit ( 0 );
+            $this->objUser = $this->getObject ( 'user', 'security' );
+            $this->objConfig = $this->getObject ( 'altconfig', 'config' );
+            $this->objLanguage = $this->getObject ( 'language', 'language' );
+            $this->objLanguageCode = $this->getObject ( 'languagecode', 'language' );
+            $this->objModuleAdmin = $this->getObject ( 'modulesadmin', 'modulecatalogue' );
+            $this->objModule = $this->getObject ( 'modules' );
+            //the class for reading register.conf files
+            $this->objModFile = $this->getObject ( 'modulefile' );
+            $this->objPatch = $this->getObject ( 'patch', 'modulecatalogue' );
+            $this->objCatalogueConfig = $this->getObject ( 'catalogueconfig', 'modulecatalogue' );
+            if (! file_exists ( $this->objConfig->getSiteRootPath () . 'config/catalogue.xml' )) {
+                $this->objCatalogueConfig->writeCatalogue ();
+            }
+            $this->objSideMenu = $this->getObject ( 'catalogue', 'modulecatalogue' );
+            // Check which zip thing we will be using
+            if(extension_loaded('zip') && function_exists('zip_open')) {
+                $this->extzip = TRUE;
+            }
+            $this->objSideMenu->addNodes ( array ('local updates', 'all', 'languages' ) );
+            $sysTypes = $this->objCatalogueConfig->getCategories ();
+            //$xmlCat = $this->objCatalogueConfig->getNavParam('category');
+            //get list of categories
+            //$catArray = $xmlCat['catalogue']['category'];
+            //natcasesort($catArray);
+            //$this->objSideMenu->addNodes($catArray);
+            $this->objSideMenu->addNodes ( $sysTypes );
+            $this->objTagCloud = $this->getObject ( 'tagcloud', 'utilities' );
+            $this->tagCloud = $this->objCatalogueConfig->getModuleTags ();
+            $tagscl = $this->processTags ();
+            //var_dump($tagscl); die();
+            if ($tagscl != NULL) {
+                $this->objTagCloud = $this->objTagCloud->buildCloud ( $tagscl );
+            } else {
+                $this->objTagCloud = NULL;
+            }
+            //$this->tagCloud = $this->objTagCloud->exampletags();
+            $this->objPOFile = $this->getObject ( 'pofile', 'modulecatalogue' );
+            $this->objLog = $this->getObject ( 'logactivity', 'logger' );
+            $this->objLog->log ();
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    /**
+     * The dispatch function which handles the execution path od the module
+     *
+     * @return mixed template names to be displayed by the engine
+     */
+    public function dispatch() {
+        try {
+            $this->output = '';
+            $action = $this->getParm ( 'action' );
+
+            /*
+             * Bounded canonical-services proof. This branch deliberately
+             * precedes modulecatalogue's legacy administrator/page-shell
+             * authorisation so it tests only the canonical authenticated
+             * session and identity contracts.
+             */
+            if ($action === 'canonicalidentityproof') {
+                $this->setLayoutTemplate(null);
+                $this->setVar('pageSuppressToolbar', true);
+                $proof = $this->getObject('canonicalidentityproof');
+                $this->setVar('canonicalIdentityProof', $proof->resolve());
+                return 'canonical_identity_proof_tpl.php';
+            }
+
+            if (($action != 'firsttimeregistration') && (! $this->objUser->isAdmin ())) { //no access to non-admin users
+                return 'noaccess_tpl.php';
+            }
+            // Retired executable-code upload: reject before inspecting files or changing state.
+            if ($action === 'uploadarchive') {
+                http_response_code(410);
+                return 'archive_retired_tpl.php';
+            }
+            if (! isset ( $activeCat )) {
+                $activeCat = $this->getParm ( 'cat', 'Local Updates' );
+            }
+            $this->setVar ( 'activeCat', $activeCat );
+
+            // Keep one installation-state filter across browsing and mutations.
+            $moduleFilter = $this->getObject('catalogueviewfilter')->resolve(
+                $this->getParam('modulefilter', null),
+                $this->getParam('installedonly', null),
+                $this->getSession('modulecatalogue_view_filter', null),
+                (bool)$this->getSession('modulecatalogue_installed_only', false)
+            );
+            $this->setSession('modulecatalogue_view_filter', $moduleFilter);
+            $this->setVar('moduleFilter', $moduleFilter);
+            if (in_array($moduleFilter, array('new', 'uninstalled'), true) && $this->getParam('cat', null) === null) {
+                $activeCat = 'all';
+                $this->setVar('activeCat', $activeCat);
+            }
+            //$this->setVar('letter',$this->getParam('letter','none'));
+            $this->setLayoutTemplate ( 'cat_layout.php' );
+            $this->setVar ( 'connected', false );
+            $this->setVar('catalogueRefreshCsrf', $this->csrf()->issue('modulecatalogue_refresh'));
+            switch ($action) { //check action
+                case 'updatedeps' :
+                    $modname = $this->getParam('modname');
+                    $this->output = $this->updateDependenciesAndPatch($modname);
+                    if (is_array($this->output) && isset($this->output['current'])) {
+                        $this->setVar('output', $this->output);
+                    } else {
+                        $this->setVar('error', htmlspecialchars(
+                            $this->patchFailureMessage($modname, $this->output),
+                            ENT_QUOTES, 'UTF-8'
+                        ));
+                        $this->setVar('dependencyActions',
+                            $this->patchDependencyActions($modname, $this->output));
+                    }
+                    $this->preparePatchView();
+                    return 'updates_tpl.php';
+                case null :
+                case 'list' :
+                    /*
+                     * CHISIMBA_MODULECATALOGUE_CONTROLLER_LOCAL_ALL
+                     *
+                     * The historical "All" category depended on an optional
+                     * remote catalogue service. During restoration that
+                     * service may be absent or unconfigured. In that case the
+                     * module administration screen must still list everything
+                     * installed locally and must not invoke RPC.
+                     *
+                     * Technical debt: restore a configurable repository
+                     * service and make remote catalogue access explicitly
+                     * optional.
+                     */
+                    if (strtolower ( trim ( $activeCat ) ) == 'all') {
+                        $localModuleList = $this->objModFile->getLocalModuleList ();
+                        $localModules = array ();
+
+                        foreach ($localModuleList as $moduleKey => $moduleValue) {
+                            /*
+                             * Older modulefile implementations may return
+                             * either a numeric list of IDs or an associative
+                             * ID => name list. Normalise both forms.
+                             */
+                            if (is_int($moduleKey) || ctype_digit((string) $moduleKey)) {
+                                $moduleId = (string) $moduleValue;
+                                $moduleName = ucfirst($moduleId);
+                            } else {
+                                $moduleId = (string) $moduleKey;
+                                $moduleName = is_scalar($moduleValue)
+                                    ? (string) $moduleValue
+                                    : ucfirst($moduleId);
+                            }
+
+                            if ($moduleId !== '') {
+                                $localModules[$moduleId] = $moduleName;
+                            }
+                        }
+
+                        ksort($localModules, SORT_NATURAL | SORT_FLAG_CASE);
+
+                        /*
+                         * front_tpl.php consumes this session value as search
+                         * results and therefore skips getCategoryList('all'),
+                         * which is the path that invokes the dead repository.
+                         */
+                        $this->setSession('modcatsearchresults', $localModules);
+                        $this->setVar('result', $localModules);
+                        $this->setVar('connected', false);
+
+                        log_debug(
+                            'Module catalogue All category: displaying '
+                            . (is_countable($localModules) ? count($localModules) : 0)
+                            . ' local modules; remote repository skipped.'
+                        );
+
+                        return 'front_tpl.php';
+                    }
+
+                    if (strtolower ( $activeCat ) == 'local updates') {
+                        $this->preparePatchView();
+                        return 'updates_tpl.php';
+                    } else if (strtolower ( $activeCat == 'languages' )) {
+                        return 'languages_tpl.php';
+                    } else {
+                        return 'front_tpl.php';
+                    }
+                case 'uninstall' :
+
+                    $srchStr = $this->getParam ( 'srchstr' );
+                    $lastAction = $this->getParam ( 'lastaction' );
+                    $srchType = $this->getParam ( 'srchtype' );
+
+                    $error = false;
+                    $mod = $this->getParm ( 'mod' );
+                    if ($this->uninstallModule ( $mod )) {
+                        $this->output = str_replace ( '[MODULE]', $mod, $this->objLanguage->languageText ( 'mod_modulecatalogue_uninstallsuccess', 'modulecatalogue' ) );
+                    } else {
+                        if ($this->output == '') {
+                            $this->output = $this->objModuleAdmin->output;
+                        }
+                        $error = $this->objModuleAdmin->getLastErrorCode ();
+                        if (! $error)
+                            $error = - 1;
+                    }
+                    $this->setSession ( 'output', $this->output );
+
+                    if ($lastAction != NULL) {
+                        return $this->nextAction ( 'search', array ('cat' => $activeCat, 'lastError' => $error, 'srchtype' => $srchType, 'srchstr' => $srchStr ) );
+                    }
+                    return $this->nextAction ( null, array ('cat' => $activeCat, 'lastError' => $error ) );
+
+                case 'install' :
+                    $error = false;
+                    $mod = $this->getParm ( 'mod' );
+                    $srchStr = $this->getParam ( 'srchstr' );
+                    $lastAction = $this->getParam ( 'lastaction' );
+                    $srchType = $this->getParam ( 'srchtype' );
+                    $ins = $this->getPatchObject ( $mod );
+                    if ($ins !== null && method_exists ( $ins, 'preinstall' )) {
+                        $ins->preinstall ();
+                    }
+
+                    $regResult = $this->installModule ( trim ( $mod ) );
+                    if ($regResult) {
+                        $this->output = str_replace ( '[MODULE]', $mod, $this->objLanguage->languageText ( 'mod_modulecatalogue_installsuccess', 'modulecatalogue' ) ); //success
+                    } else {
+                        $error = $this->objModuleAdmin->getLastErrorCode ();
+                        if (! $error)
+                            $error = - 1;
+                        if ($this->output == '') {
+                            $this->output = isset ( $this->objModuleAdmin->output ) ? $this->objModuleAdmin->output : $this->objModuleAdmin->getLastError ();
+                        }
+                    }
+                    // run the postinstall script(s)
+                    if ($ins !== null && method_exists ( $ins, 'postinstall' )) {
+                        $ins->postinstall ();
+                    }
+
+                    $this->setSession ( 'output', $this->output );
+                    if ($lastAction != NULL) {
+                        return $this->nextAction ( 'search', array ('cat' => $activeCat, 'lastError' => $error, 'srchtype' => $srchType, 'srchstr' => $srchStr ) );
+                    }
+                    return $this->nextAction ( null, array ('cat' => $activeCat, 'lastError' => $error ) );
+                case 'installwithdeps' :
+                    $error = false;
+                    $mod = trim ( $this->getParam ( 'mod' ) );
+                    /*
+                     * Dependency installers are legacy code and some still
+                     * print diagnostics. Contain that output so it cannot
+                     * consume the response before the catalogue redirect.
+                     */
+                    $bufferLevel = ob_get_level();
+                    ob_start();
+                    try {
+                        $regResult = $this->smartRegister ( $mod );
+                    } finally {
+                        $unexpectedOutput = '';
+                        while (ob_get_level() > $bufferLevel) {
+                            $unexpectedOutput .= (string) ob_get_clean();
+                        }
+                        if (trim($unexpectedOutput) !== '') {
+                            error_log(
+                                'Module Catalogue dependency installation diagnostics: '
+                                . trim(strip_tags($unexpectedOutput))
+                            );
+                        }
+                    }
+                    if ($regResult) {
+                        $this->output = str_replace ( '[MODULE]', $mod, $this->objLanguage->languageText ( 'mod_modulecatalogue_installsuccess', 'modulecatalogue' ) ); //success
+                    } else {
+                        if ($this->output == '') {
+                            $this->output = $this->objModuleAdmin->output;
+                        }
+                        $error = $this->objModuleAdmin->getLastErrorCode ();
+                        if (! $error)
+                            $error = - 1;
+                    }
+                    $this->setSession ( 'output', $this->output );
+                    return $this->nextAction ( 'list', array ('cat' => $activeCat, 'lastError' => $error ) );
+                case 'info' :
+                    $filepath = $this->objModFile->findRegisterFile ( $this->getParm ( 'mod' ) );
+                    if ($filepath) { // if there were no file it would be FALSE
+                        $this->registerdata = $this->objModFile->readRegisterFile ( $filepath );
+                        if ($this->registerdata) {
+                            return 'info_tpl.php';
+                        }
+                    } else {
+                        $this->setVar ( 'output', $this->objLanguage->languageText ( 'mod_modulecatalogue_noinfo', 'modulecatalogue' ) );
+                        return 'front_tpl.php';
+                    }
+                case 'textelements' :
+                    $texts = $this->objModuleAdmin->moduleText ( $this->getParm ( 'mod' ) );
+                    $this->setVar ( 'moduledata', $texts );
+                    $this->setVar ( 'modname', $this->getParm ( 'mod' ) );
+                    return 'textelements_tpl.php';
+                case 'addtext' :
+                    $modname = $this->getParm ( 'mod' );
+                    $texts = $this->objModuleAdmin->moduleText ( $modname, 'fix' );
+                    return $this->nextAction ( 'textelements', array ('mod' => $modname, 'cat' => $this->getParam ( 'cat' ), 'message' => 'textadded' ) );
+
+                /*
+                        // Redirect back to textelements action
+
+                    $texts = $this->objModuleAdmin->moduleText($modname);
+                    $this->output=$this->objModule->output;
+                    $this->setVar('output',$this->output);
+                    $this->setVar('moduledata',$texts);
+                    $this->setVar('modname',$modname);
+                    return 'textelements_tpl.php';
+                    */
+                case 'replacetext' :
+                    $modname = $this->getParm ( 'mod' );
+                    $texts = $this->objModuleAdmin->moduleText ( $modname, 'replace' );
+
+                    return $this->nextAction ( 'textelements', array ('mod' => $modname, 'cat' => $this->getParam ( 'cat' ), 'message' => 'textreplaced' ) );
+
+                /*
+                        // Redirect back to textelements action
+
+                    $texts=$this->objModuleAdmin->moduleText($modname);
+                    $this->output=$this->objModule->output;
+                    $this->setVar('output',$this->output);
+                    $this->setVar('moduledata',$texts);
+                    $this->setVar('modname',$modname);
+                    return 'textelements_tpl.php';
+                    */
+
+                case 'batchinstall' :
+                    $error = false;
+                    $selectedModules = $this->getArrayParam ( 'arrayList' );
+                    if ((is_countable($selectedModules) ? count($selectedModules) : 0) > 0) {
+                        if (! $this->batchRegister ( $selectedModules )) {
+                            $error = - 1;
+                            if (! $this->output)
+                                $this->output = $this->objModuleAdmin->output;
+                        }
+                    } else {
+                        $error = - 2;
+                        $this->output = '<b>' . $this->objLanguage->languageText ( 'mod_modulecatalogue_noselect', 'modulecatalogue' ) . '</b>';
+                    }
+                    $this->setSession ( 'output', $this->output );
+                    return $this->nextAction ( 'list', array ('cat' => $activeCat, 'lastError' => $error ) );
+                case 'batchuninstall' :
+                    $error = false;
+                    $selectedModules = $this->getArrayParam ( 'arrayList' );
+                    if ((is_countable($selectedModules) ? count($selectedModules) : 0) > 0) {
+                        if (! $this->batchDeregister ( $selectedModules )) {
+                            $error = - 1;
+                            if (! $this->output)
+                                $this->output = $this->objModuleAdmin->output;
+                        }
+                    } else {
+                        $error = - 2;
+                        $this->output = '<b>' . $this->objLanguage->languageText ( 'mod_modulecatalogue_noselect', 'modulecatalogue' ) . '</b>';
+                    }
+                    $this->setSession ( 'output', $this->output );
+                    return $this->nextAction ( 'list', array ('cat' => $activeCat, 'lastError' => $error ) );
+
+                case 'updateall' :
+                    ini_set ( 'max_execution_time', '6000' );
+                    set_time_limit ( 0 );
+                    $this->objModuleAdmin->updateAllText ();
+                    return $this->nextAction ( 'list' );
+
+                case 'firsttimeregistration' :
+                    $this->ajaxInstall = $this->getParam ( 'ajax', 'false' ) == 'true';
+                    $this->objSysConfig = $this->getObject ( 'dbsysconfig', 'sysconfig' );
+                    $sysType = $this->getParam ( 'sysType', 'Basic System Only' );
+                    $check = $this->objSysConfig->getValue ( 'firstreg_run', 'modulecatalogue' );
+                    if (! $check) {
+                        log_debug ( 'Modulecatalogue controller - performing first time registration' );
+                        $this->firstRegister ( $sysType );
+                        log_debug ( 'First time registration complete' );
+                        if ($this->ajaxInstall) {
+                            header('Content-Type: application/json; charset=UTF-8');
+                            echo json_encode(array(
+                                'ok' => true,
+                                'code' => 'first_registration_complete'
+                            ));
+                            exit();
+                        }
+                    } else {
+                        log_debug ( 'First time registration has already been performed on this system. Aborting' );
+                    }
+
+                    if (!$this->ajaxInstall)
+                    {
+                        $url = array ('mod' => 'modulecatalogue' );
+                        return $this->nextAction ( 'showlogin', $url, 'security' );
+                    }
+                    else
+                    {
+                        die();
+                    }
+
+                case 'update' :
+                    $patchver = $this->getParam ( 'patchver' );
+                    $modname = $this->getParam ( 'mod' );
+                    $updateCsrfContext = $this->moduleUpdateCsrfContext($modname);
+                    if (!$this->validUpdateRequest($updateCsrfContext)) {
+                        return $this->updateFailureResponse(
+                            'invalid_request',
+                            $this->objLanguage->languageText('mod_modulecatalogue_update_invalid_request', 'modulecatalogue'),
+                            400,
+                            $updateCsrfContext
+                        );
+                    }
+                    if (!$this->pendingUpdateMatches($modname, $patchver)) {
+                        return $this->updateFailureResponse(
+                            'update_not_available',
+                            $this->objLanguage->languageText('mod_modulecatalogue_update_not_available', 'modulecatalogue'),
+                            409
+                        );
+                    }
+                    $ins = $this->getPatchObject ( $modname );
+                    if ($ins !== null && method_exists ( $ins, 'preinstall' )) {
+                        $ins->preinstall ($patchver);
+                    }
+                    $updateSucceeded = true;
+                    if (($this->output = $this->runPatchUpdate($modname)) === FALSE
+                        || !is_array($this->output)
+                        || !isset($this->output['current'])) {
+                        $updateSucceeded = false;
+                        $updateError = $this->patchFailureMessage($modname, $this->output);
+                        $this->setVar('error', htmlspecialchars($updateError, ENT_QUOTES, 'UTF-8'));
+                        $dependencyActions = $this->patchDependencyActions($modname, $this->output);
+                        $this->setVar('dependencyActions', $dependencyActions);
+                    } else {
+                        $this->setVar ( 'output', $this->output );
+                    }
+                    // postinstall
+                    $ins = $this->getPatchObject ( $modname );
+                    if ($updateSucceeded && $ins !== null && method_exists ( $ins, 'postinstall' )) {
+                        $ins->postinstall ($patchver);
+                    }
+
+                    if ($this->wantsUpdateJson()) {
+                        if (!$updateSucceeded) {
+                            $this->sendUpdateJson(array(
+                                'ok' => false,
+                                'code' => 'update_failed',
+                                'message' => $updateError,
+                                'dependencyActions' => $dependencyActions,
+                                'csrfToken' => $this->csrf()->issue($updateCsrfContext),
+                            ), 500);
+                        }
+                        $this->sendUpdateJson(array(
+                            'ok' => true,
+                            'code' => 'update_applied',
+                            'module' => $modname,
+                            'oldVersion' => $this->output['old'],
+                            'currentVersion' => $this->output['current'],
+                            'message' => $this->objLanguage->languageText('mod_modulecatalogue_update_applied', 'modulecatalogue'),
+                            'remaining' => count($this->objPatch->checkModules()),
+                        ));
+                    }
+
+                    $this->preparePatchView();
+                    return 'updates_tpl.php';
+
+                case 'patchall' :
+                    if (!$this->validUpdateRequest(self::UPDATE_ALL_CSRF_CONTEXT)) {
+                        return $this->updateFailureResponse(
+                            'invalid_request',
+                            $this->objLanguage->languageText('mod_modulecatalogue_update_invalid_request', 'modulecatalogue'),
+                            400,
+                            self::UPDATE_ALL_CSRF_CONTEXT
+                        );
+                    }
+                    $mods = $this->objPatch->checkModules ();
+                    $this->output = array ();
+                    $failedModules = array();
+                    $failureMessages = array();
+                    $dependencyActions = array();
+                    foreach ( $mods as $mod ) {
+                        $result = $this->applyPatchWithHooks($mod['module_id'], $mod['new_version']);
+                        if ($result === false || !is_array($result) || !isset($result['current'])) {
+                            $failedModules[] = $mod['module_id'];
+                            $failureMessages[] = $this->patchFailureMessage($mod['module_id'], $result);
+                            $dependencyActions = array_merge($dependencyActions,
+                                $this->patchDependencyActions($mod['module_id'], $result));
+                        } else {
+                            $this->output[] = $result;
+                        }
+                    }
+                    if ($failedModules) {
+                        $error = implode('; ', $failureMessages);
+                        $this->setVar('error', htmlspecialchars($error, ENT_QUOTES, 'UTF-8'));
+                    }
+                    $this->setVar ( 'output', $this->output );
+                    $this->setVar('dependencyActions', $dependencyActions);
+                    if ($this->wantsUpdateJson()) {
+                        $this->sendUpdateJson(array(
+                            'ok' => !$failedModules,
+                            'code' => $failedModules ? 'some_updates_failed' : 'all_updates_applied',
+                            'message' => $failedModules
+                                ? $error
+                                : $this->objLanguage->languageText('mod_modulecatalogue_all_updates_applied', 'modulecatalogue'),
+                            'updated' => count($this->output),
+                            'failedModules' => $failedModules,
+                            'dependencyActions' => $dependencyActions,
+                            'remaining' => count($this->objPatch->checkModules()),
+                            'updatedModules' => array_values(array_map(
+                                static fn($result) => (string) ($result['modname'] ?? ''),
+                                $this->output
+                            )),
+                            'csrfToken' => $failedModules
+                                ? $this->csrf()->issue(self::UPDATE_ALL_CSRF_CONTEXT)
+                                : '',
+                        ), $failedModules ? 500 : 200);
+                    }
+                    $this->preparePatchView();
+                    return 'updates_tpl.php';
+
+                case 'makepatch' :
+                    return 'makepatch_tpl.php';
+
+                case 'reloaddefaultdata' :
+                    $moduleId = $this->getParam ( 'moduleid' );
+                    $this->objModuleAdmin->loadData ( $moduleId );
+                    return $this->nextAction ( 'list', array ('cat' => $activeCat ) );
+
+                case 'search' :
+                    $str = $this->getParam ( 'srchstr' );
+                    $type = $this->getParam ( 'srchtype' );
+                    $result = $this->objCatalogueConfig->searchModuleList ( $str, $type );
+                    $this->setSession('modcatsearchresults', $result);
+                    $this->setVar ( 'result', $result );
+                    return 'front_tpl.php';
+
+                case 'updatexml' :
+                    try {
+                        if (!$this->validUpdateRequest('modulecatalogue_refresh')) {
+                            throw new RuntimeException('Invalid catalogue refresh request.');
+                        }
+                        $summary = $this->objCatalogueConfig->writeCatalogue();
+                    } catch (RuntimeException $e) {
+                        $message = $this->objLanguage->languageText('mod_modulecatalogue_refreshfailed', 'modulecatalogue',
+                            'The catalogue refresh did not complete. Reload the page and try again. If it still fails, check module files and configuration permissions.');
+                        return $this->nextAction('list', array('message'=>$message, 'cat'=>$activeCat, 'modulefilter'=>$moduleFilter));
+                    }
+                    $message = $this->objLanguage->languageText ( 'mod_modulecatalogue_xmlupdated', 'modulecatalogue' );
+                    if (is_array($summary)) {
+                        $detail = $this->objLanguage->languageText(
+                            'mod_modulecatalogue_refreshsummary',
+                            'modulecatalogue'
+                        );
+                        $detail = str_replace('{DISCOVERED}', (string) $summary['discovered'], $detail);
+                        $detail = str_replace('{REMOVED}', (string) count($summary['removed']), $detail);
+                        $message .= ' ' . $detail;
+                        if (empty($summary['reconciled'])) {
+                            $message .= ' ' . $this->objLanguage->languageText(
+                                'mod_modulecatalogue_reconcileskipped',
+                                'modulecatalogue'
+                            );
+                        } elseif (!empty($summary['removed'])) {
+                            $message .= ' ' . htmlspecialchars(implode(', ', $summary['removed']), ENT_QUOTES, 'UTF-8');
+                        }
+                    }
+                    return $this->nextAction('list', array('message' => $message, 'cat' => $activeCat, 'modulefilter' => $moduleFilter));
+
+                case 'downloadpo' :
+                    $this->setPageTemplate ( NULL );
+                    $this->setLayoutTemplate ( NULL );
+                    $langName = $_POST ['langname'];
+                    header ( "Content-type: text/plain" );
+                    //header("Content-length: 0");
+                    header ( "Content-Disposition: attachment; filename=$langName.po" );
+                    //header("Content-Description: PHP Generated Data");
+                    $this->objPOFile->export ( $langName );
+                    break;
+                default :
+                    throw new customException ( $this->objLanguage->languageText ( 'mod_modulecatalogue_unknownaction', 'modulecatalogue' ) . ': ' . $action );
+                    break;
+            }
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    /**
+     * This method is a 'wrapper' function - it takes info from the
+     * 'register.conf' file provided by the module to be registered,
+     * and passes it to its namesake function in the modulesadmin
+     * class - which is where the SQL entries actually happen.
+     * @author James Scoble
+     * @param  string $modname the module_id of the module to be used
+     * @return string $regResult
+     */
+    private function installModule($modname, $upgrade = FALSE) {
+        try {
+            $filepath = $this->objModFile->findRegisterFile ( $modname );
+            if ($filepath) { // if there were no file it would be FALSE
+                $this->registerdata = $this->objModFile->readRegisterFile ( $filepath );
+
+                if ($this->registerdata) {
+                    // Added 2005-08-24 as extra check
+                    if (isset ( $this->registerdata ['WARNING'] ) && ($this->getParm ( 'confirm' ) != '1')) {
+                        $this->output = $this->registerdata ['WARNING'];
+                        return FALSE;
+                    }
+                    // var_dump($this->registerdata); die();
+                    if ($upgrade == TRUE) {
+                        return $this->runPatchUpdate($modname);
+                    } else {
+                        return $this->objModuleAdmin->installModule ( $this->registerdata );
+                    }
+                }
+            } else {
+                $this->output = $this->objLanguage->languageText ( 'mod_modulecatalogue_errnofile', 'modulecatalogue' );
+                return FALSE;
+            }
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    } // end of function
+
+
+    /**
+     * This method is a 'wrapper' function - it takes info from the 'register.conf'
+     * file provided by the module to be registered, and passes it to its namesake
+     * function in the modulesadmin class - which is where the SQL entries actually
+     * happen. It uses file() to load the register.php file into an array, then
+     * chew through it line by line, looking for keywords.
+     *
+     * @author  James Scoble
+     * @param   string $modname the module_id of the module to be used
+     * @returns boolean TRUE or FALSE
+     */
+    private function uninstallModule($modname) {
+        try {
+            $filepath = $this->objModFile->findRegisterFile ( $modname );
+            $this->registerdata = $this->objModFile->readRegisterFile ( $filepath );
+            if (is_array ( $this->registerdata )) {
+                return $this->objModuleAdmin->uninstallModule ( $modname, $this->registerdata );
+            }
+            else {
+                $this->output = $this->objLanguage->languageText ( 'mod_modulecatalogue_errnofile', 'modulecatalogue' );
+                return FALSE;
+            }
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    /**
+     * Method to handle registration of multiple modules at once
+     * @param array $modArray
+     */
+    private function batchRegister($modArray) {
+        $bufferLevel = ob_get_level();
+        ob_start();
+
+        try {
+            $success = TRUE;
+            foreach ( $modArray as $line ) {
+                if ($line != 'on') {
+                    if (! $this->smartRegister ( $line )) {
+                        $success = FALSE;
+                        break;
+                    }
+                }
+            }
+
+            $unexpectedOutput = ob_get_clean();
+            if (trim((string) $unexpectedOutput) !== '') {
+                error_log(
+                    'Module Catalogue batch registration diagnostics: '
+                    . trim(strip_tags((string) $unexpectedOutput))
+                );
+            }
+
+            return $success;
+        } catch ( Throwable $e ) {
+            $unexpectedOutput = '';
+            while (ob_get_level() > $bufferLevel) {
+                $unexpectedOutput .= (string) ob_get_clean();
+            }
+            /* CHISIMBA_MODULECATALOGUE_BATCH_RETURN_BOUNDARY */
+            error_log(
+                'Module Catalogue batch registration failed: '
+                . $e->getMessage()
+                . ($unexpectedOutput !== ''
+                    ? '; diagnostics: ' . trim(strip_tags($unexpectedOutput))
+                    : '')
+            );
+            $moduleName = isset($line) ? (string) $line : '';
+            if (! $this->output) {
+                $this->output = str_replace(
+                    '[MODULE]',
+                    $moduleName,
+                    $this->objLanguage->languageText(
+                        'mod_modulecatalogue_failed',
+                        'modulecatalogue'
+                    )
+                );
+            }
+            return FALSE;
+        }
+    }
+
+    /**
+     * This method is designed to handle the registeration of multiple modules at once.
+     * @param string $modname
+     */
+    private function smartRegister($modname) {
+        try {
+            $isReg = $this->objModule->checkIfRegistered ( $modname, $modname );
+            if ($isReg) {
+                return TRUE;
+            }
+            $filepath = $this->objModFile->findRegisterFile ( $modname );
+
+            if ($filepath) { //if there were no file it would be FALSE
+                $registerdata = $this->objModFile->readRegisterFile ( $filepath );
+                if ($registerdata) {
+                    if (isset ( $registerdata ['DEPENDS'] )) {
+                        foreach ( $registerdata ['DEPENDS'] as $line ) {
+                            $result = $this->smartRegister ( $line );
+                            if ($result == FALSE) {
+                                $this->output = $this->objModuleAdmin->output . "\n";
+                                $this->output .= str_replace ( '{MODULE}', $line, $this->objLanguage->languageText ( 'mod_modulecatalogue_needmodule', 'modulecatalogue' ) ) . "\n";
+                                return FALSE;
+                            }
+                        }
+                    }
+                    $regResult = $this->objModuleAdmin->installModule ( $registerdata );
+                    if ($regResult) {
+                        $this->output .= str_replace ( '[MODULE]', $modname, $this->objLanguage->languageText ( 'mod_modulecatalogue_regconfirm', 'modulecatalogue' ) ) . "\n";
+                    }
+                    return $regResult;
+                }
+            } else {
+                $this->output .= $this->objLanguage->languageText ( 'mod_modulecatalogue_errnofile', 'modulecatalogue' ) . "\n";
+                return FALSE;
+            }
+        } catch ( Throwable $e ) {
+            /* CHISIMBA_MODULECATALOGUE_SMART_RETURN_BOUNDARY */
+            error_log(
+                'Module Catalogue registration failed for ' . $modname . ': '
+                . $e->getMessage()
+            );
+            $this->output .= str_replace(
+                '[MODULE]',
+                $modname,
+                $this->objLanguage->languageText(
+                    'mod_modulecatalogue_failed',
+                    'modulecatalogue'
+                )
+            ) . "
+";
+            return FALSE;
+        }
+    }
+
+    /**
+     * Method to handle deregistration of multiple modules at once
+     * @param array $modArray
+     */
+    private function batchDeregister($modArray) {
+        try {
+            foreach ( $modArray as $line ) {
+                if (! $this->smartDeregister ( $line )) {
+                    return false;
+                }
+            }
+            return TRUE;
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    /**
+     * This method is designed to handle the deregisteration of multiple modules at once.
+     * @param string $modname
+     */
+    private function smartDeregister($modname) {
+        try {
+            $isReg = $this->objModule->checkIfRegistered ( $modname, $modname );
+            if ($isReg == FALSE) {
+                return TRUE;
+            }
+            $filepath = $this->objModFile->findRegisterFile ( $modname );
+            if ($filepath) { // if there were no file it would be FALSE
+                $registerdata = $this->objModFile->readRegisterFile ( $filepath );
+                if ($registerdata) {
+                    // Here we get a list of modules that depend on this one
+                    $depending = $this->objModule->getDependencies ( $modname );
+                    if ((is_countable($depending) ? count($depending) : 0) > 0) {
+                        foreach ( $depending as $line ) {
+                            $result = $this->smartDeregister ( $line );
+                            if ($result == FALSE) {
+                                return FALSE;
+                            }
+                        }
+                    }
+
+                    $regResult = $this->objModuleAdmin->uninstallModule ( $modname, $registerdata );
+                    if ($regResult) {
+                        $this->output [] = str_replace ( '[MODULE]', $modname, $this->objLanguage->languageText ( 'mod_modulecatalogue_deregconfirm', 'modulecatalogue' ) );
+                    }
+                    return $regResult;
+                }
+            } else {
+                $this->output = $this->objLanguage->languageText ( 'mod_modulecatalogue_errnofile', 'modulecatalogue' );
+                return FALSE;
+            }
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    /**
+     * Apply a module patch with its schema hooks before recording the version.
+     */
+    private function runPatchUpdate($moduleId) {
+        try { return $this->objPatch->applyUpdates($moduleId); }
+        catch (Throwable $error) {
+            error_log('Module patch failed for '.$moduleId.': '.$error->getMessage());
+            return ['error'=>'patch_failed'];
+        }
+    }
+
+    private function applyPatchWithHooks($moduleId, $version) {
+        $installer = $this->getPatchObject($moduleId);
+        if ($installer !== null && method_exists($installer, 'preinstall')) {
+            $installer->preinstall($version);
+        }
+        $result = $this->runPatchUpdate($moduleId);
+        if (is_array($result) && isset($result['current'])
+            && $installer !== null && method_exists($installer, 'postinstall')) {
+            $installer->postinstall($version);
+        }
+        return $result;
+    }
+
+    /** Install new dependencies, then resume the module update and its hooks. */
+    private function updateDependenciesAndPatch($moduleId) {
+        $bufferLevel = ob_get_level();
+        ob_start();
+        try {
+            // Dependency installation writes progress into output as a string.
+            $this->output = '';
+            $this->updateDeps($moduleId);
+            $registration = $this->objModFile->readRegisterFile(
+                $this->objModFile->findRegisterFile($moduleId)
+            );
+            $version = $registration['MODULE_VERSION'];
+            return $this->applyPatchWithHooks($moduleId, $version);
+        } finally {
+            $diagnostics = '';
+            while (ob_get_level() > $bufferLevel) {
+                $diagnostics .= (string) ob_get_clean();
+            }
+            if (trim($diagnostics) !== '') {
+                error_log('Module Catalogue dependency update diagnostics: '
+                    . trim(strip_tags($diagnostics)));
+            }
+        }
+    }
+
+    private function updateDeps($moduleId) {
+        $rData = $this->objModFile->readRegisterFile ( $this->objModFile->findRegisterFile ( $moduleId ) );
+        foreach ( $rData ['DEPENDS'] as $dep ) {
+            if (! $this->smartRegister ( trim ( $dep ) )) {
+                throw new customException ( "Error installing dependency $dep: {$this->objModuleAdmin->output} {$this->objModuleAdmin->getLastError()}" );
+            }
+        }
+    }
+
+     /**
+     * The filename of the progress file.
+     *
+     * @var string $progress_fn
+     */
+    private $progress_fn = "progress.xml";
+
+     /**
+     * The content that is written to the progress file.
+     *
+     * @var string $progress_content
+     */
+    private $progress_content = "";
+
+     /**
+     * The current step.
+     *
+     * @var mixed $progress_step
+     */
+    private $progress_step = false;
+
+     /**
+     * The total number of steps.
+     *
+     * @var mixed $progress_totalSteps
+     */
+    private $progress_totalSteps = false;
+
+    /**
+     * Reset the current step.
+     *
+     */
+    private function reset_progess_step()
+    {
+        $this->progress_step = false;
+    }
+
+    /**
+     * Set the current step.
+     *
+     * @param integer $step The current step
+     */
+    private function set_progess_step($step)
+    {
+        $this->progress_step = $step;
+    }
+
+    /**
+     * Increment the current step.
+     *
+     */
+    private function increment_progess_step()
+    {
+        ++$this->progress_step;
+    }
+
+    /**
+     * Reset the total number of steps.
+     *
+     */
+    private function reset_progess_totalSteps()
+    {
+        $this->progress_totalSteps = false;
+    }
+
+    /**
+     * Set the total number of steps.
+     *
+     * @param integer $totalSteps The total number of steps
+     */
+    private function set_progess_totalSteps($totalSteps)
+    {
+        $this->progress_totalSteps = $totalSteps;
+    }
+
+    /**
+     * Output status messages to the progress file during first-time registration. The progress file is read by the installer.
+     *
+     * @param string $status The status message
+     */
+    private function update_progess($status)
+    {
+        // Check if the install method is the AJAX method.
+        if ($this->ajaxInstall) {
+            if ($this->progress_totalSteps === false) {
+                $percentage = 0;
+            }
+            else {
+                if ($this->progress_step === false) {
+                    $percentage = 0;
+                }
+                else {
+                    $percentage = (int)($this->progress_step*100/$this->progress_totalSteps);
+                }
+            }
+
+            // Append the status message to the content.
+            $this->progress_content .= $status;
+            // Write the content to the progress file.
+            // xml:lang=\"EN\"
+            $contents = <<<EOT
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data>
+    <percentage>{$percentage}</percentage>
+    <message>{$this->progress_content}</message>
+</data>
+EOT;
+            if (file_put_contents($this->progress_fn, $contents) === FALSE) {
+                //echo "Failure!";
+                //exit(0);
+            }
+        }
+    }
+    /**
+     * This is a method to handle first-time registration of the basic modules
+     *
+     * @param string sysType The type of system to install
+     */
+    private function firstRegister($sysType) {
+        try {
+            $this->reset_progess_totalSteps();
+            $this->reset_progess_step();
+            log_debug ( "Installing system, type: $sysType" );
+            //$this->update_progess("\n");
+            $this->update_progess("Installing system, type: $sysType\n");
+            $root = $this->objConfig->getsiteRootPath ();
+            if (! file_exists ( $root . 'config/config.xml' )) {
+                throw new customException ( "could not find config.xml! tried {$root}config/config.xml" );
+            }
+            if (! file_exists ( $root . 'installer/dbhandlers/systemtypes.xml' )) {
+                throw new customException ( "could not find systemtypes.xml! tried {$root}installer/dbhandlers/default_modules.txt" );
+            }
+            $objXml = simplexml_load_file ( $root . 'installer/dbhandlers/systemtypes.xml' );
+            // Compute number of modules that will be installed.
+            // BEGIN >>
+            $total = 0;
+            $coreList = $objXml->xpath ( "//category[categoryname='Basic System Only']" );
+            $total += count($coreList [0]->module);
+            if ($sysType != "Basic System Only") {
+                $specificList = $objXml->xpath ( "//category[categoryname='$sysType']" );
+                $total += count($specificList [0]->module);
+            }
+            $this->set_progess_totalSteps($total);
+            // << END
+            // Set step to zero.
+            $this->set_progess_step(0);
+            /*
+             * Provision the canonical administrator identity and baseline
+             * groups before module registration. This deliberately creates
+             * no login session; normal authentication remains mandatory.
+             */
+            $objInitialAdminProvisioning = $this->getObject(
+                'initialadminprovisioningservice',
+                'security'
+            );
+            $adminProvisioning = $objInitialAdminProvisioning
+                ->ensureInitialAdministrator('1');
+            if (!is_array($adminProvisioning) || empty($adminProvisioning['ok'])) {
+                $code = is_array($adminProvisioning)
+                    && isset($adminProvisioning['code'])
+                    ? $adminProvisioning['code']
+                    : 'unknown_failure';
+                throw new customException(
+                    'Initial administrator baseline provisioning failed: ' . $code
+                );
+            }
+
+            log_debug ( 'Installing core modules' );
+            $this->update_progess("Installing core modules\n");
+            $coreList = $objXml->xpath ( "//category[categoryname='Basic System Only']" );
+            foreach ( $coreList [0]->module as $module ) {
+                $this->update_progess("$module...");
+                if (! $this->smartRegister ( trim ( $module ) )) {
+                    throw new customException ( "Error installing module $module: {$this->objModuleAdmin->output} {$this->objModuleAdmin->getLastError()}" );
+                }
+                $this->increment_progess_step();
+                $this->update_progess("OK\n");
+            }
+            if ($sysType != "Basic System Only") {
+                log_debug ( 'Installing system specific modules' );
+                $this->update_progess("Installing system specific modules\n");
+                $specificList = $objXml->xpath ( "//category[categoryname='$sysType']" );
+                foreach ( $specificList [0]->module as $module ) {
+                    $this->update_progess("$module...");
+                    if (! $this->smartRegister ( trim ( $module ) )) {
+                        throw new customException ( "Error installing module $module: {$this->objModuleAdmin->output} {$this->objModuleAdmin->getLastError()}" );
+                    }
+                    $this->increment_progess_step();
+                    $this->update_progess("OK\n");
+                }
+            }
+            $objInitialAdminProvisioning = $this->getObject(
+                'initialadminprovisioningservice',
+                'security'
+            );
+            $adminProvisioning = $objInitialAdminProvisioning
+                ->ensureInitialAdministrator('1');
+
+            if (!is_array($adminProvisioning) || empty($adminProvisioning['ok'])) {
+                $code = is_array($adminProvisioning) && isset($adminProvisioning['code'])
+                    ? $adminProvisioning['code']
+                    : 'unknown_failure';
+                throw new customException(
+                    'Initial administrator provisioning failed: ' . $code
+                );
+            }
+
+            // Flag first-time registration complete only after provisioning succeeds.
+            $this->objSysConfig->insertParam ( 'firstreg_run', 'modulecatalogue', TRUE, 'mod_modulecatalogue_firstreg_run_desc' );
+            log_debug ( 'first time registration performed, variable set. First time registration cannot be performed again unless system variable \'firstreg_run\' is unset.' );
+            $this->update_progess("Installation complete.\n");
+        } catch ( customException $e ) {
+            if ($this->ajaxInstall) {
+                http_response_code(500);
+                header('Content-Type: application/json; charset=UTF-8');
+                echo json_encode(array(
+                    'ok' => false,
+                    'code' => 'first_registration_failed',
+                    'message' => $e->getMessage()
+                ));
+            } else {
+                $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            }
+            exit ();
+        }
+    }
+
+    private function patchDependencyActions($module, $result)
+    {
+        if (!is_array($result) || !isset($result['unMetDep'])
+            || empty($result['modules']) || !empty($result['missing'])) {
+            return array();
+        }
+        return array(array(
+            'url' => html_entity_decode($this->uri(array(
+                'action' => 'updatedeps', 'modname' => $module,
+            ), 'modulecatalogue'), ENT_QUOTES, 'UTF-8'),
+            'label' => str_replace('{MODULE}', $module,
+                $this->objLanguage->languageText(
+                    'mod_modulecatalogue_updatedeps', 'modulecatalogue'
+                )),
+        ));
+    }
+
+    private function patchFailureMessage($module, $result)
+    {
+        $message = $module . ': ' . $this->objLanguage->languageText(
+            'mod_modulecatalogue_update_failed', 'modulecatalogue'
+        );
+        if (is_array($result) && isset($result['unMetDep'])) {
+            $details = array();
+            if (!empty($result['modules'])) {
+                $details[] = $this->objLanguage->languageText(
+                    'mod_modulecatalogue_unmetdependencies', 'modulecatalogue'
+                ) . ': ' . implode(', ', $result['modules']);
+            }
+            if (!empty($result['missing'])) {
+                $details[] = $this->objLanguage->languageText(
+                    'mod_modulecatalogue_downloadmissing', 'modulecatalogue'
+                ) . ': ' . implode(', ', $result['missing']);
+            }
+            if ($details) {
+                $message = $module . ': ' . implode('; ', $details);
+            }
+        }
+        return $message;
+    }
+
+    private function preparePatchView($patches = null)
+    {
+        $patches = is_array($patches) ? $patches : $this->objPatch->checkModules();
+        $tokens = array();
+        foreach ($patches as $patch) {
+            if (!empty($patch['module_id'])) {
+                $moduleId = (string) $patch['module_id'];
+                $tokens[$moduleId] = $this->csrf()->issue($this->moduleUpdateCsrfContext($moduleId));
+            }
+        }
+        $this->setVar('patchArray', $patches);
+        $this->setVar('moduleUpdateCsrfTokens', $tokens);
+        $this->setVar('moduleUpdateAllCsrfToken', $this->csrf()->issue(self::UPDATE_ALL_CSRF_CONTEXT));
+    }
+
+    private function validUpdateRequest($context)
+    {
+        return strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET')) === 'POST'
+            && $this->csrf()->consume($context, (string) $this->getParam('csrf_token', ''));
+    }
+
+    private function moduleUpdateCsrfContext($moduleId)
+    {
+        return 'modulecatalogue_update_' . substr(hash('sha256', (string) $moduleId), 0, 32);
+    }
+
+    private function pendingUpdateMatches($moduleId, $version)
+    {
+        $moduleId = is_scalar($moduleId) ? (string) $moduleId : '';
+        $version = is_scalar($version) ? (string) $version : '';
+        if (!preg_match('/^[a-z0-9][a-z0-9_-]{0,127}$/', $moduleId)) {
+            return false;
+        }
+        foreach ($this->objPatch->checkModules() as $pending) {
+            if ((string) ($pending['module_id'] ?? '') === $moduleId
+                && (string) ($pending['new_version'] ?? '') === $version) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private function wantsUpdateJson()
+    {
+        return (string) $this->getParam('ajax', '') === '1'
+            || stripos((string) ($_SERVER['HTTP_ACCEPT'] ?? ''), 'application/json') !== false;
+    }
+
+    private function updateFailureResponse($code, $message, $status, $context = self::UPDATE_CSRF_CONTEXT)
+    {
+        if ($this->wantsUpdateJson()) {
+            $this->sendUpdateJson(array(
+                'ok' => false,
+                'code' => $code,
+                'message' => $message,
+                'csrfToken' => $this->csrf()->issue($context),
+            ), $status);
+        }
+        $this->setVar('error', $message);
+        $this->preparePatchView();
+        return 'updates_tpl.php';
+    }
+
+    private function sendUpdateJson(array $payload, $status = 200)
+    {
+        if (!headers_sent()) {
+            http_response_code((int) $status);
+            header('Content-Type: application/json; charset=UTF-8');
+            header('Cache-Control: no-store, private');
+            header('X-Content-Type-Options: nosniff');
+        }
+        echo json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+
+    private function csrf()
+    {
+        if ($this->csrf === null) {
+            $nativeAuth = $this->getObject('nativeauthwebcomposition', 'security')->build();
+            $this->csrf = $nativeAuth['csrf'];
+        }
+        return $this->csrf;
+    }
+
+    /**
+     * The error callback function, defers to configured error handler
+     *
+     * @param  string $exception
+     * @return void
+     */
+    public function errorCallback($exception) {
+        echo customException::cleanUp ( $exception );
+    }
+
+    /**
+     * Method to determine whether the module requires the user to be logged in.
+     *
+     * @return TRUE|FALSE false if the user is carrying out first time module registration, else true.
+     */
+    public function requiresLogin($action = null) {
+        try {
+            $action = $this->getParm ( 'action' );
+            if (
+                $action == 'firsttimeregistration'
+                || $action == 'canonicalidentityproof'
+            ) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    /**
+     * kind of a hack wrapper method to get the messed up params from the header via getParam in the engine
+     *
+     * @param  string $name parameter name
+     * @param  string $def  default param value
+     * @return string Parameter value or default if it doesnt exist
+     */
+    public function getParm($name, $def = null) {
+        try {
+            if (($res = $this->getParam ( $name )) == null) {
+                return $this->getParam ( 'amp;' . $name, $def );
+            } else {
+                return $res;
+            }
+        } catch ( customException $e ) {
+            $this->errorCallback ( 'Caught exception: ' . $e->getMessage () );
+            exit ();
+        }
+    }
+
+    public function processTags() {
+        foreach ( $this->tagCloud as $arrs ) {
+            if (! empty ( $arrs ['tags'] )) {
+                $tagarr [] = explode ( ',', preg_replace('~ +~', '', $arrs ['tags'] ) );
+            }
+        }
+        $tags = NULL;
+        if (empty ( $tagarr )) {
+            return NULL;
+        }
+        foreach ( $tagarr as $tagger ) {
+            foreach ( $tagger as $tagged ) {
+                $tags .= $tagged . ",";
+            }
+        }
+        $tags = str_replace ( ',,', ',', $tags );
+        $tagarray = explode ( ',', $tags );
+        $basetags = array_unique ( $tagarray );
+        foreach ( $basetags as $q ) {
+            $numbers = array_count_values ( $tagarray );
+            $weight = $numbers [$q];
+            $entry [] = array ('name' => $q, 'url' => $this->uri ( array ('action' => 'search', 'srchstr' => $q, 'srchtype' => 'tags', 'cat' => 'all' ), 'modulecatalogue' ), 'weight' => $weight * 1000, 'time' => time () );
+        }
+        // var_dump($entry); die();
+        return $entry;
+    }
+
+    public function deltree($f) {
+        if (is_dir ( $f )) {
+            foreach ( scandir ( $f ) as $item ) {
+                if (! strcmp ( $item, '.' ) || ! strcmp ( $item, '..' )) {
+                    continue;
+                }
+                $this->deltree ( $f . "/" . $item );
+            }
+            rmdir ( $f );
+        } else {
+            unlink ( $f );
+        }
+    }
+
+    private function handleZip($zipfile, $modtype) {
+        if($this->extzip == TRUE) {
+            $zip = new ZipArchive;
+            if($modtype == 'core') {
+                $zip->open("core.zip");
+                if (! $zip->extractTo( $this->objConfig->getsiteRootPath ()."classes/" )) {
+                        //log_debug($zip->error);
+                        $zip->close();
+                        return FALSE;
+                }
+                else {
+                    $zip->close();
+                    return TRUE;
+                }
+            }
+            // now for a core_module
+            elseif($modtype == 'core_modules') {
+                $zip->open($zipfile.".zip");
+                if (! $zip->extractTo( $this->objConfig->getsiteRootPath () . 'core_modules/'.$zipfile )) {
+                        //log_debug($zip->error);
+                        $zip->close();
+                        return FALSE;
+                }
+                else {
+                    $zip->close();
+                    return TRUE;
+                }
+            }
+            // last but not least the regular modules
+            elseif($modtype == 'modules') {
+                $zip->open($zipfile.".zip");
+                if (! $zip->extractTo( $this->objConfig->getModulePath ().$zipfile )) {
+                        //log_debug($zip->error);
+                        $zip->close();
+                        return FALSE;
+                }
+                else {
+                    $zip->close();
+                    return TRUE;
+                }
+            }
+            elseif($modtype == 'skin') {
+                $zip->open($zipfile.".zip");
+                if (! $zip->extractTo( $this->objConfig->getSkinRoot ().$zipfile )) {
+                        //log_debug($zip->error);
+                        $zip->close();
+                        return FALSE;
+                }
+                else {
+                    $zip->close();
+                    return TRUE;
+                }
+            }
+            else {
+                log_debug("Unknown module type!");
+                return FALSE;
+            }
+        }
+        else {
+            // we are using the wzip PHP implementation an you are probably using MAMP
+            $zip = $this->getObject ( 'wzip', 'utilities' );
+            if($modtype == 'core') {
+                if (! $zip->unZipArchive( 'core.zip', $this->objConfig->getsiteRootPath ()."classes/" )) {
+                        //log_debug($zip->error);
+                        return FALSE;
+                }
+                else {
+                    return TRUE;
+                }
+            }
+            // now for a core_module
+            elseif($modtype == 'core_modules') {
+                if (! $zip->unZipArchive( $zipfile.".zip", $this->objConfig->getsiteRootPath () . 'core_modules/'.$zipfile )) {
+                        //log_debug($zip->error);
+                        return FALSE;
+                }
+                else {
+                    return TRUE;
+                }
+            }
+            // last but not least the regular modules
+            elseif($modtype == 'modules') {
+                if (! $zip->unZipArchive( $zipfile.".zip", $this->objConfig->getModulePath ().$zipfile )) {
+                        //log_debug($zip->error);
+                        return FALSE;
+                }
+                else {
+                    return TRUE;
+                }
+            }
+            elseif($modtype == 'skin') {
+                if (! $zip->unZipArchive( $zipfile.".zip", $this->objConfig->getSkinRoot ().$zipfile )) {
+                        log_debug($zip->error);
+                        return FALSE;
+                }
+                else {
+                    return TRUE;
+                }
+            }
+            else {
+                log_debug("Unknown module type!");
+                return FALSE;
+            }
+        }
+
+    }
+}
+?>

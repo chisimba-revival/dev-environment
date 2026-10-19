@@ -1,0 +1,24 @@
+{
+  "site": "kengapub",
+  "host": "kengapub.com",
+  "previous": "/srv/kengapub.com/releases/release-shared-20261017-142156/ch",
+  "release": "/srv/kengapub.com/releases/release-patch-runner-20261019-135114/ch",
+  "backup": "/srv/kengapub.com/backups/patch-runner-20261019-135114",
+  "imageId": "sha256:823f958f1919fa220581a40db8188828c0b7f7626d3f699122a0f55680f8e9ad",
+  "commits": {
+    "framework": "a3fa6b839d84a53935a6792317f0f5b9561d42f9"
+  },
+  "manifest": "fd2522c903f481d61c3cad88e61fc5a581f333d447a72aff09a3b4c66e2adc41",
+  "startedUTC": "20261019-135114",
+  "status": "online-verified",
+  "database": "5e7ec91b9e209ad3c2d003338d0bd1ca435d220ba8a7b6939ad49b54c3c9101c",
+  "persistentFiles": "4d06d833e261b828c73413d87dd1a708f4a1c9a84f99d233c22031c4d6d2f998",
+  "protectedTables": 222,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": [
+    "kengapub-mail.timer"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "site": "kengalearn",
+  "host": "kengalearn.com",
+  "previous": "/srv/kengalearn/releases/release-shared-20261017-135412/ch",
+  "release": "/srv/kengalearn/releases/release-patch-runner-20261019-134526/ch",
+  "backup": "/srv/kengalearn/backups/patch-runner-20261019-134526",
+  "imageId": "sha256:963220bf21a63eec7ed722bda606869a37bf01f17fe80af903f6617e941cdbe6",
+  "commits": {
+    "framework": "a3fa6b839d84a53935a6792317f0f5b9561d42f9"
+  },
+  "manifest": "fd2522c903f481d61c3cad88e61fc5a581f333d447a72aff09a3b4c66e2adc41",
+  "startedUTC": "20261019-134526",
+  "status": "online-verified",
+  "database": "d3eb3073ce52cee495aefa21343b3433392beda60590c2c2ff3c2eff87c2ec35",
+  "persistentFiles": "3760e38db190d7e937694062a8e289cd3a446bae97a172ed9776444e21428513",
+  "protectedTables": 171,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": [
+    "chisimba-communications-worker.timer"
+  ]
+}
