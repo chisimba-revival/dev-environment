@@ -1,0 +1,57 @@
+[
+  {
+    "path": "packages/messaging/classes/conversationservice_class_inc.php",
+    "before": "a67170e8bdd8ced9ff2d5cc0da5f2e3e916df2615197ba2740b05f9f7a47618e",
+    "after": "2e5353e4378d45a1aa2292b021b29b32c7b3deeefb1c0c9971b2961fd3a6a705"
+  },
+  {
+    "path": "packages/messaging/classes/conversationstore_class_inc.php",
+    "before": "7e3e9ff1dc5755049296d50ceafcee0f504be5043bea2dbff61bade46cd17c50",
+    "after": "f695a3b1fb80e2b9fb39918f9802d52bd31952d998ebd42fe330bb5715fcec66"
+  },
+  {
+    "path": "packages/messaging/classes/helpcontent_class_inc.php",
+    "before": "8f0224e1bf260b265ab9cc24137e7d9a33e4bc655add7588ec9386698e48b23b",
+    "after": "6d4fee72e3d3d77874f7a11ed437a48b37d06f52588da74e8b8518d5001c7a67"
+  },
+  {
+    "path": "packages/messaging/controller.php",
+    "before": "4cbf3d00a62ce60d6f7321381513a7914fd48e3012d8cf8a1b3aff51b7c905bd",
+    "after": "aaae5f16ca410f2308dafba66da76451c3d3c7617d91505dbf435649bd5db7dc"
+  },
+  {
+    "path": "packages/messaging/register.conf",
+    "before": "5ccaab42285442fcd762268733e455ad5742ed67ad46e2e6460916ac7ab53491",
+    "after": "9f9bf70924026dec20f1cca59c11c3b39bc75e0aa63847d9e7dbf84a1e69ce98"
+  },
+  {
+    "path": "packages/messaging/resources/conversation.js",
+    "before": "2b182d2b5effca5e9c6bedfa847e3457a51fa5296a172ddbe8ce6cd981cd5b91",
+    "after": "4132cb71bf74f4906708da268b09c6224b83fd7eeaf4adc94170c75a367c8d8a"
+  },
+  {
+    "path": "packages/messaging/sql/tbl_messaging_replies_v2.sql",
+    "before": null,
+    "after": "cf788b02f5d5916fe31b4050320e363b4449c2482a5e07d2cbf7fd175d7e808a"
+  },
+  {
+    "path": "packages/messaging/templates/content/conversation_tpl.php",
+    "before": "1f50880d1badc226923ff66482bd7f10fa2892d5e7171b66ad5296f9ae673aeb",
+    "after": "d7d9b82eaf0374836ede3d7491ce9c80a3ec2d56397ffd8d3687b160e7e923a8"
+  },
+  {
+    "path": "core_modules/restapi/classes/messagingendpoints_trait.php",
+    "before": "710d9969d4e9e6488696e63c866ffed92307276cee2197047f39cd4023eb91ca",
+    "after": "943e91813028e7085315f9cbe2ffd22402d3721feee824299910b0912191d3e3"
+  },
+  {
+    "path": "core_modules/restapi/register.conf",
+    "before": "486a6a33c3cba5525ecf0074618184c91722b1cef81a2063a027f25fce66f5dd",
+    "after": "c5c1d068e536a202e7555152ea5868db134aed496011087fc915e4d03d69c1cf"
+  },
+  {
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "before": "18676c8606655324bd8b90140b831796866518e6529cf1387ceddda73259cead",
+    "after": "65161d6f53cc3965b9b1d77258304afa6978c213609cd8efbdac22925ab706b3"
+  }
+]
