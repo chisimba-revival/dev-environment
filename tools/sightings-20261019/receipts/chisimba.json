@@ -1,0 +1,24 @@
+{
+  "site": "chisimba",
+  "host": "chisimba.com",
+  "previous": "/srv/chisimba-com/releases/release-patch-runner-20261019-134522/ch",
+  "release": "/srv/chisimba-com/releases/release-sightings-20261019-143926/ch",
+  "backup": "/srv/chisimba-com/backups/sightings-20261019-143926",
+  "imageId": "sha256:4f30c6e68f5c705a99650cfc8a0f4ae2dbf5a8d9f4a5593d1c7fb2bf619e4a08",
+  "commits": {
+    "framework": "19deec22778aed99563c43e7eef0d99f08a19d9a",
+    "modules": "8d12fc290cb0f48b2b8969889cbd5bbd6d718155",
+    "mobile": "c63840e4592757b375d8a5ad243fc1d3c9086dcb"
+  },
+  "manifest": "31000115f759111c0c7bf9149fed341d5ffff2b5a9e28ad6828739c2fe4bc85b",
+  "startedUTC": "20261019-143926",
+  "status": "online-verified",
+  "database": "67e9f5b4d5c46d9683713dcc8dea6f89f429a2d702d87dd368a624696e45d74d",
+  "persistentFiles": "56d1b649ceca46850ba9bdcfc77196c554e25ffc4c120095dc06dc40a5a27786",
+  "protectedTables": 121,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": []
+}

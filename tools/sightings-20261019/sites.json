@@ -1,0 +1,12 @@
+{
+  "chisimba": {
+    "site": "/srv/chisimba-com",
+    "current": "/srv/chisimba-com/app/current",
+    "web": "chisimba-com-web-1",
+    "root": "/var/www/html",
+    "host": "chisimba.com",
+    "target": "root@167.99.253.210",
+    "timers": [],
+    "locks": []
+  }
+}

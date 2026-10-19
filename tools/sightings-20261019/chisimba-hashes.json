@@ -1,0 +1,20 @@
+{
+  "core_modules/context/classes/contextdeletion_class_inc.php": "6a8bd96e19dcc9ac2fc80c4d968050b6e404810a5b9a33036c80f215c5d937ac",
+  "core_modules/context/register.conf": "3e3ebdf74817e421cf5f65288c916cfca4574f335b46914e89bde1c449dbb0c8",
+  "core_modules/filemanager/register.conf": "3fb91f3fded058155070624f228719ad9c0e808e6303412d042d70a96821625b",
+  "core_modules/restapi/classes/messagingendpoints_trait.php": "c3db56602a6912d8c02df87db6f5c7f1eeb532737e2dff86e2648a1be2a57dca",
+  "core_modules/restapi/classes/restcontroller_class_inc.php": "2dd593ce24b24155907e533bc9ad10c3c771f0eee322699c35cab06f6bd329b5",
+  "core_modules/restapi/register.conf": "e9268ba898b787f2d0e4ed384ef112d3dd7af00761b3867ba729750e239634c2",
+  "skins/chisimba-reborn/stylesheet.css": "809d9b034a20c70d9780d5a9b6588d072d5e17e72fd671ee26afa0d46a4a1f9d",
+  "core_modules/filemanager/classes/privateimageasset_class_inc.php": null,
+  "packages/messaging/classes/conversationstore_class_inc.php": "d697a0cbafc30267eb16c644e1d78481e6cb71bfe26d256d6e22df1bd9784335",
+  "packages/messaging/classes/helpcontent_class_inc.php": "6d4fee72e3d3d77874f7a11ed437a48b37d06f52588da74e8b8518d5001c7a67",
+  "packages/messaging/controller.php": "e4ff6b6cac5724a1ef78a3576ce67227e1852aeadb0870a23aca31cdb0193e3f",
+  "packages/messaging/register.conf": "e7766bb825cd5897a5cf1a75546e83ba4324f92caa6a0262c5f0b45f206dd923",
+  "packages/messaging/resources/conversation.js": "4132cb71bf74f4906708da268b09c6224b83fd7eeaf4adc94170c75a367c8d8a",
+  "packages/messaging/templates/content/conversation_tpl.php": "a3973ee8e5d5d8ba588ecf19ea60c4aef50d9518f75bd2852dfac96bf3991354",
+  "packages/messaging/classes/sightingservice_class_inc.php": null,
+  "packages/messaging/sql/tbl_messaging_image_cleanup.sql": null,
+  "packages/messaging/sql/tbl_messaging_sightings_v2.sql": null,
+  "packages/messaging/tools/cleanup-images.php": null
+}

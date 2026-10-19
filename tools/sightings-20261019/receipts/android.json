@@ -1,0 +1,10 @@
+{
+  "package": "org.chisimba.mobiletest",
+  "deviceModel": "Samsung SM-S908E",
+  "installedAtLocal": "2026-10-19 16:40:59 Africa/Johannesburg",
+  "method": "adb install -r",
+  "sourceCommit": "e6b16103741092c5d6ddb945f4e568a9f50a1c69",
+  "apkSHA256": "fea86ef2dc875d94b069bd0742b201fd086b17232bcd911b02ff307674c23ba8",
+  "result": "Success",
+  "nativePhotoPickerAcceptance": "pending user test"
+}
