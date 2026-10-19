@@ -1,0 +1,12 @@
+[
+  {
+    "path": "packages/messaging/resources/conversation.js",
+    "before": "93698c2b7c92ed2767afe8c4607761703d3b655c60f3490a153995ace858c25c",
+    "after": "2b182d2b5effca5e9c6bedfa847e3457a51fa5296a172ddbe8ce6cd981cd5b91"
+  },
+  {
+    "path": "packages/messaging/controller.php",
+    "before": "0d18031826e9baec60dee49e9b65ff42fd3f099a12931835a72e4c0e7455129c",
+    "after": "4cbf3d00a62ce60d6f7321381513a7914fd48e3012d8cf8a1b3aff51b7c905bd"
+  }
+]

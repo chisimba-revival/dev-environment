@@ -1,0 +1,47 @@
+[
+  {
+    "path": "packages/messaging/classes/conversationservice_class_inc.php",
+    "before": "ba0d925d375f644ec771b14229091d4bee42c32bb44ce9d06b3e43558b1b875a",
+    "after": "a67170e8bdd8ced9ff2d5cc0da5f2e3e916df2615197ba2740b05f9f7a47618e"
+  },
+  {
+    "path": "packages/messaging/classes/conversationstore_class_inc.php",
+    "before": "fc97aa37824c1041f86c53bd07779b7edf8cb6d8798761aab1b4d4896382fc41",
+    "after": "7e3e9ff1dc5755049296d50ceafcee0f504be5043bea2dbff61bade46cd17c50"
+  },
+  {
+    "path": "packages/messaging/classes/helpcontent_class_inc.php",
+    "before": "dbce4e74bc47d9547ac79af5a307e909fc23c2463fd9da231d96f49d323eedc5",
+    "after": "8f0224e1bf260b265ab9cc24137e7d9a33e4bc655add7588ec9386698e48b23b"
+  },
+  {
+    "path": "packages/messaging/controller.php",
+    "before": "536bcbdd0cfb97e8d4552fa6b7eeb67b275e0d257d63ef1fafd541ee9185ec41",
+    "after": "0d18031826e9baec60dee49e9b65ff42fd3f099a12931835a72e4c0e7455129c"
+  },
+  {
+    "path": "packages/messaging/register.conf",
+    "before": "d060273da36f8be542562890e786dcddf41dead2a3c81c3164304e0b54ad9837",
+    "after": "5ccaab42285442fcd762268733e455ad5742ed67ad46e2e6460916ac7ab53491"
+  },
+  {
+    "path": "packages/messaging/resources/conversation.js",
+    "before": "94a74e2716d11f6b4925a9518d6d326e839426f6ea25acacc55a410d40baed23",
+    "after": "93698c2b7c92ed2767afe8c4607761703d3b655c60f3490a153995ace858c25c"
+  },
+  {
+    "path": "packages/messaging/sql/tbl_messaging_deliveries_v2.sql",
+    "before": null,
+    "after": "545ca1b57492e58b5f2b2879d5807bbdf5d23bbf6362504093d66221e733dbe8"
+  },
+  {
+    "path": "packages/messaging/templates/content/conversation_tpl.php",
+    "before": "c6e2a9ea84f703ecff96ea8bc2b78740a9a66b9dcf79a506000232c74a84af05",
+    "after": "1f50880d1badc226923ff66482bd7f10fa2892d5e7171b66ad5296f9ae673aeb"
+  },
+  {
+    "path": "skins/chisimba-reborn/stylesheet.css",
+    "before": "2ff3dc62c3f218d6e57e8f90b8a7a9f606fe94ce8eab70b10d55b3d77dc6594e",
+    "after": "735875135971ac93b19c8c0d6722ac12c0308f7457c820a4b48522ad616fd432"
+  }
+]
