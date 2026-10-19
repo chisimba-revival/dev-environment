@@ -36,3 +36,22 @@ The user was asked to authorise cleanup through normal signed-in administration.
 The exact disposable scopes are `msgtest827c3db19b`, `msgtest16bbef25a3`, and
 `msgtest52119133c7`, all created by this run. Do not touch other paused modules,
 course content, or the untracked Android IDE/compose configuration.
+
+Follow-up cleanup (2026-10-19): user authorised normal signed-in administration.
+Deleted `msgtest52119133c7` through contextadmin's normal confirmation form as
+Site Administrator; browser confirmed success. Read-only dbTable verification
+shows all three course rows absent. Each scope still has four permission groups.
+The first two have zero messaging channels and announcement associations; the
+last has one messaging channel and four announcement associations. The normal
+course deletion does not cascade these records, and native group administration
+exposes membership controls but no group deletion. Cleanup therefore remains
+incomplete; do not claim all fixtures removed. No administrator-session bypass
+was used. Production was not changed during this cleanup.
+
+Resolved 2026-10-19: the corrected, CSRF-protected contextadmin repair form was
+used through the existing Site Administrator browser session for each exact
+scope. Read-only dbTable verification now reports no courses, channels,
+announcement associations or groups for all three. The regression repair is in
+context/contextadmin/contextgroups/groupadmin plus messaging/announcements;
+see framework `docs/dependencies/context-deletion-20261019.md`. No production
+release was made for this follow-up.
