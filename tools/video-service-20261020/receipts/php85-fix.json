@@ -1,0 +1,10 @@
+{
+  "previous": "/srv/chisimba-com/releases/release-video-service-20261020-072327/ch",
+  "release": "/srv/chisimba-com/releases/release-video-php85-20261020-080704/ch",
+  "backup": "/srv/chisimba-com/backups/video-php85-20261020-080704",
+  "modulesCommit": "7c2935718",
+  "path": "packages/video-service/classes/muxvideoprovider_class_inc.php",
+  "sha256": "72ecb1ff16b640b58c236c307e26c53c8a8d537dbca2d02574e1093e67a8142d",
+  "schemaChanges": false,
+  "health": "passed"
+}

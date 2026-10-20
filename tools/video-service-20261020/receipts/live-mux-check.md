@@ -25,3 +25,9 @@ Live testing exposed PHP 8.5's deprecated curl_close no-op. Modules commit
 7c2935718 replaces it with object release using unset. Provider/progress tests
 and PHP syntax checks pass. The bounded deployment script preserves the previous
 release, checks exact before/after source, and makes no data or schema changes.
+
+Compatibility fix deployed to
+`/srv/chisimba-com/releases/release-video-php85-20261020-080704/ch`.
+Post-release configuration/signing checks, Mux API HTTP 200 and actual connector
+metadata retrieval passed without the deprecated cleanup warning. Previous release
+is retained; `php85-fix.json` records its backup and exact source hash.
