@@ -1,0 +1,11 @@
+# USB-forwarded HTTPS for the debug app; no LAN/public listener.
+services:
+  mobile-proxy:
+    image: nginx:1.31.3-alpine
+    ports:
+      - "127.0.0.1:9445:443"
+    volumes:
+      - ../local-https/nginx-mobile.conf:/etc/nginx/nginx.conf:ro
+      - ../../private-storage/php85/mobile-tls:/etc/mobile-tls:ro
+    depends_on:
+      - web
