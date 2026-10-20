@@ -1,0 +1,34 @@
+{
+  "site": "chisimba",
+  "host": "www.chisimba.com",
+  "previous": "/srv/chisimba-com/releases/release-sightings-chat-20261019-145607/ch",
+  "release": "/srv/chisimba-com/releases/release-video-service-20261020-072327/ch",
+  "backup": "/srv/chisimba-com/backups/video-service-20261020-072327",
+  "imageId": "sha256:4f30c6e68f5c705a99650cfc8a0f4ae2dbf5a8d9f4a5593d1c7fb2bf619e4a08",
+  "commits": {
+    "modules": "ae7de8abb5e7126ba5322debff0d11f25e081d2e",
+    "framework": "449f3ae09244939a66121fed4a877b1f1f785316",
+    "dev-environment": "817976a7b9f5b0e3b8a45ef1647824be13db667c"
+  },
+  "manifest": "dccd04c703a2db1cc9562c6ec2a9e19162f04c38f3b7bd12d409e396f051a10a",
+  "startedUTC": "20261020-072327",
+  "status": "online-verified",
+  "database": "691747d84c9be1a37962d356641da1d203e6498f7c52ea745886ee28d6e4a2c3",
+  "persistentFiles": "d16763d58d03eb2f23f33d1c83638239ebe861efded682bda875ddbaa1008375",
+  "protectedTables": 123,
+  "postReleaseFatalErrors": 0,
+  "postReleaseDeprecations": 0,
+  "sourceVerified": true,
+  "webRunning": true,
+  "timersVerified": [],
+  "deploymentScriptsCommit": "9d9e529",
+  "unsignedWebhookStatus": 401,
+  "invalidCaptionStatus": 404,
+  "queryTokensOmittedFromAccessLogs": true,
+  "browserChecks": [
+    "Authenticated library renders; upload disabled until configured",
+    "Help opens and Escape closes",
+    "Sysconfig lists all eight parameters; canonical public URL preset"
+  ],
+  "liveMuxAcceptance": "Pending account configuration"
+}

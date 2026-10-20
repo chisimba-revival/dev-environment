@@ -47,3 +47,13 @@ https://www.chisimba.com/index.php?module=video-service&action=webhook&configura
 
 The reconciliation CLI is available; a scheduled worker is not installed by this
 release. Sysconfig redesign remains separate work.
+
+## Completed deployment
+
+Live release: `/srv/chisimba-com/releases/release-video-service-20261020-072327/ch`.
+Backups: `/srv/chisimba-com/backups/video-service-20261020-072327`.
+All 123 protected data tables retained their fingerprints. Source checks passed;
+zero new fatal errors or deprecations. The unsigned webhook returns HTTP 401 and
+an invalid caption capability returns HTTP 404. Both Apache access logs omit the
+synthetic query token. Authenticated browser checks passed for the library, Help
+and the eight Sysconfig settings. Credentials remain blank.
