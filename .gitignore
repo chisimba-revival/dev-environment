@@ -6,3 +6,6 @@ backups/
 
 # Machine-specific TLS identity and backups (never share private keys).
 /local-https/certs/
+
+# Generated Python bytecode
+__pycache__/
