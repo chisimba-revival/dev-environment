@@ -1,0 +1,150 @@
+[
+  {
+    "path": "packages/contextcontent/classes/chapterstagegateservice_class_inc.php",
+    "after": "3b0b34acb67c15e21292b0876e429b3154e16984ea845fac976af04e0e6cb666"
+  },
+  {
+    "path": "packages/contextcontent/classes/videoconsumer_class_inc.php",
+    "after": "5a91ffbc91193c238c173971f34ad2848aee3d2783a7330e7b8a2726c072f992"
+  },
+  {
+    "path": "packages/contextcontent/controller.php",
+    "after": "8e6decdb71ac4c008e5b1d3489838eb11eae6bbe12bfc313eb9b152abb706819"
+  },
+  {
+    "path": "packages/contextcontent/patches/installscripts_class_inc.php",
+    "after": "e05d5eb55a16265cf69c6b47ebdc50c47222fc3b324a8194bdcbfee105caf405"
+  },
+  {
+    "path": "packages/contextcontent/register.conf",
+    "after": "83585d24c8bbc2f6c57bf7943eba37e8adbbd2e13f1f38075aeb2c33af6eec13"
+  },
+  {
+    "path": "packages/contextcontent/sql/tbl_contextcontent_videos.sql",
+    "after": "14a11d8a8bb4212e4584da10dc2a8d478ba85a4d87c49430bc11c775aed2b43d"
+  },
+  {
+    "path": "packages/contextcontent/templates/content/videogatelocked_tpl.php",
+    "after": "175cb90b026f5472b07dccdaaf39dce3798f48baf8b4ec0ee5ce19f8cacc1a03"
+  },
+  {
+    "path": "packages/contextcontent/templates/content/viewpage_tpl.php",
+    "after": "34715eb0ed333421813d8361b74d85717b3d6f94a2e9381851d3deeab85a295f"
+  },
+  {
+    "path": "packages/video-service/README.md",
+    "after": "7b946aa09a97de403f92d0877ae09741d4edf3ed8dff31fe6c5fdf33511311fc"
+  },
+  {
+    "path": "packages/video-service/classes/dbvideos_class_inc.php",
+    "after": "d679d808f805ea28eef9258e77395a1b117950d05e395226d07ea0be9fe26395"
+  },
+  {
+    "path": "packages/video-service/classes/helpcontent_class_inc.php",
+    "after": "f524e81aa326ef3f769f2671e475f5feefa35177b8bafc3e05ea8e5900884800"
+  },
+  {
+    "path": "packages/video-service/classes/muxvideoprovider_class_inc.php",
+    "after": "03fbb35461db1315e651d39a7eb1a2d17494b1452ee24235957f3237811fbaf5"
+  },
+  {
+    "path": "packages/video-service/classes/videoplayer_class_inc.php",
+    "after": "95a63fcf96ebf1b810f9e2c550c6e73452c50291aee4aaafc58621149c34216b"
+  },
+  {
+    "path": "packages/video-service/classes/videoprogress_class_inc.php",
+    "after": "60b84fdcc158b01e9c329134e0094cfdd4029a6416f0cb67c3cf80150049b280"
+  },
+  {
+    "path": "packages/video-service/classes/videoproviderinterface.php",
+    "after": "b7a3079f5112b6b56c00c5ede10acc837de72b2c7437dd09b33a5f8c53f21d3e"
+  },
+  {
+    "path": "packages/video-service/classes/videoservice_class_inc.php",
+    "after": "a3e67f3fb6e20febf30f3bac1f81cd349da06a95814c92d588a5e4b4f91156c2"
+  },
+  {
+    "path": "packages/video-service/controller.php",
+    "after": "5e3fbb340547d33eeed5563ebd2b80b775fce0fd8997b163dd6e80f242da9075"
+  },
+  {
+    "path": "packages/video-service/patches/installscripts_class_inc.php",
+    "after": "46d58f18a13613f0d72b51e959b0754a95742796bdc567e9612bb9bb0cb5f7fe"
+  },
+  {
+    "path": "packages/video-service/register.conf",
+    "after": "bfeb14b4ac52efc3b8ae7ad3c025bedbff75445f453fa9796b2c1668508e99b4"
+  },
+  {
+    "path": "packages/video-service/resources/library.js",
+    "after": "cea250ca1e95861684f8bd7771b3ee282b8a59ca6de480727e56a40c178a90cd"
+  },
+  {
+    "path": "packages/video-service/resources/player.js",
+    "after": "2cb5e45d6a9d84662820bd7f64de68116b14c6ee799293e561c1627d46138ed0"
+  },
+  {
+    "path": "packages/video-service/resources/vendor/.gitattributes",
+    "after": "39a9e8d3d16fdaf78d2bc5f7391777f897af104bf259a6c5c7fab74827d3ce7f"
+  },
+  {
+    "path": "packages/video-service/resources/vendor/LICENSE-mux-player",
+    "after": "807c483a5e073a718af04d0731bc815d4d5d69813614b02290c9ff026bc77e5b"
+  },
+  {
+    "path": "packages/video-service/resources/vendor/LICENSE-upchunk",
+    "after": "1f3376358f589437b9d241ff2977ca098abd7bc25e7e99ed63b48610b86073db"
+  },
+  {
+    "path": "packages/video-service/resources/vendor/README.md",
+    "after": "76e5ef68b5e567e4fe56f8380eb2a24d9a9fb0197733f68cba42cafa1a1b6d4e"
+  },
+  {
+    "path": "packages/video-service/resources/vendor/mux-player.js",
+    "after": "9f160fd0a0db403d9af306bd8c9e13dee01f10a2c66e8a4f0df8fe635feb823a"
+  },
+  {
+    "path": "packages/video-service/resources/vendor/upchunk.js",
+    "after": "d8f8efbb101f112f44da8d1a7005e3d9ca8cd9c3e1d7a0ef3ae6a0ffd870e668"
+  },
+  {
+    "path": "packages/video-service/scripts/reconcile.php",
+    "after": "fe6c1878fa4a7c79494ff6be14d91d5da0186a83ef7f99ae4ed4267f7fdedcb5"
+  },
+  {
+    "path": "packages/video-service/sql/tbl_video_assets.sql",
+    "after": "e98ed9c99c3db0b42e5f91486d5b7958dba1b5b0052788e1086fb78b920d15d3"
+  },
+  {
+    "path": "packages/video-service/sql/tbl_video_captions.sql",
+    "after": "893c2191cb99fed82a7d23b2b788cb6f37fb325a6837cb9bedbd0875eaef2b3e"
+  },
+  {
+    "path": "packages/video-service/sql/tbl_video_events.sql",
+    "after": "d4a2a0ba12621a1373b44dd52d1b3c4c98a52f843411a354004f3f291501009c"
+  },
+  {
+    "path": "packages/video-service/sql/tbl_video_progress.sql",
+    "after": "e95682b8b5513c844ad1e5fc57f5bce0e8c6ee1f994ed9deb26c5f0603c86e68"
+  },
+  {
+    "path": "packages/video-service/templates/content/error_tpl.php",
+    "after": "3b3b73766e70674f1ead8e5d1e683ff9776df5716e544466eac3171d1fd3f030"
+  },
+  {
+    "path": "packages/video-service/templates/content/library_tpl.php",
+    "after": "c4a8965443008cfd5410c3fd3993690925b8fd79382ef167a7ce7130c5e272ff"
+  },
+  {
+    "path": "packages/video-service/tests/course_policy_test.php",
+    "after": "82a710daff9a0cd8d948e851fb3b3cfedbbe07d14d2fd08f6b1d207d3611a832"
+  },
+  {
+    "path": "packages/video-service/tests/pdo_integration_test.php",
+    "after": "71519f785d03428da2fab1be17066f74e5585fe0070b37833e63246ebe56148d"
+  },
+  {
+    "path": "packages/video-service/tests/provider_progress_test.php",
+    "after": "4a75895db3e26829fa26cf708fb08aac685148cebce26c02a22e4776d2f870cb"
+  }
+]
