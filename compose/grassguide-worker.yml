@@ -1,0 +1,26 @@
+# Local development enrichment. Inherits the web service's published source and data mounts.
+# Start with: docker compose -f php85.yml -f grassguide-worker.yml up -d --no-build grassguide-worker
+services:
+  grassguide-worker:
+    extends:
+      file: php85.yml
+      service: web
+    image: chisimba-php85-web
+    container_name: chisimba-grassguide-worker
+    ports: !reset []
+    init: true
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        trap 'exit 0' TERM INT
+        cd /var/www/html/ch
+        while true; do
+          php packages/grassguide/scripts/run_enrichment_worker.php queue
+          for provider in kew gbif wikipedia inaturalist; do
+            php packages/grassguide/scripts/run_enrichment_worker.php "$$provider" 200 &
+          done
+          wait
+          sleep 60 &
+          wait
+        done
