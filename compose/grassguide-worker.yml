@@ -17,7 +17,7 @@ services:
         cd /var/www/html/ch
         while true; do
           php packages/grassguide/scripts/run_enrichment_worker.php queue
-          for provider in kew gbif wikipedia inaturalist; do
+          for provider in grassbase kew gbif wikipedia inaturalist; do
             php packages/grassguide/scripts/run_enrichment_worker.php "$$provider" 200 &
           done
           wait
